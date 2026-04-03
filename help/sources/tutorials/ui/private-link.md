@@ -1,10 +1,10 @@
 ---
 title: 对UI中的源的专用链接支持
-description: 了解如何在Experience Platform UI中为源使用Azure专用链接。
+description: 了解如何在Experience Platform UI中使用源的Azure专用链接。
 exl-id: 2882729e-2d46-48dc-9227-51dda5bf7dfb
-source-git-commit: 4d82b0a7f5ae9e0a7607fe7cb75261e4d3489eff
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '814'
+source-wordcount: '789'
 ht-degree: 0%
 
 ---
@@ -39,11 +39,11 @@ ht-degree: 0%
 
 ## 创建专用端点
 
-要开始使用专用链接，请导航到Experience Platform UI的&#x200B;*[!UICONTROL 源]*&#x200B;目录，然后从源工作区的选项卡菜单中选择&#x200B;**[!UICONTROL 专用端点]**。
+要开始使用专用链接，请导航到Experience Platform UI的&#x200B;*[!UICONTROL Sources]*&#x200B;目录，然后从源工作区的选项卡菜单中选择&#x200B;**[!UICONTROL Private endpoints]**。
 
 ![具有“私有端点”的源目录。](../../images/tutorials/private-links/catalog.png)
 
-使用界面可查看有关现有专用端点的信息，例如其ID、关联的源和当前状态。 要创建新的专用终结点，请选择&#x200B;**[!UICONTROL 创建专用终结点]**。
+使用界面可查看有关现有专用端点的信息，例如其ID、关联的源和当前状态。 要创建新的专用终结点，请选择&#x200B;**[!UICONTROL Create private endpoint]**。
 
 ![已选择“创建专用终结点”的专用终结点接口。](../../images/tutorials/private-links/private-endpoints.png)
 
@@ -58,7 +58,7 @@ ht-degree: 0%
 
 {style="table-layout:auto"}
 
-完成后，选择&#x200B;**[!UICONTROL 提交]**。
+完成后，选择&#x200B;**[!UICONTROL Submit]**。
 
 ![在源UI工作区中创建新专用终结点的身份验证窗口。](../../images/tutorials/private-links/create-private-endpoint.png)
 
@@ -68,25 +68,25 @@ ht-degree: 0%
 
 要批准[!DNL Azure Blob]和[!DNL Azure Data Lake Gen2]源的专用终结点请求，请登录到[!DNL Azure Portal]。 在左侧导航中，选择&#x200B;**[!DNL Data storage]**，然后转到&#x200B;**[!DNL Security + networking]**&#x200B;选项卡并选择&#x200B;**[!DNL Networking]**。 接下来，选择&#x200B;**[!DNL Private endpoints]**&#x200B;以查看与您的帐户关联的专用端点列表及其当前连接状态。 要批准挂起的请求，请选择所需的终结点，然后单击&#x200B;**[!DNL Approve]**。
 
-![包含待处理专用终结点列表的Azure门户。](../../images/tutorials/private-links/azure.png)
+![包含待处理专用端点列表的Azure门户。](../../images/tutorials/private-links/azure.png)
 
 ## 创建具有专用端点的帐户
 
-导航到源目录并选择支持专用端点的源。 接下来，使用您的源创建一个新帐户，在帐户身份验证期间，选择&#x200B;**[!UICONTROL 私有终结点]**&#x200B;切换开关。 提供源的身份验证凭据，然后选择&#x200B;**[!UICONTROL 连接到源]**&#x200B;允许几分钟以建立连接。
+导航到源目录并选择支持专用端点的源。 接下来，使用您的源创建一个新帐户，在帐户身份验证期间，选择&#x200B;**[!UICONTROL Private endpoint]**&#x200B;切换开关。 提供源的身份验证凭据，然后选择&#x200B;**[!UICONTROL Connect to source]**&#x200B;允许几分钟以建立连接。
 
 >[!NOTE]
 >
->如果启用了[!UICONTROL 私有终结点]选项，Experience Platform将检查所选源是否存在批准的私有终结点。 如果未找到批准的端点，您将无法建立连接。
+>如果启用了[!UICONTROL Private endpoint]选项，Experience Platform将检查所选源是否存在批准的专用端点。 如果未找到批准的端点，您将无法建立连接。
 
 ![已启用私有终结点的新帐户身份验证步骤。](../../images/tutorials/private-links/new-account.png)
 
-接下来，导航到源的[!UICONTROL 现有帐户]界面。 使用此界面可查看现有帐户及其相应状态的列表。 您可以选择筛选器图标![筛选器图标](../../../images/icons/filter.png)以仅显示已启用与专用终结点连接的帐户。
+接下来，导航到源的[!UICONTROL Existing account]界面。 使用此界面可查看现有帐户及其相应状态的列表。 您可以选择筛选器图标![筛选器图标](../../../images/icons/filter.png)以仅显示已启用与专用终结点连接的帐户。
 
 ![源工作流程中的现有帐户接口仅显示为专用终结点连接启用的筛选帐户。](../../images/tutorials/private-links/existing-private-endpoints.png)
 
-选择要使用的帐户，然后启用&#x200B;**[!UICONTROL 交互式创作]**。 此切换激活[!UICONTROL 交互式创作]，这是一项[!DNL Azure]功能，允许您测试连接、浏览文件夹列表和预览数据。 专用终结点连接需要启用[!UICONTROL 交互式创作]。 请注意，您无法手动关闭此切换开关；它在60分钟后自动禁用。
+选择要使用的帐户，然后启用&#x200B;**[!UICONTROL Interactive Authoring]**。 此切换激活[!UICONTROL Interactive Authoring]，这是一项[!DNL Azure]功能，允许您测试连接、浏览文件夹列表和预览数据。 专用终结点连接需要启用[!UICONTROL Interactive Authoring]。 请注意，您无法手动关闭此切换开关；它在60分钟后自动禁用。
 
-[!UICONTROL 交互式创作]需要几分钟才能启用。 启用该设置后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续执行下一步，并选择要摄取的数据。
+[!UICONTROL Interactive Authoring]需要几分钟才能启用。 启用该设置后，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续执行下一步并选择您要摄取的数据。
 
 ![已选择现有帐户并启用交互式创作。](../../images/tutorials/private-links/interactive-authoring.png)
 
