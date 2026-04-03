@@ -2,7 +2,7 @@
 description: 本页举例说明了用于通过Adobe Experience Platform Destination SDK删除现有目标服务器配置的API调用。
 title: 删除目标服务器配置
 exl-id: 2322a2ce-220e-4590-a553-b15152412752
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '328'
 ht-degree: 1%
@@ -22,7 +22,7 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->Destination SDK支持的所有参数名称和值均区分大小写&#x200B;**&#x200B;**。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
+>Destination SDK支持的所有参数名称和值均区分大小写&#x200B;****。 为避免出现区分大小写错误，请完全按照文档中的说明使用参数名称和值。
 
 ## 目标服务器API操作快速入门 {#get-started}
 
@@ -50,7 +50,7 @@ DELETE /authoring/destination-servers/{INSTANCE_ID}
 
 {style="table-layout:auto"}
 
-+++请求
++++ 请求
 
 ```shell
 curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destination-servers/{INSTANCE_ID} \
@@ -60,9 +60,13 @@ curl -X DELETE https://platform.adobe.io/data/core/activation/authoring/destinat
  -H 'x-sandbox-name: {SANDBOX_NAME}' \
 ```
 
-+++响应
++++
+
++++ 响应
 
 成功的响应返回HTTP状态200以及空的HTTP响应。
+
++++
 
 ## API错误处理 {#error-handling}
 
