@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 批量摄取API概述
 description: Adobe Experience Platform批量摄取API允许您将数据作为批处理文件接入Experience Platform。 所摄取的数据可以是来自CRM系统中平面文件（如Parquet文件）的配置文件数据，也可以是与Experience Data Model (XDM)注册表中的已知架构相符的数据。
 exl-id: ffd1dc2d-eff8-4ef7-a26b-f78988f050ef
-source-git-commit: dace7bc2f7940748422628b62f0f57854036ad3f
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1389'
 ht-degree: 4%
@@ -412,7 +412,7 @@ curl GET "https://platform.adobe.io/data/foundation/catalog/batch/{BATCH_ID}" \
 | 活动 | 已成功提升该批次，可用于下游使用。 此状态可与“Success”互换使用。 |
 | 已删除 | 批次的数据已完全删除。 |
 | 失败 | 因配置错误和/或数据错误导致的终端状态。 失败批次的数据&#x200B;**不会**&#x200B;显示。 此状态可与“失败”互换使用。 |
-| 非活动 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
+| 非活跃 | 批次已成功提升，但已还原或已过期。 该批次不再可用于下游消耗。 |
 | 已加载 | 批次的数据已完成，批次已准备好进行升级。 |
 | 正在加载 | 正在上载此批次的数据，批次当前为&#x200B;**未就绪**，无法升级。 |
 | 正在重试 | 正在处理此批次的数据。 但是，由于系统或临时错误，批次失败 — 因此，将重试此批次。 |
