@@ -47,7 +47,7 @@ ID迁移支持以下过渡模式：
 
 ## Audience Manager特征更新
 
-在迁移期间将XDM格式的数据发送到Audience Manager时，必须将该数据转换为信号。 必须更新您的特征以反映XDM提供的新密钥。 使用[BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html#getting-started-with-bulk-management)可简化此过程。
+在迁移期间将XDM格式的数据发送到Audience Manager时，必须将该数据转换为信号。 必须更新您的特征以反映XDM提供的新密钥。 使用[BAAAM工具](https://experienceleague.adobe.com/docs/audience-manager/user-guide/reference/bulk-management-tools/bulk-management-intro.html?lang=zh-Hans#getting-started-with-bulk-management)可简化此过程。
 
 ## 第三方ID迁移 {#third-party-id}
 

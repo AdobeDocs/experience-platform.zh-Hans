@@ -24,9 +24,9 @@ ECID可识别设备，而不是人员。 要将活动绑定到已知人员，您
 
 ## 第一方和第三方收藏集 {#first-party-and-third-party-collection}
 
-Web SDK始终将标识[Cookie](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk)（如`kndctr_` Cookie）设置为域上的第一方Cookie，无论哪个端点接收数据收集请求。 收集端点（实施将数据发送到的域）是一个单独的选择，它影响浏览器和网络策略处理请求本身的方式。
+Web SDK始终将标识[Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)（如`kndctr_` Cookie）设置为域上的第一方Cookie，无论哪个端点接收数据收集请求。 收集端点（实施将数据发送到的域）是一个单独的选择，它影响浏览器和网络策略处理请求本身的方式。
 
-**第一方收集**&#x200B;使用指向Adobe的Edge Network的CNAME，通过贵组织控制的域（例如，`data.example.com`）路由数据收集请求。 由于该请求驻留在您的域中，因此不太可能被广告拦截器或浏览器网络限制阻止。 第一方集合也是从您自己的服务器基础结构设置[第一方设备ID](./fpid.md)的先决条件，这是可用的最持久标识策略。 Adobe建议使用[Adobe管理的证书计划](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/adobe-managed-cert)来配置实施的第一方收藏集。
+**第一方收集**&#x200B;使用指向Adobe的Edge Network的CNAME，通过贵组织控制的域（例如，`data.example.com`）路由数据收集请求。 由于该请求驻留在您的域中，因此不太可能被广告拦截器或浏览器网络限制阻止。 第一方集合也是从您自己的服务器基础结构设置[第一方设备ID](./fpid.md)的先决条件，这是可用的最持久标识策略。 Adobe建议使用[Adobe管理的证书计划](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/adobe-managed-cert)来配置实施的第一方收藏集。
 
 **第三方收藏集**&#x200B;将请求直接发送到Adobe拥有的[`edgeDomain`](/help/collection/js/commands/configure/edgedomain.md)（如`example.data.adobedc.net`）。 虽然身份Cookie仍被设置为域中的第一方，但请求本身会转到第三方域，而一些浏览器和广告拦截器可以限制该域。
 

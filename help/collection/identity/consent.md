@@ -34,7 +34,7 @@ Web SDK同时使用[`defaultConsent`](/help/collection/js/commands/configure/def
 
 >[!NOTE]
 >
->即使访客选择禁用，也会设置身份和同意Cookie。 这些Cookie是尊重访客的数据收集偏好设置所必需的。 有关Web SDK设置的Cookie的完整列表，请参阅[Web SDK Cookie](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk)。
+>即使访客选择禁用，也会设置身份和同意Cookie。 这些Cookie是尊重访客的数据收集偏好设置所必需的。 有关Web SDK设置的Cookie的完整列表，请参阅[Web SDK Cookie](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk)。
 
 当访客在之前撤销同意后重新授予同意（通过在`setConsent`后使用`"general": "in"`调用`"general": "out"`）时，Web SDK会恢复发送事件并使用Cookie中的现有ECID（如果尚未过期）。 访客的身份将被保留。
 

@@ -22,7 +22,7 @@ Web SDK支持以下标准：
    1. 体验事件架构包含[IAB TCF 2.0同意字段组](/help/xdm/field-groups/event/iab.md)。
    1. 您将IAB同意信息包含在事件[XDM对象](sendevent/xdm.md)中。 在发送事件数据时，Web SDK不会自动包含同意信息。
 
-使用此命令时，Web SDK会将用户的首选项写入[`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/en/docs/core-services/interface/data-collection/cookies/web-sdk) Cookie。 无论访客的同意首选项如何，都会设置此Cookie，因为它存储该访客的同意首选项。 下次用户在浏览器中加载您的网站时，SDK将检索这些保留的首选项，以确定是否可将事件发送到Adobe。
+使用此命令时，Web SDK会将用户的首选项写入[`kndctr_<orgId>_consent`](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/data-collection/cookies/web-sdk) Cookie。 无论访客的同意首选项如何，都会设置此Cookie，因为它存储该访客的同意首选项。 下次用户在浏览器中加载您的网站时，SDK将检索这些保留的首选项，以确定是否可将事件发送到Adobe。
 
 Adobe建议您将任何同意对话框首选项与Web SDK同意分开存储。 Web SDK不提供检索同意的方法。 为确保用户首选项与SDK保持同步，您可以在每次加载页面时调用`setConsent`命令。 Web SDK仅在同意更改时进行服务器调用。
 
