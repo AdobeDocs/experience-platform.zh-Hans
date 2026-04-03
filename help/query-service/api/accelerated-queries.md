@@ -3,7 +3,7 @@ title: 加速查询端点
 description: 了解如何以无状态方式访问查询加速存储区，以根据聚合数据快速返回结果。 本文档提供了查询服务加速查询端点的示例HTTP请求和响应。
 role: Developer
 exl-id: 29ea4d25-9c46-4b29-a6d7-45ac33dcb0fb
-source-git-commit: ddf886052aedc025ff125c03ab63877cb049583d
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '560'
 ht-degree: 1%
@@ -80,7 +80,7 @@ curl -X POST https://platform.adobe.io/data/foundation/query/accelerated-queries
 
 | 属性 | 描述 |
 |---|---|
-| `dbName` | 要向其进行加速查询的数据库名称。 `dbName`的值应采用`{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`格式。 提供的数据库必须存在于加速存储中，否则请求将导致错误。 您还必须确保`dbName`中的`x-sandbox-name`标头和沙盒名称引用同一沙盒。 |
+| `dbName` | 要向其进行加速查询的数据库名称。 `dbName`的值应采用`{SANDBOX_NAME}:{ACCELERATED_STORE_DATABASE}.{ACCELERATED_STORE_SCHEMA}`格式。 提供的数据库必须存在于加速存储中，否则请求将导致错误。 您还必须确保`x-sandbox-name`中的`dbName`标头和沙盒名称引用同一沙盒。 |
 | `sql` | SQL语句字符串。 允许的最大大小为1000000个字符。 |
 | `templateId` | 向`/templates`端点发出POST请求时创建并另存为模板的查询的唯一标识符。 |
 | `name` | 加速查询的可选的人类易记描述性名称。 |
