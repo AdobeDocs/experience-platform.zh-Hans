@@ -3,7 +3,7 @@ keywords: 广告；必应；
 title: Microsoft Bing连接
 description: 通过Microsoft Bing连接目标，您可以在整个Microsoft Advertising网络（包括显示广告、搜索和原生）中执行重定位和面向受众的数字营销活动。
 exl-id: e1c0273b-7e3c-4d77-ae14-d1e528ca0294
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1044'
 ht-degree: 10%
@@ -79,7 +79,7 @@ ht-degree: 10%
 
 [!DNL Microsoft Bing]目标需要以下安装程序才能正常工作：
 
-1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
    * 如果您之前在Audience Manager中设置[!DNL Microsoft Bing]集成，则您现有的ID同步会自动转移到Experience Platform。
 
 2. **确保在配置文件上使用ECID**：所有配置文件都必须具有ECID，才能成功导出。 此目标的ECID为&#x200B;**强制**。
@@ -150,7 +150,7 @@ ht-degree: 10%
 
 * **具有ECID和Microsoft Advertising ID映射的配置文件：**&#x200B;已成功导出和激活配置文件
 * **仅具有ECID的配置文件（无Microsoft Advertising ID映射）：**&#x200B;配置文件&#x200B;**未导出**。 需要ECID和MAID之间的ID同步映射。
-* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;**&#x200B;**。 此目标必须具有ECID。
+* **没有ECID的配置文件：**&#x200B;未导出配置文件&#x200B;****。 此目标必须具有ECID。
 
 ## 导出的数据 {#exported-data}
 
