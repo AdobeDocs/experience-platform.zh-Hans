@@ -2,7 +2,7 @@
 title: 机器学习的工程师功能
 description: 了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 使用Data Distiller可大规模计算ML功能，并与您的机器学习环境共享这些功能。
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
-source-git-commit: 308d07cf0c3b4096ca934a9008a13bf425dc30b6
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1140'
 ht-degree: 13%
@@ -57,7 +57,7 @@ df_labels.head()
 类数： 50000
 
 |   | 事件类型 | userId | subscriptionOcked | random_row_number_for_user |
-| ---  |   ---  |   ---  |   ---  |   --- | 
+| ---  |   ---  |   ---  |   ---  |   --- |
 | 0 | directMarketing.emailClicked | 01027994177972439148069092698714414382 | 0 | 1 |
 | 1 | directMarketing.emailOpened | 01054714817856066632264746967668888198 | 0 | 1 |
 | 2 | web.formFilledOut | 01117296890525140996735553609305695042 | 1 | 15 |
@@ -147,7 +147,7 @@ df_features.head()
 **示例输出**
 
 |   | userId | 电子邮件已接收 | 电子邮件已打开 | 已单击电子邮件 | 已查看的产品 | propositionInteracts | propositionMissed | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDiscisse | minutes_since_linkClick |
-| --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- | 
+| --- |    --- |    ---   |  ---  |   ---  |   ---  |  ---  |  ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   ---  |   --- |
 | 0 | 01102546977582484968046916668339306826 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | None | NaN |
 | 1 | 01102546977582484968046916668339306826 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | None | NaN |
 | 2 | 01102546977582484968046916668339306826 | 3 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | None | NaN |
@@ -230,7 +230,7 @@ df_training_set.head()
 **示例输出**
 
 |  | userId | 事件类型 | 时间戳 | subscriptionOcked | 电子邮件已接收 | 电子邮件已打开 | 已单击电子邮件 | 已查看的产品 | propositionInteracts | propositionMissed | webLinkClicks | minutes_since_emailSent | minutes_since_emailOpened | minutes_since_emailClick | minutes_since_productView | minutes_since_propositionInteract | minutes_since_propositionDiscisse | minutes_since_linkClick | random_row_number_for_user |
-| ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |    
+| ---  |  --- |   ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---   | ---  |  ---  |  ---  |  --- |
 | 0 | 02554909162592418347780983091131567290 | directMarketing.emailSent | 2023-06-17 13:44:59.086 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0.0 | NaN | NaN | NaN | NaN | None | NaN | 1 |
 | 1 | 01130334080340815140184601481559659945 | directMarketing.emailOpened | 2023-06-19 06:01:55.366 | 0 | 1 | 3 | 0 | 1 | 0 | 0 | 0 | 1921.0 | 0.0 | NaN | 1703.0 | NaN | None | NaN | 1 |
 | 2 | 01708961660028351393477273586554010192 | web.formFilledOut | 2023-06-19 18:36:49.083 | 1 | 1 | 2 | 2 | 0 | 0 | 0 | 0 | 2365.0 | 26.0 | 1.0 | NaN | NaN | None | NaN | 7 |
@@ -484,4 +484,4 @@ Query completed successfully in 473.8 seconds
 
 ## 后续步骤：
 
-通过阅读本文档，您已了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 在机器学习环境中创建从Experience Platform到馈送自定义模型的功能管道的下一步是[导出功能数据集](./export-data.md)。
+通过阅读本文档，您已了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 从Experience Platform创建功能管道以在机器学习环境中馈送自定义模型的下一步是[导出功能数据集](./export-data.md)。
