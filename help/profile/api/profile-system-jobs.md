@@ -5,9 +5,9 @@ type: Documentation
 description: Adobe Experience Platform允许您从配置文件存储中删除数据集或批次，以便删除不再需要或添加错误的实时客户配置文件数据。 这需要使用配置文件API创建配置文件系统作业或删除请求。
 role: Developer
 exl-id: 75ddbf2f-9a54-424d-8569-d6737e9a590e
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
-source-wordcount: '2022'
+source-wordcount: '2021'
 ht-degree: 2%
 
 ---
@@ -16,7 +16,7 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/landing/multi-cloud)。
+>在Microsoft Azure上运行的Adobe Experience Platform实施与Amazon Web Services (AWS)上运行的实施之间可能存在以下端点。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](https://experienceleague.adobe.com/en/docs/experience-platform/landing/multi-cloud)。
 
 Adobe Experience Platform允许您从多个源摄取数据，并为个别客户构建可靠的配置文件。 摄取到[!DNL Experience Platform]的数据存储在[!DNL Data Lake]中，如果为配置文件启用了数据集，则该数据也存储在[!DNL Real-Time Customer Profile]数据存储中。 有时候，可能有必要从配置文件存储中删除与数据集关联的配置文件数据，以便删除不再需要或添加错误的数据。 这需要使用[!DNL Real-Time Customer Profile] API创建[!DNL Profile]系统作业或“删除请求”。
 
@@ -357,7 +357,7 @@ curl -X POST \
 >
 > 无法删除基于记录架构的数据集的批次，因为记录类型数据集批次会覆盖以前的记录，因此无法“撤消”或删除。 在基于记录架构的数据集中消除错误批次影响的唯一方法是使用正确的数据重新摄取批次，以覆盖错误的记录。
 
-有关记录和时序行为的更多信息，请查看[!DNL XDM System]概述中有关XDM数据行为[&#128279;](../../xdm/home.md#data-behaviors)的部分。
+有关记录和时序行为的更多信息，请查看[概述中有关XDM数据行为](../../xdm/home.md#data-behaviors)的[!DNL XDM System]部分。
 
 **API格式**
 
@@ -654,7 +654,7 @@ curl -X GET https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-46
 
 >[!AVAILABILITY]
 >
->此终结点在Adobe Experience Platform的Azure实例中是&#x200B;**only**&#x200B;受支持的，在AWS实例中是&#x200B;**不支持**。
+>此终结点在Adobe Experience Platform的Azure实例中是&#x200B;**仅**&#x200B;受支持的，在AWS实例中是&#x200B;**不支持**。
 
 [!DNL Experience Platform]允许您删除以前的请求，这可能对许多原因有用，包括删除作业未完成或卡在处理阶段。 要删除删除请求，您可以对`/system/jobs`端点执行DELETE请求，并包含要删除到请求路径的删除请求的ID。
 
@@ -684,4 +684,4 @@ curl -X POST https://platform.adobe.io/data/core/ups/system/jobs/9c2018e2-cd04-4
 
 ## 后续步骤
 
-现在您已经知道从[!DNL Experience Platform]中的[!DNL Profile store]删除数据集和批次所涉及的步骤，您可以安全地删除已错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。
+现在您已经知道从[!DNL Profile store]中的[!DNL Experience Platform]删除数据集和批次所涉及的步骤，您可以安全地删除已错误添加或您的组织不再需要的数据。 请注意，删除请求无法撤消，因此您应该只删除确信现在不需要且将来不需要的数据。
