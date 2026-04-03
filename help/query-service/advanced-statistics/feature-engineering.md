@@ -3,7 +3,7 @@ title: 功能工程SQL扩展
 description: 了解Data Distiller功能工程SQL扩展，用于预处理数据以实现高级统计建模。 它涵盖了可用的特征提取、转换和选择技术。
 role: Developer
 exl-id: 622c8ef3-9651-46b3-ad22-021a93190149
-source-git-commit: e7bc30c153f67c59e9c04e8c8df60394f48871d0
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '735'
 ht-degree: 0%
@@ -70,7 +70,8 @@ ht-degree: 0%
 
 接下来，重点从原始集中选择最重要特征的子集。 此过程有助于减少数据的维数，使模型更易于处理并改进整体模型性能。
 
-<!-- Commented out as it 
+<!-- 
+Commented out as it 
 ## Supported machine learning algorithms {#supported-ml-algorithms}
 
 Once you have preprocessed your data, use the feature engineering SQL extension to prepare your data for the following machine learning algorithms:
@@ -86,7 +87,8 @@ Use logical regression to predict categorical outcomes and linear regression to 
 
 Use a clustering algorithm to group data points into distinct clusters based on their similarities.
 
-- **[`K-Means`](./feature-transformation.md#kmeans)**: Use `K-Means` for unsupervised learning tasks to partition data into a specified number of clusters, with each data point assigned to the cluster with the nearest mean. -->
+- **[`K-Means`](./feature-transformation.md#kmeans)**: Use `K-Means` for unsupervised learning tasks to partition data into a specified number of clusters, with each data point assigned to the cluster with the nearest mean. 
+-->
 
 ## 实施OPTIONS子句 {#options-clause}
 
@@ -94,4 +96,4 @@ Use a clustering algorithm to group data points into distinct clusters based on 
 
 ### 后续步骤
 
-学习本文档中概述的功能工程技术后，请转至[模型](./models.md)文档。 它引导您使用所设计功能来创建、培训和管理可信模型。 生成模型后，请转到[实施高级统计模型文档。](./implement-models/implement-models.md)的问题。本文档作为概览，链接到不同建模技术（包括聚类、分类和回归）的深入指南。 通过阅读这些文档，您可以了解如何在SQL工作流中配置和实施各种可信模型，并优化模型以进行高级数据分析。
+学习本文档中概述的功能工程技术后，请转至[模型](./models.md)文档。 它引导您使用所设计功能来创建、培训和管理可信模型。 生成模型后，请转到[实施高级统计模型文档。](./implement-models/implement-models.md)。本文档作为概览，链接到不同建模技术（包括聚类、分类和回归）的深入指南。 通过阅读这些文档，您可以了解如何在SQL工作流中配置和实施各种可信模型，并优化模型以进行高级数据分析。
