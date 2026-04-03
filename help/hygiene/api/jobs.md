@@ -5,7 +5,7 @@ role: Developer
 hide: true
 hidefromtoc: true
 exl-id: d80a4be3-e072-4bb4-a56d-b34a20f88c78
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '481'
 ht-degree: 5%
@@ -14,9 +14,11 @@ ht-degree: 5%
 
 # 使用数据卫生API删除记录
 
-<!-- >[!IMPORTANT]
+<!-- 
+>[!IMPORTANT]
 >
->This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. -->
+>This endpoint represents the beta functionality for record deletes. For the latest functionality, please use the [`/workorder` endpoint](./workorder.md) instead. 
+-->
 
 数据卫生API允许您以编程方式更正或删除客户在Adobe Experience Platform中存储的个人数据。
 
@@ -54,7 +56,7 @@ POST /jobs
 
 **请求**
 
-请求有效负载的结构与Privacy Service API[&#128279;](../../privacy-service/api/privacy-jobs.md#access-delete)中删除请求的有效负载类似。 它包含一个`users`数组，其对象表示要删除其数据的用户。
+请求有效负载的结构与Privacy Service API[中](../../privacy-service/api/privacy-jobs.md#access-delete)删除请求的有效负载类似。 它包含一个`users`数组，其对象表示要删除其数据的用户。
 
 ```shell
 curl -X POST \
