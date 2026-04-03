@@ -4,7 +4,7 @@ solution: Experience Platform
 title: 查询编辑器UI指南
 description: 查询编辑器是Adobe Experience Platform查询服务提供的交互式工具，允许您在Experience Platform用户界面中编写、验证和运行客户体验数据查询。 查询编辑器支持开发用于分析和数据探索的查询，并允许您运行交互式查询以进行开发以及非交互式查询，以填充Experience Platform中的数据集。
 exl-id: d7732244-0372-467d-84e2-5308f42c5d51
-source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '3341'
 ht-degree: 0%
@@ -123,11 +123,13 @@ ht-degree: 0%
 
 ![包含[!UICONTROL Format text]和SQL语句的查询编辑器已突出显示。](../images/ui/query-editor/format-text.png)
 
-<!-- ### Undo text {#undo-text}
+<!-- 
+### Undo text {#undo-text}
 
 If you format your SQL in the Query Editor, you can undo the formatting applied by the [!UICONTROL Format text] feature. To return your SQL back to its original form, select **[!UICONTROL Undo text]**.
 
-![The Query Editor with [!UICONTROL Undo text] and the SQL statements highlighted.](../images/ui/query-editor/undo-text.png) -->
+![The Query Editor with [!UICONTROL Undo text] and the SQL statements highlighted.](../images/ui/query-editor/undo-text.png) 
+-->
 
 ### 复制 SQL {#copy-sql}
 
@@ -312,7 +314,7 @@ If you format your SQL in the Query Editor, you can undo the formatting applied 
 >
 >视频中描述的UI已过时，但在工作流中使用的逻辑保持不变。
 
->[!VIDEO](https://video.tv.adobe.com/v/32702?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29796?quality=12&learn=on)
 
 ## 监视和管理并发会话 {#monitor-manage-sessions}
 
