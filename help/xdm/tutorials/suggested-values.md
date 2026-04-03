@@ -2,7 +2,7 @@
 title: 在API中管理建议值
 description: 了解如何在架构注册表API中将建议值添加到字符串字段。
 exl-id: 96897a5d-e00a-410f-a20e-f77e223bd8c4
-source-git-commit: a3140d5216857ef41c885bbad8c69d91493b619d
+source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
 workflow-type: tm+mt
 source-wordcount: '654'
 ht-degree: 1%
@@ -25,7 +25,7 @@ ht-degree: 1%
 
 本指南假定您熟悉XDM中架构组合的元素以及如何使用架构注册表API创建和编辑XDM资源。 如果您需要了解简介，请参阅以下文档：
 
-* [架构组合基础](../schema/composition.md)
+* [架构构成基础](../schema/composition.md)
 * [架构注册表API指南](../api/overview.md)
 
 如果更新现有字段，则强烈建议您查看枚举和建议值的[演化规则](../ui/fields/enum.md#evolution)。 如果您正在管理参与合并的架构的建议值，请参阅合并枚举和建议值的[规则](../ui/fields/enum.md#merging)。
@@ -69,9 +69,11 @@ ht-degree: 1%
 
 由于字符串没有用于定义约束的`enum`数组，因此可以扩展其`meta:enum`属性以包含新值。
 
-<!-- ## Manage suggested values for standard fields
+<!-- 
+## Manage suggested values for standard fields
 
-For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). -->
+For existing standard fields, you can [add suggested values](#add-suggested-standard) or [remove suggested values](#remove-suggested-standard). 
+-->
 
 ## 向标准字段添加建议值 {#add-suggested-standard}
 
@@ -81,7 +83,7 @@ For existing standard fields, you can [add suggested values](#add-suggested-stan
 >
 >字符串字段的建议值只能在架构级别添加。 换句话说，在一个架构中扩展标准字段的`meta:enum`不会影响使用同一标准字段的其他架构。
 
-以下请求将建议值添加到`sourceSchema`下标识的架构的标准`eventType`字段（由[XDM ExperienceEvent类](../classes/experienceevent.md)提供）：
+以下请求将建议值添加到`eventType`下标识的架构的标准[字段（由](../classes/experienceevent.md)XDM ExperienceEvent类`sourceSchema`提供）：
 
 ```curl
 curl -X POST \
@@ -150,7 +152,8 @@ curl -X POST \
 >}
 >```
 
-<!-- ### Remove suggested values {#remove-suggested-standard}
+<!-- 
+### Remove suggested values {#remove-suggested-standard}
 
 If a standard string field has predefined suggested values, you can remove any values that you do not wish to see in segmentation. This is done through by creating a [friendly name descriptor](../api/descriptors.md#friendly-name) for the schema that includes an `xdm:excludeMetaEnum` property.
 
@@ -210,7 +213,8 @@ A successful response returns HTTP status 201 (Created) and the details of the n
   "meta:containerId": "tenant",
   "@id": "f3a1dfa38a4871cf4442a33074c1f9406a593407"
 }
-``` -->
+``` 
+-->
 
 ## 管理自定义字段的建议值 {#suggested-custom}
 
