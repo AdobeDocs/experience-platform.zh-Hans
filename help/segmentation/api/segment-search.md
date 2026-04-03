@@ -3,7 +3,7 @@ title: 区段搜索API端点
 description: 在Adobe Experience Platform分段服务API中，分段搜索用于搜索各种数据源中包含的字段并近乎实时地返回它们。 本指南提供的信息可帮助您更好地了解区段搜索，包括用于使用API执行基本操作的示例API调用。
 role: Developer
 exl-id: bcafbed7-e4ae-49c0-a8ba-7845d8ad663b
-source-git-commit: 1b507e9846a74b7ac2d046c89fd7c27a818035ba
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1178'
 ht-degree: 2%
@@ -36,7 +36,7 @@ GET /search/namespaces?schema.name={SCHEMA}&s={SEARCH_TERM}
 ```
 
 | 参数 | 描述 |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}表示与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
 | `s={SEARCH_TERM}` | *（可选）*&#x200B;其中{SEARCH_TERM}表示符合Microsoft对[Lucene搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)的实现的查询。 如果未指定搜索词，则将返回与`schema.name`关联的所有记录。 有关更详细的解释，请参阅本文档的[附录](#appendix)。 |
 
@@ -96,7 +96,7 @@ GET /search/entities?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 ```
 
 | 参数 | 描述 |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}包含与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
 | `namespace={NAMESPACE}` | **（必需）**&#x200B;其中{NAMESPACE}包含要搜索的命名空间。 |
 | `s={SEARCH_TERM}` | *（可选）*&#x200B;其中{SEARCH_TERM}包含符合Microsoft的[Lucene搜索语法](https://docs.microsoft.com/en-us/azure/search/query-lucene-syntax)实现的查询。 如果未指定搜索词，则将返回与`schema.name`关联的所有记录。 有关更详细的解释，请参阅本文档的[附录](#appendix)。 |
@@ -167,7 +167,7 @@ GET /search/taxonomy?schema.name={SCHEMA}&namespace={NAMESPACE}&entityId={ENTITY
 ```
 
 | 参数 | 描述 |
-| ---------- | ----------- | 
+| ---------- | ----------- |
 | `schema.name={SCHEMA}` | **（必需）**&#x200B;其中{SCHEMA}包含与搜索对象关联的架构类值。 当前仅支持`_xdm.context.segmentdefinition`。 |
 | `namespace={NAMESPACE}` | **（必需）**&#x200B;其中{NAMESPACE}包含要搜索的命名空间。 |
 | `entityId={ENTITY_ID}` | **（必需）**&#x200B;要获取有关结构信息的搜索对象的ID，使用{ENTITY_ID}指定。 |
