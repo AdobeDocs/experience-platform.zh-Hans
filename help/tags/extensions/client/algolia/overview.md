@@ -2,7 +2,7 @@
 title: Algolia标记扩展概述
 description: 了解Adobe Experience Platform中的Algolia Tags扩展。
 exl-id: 8409bf8b-fae2-44cc-8466-9942f7d92613
-source-git-commit: 6eee26df3841a7829625361fc726bf59a278f867
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1954'
 ht-degree: 1%
@@ -11,7 +11,7 @@ ht-degree: 1%
 
 # [!DNL Algolia]标记扩展概述
 
-[!DNL Algolia] Tags扩展使营销人员能够轻松设置规则以将用户交互数据发送到[!DNL Algolia]，从而帮助您提供更加个性化的AI搜索和发现体验。
+[!DNL Algolia] Tags扩展使营销人员能够轻松设置规则以将用户交互数据发送到[!DNL Algolia]，从而帮助您提供更加个性化的AI 搜索和发现体验。
 
 此扩展由一项关键功能提供支持：
 
@@ -85,7 +85,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->如果同时包括`queryID`和`positions`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;已点击对象ID。 否则，它被分类为&#x200B;**点击的对象ID**&#x200B;事件。
+>如果同时包括`queryID`和`positions`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;已点击对象ID。 否则，它被分类为&#x200B;**点击的对象ID**事件。
 ><br>
 >如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
@@ -105,7 +105,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->如果数据元素包含`queryId`，则将该事件分类为&#x200B;**Converted after Search**。 否则，它将被分类为&#x200B;**转化的**&#x200B;事件。
+>如果数据元素包含`queryId`，则将该事件分类为&#x200B;**Converted after Search**。 否则，它将被分类为&#x200B;**转化的**事件。
 ><br>
 >如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 
@@ -124,7 +124,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->如果数据元素包含`queryId`，则该事件将被分类为&#x200B;**已添加到购物车对象ID（在搜索**&#x200B;之后）。 否则，它将被分类为&#x200B;**添加到购物车对象ID**&#x200B;事件。
+>如果数据元素包含`queryId`，则该事件将被分类为&#x200B;**已添加到购物车对象ID（在搜索**&#x200B;之后）。 否则，它将被分类为&#x200B;**添加到购物车对象ID**事件。
 ><br>
 >如果数据元素不提供`indexName`，则在发送事件时将使用&#x200B;**默认索引名称**。
 ><br>
@@ -145,7 +145,7 @@ ht-degree: 1%
 
 >[!NOTE]
 >
->Purchased操作根据购买的项目ID从浏览器存储中检索事件数据。 如果任何购买的项目在其存储的数据中包含`queryID`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;购买的对象ID。 否则，它将被分类为&#x200B;**购买的对象ID**&#x200B;事件。
+>Purchased操作根据购买的项目ID从浏览器存储中检索事件数据。 如果任何购买的项目在其存储的数据中包含`queryID`，则该事件在搜索&#x200B;**后将被分类为**&#x200B;购买的对象ID。 否则，它将被分类为&#x200B;**购买的对象ID**事件。
 ><br>
 >此方法允许购买事件自动包含用户之前与项目交互的所有相关上下文（查询ID、索引名称、价格、数量、折扣）。
 
