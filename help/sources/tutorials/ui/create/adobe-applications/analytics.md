@@ -2,7 +2,7 @@
 title: 将Adobe Analytics连接到Experience Platform
 description: 了解如何将Adobe Analytics报表包数据引入Experience Platform
 exl-id: 5ddbaf63-feaa-44f5-b2f2-2d5ae507f423
-source-git-commit: dfc8a1d51e6dd25210a0b6f24dad4d0f00052414
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '2754'
 ht-degree: 4%
@@ -26,7 +26,7 @@ ht-degree: 4%
 请务必了解本文档中使用的以下关键术语：
 
 * **标准属性**：标准属性是Adobe预定义的任何属性。 它们对所有客户具有相同的含义，并且在Analytics源数据和Analytics架构字段组中可用。
-* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html?lang=zh-Hans)的Analytics文档。
+* **自定义属性**：自定义属性是Analytics自定义变量层次结构中的任何属性。 在Adobe Analytics实施中使用自定义属性将特定信息捕获到报表包中，这些属性的使用因报表包而异。 自定义属性包括eVar、prop和列表。 有关eVar的更多信息，请参阅以下[有关转化变量](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/conversion-variables/conversion-var-admin.html)的Analytics文档。
 * **自定义字段组中的任何属性**：源自客户创建的字段组的属性都是用户定义的属性，既不是标准属性，也不是自定义属性。
 
 ## 导航源目录
@@ -164,7 +164,8 @@ Similar to the source schema, you can use the interface to navigate through the 
 
 With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 
-![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) -->
+![complete-custom-mapping](../../../../images/tutorials/create/analytics/complete-custom-mapping.png) 
+-->
 
 ## 筛选实时客户轮廓 {#filtering-for-profile}
 
@@ -279,7 +280,7 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 >请按照以下最佳实践操作，避免超出您的许可证权利范围，并避免超出您的总存储和数据丰富度指标：
 >
->* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[&#128279;](../../../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
+>* 一开始就设置体验事件数据集保留生存时间(TTL) ，以优化数据生命周期管理和存储效率。 有关更多详细信息，请参阅有关使用TTL在数据湖中管理Experience Event数据集保留的指南[](../../../../../catalog/datasets/experience-event-dataset-retention-ttl-guide.md)。
 >
 >* 创建Analytics源数据流时，首先要将连接器配置为仅将数据摄取到数据湖中。 确认数据流可以正常工作后，您可以为数据集启用配置文件摄取。 当行和列过滤器有效地减少数据量时，这种方法效果最佳。
 
@@ -325,5 +326,5 @@ With your custom mapping set completed, select **[!UICONTROL Next]** to proceed.
 >
 > 以下视频中显示的[!DNL Experience Platform] UI已过期。 有关最新的UI屏幕截图和功能，请参阅上述文档。
 
->[!VIDEO](https://video.tv.adobe.com/v/3430251?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/29687?quality=12&learn=on)
 
