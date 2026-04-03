@@ -2,7 +2,7 @@
 title: 交易台实时转化API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Trade Desk Real-time Conversions API扩展。
 exl-id: 1ff32e2b-9ff8-4395-ae44-cba75a2da515
-source-git-commit: 8cf838b6f6794b52f80cb899945c066014e211c2
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '888'
 ht-degree: 1%
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 在下一个屏幕中，输入[!UICONTROL Advertiser ID]，也可以输入[!UICONTROL Merchant ID]。 您可以将ID直接粘贴到这些输入中，也可以改用数据元素。 这些将用作对[!DNL The Trade Desk]实时转化API进行事件调用时使用的默认值。 完成后，选择 **[!UICONTROL Save]**。
 
-要了解如何创建数据元素并使其可用于标记属性中的扩展，请按照[创建数据元素](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/data-collection/tags/create-data-elements)教程操作。
+要了解如何创建数据元素并使其可用于标记属性中的扩展，请按照[创建数据元素](https://experienceleague.adobe.com/en/docs/platform-learn/data-collection/tags/create-data-elements)教程操作。
 
 ![突出显示了[!DNL The Trade Desk]和[!UICONTROL Advertiser ID]字段的[!UICONTROL Merchant ID]扩展配置页面。](../../../images/extensions/server/tradedesk/configure-extension.png)
 
