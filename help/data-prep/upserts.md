@@ -3,7 +3,7 @@ keywords: Experience Platform；主页；热门主题；数据准备；数据准
 title: 使用数据准备将部分行更新发送到实时客户个人资料
 description: 了解如何使用数据准备将部分行更新发送到Real-Time Customer Profile。
 exl-id: f9f9e855-0f72-4555-a4c5-598818fc01c2
-source-git-commit: f988d7665a40b589ca281d439b6fca508f23cd03
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1363'
 ht-degree: 0%
@@ -14,7 +14,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* 已弃用通过DCS入口为配置文件更新摄取体验数据模型(XDM)实体更新消息(使用JSON PATCH操作)。 作为替代方法，请遵循本指南中概述的步骤。
+>* 已弃用通过DCS入口为配置文件更新摄取体验数据模型(XDM)实体更新消息（使用JSON PATCH操作）。 作为替代方法，请遵循本指南中概述的步骤。
 >
 >* 您还可以使用HTTP API源[将原始数据摄取到DCS入口](../sources/tutorials/api/create/streaming/http.md#sending-messages-to-an-authenticated-streaming-connection)，并指定必要的数据映射以将您的数据转换为符合XDM标准的消息以进行配置文件更新。
 >
@@ -64,7 +64,7 @@ ht-degree: 0%
 
 * 身份数据集必须具有其关联的架构作为[!DNL Profile]数据集。 架构不匹配可能导致系统行为不一致。
 * 但是，您必须确保标识数据集不同于[!DNL Profile]数据集。 如果数据集相同，则将覆盖数据而不是更新数据。
-* 虽然必须为[!DNL Profile]启用初始数据集，但不应为&#x200B;**启用标识数据集**&#x200B;[!DNL Profile]。 否则，数据也将被覆盖而不是更新。 但是，应该为&#x200B;**启用标识数据集**&#x200B;[!DNL Identity Service]。
+* 虽然必须为[!DNL Profile]启用初始数据集，但不应为&#x200B;**启用标识数据集**[!DNL Profile]。 否则，数据也将被覆盖而不是更新。 但是，应该为&#x200B;**启用标识数据集**[!DNL Identity Service]。
 
 #### 与身份数据集关联的架构中的必填字段 {#identity-dataset-required-fileds}
 
@@ -133,7 +133,7 @@ curl -X POST 'https://platform.adobe.io/data/foundation/catalog/dataSets/62257be
 [!DNL Real-Time Customer Profile]支持以下操作：
 
 | 操作 | 描述 |
-| --- | --- | 
+| --- | --- |
 | `create` | 默认操作。 这将为[!DNL Real-Time Customer Profile]生成XDM实体创建方法。 |
 | `merge` | 这将为[!DNL Real-Time Customer Profile]生成XDM实体更新方法。 |
 | `delete` | 这将为[!DNL Real-Time Customer Profile]生成XDM实体删除方法，并从[!DNL Profile store]中永久删除数据。 |
