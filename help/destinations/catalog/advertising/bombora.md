@@ -2,7 +2,7 @@
 title: Bombora ABM受众连接
 description: 根据客户受众，激活Bombora营销活动的用户档案，以实现受众定位、个性化和抑制。
 exl-id: a2f8e399-e192-4104-876a-fe60f8403143
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1157'
 ht-degree: 3%
