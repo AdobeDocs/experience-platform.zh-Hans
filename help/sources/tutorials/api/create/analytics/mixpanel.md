@@ -2,16 +2,16 @@
 title: 使用流服务API为Mixpanel创建Source连接和数据流
 description: 了解如何使用流服务API将Adobe Experience Platform连接到Mixpanel。
 exl-id: 804b876d-6fd5-4a28-b33c-4ecab1ba3333
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1992'
 ht-degree: 1%
 
 ---
 
-# 使用[!DNL Flow Service] API为[!DNL Mixpanel]创建源连接和数据流
+# 使用[!DNL Mixpanel] API为[!DNL Flow Service]创建源连接和数据流
 
-以下教程将指导您完成使用[流服务API](https://developer.adobe.com/experience-platform-apis/references/flow-service/)创建源连接和数据流以将[!DNL Mixpanel]数据引入Adobe Experience Platform的步骤。
+以下教程将指导您完成使用[!DNL Mixpanel]流服务API[创建源连接和数据流以将](https://developer.adobe.com/experience-platform-apis/references/flow-service/)数据引入Adobe Experience Platform的步骤。
 
 ## 快速入门
 
@@ -20,7 +20,7 @@ ht-degree: 1%
 * [源](../../../../home.md)： Experience Platform允许从各种源摄取数据，同时让您能够使用Experience Platform服务来构建、标记和增强传入数据。
 * [沙盒](../../../../../sandboxes/home.md)： Experience Platform提供了将单个Experience Platform实例划分为多个单独的虚拟环境的虚拟沙盒，以帮助开发和改进数字体验应用程序。
 
-以下部分提供使用[!DNL Flow Service] API成功连接到[!DNL Mixpanel]所需了解的其他信息。
+以下部分提供使用[!DNL Mixpanel] API成功连接到[!DNL Flow Service]所需了解的其他信息。
 
 ### 收集所需的凭据
 
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 基本连接会保留源与Experience Platform之间的信息，包括源的身份验证凭据、连接的当前状态以及唯一的基本连接ID。 基本连接ID允许您浏览和浏览源中的文件，并标识要摄取的特定项目，包括有关其数据类型和格式的信息。
 
-要创建基本连接ID，请在提供您的[!DNL Mixpanel]身份验证凭据作为请求正文的一部分时，向`/connections`端点发出POST请求。
+要创建基本连接ID，请在提供您的`/connections`身份验证凭据作为请求正文的一部分时，向[!DNL Mixpanel]端点发出POST请求。
 
 **API格式**
 
@@ -674,11 +674,11 @@ curl -X POST \
 
 ### 更新您的数据流
 
-通过提供数据流的ID，向[!DNL Flow Service] API的`/flows`端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`If-Match`标头中提供数据流唯一的`etag`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
+通过提供数据流的ID，向`/flows` API的[!DNL Flow Service]端点发出PATCH请求来更新数据流的详细信息，例如其名称和描述，以及其运行计划和关联的映射集。 发出PATCH请求时，必须在`etag`标头中提供数据流唯一的`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源数据流](../../update-dataflows.md)的指南。
 
 ### 更新您的帐户
 
-在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`If-Match`标头中提供源帐户的唯一`etag`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
+在提供基本连接ID作为查询参数的同时，通过向[!DNL Flow Service] API执行PATCH请求来更新源帐户的名称、描述和凭据。 发出PATCH请求时，必须在`etag`标头中提供源帐户的唯一`If-Match`。 有关完整的API示例，请阅读有关[使用API更新源帐户](../../update.md)的指南。
 
 ### 删除您的数据流
 
@@ -686,4 +686,4 @@ curl -X POST \
 
 ### 删除您的帐户
 
-在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[&#128279;](../../delete.md)删除源帐户的指南。
+在提供要删除的帐户的基本连接ID时，通过向[!DNL Flow Service] API执行DELETE请求来删除您的帐户。 有关完整的API示例，请阅读有关使用API[删除源帐户](../../delete.md)的指南。
