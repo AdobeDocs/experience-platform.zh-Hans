@@ -3,7 +3,7 @@ title: Snapchat Conversions API扩展概述
 description: 使用Snapchat转换将服务器端事件数据发送到Snap。
 last-substantial-update: 2025-01-20T00:00:00Z
 exl-id: 1c2d7243-5bcd-40a0-8515-9ab72613c5f3
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
 workflow-type: tm+mt
 source-wordcount: '920'
 ht-degree: 2%
@@ -25,7 +25,7 @@ ht-degree: 2%
 
 需要&#x200B;**[!DNL Snapchat]** [Business Manager](https://business.snapchat.com/)帐户才能使用转化API。 Business Manager帮助广告商将&#x200B;**[!DNL Snapchat]**&#x200B;的营销工作整合到其整个业务中并与外部合作伙伴集成。 请参阅有关创建Business Manager帐户的&#x200B;**[!DNL Snapchat]** [帮助中心文章](https://businesshelp.snapchat.com/s/article/get-started?language=en_US)（如果没有）。
 
-必须在Snapchat广告管理器中设置[[!DNL [Snap Pixel]]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US)，并且您必须有权查看`Pixel ID`。 可以在`Pixel ID`部分找到[[!UICONTROL [Events Manager]]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US)。
+必须在Snapchat广告管理器中设置[!DNL [Snap Pixel]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US)，并且您必须有权查看`Pixel ID`。 可以在`Pixel ID`部分找到[!UICONTROL [Events Manager]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US)。
 
 您需要一个静态、生命周期较长的API令牌。 请参阅[[!DNL Snapchat] 转化API文档](https://developers.snap.com/api/marketing-api/Conversions-API/GetStarted#access-token)以获取此令牌。
 
@@ -48,12 +48,14 @@ ht-degree: 2%
 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
 ![显示像素ID和API令牌按钮的图像](../../../images/extensions/server/snap/configure.png)
+
 <!-- 
-![[!DNL Snap] configuration screen for the [!DNL Snap] conversion API extension.](../../../images/extensions/server/snap/configure.png) -->
+![[!DNL Snap] configuration screen for the [!DNL Snap] conversion API extension.](../../../images/extensions/server/snap/configure.png) 
+-->
 
 ## 创建数据元素 {#create-data-elements}
 
-若要将数据发送到[!DNL Snapchat]转化API扩展，请为每个数据参数创建[数据元素](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element)。 执行以下步骤：
+若要将数据发送到[!DNL Snapchat]转化API扩展，请为每个数据参数创建[数据元素](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-data-element)。 执行以下步骤：
 
 1. 在属性的&#x200B;**[!UICONTROL Authoring]**&#x200B;屏幕中导航到&#x200B;**[!UICONTROL Data Elements]**>**[!UICONTROL Property Info]**，然后选择&#x200B;**[!UICONTROL Add Data Element]**。
 
@@ -79,7 +81,7 @@ ht-degree: 2%
 
 ## 创建规则以将转换事件发送到Snap {#create-snap-rules}
 
-[规则](https://experienceleague.adobe.com/zh-hans/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于在Experience Platform中触发扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
+[规则](https://experienceleague.adobe.com/en/docs/platform-learn/implement-web-sdk/event-forwarding/setup-event-forwarding#create-an-event-forwarding-rule)用于在Experience Platform中触发扩展。 本节概述如何使用转化API扩展在事件转发属性中创建规则以将转化事件发送到快照。
 
 ### 创建新规则
 
