@@ -3,7 +3,7 @@ title: Moengage连接
 description: Moengage是一个客户参与平台，可实时支持消费者和品牌之间以客户为中心的互动。
 last-substantial-update: 2023-10-11T00:00:00Z
 exl-id: 051f1a10-3c41-4c0a-b187-bf80de0565f0
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
 workflow-type: tm+mt
 source-wordcount: '1132'
 ht-degree: 3%
