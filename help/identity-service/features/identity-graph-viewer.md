@@ -21,7 +21,7 @@ ht-degree: 6%
 
 以下视频旨在支持您了解身份图查看器。
 
->[!VIDEO](https://video.tv.adobe.com/v/331030/?quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/345652/?captions=chi_hans&quality=12&learn=on)
 
 ## 快速入门
 
