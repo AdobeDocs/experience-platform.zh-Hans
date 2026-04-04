@@ -79,7 +79,7 @@ ht-degree: 10%
 
 [!DNL Microsoft Bing]目标需要以下安装程序才能正常工作：
 
-1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+1. **启用ID同步功能**：如果您是第一次设置[!DNL Microsoft Bing]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/docs/id-service/using/id-service-api/methods/idsync.html?lang=zh-Hans)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
    * 如果您之前在Audience Manager中设置[!DNL Microsoft Bing]集成，则您现有的ID同步会自动转移到Experience Platform。
 
 2. **确保在配置文件上使用ECID**：所有配置文件都必须具有ECID，才能成功导出。 此目标的ECID为&#x200B;**强制**。

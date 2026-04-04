@@ -47,11 +47,11 @@ Adobe Experience Platform 提供一套技术，通过这些技术，可收集客
 
 | 功能 | 描述 |
 | --- | --- |
-| Meta Conversions API 新的快速启动工作流程 (Beta) | 从数据收集主屏幕访问“开始使用”下新的快速启动工作流程！[Meta Conversions API 快速启动工作流程](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html#quick-start)使客户能够快速收集事件数据并将其从服务器端转发到 Meta，只需几个简单的步骤即可实现广告转换。 |
+| Meta Conversions API 新的快速启动工作流程 (Beta) | 从数据收集主屏幕访问“开始使用”下新的快速启动工作流程！[Meta Conversions API 快速启动工作流程](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/meta/overview.html?lang=zh-Hans#quick-start)使客户能够快速收集事件数据并将其从服务器端转发到 Meta，只需几个简单的步骤即可实现广告转换。 |
 | Mobile SDK 新的快速启动工作流程 (Beta) | 从数据收集主屏幕访问“开始使用”下新的快速启动工作流程！[Mobile SDK 的快速启动工作流程](https://developer.adobe.com/client-sdks/documentation/)使您只需几个简单的步骤即可快速实施 Mobile SDK 并验证基本移动事件。 |
-| [!DNL Braze] 事件转发扩展 | [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html)事件转发扩展允许您利用 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Braze] User Track API 以服务器端事件的形式将其发送到 [!DNL Braze]。 |
-| [!DNL Epsilon] 事件转发扩展 | [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用[!DNL Epsilon] Event API 将其发送给 [!DNL Epsilon]。 |
-| [!DNL Mixpanel] 事件转发扩展 | [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html) 扩展允许客户利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 Track Events API 将其发送给 Mixpanel。 |
+| [!DNL Braze] 事件转发扩展 | [[!DNL Braze Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=zh-Hans)事件转发扩展允许您利用 Adobe Experience Platform Edge Network 中捕获的数据，并使用 [!DNL Braze] User Track API 以服务器端事件的形式将其发送到 [!DNL Braze]。 |
+| [!DNL Epsilon] 事件转发扩展 | [[!DNL Epsilon Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/overview.html?lang=zh-Hans) 扩展允许您利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用[!DNL Epsilon] Event API 将其发送给 [!DNL Epsilon]。 |
+| [!DNL Mixpanel] 事件转发扩展 | [[!DNL Mixpanel Track Events API]](https://experienceleague.adobe.com/docs/experience-platform/tags/extensions/server/braze/overview.html?lang=zh-Hans) 扩展允许客户利用事件转发功能在 Adobe Experience Platform Edge Network 中捕获事件信息，并使用 Track Events API 将其发送给 Mixpanel。 |
 
 {style="table-layout:auto"}
 

@@ -72,7 +72,7 @@ Adobe致力于为在Experience Platform上运行的所有应用程序提供跨�
 
 * [Real-Time Customer Data Platform](../rtcdp/home.md)
 * [Adobe Journey Optimizer](https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/ajo-home)
-* [Customer Journey Analytics](https://experienceleague.adobe.com/en/docs/analytics-platform/using/cja-landing)
+* [Customer Journey Analytics](https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/cja-landing)
 
 但是，Azure实施和AWS实施中的某些功能可能有所不同。 以下部分以及产品文档的其他部分中概述了这些差异（如果适用）。
 
