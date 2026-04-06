@@ -4,9 +4,9 @@ solution: Experience Platform
 title: Source连接器概述
 description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源（如Adobe应用程序、基于云的存储、数据库和许多其他源）中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: 6b6a03fb8675ed01dd255f7206b23b05c809f2a6
+source-git-commit: f3026e0a717c07d95f12e3aeaf380ddc1b87c712
 workflow-type: tm+mt
-source-wordcount: '1721'
+source-wordcount: '1724'
 ht-degree: 11%
 
 ---
@@ -65,7 +65,7 @@ Experience Platform允许从其他Adobe应用程序（包括Adobe Analytics和Ad
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
+以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -230,6 +230,7 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 | 来源 | 摄取类型 | 云 |
 | --- | --- | --- |
 | [[!DNL Capillary Streaming Events]](connectors/loyalty/capillary.md) | 流传输 | Azure |
+| [[!DNL Talon.One]](connectors/loyalty/talon-one.md) | 批次，流 | Azure |
 
 {style="table-layout:auto"}
 

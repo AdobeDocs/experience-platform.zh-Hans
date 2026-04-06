@@ -2,10 +2,9 @@
 title: 使用UI将批量数据从Talon.One引入到Experience Platform
 description: 了解如何使用UI将批量数据从Talon.One摄取到Adobe Experience Platform。 本指南介绍设置、数据选择和数据流配置。
 badge: Beta 版
-hide: true
-hidefromtoc: true
+last-substantial-update: 2026-04-06T00:00:00Z
 exl-id: 65a8ae42-0c0f-4bc5-b99e-52b02ab2130a
-source-git-commit: 9c4c4a3bce2329e65abf5e8cfcc2f20ec2799045
+source-git-commit: f3026e0a717c07d95f12e3aeaf380ddc1b87c712
 workflow-type: tm+mt
 source-wordcount: '1518'
 ht-degree: 1%

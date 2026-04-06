@@ -2,10 +2,9 @@
 title: 使用UI将数据从Talon.One流式传输到Experience Platform
 description: 了解如何使用UI将数据从Talon.One流式传输到Adobe Experience Platform。 本指南介绍设置、数据选择和数据流配置。
 badge: Beta 版
-hide: true
-hidefromtoc: true
+last-substantial-update: 2026-04-06T00:00:00Z
 exl-id: a92e17dd-123c-4e83-a851-3cf2861751e5
-source-git-commit: 6b6a03fb8675ed01dd255f7206b23b05c809f2a6
+source-git-commit: f3026e0a717c07d95f12e3aeaf380ddc1b87c712
 workflow-type: tm+mt
 source-wordcount: '961'
 ht-degree: 2%
