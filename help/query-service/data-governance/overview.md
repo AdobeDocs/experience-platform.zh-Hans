@@ -129,7 +129,7 @@ Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](
 
 为了提高安全性，查询服务为SSL连接提供本机支持，以加密客户端/服务器通信。 Experience Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
 
-有关详细信息（包括如何使用[ SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用`verify-full`SSL选项的指南。
+有关详细信息（包括如何使用[&#x200B; SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用`verify-full`SSL选项的指南。
 
 ### 加密和客户管理的密钥(CMK) {#encryption-and-customer-managed-keys}
 

@@ -193,7 +193,7 @@ curl -X POST https://platform.adobe.io/data/foundation/schemaregistry/tenant/des
 
 >[!NOTE]
 >
->{0&#x200B;}身份命名空间代码&#x200B;****
+>{0&#x200B;}身份命名空间代码&#x200B;**&#x200B;**
 >
 > 请确保代码有效 — 上面的示例使用“email”，它是一个标准身份命名空间。 在[身份服务常见问题解答](../../identity-service/troubleshooting-guide.md#what-are-the-standard-identity-namespaces-provided-by-experience-platform)中可以找到其他常用的标准身份命名空间。
 >

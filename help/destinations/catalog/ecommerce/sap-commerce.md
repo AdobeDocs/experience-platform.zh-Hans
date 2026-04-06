@@ -229,7 +229,7 @@ ht-degree: 4%
 
 1. 在&#x200B;**[!UICONTROL Mapping]**&#x200B;步骤中，选择&#x200B;**[!UICONTROL Add new mapping]**。 您现在可以在屏幕上看到新的映射行。
    ![突出显示了“添加新映射”按钮的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-add-new-mapping.png)
-1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**类别并选择XDM属性。
+1. 在&#x200B;**[!UICONTROL Select source field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select attributes]**&#x200B;类别并选择XDM属性。
    ![选择“姓氏”作为源属性的Experience Platform UI屏幕截图。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-source-attribute.png)
 1. 在&#x200B;**[!UICONTROL Select target field]**&#x200B;窗口中，选择&#x200B;**[!UICONTROL Select custom attributes]**&#x200B;类别并从客户[!DNL SAP Subscription Billing]架构[属性的列表中键入](https://api.sap.com/api/BusinessPartner_APIs/schema)属性的名称。
    ![Experience Platform UI屏幕截图，其中lastName被定义为target属性。](../../assets/catalog/ecommerce/sap-commerce/mapping-select-target-attribute.png)
@@ -303,7 +303,7 @@ ht-degree: 4%
 
 执行[计划受众导出](/help/destinations/ui/activate-segment-streaming-destinations.md#scheduling)步骤时，必须手动将Experience Platform受众映射到[中的](#prerequisites-attribute)属性[!DNL SAP Subscription Billing]。
 
-下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL Mapping ID]**位置的计划受众导出步骤示例：
+下面显示了突出显示[!DNL SAP Commerce] **[!UICONTROL Mapping ID]**&#x200B;位置的计划受众导出步骤示例：
 ![Experience Platform中的图像显示了填充了映射ID的计划受众导出。](../../assets/catalog/ecommerce/sap-commerce/schedule-segment-export.png)
 
 为此，请选择每个区段，然后在[!DNL SAP Subscription Billing] [!DNL SAP Commerce]目标连接器字段中输入来自&#x200B;**[!UICONTROL Mapping ID]**&#x200B;的自定义引用的名称。 有关创建自定义引用的指导，请参阅[在 [!DNL SAP Subscription Billing]](#prerequisites-custom-reference)中创建自定义引用。
@@ -336,7 +336,7 @@ ht-degree: 4%
 
 要验证您是否正确设置了目标，请执行以下步骤：
 
-转到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL Contacts]**页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
+转到[!DNL SAP Subscription Billing]帐户，然后导航到&#x200B;**[!UICONTROL Contacts]**&#x200B;页面以检查受众状态。 列表可以配置为显示自定义引用的列并显示相应的受众状态。
 ![显示客户概述页面的SAP订阅帐单图像，列标题显示受众名称和单元格受众状态](../../assets/catalog/ecommerce/sap-commerce/customer-overview.png)
 
 ## 数据使用和治理 {#data-usage-governance}

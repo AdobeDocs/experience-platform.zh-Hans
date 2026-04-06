@@ -64,7 +64,7 @@ ht-degree: 0%
 
 * 身份数据集必须具有其关联的架构作为[!DNL Profile]数据集。 架构不匹配可能导致系统行为不一致。
 * 但是，您必须确保标识数据集不同于[!DNL Profile]数据集。 如果数据集相同，则将覆盖数据而不是更新数据。
-* 虽然必须为[!DNL Profile]启用初始数据集，但不应为&#x200B;**启用标识数据集**[!DNL Profile]。 否则，数据也将被覆盖而不是更新。 但是，应该为&#x200B;**启用标识数据集**[!DNL Identity Service]。
+* 虽然必须为[!DNL Profile]启用初始数据集，但不应为&#x200B;**启用标识数据集**&#x200B;[!DNL Profile]。 否则，数据也将被覆盖而不是更新。 但是，应该为&#x200B;**启用标识数据集**&#x200B;[!DNL Identity Service]。
 
 #### 与身份数据集关联的架构中的必填字段 {#identity-dataset-required-fileds}
 

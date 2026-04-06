@@ -25,7 +25,7 @@ ht-degree: 2%
 
 需要&#x200B;**[!DNL Snapchat]** [Business Manager](https://business.snapchat.com/)帐户才能使用转化API。 Business Manager帮助广告商将&#x200B;**[!DNL Snapchat]**&#x200B;的营销工作整合到其整个业务中并与外部合作伙伴集成。 请参阅有关创建Business Manager帐户的&#x200B;**[!DNL Snapchat]** [帮助中心文章](https://businesshelp.snapchat.com/s/article/get-started?language=en_US)（如果没有）。
 
-必须在Snapchat广告管理器中设置[!DNL [Snap Pixel]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US)，并且您必须有权查看`Pixel ID`。 可以在`Pixel ID`部分找到[!UICONTROL [Events Manager]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US)。
+必须在Snapchat广告管理器中设置[[!DNL [Snap Pixel]]](https://businesshelp.snapchat.com/s/article/pixel-website-install?language=en_US)，并且您必须有权查看`Pixel ID`。 可以在`Pixel ID`部分找到[[!UICONTROL [Events Manager]]](https://businesshelp.snapchat.com/s/article/events-manager?language=en_US)。
 
 您需要一个静态、生命周期较长的API令牌。 请参阅[[!DNL Snapchat] 转化API文档](https://developers.snap.com/api/marketing-api/Conversions-API/GetStarted#access-token)以获取此令牌。
 

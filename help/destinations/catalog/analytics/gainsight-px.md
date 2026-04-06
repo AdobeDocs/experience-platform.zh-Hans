@@ -96,7 +96,7 @@ Gainsight PX支持激活下表中描述的标识。 了解有关[标识](../../.
 
 * **[!UICONTROL Password]**：用于登录到[[!DNL Gainsight PX]](https://app.aptrinsic.com)的密码
 * **[!UICONTROL Client ID]**： [公司详细信息页面](https://app.aptrinsic.com/settings/subscription)上的Gainsight PX订阅ID
-* **[!UICONTROL Client secret]**：在[ UI中的](https://app.aptrinsic.com/settings/subscription)公司详细信息页面[!DNL Gainsight PX]底部生成的OAuth密钥。
+* **[!UICONTROL Client secret]**：在[&#x200B; UI中的](https://app.aptrinsic.com/settings/subscription)公司详细信息页面[!DNL Gainsight PX]底部生成的OAuth密钥。
 * **[!UICONTROL Username]**：用于登录到[[!DNL Gainsight PX]](https://app.aptrinsic.com) UI的电子邮件
 
 ### 填写目标详细信息 {#destination-details}

@@ -95,7 +95,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 
 如果您的移动应用程序需要客户同意首选项，则可以集成Experience Platform Mobile SDK以检索和更新同意设置，并在调用同意API时将它们发送到Experience Platform。
 
-请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
+请参阅移动SDK文档，了解[使用同意API配置同意移动扩展](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/)和[&#128279;](https://developer.adobe.com/client-sdks/documentation/consent-for-edge-network/api-reference/)。 有关如何使用Mobile SDK处理隐私问题的更多详细信息，请参阅[隐私和GDPR](https://developer.adobe.com/client-sdks/resources/privacy-and-gdpr/)部分。
 
 ### 直接摄取符合XDM标准的同意数据 {#batch}
 
@@ -113,7 +113,7 @@ Adobe Experience Platform允许您处理从客户那里收集的同意数据，�
 >
 >如果您无权访问此信息，则可以选择摄取您自己的测试同意数据，并将其与您已知的身份值/命名空间关联。
 
-有关如何查找配置文件详细信息的具体步骤，请参阅[ UI指南中有关](../../../../profile/ui/user-guide.md#browse)按身份浏览配置文件[!DNL Profile]的部分。
+有关如何查找配置文件详细信息的具体步骤，请参阅[&#x200B; UI指南中有关](../../../../profile/ui/user-guide.md#browse)按身份浏览配置文件[!DNL Profile]的部分。
 
 默认情况下，新的同意属性不会显示在用户档案的仪表板上。 因此，您必须导航到配置文件详细信息页面上的&#x200B;**[!UICONTROL Attributes]**&#x200B;选项卡，以确认已按预期摄取这些区段。 请参阅[配置文件仪表板](../../../../profile/ui/profile-dashboard.md)上的指南，了解如何根据您的需求自定义仪表板。
 

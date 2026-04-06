@@ -33,7 +33,7 @@ ht-degree: 3%
 
 您必须拥有有效的[!DNL Pinterest] [商业帐户](https://help.pinterest.com/en/business/article/get-a-business-account)才能使用此扩展。 转到[[!DNL Pinterest] 注册页面](https://www.pinterest.com/business/create/)进行注册并创建帐户（如果还没有帐户）。
 
-您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest ] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
+您还需要一个[!DNL Pinterest]开发人员帐户，该帐户需要与您的[!DNL Pinterest]业务帐户关联。 若要将开发人员帐户与业务帐户关联，请参阅[[!DNL Pinterest &#x200B;] 开发人员帐户](https://developers.pinterest.com/account-setup/)。
 
 ### 收集所需的配置详细信息 {#configuration-details}
 
@@ -58,13 +58,13 @@ ht-degree: 3%
 >
 >根据您的实施需求，您可能需要在配置扩展之前创建架构、数据元素和数据集。 请在开始之前查看所有配置步骤，以确定需要为用例设置哪些实体。
 
-在左侧导航中，选择&#x200B;**[!UICONTROL Extensions]**。 在&#x200B;**[!UICONTROL Configure]**&#x200B;选项卡的[!DNL Pinterest]扩展的卡片中选择{0**。[!UICONTROL Installed]
+在左侧导航中，选择&#x200B;**[!UICONTROL Extensions]**。 在&#x200B;**[!UICONTROL Configure]**&#x200B;选项卡的[!DNL Pinterest]扩展的卡片中选择&lbrace;0**。[!UICONTROL Installed]
 
 在![[!DNL Pinterest]选项卡中显示的[!UICONTROL Install]扩展突出显示[!UICONTROL Configure]。](../../../images/extensions/server/pinterest/configure.png)
 
 在下一个屏幕上，输入您之前在[!UICONTROL Ads Account Id]配置详细信息[!UICONTROL Conversion Access Token]部分中收集的[和](#configuration-details)。 完成后，选择&#x200B;**[!UICONTROL Save]**。
 
-![ [!DNL Pinterest] [!UICONTROL Configure]屏幕突出显示[!UICONTROL Ads Account Id]和[!UICONTROL Conversion Access Token]输入字段。](../../../images/extensions/server/pinterest/input.png)
+![&#x200B; [!DNL Pinterest] [!UICONTROL Configure]屏幕突出显示[!UICONTROL Ads Account Id]和[!UICONTROL Conversion Access Token]输入字段。](../../../images/extensions/server/pinterest/input.png)
 
 ## 配置事件转发规则 {#config-rule}
 
@@ -161,7 +161,7 @@ ht-degree: 3%
 
 如果事件收集和[!DNL Experience Platform]集成成功，您将在[!DNL Pinterest] UI中看到事件。
 
-![ [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
+![&#x200B; [!DNL Pinterest]事件管理器](../../../images/extensions/server/pinterest/event-history.png)
 
 您可以进一步穿透钻取并查看[!DNL Pinterest]事件数据分发。
 

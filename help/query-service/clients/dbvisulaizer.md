@@ -19,7 +19,7 @@ ht-degree: 0%
 
 本指南要求您已具有对[!DNL DbVisualizer]桌面应用程序的访问权限，并且熟悉如何导航其界面。 要下载[!DNL DbVisualizer]桌面应用或了解详细信息，请参阅[官方 [!DNL DbVisualizer] 文档](https://www.dbvis.com/download/)。
 
-要获取将[!DNL  DbVisualizer]连接到Experience Platform所需的凭据，您必须有权访问Experience Platform UI中的查询工作区。 如果您当前无权访问查询工作区，请联系您的组织管理员。
+要获取将[!DNL &#x200B; DbVisualizer]连接到Experience Platform所需的凭据，您必须有权访问Experience Platform UI中的查询工作区。 如果您当前无权访问查询工作区，请联系您的组织管理员。
 
 ## 创建数据库连接 {#connect-database}
 
