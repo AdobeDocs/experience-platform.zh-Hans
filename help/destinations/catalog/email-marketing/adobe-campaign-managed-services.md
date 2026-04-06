@@ -13,11 +13,11 @@ ht-degree: 2%
 
 >[!IMPORTANT]
 >
->此集成适用于[[!DNL Adobe Campaign] 版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html#release-8-4-1)。
+>此集成适用于[[!DNL Adobe Campaign] 版本8.4或更高版本](https://experienceleague.adobe.com/docs/campaign/campaign-v8/new/release-notes.html?lang=zh-Hans#release-8-4-1)。
 
 ## 概述 {#overview}
 
-[!DNL Adobe Campaign Managed Cloud Services]提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [开始使用营销活动](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html)
+[!DNL Adobe Campaign Managed Cloud Services]提供了跨渠道客户体验设计平台，并为可视化的活动编排、实时互动管理和跨渠道执行提供了环境。 [开始使用营销活动](https://experienceleague.adobe.com/docs/campaign/campaign-v8/start/get-started.html?lang=zh-Hans)
 
 使用 Campaign 可以：
 
@@ -61,7 +61,7 @@ ht-degree: 2%
   >
   >配置文件属性同步可用于[!DNL Adobe Campaign]数据库中已存在的配置文件。
 
-[了解有关 [!DNL Adobe Campaign] 与 [!DNL Adobe Experience Platform]集成的更多信息](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html)
+[了解有关 [!DNL Adobe Campaign] 与 [!DNL Adobe Experience Platform]集成的更多信息](https://experienceleague.adobe.com/docs/campaign/campaign-v8/connect/ac-aep.html?lang=zh-Hans)
 
 ## 支持的身份 {#supported-identities}
 
@@ -131,7 +131,7 @@ ht-degree: 2%
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
 * **[!UICONTROL Select instance]**：您的&#x200B;**[!DNL Campaign]**&#x200B;营销实例。
-* **[!UICONTROL Target mapping]**：选择您在&#x200B;**[!DNL Adobe Campaign]**&#x200B;中使用的目标映射以发送投放。 [了解详情](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html)。
+* **[!UICONTROL Target mapping]**：选择您在&#x200B;**[!DNL Adobe Campaign]**&#x200B;中使用的目标映射以发送投放。 [了解详情](https://experienceleague.adobe.com/docs/campaign/campaign-v8/profiles-and-audiences/add-profiles/target-mappings.html?lang=zh-Hans)。
 * **[!UICONTROL Select sync type]**：
 
    * **[!UICONTROL Audience sync]**：使用此选项将[!DNL Adobe Experience Platform]受众发送到[!DNL Adobe Campaign]。
@@ -156,7 +156,7 @@ ht-degree: 2%
 >* 若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 >* 要导出&#x200B;*标识*，您需要&#x200B;**[!UICONTROL View Identity Graph]** [访问控制权限](/help/access-control/home.md#permissions)。<br> ![选择工作流中突出显示的身份命名空间以将受众激活到目标。](/help/destinations/assets/overview/export-identities-to-destination.png "选择工作流中突出显示的身份命名空间以将受众激活到目标。"){width="100" zoomable="yes"}
 
-有关将受众数据激活到此目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html)。
+有关将受众数据激活到此目标的说明，请阅读[将受众数据激活到批量配置文件导出目标](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans)。
 
 ### 映射属性和身份 {#map}
 

@@ -31,14 +31,14 @@ AI助手（旧版）支持Experience Platform、Real-Time CDP、Adobe Journey Op
     <div><strong>加强您的学习</strong><br/>在不中断工作流程的情况下发现、排除故障并增强您对产品知识的理解。</div>
     </td>
     <td>
-    <a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
+    <a href="https://experienceleague.adobe.com/zh-hans/playlists/experience-platform-get-started-with-ai-assistant"><img src="./assets/landing/ai-videos.png" style="width:100%;max-height:100%"></a>
     <div><strong>访问AI助手视频播放列表</strong><br/>了解可使用AI助手解决的许多不同挑战和使用案例。</div>
     </td>
   </tr>
   <tr style="border: 0;">
     <td align="center"><a href="./home.md"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     <td align="center"><a href="./home.md#product-knowledge"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
-    <td align="center"><a href="https://experienceleague.adobe.com/en/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
+    <td align="center"><a href="https://experienceleague.adobe.com/zh-hans/playlists/experience-platform-get-started-with-ai-assistant"><img src="../rtcdp/assets/do-not-localize/learn-more-button.svg"></a></td>
     </tr>
 </table>
 
@@ -437,11 +437,11 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 
 有关AI助手（旧版）用例示例，请阅读以下内容：
 
-* [缩短团队新成员的入门时间](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153)
-* [清理受众并优化营销操作](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002)
-* [检查依赖关系并在数据更新期间将风险降至最低](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364)
-* [更快地发现和部署新功能](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125)
-* [用AI助手实现客户支持的革新](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416)
+* [缩短团队新成员的入门时间](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/onboard-new-team-members-in-less-than-half-the-time-with-ai/ba-p/706153?profile.language=zh-Hans)
+* [清理受众并优化营销操作](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-helps-optimize-marketing-operations-by-de/ba-p/696002?profile.language=zh-Hans)
+* [检查依赖关系并在数据更新期间将风险降至最低](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-minimizes-risk-during-data-updates-by-checking/ba-p/713364?profile.language=zh-Hans)
+* [更快地发现和部署新功能](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/discover-and-deploy-new-features-faster-with-ai-assistant-in/ba-p/731125?profile.language=zh-Hans)
+* [用AI助手实现客户支持的革新](https://experienceleaguecommunities.adobe.com/t5/adobe-experience-platform-blogs/ai-assistant-in-adobe-experience-platform-revolutionizing/ba-p/735416?profile.language=zh-Hans)
 
 >[!TAB 其他视频内容]
 
@@ -465,6 +465,6 @@ For more information about AI Assistant, read the [security fact sheet for AI As
 <a href="https://experienceleague.adobe.com/zh-hans/docs/journey-optimizer/using/get-started/ai-assistant" target="_blank">文档</a>
 </td>
 <td><strong>Customer Journey Analytics</strong><br/>
-<a href="https://experienceleague.adobe.com/en/docs/analytics-platform/using/ai-assistant" target="_blank">文档</a>
+<a href="https://experienceleague.adobe.com/zh-hans/docs/analytics-platform/using/ai-assistant" target="_blank">文档</a>
 </td>
 </tr></table>
