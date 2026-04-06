@@ -18,7 +18,7 @@ ht-degree: 8%
 |---|---|---|
 | 2024 年 4 月 | 功能和文档更新 | 当连接到Target目标并使用数据流时，您现在&#x200B;*不需要*&#x200B;为边缘分段启用数据流。 这意味着Target目标将与批处理受众和流式受众配合使用，但您可以完成的用例有所不同。 查看[连接参数](#parameters)部分中的表以了解详细信息。 |
 | 2024 年 1 月 | 功能和文档更新 | 您现在可以为默认的生产沙盒和其他非默认沙盒将受众和配置文件属性共享到[!DNL Adobe Target]连接。 |
-| 2023 年 6 月 | 功能和文档更新 | 自2023年6月起，在配置新的[!DNL Adobe Target]目标连接时，您可以选择要将受众共享到的[!DNL Adobe Target]工作区。 请参阅[连接参数](#parameters)部分，了解详细信息。此外，有关工作区的详细信息，请参阅有关[中](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans#)配置工作区[!DNL Adobe Target]的教程。 |
+| 2023 年 6 月 | 功能和文档更新 | 自2023年6月起，在配置新的[!DNL Adobe Target]目标连接时，您可以选择要将受众共享到的[!DNL Adobe Target]工作区。 请参阅[连接参数](#parameters)部分，了解详细信息。此外，有关工作区的详细信息，请参阅有关[中](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html#)配置工作区[!DNL Adobe Target]的教程。 |
 | 2023 年 5 月 | 功能和文档更新 | 自2023年5月起，**[!UICONTROL Adobe Target]**&#x200B;连接支持基于[属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes)，通常向所有客户提供。 |
 
 {style="table-layout:auto"}
@@ -33,7 +33,7 @@ ht-degree: 8%
 
 有关如何在Experience Platform中配置[!DNL Adobe Target]连接的简短概述，请观看以下视频。
 
->[!VIDEO](https://video.tv.adobe.com/v/3449803/?captions=chi_hans&quality=12&learn=on)
+>[!VIDEO](https://video.tv.adobe.com/v/3418799/?quality=12&learn=on)
 
 ## 基于实施类型的受支持用例 {#supported-use-cases}
 
@@ -41,7 +41,7 @@ ht-degree: 8%
 
 | [!DNL Adobe Target]实现&#x200B;*不带* Web SDK | 使用[!DNL Adobe Target] Web SDK的&#x200B;*实现* | 已关闭[!DNL Adobe Target]实现&#x200B;*的* Web SDK *和* Edge分段 |
 |---|---|---|
-| <ul><li>数据流不是必需的。 [!DNL Adobe Target]可以通过[at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=zh-Hans)、[服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=zh-Hans#server-side-implementation)或[hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=zh-Hans#hybrid-implementation)实现方法进行部署。</li><li>不支持[Edge分段](../../../segmentation/methods/edge-segmentation.md)。</li><li>[不支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md)。</li><li>您可以为[!DNL Adobe Target]默认生产沙盒&#x200B;*和非默认沙盒将受众和配置文件属性共享到*&#x200B;连接。</li><li>要在不使用数据流的情况下配置下一会话个性化，请使用[at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=zh-Hans)。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>Edge分段按预期工作。</li><li>[支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md#use-cases)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>在[配置数据流](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)时，请勿选中&#x200B;**Edge分段**&#x200B;复选框。</li><li>支持[下一会话个性化](../../ui/activate-edge-personalization-destinations.md#next-session)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
+| <ul><li>数据流不是必需的。 [!DNL Adobe Target]可以通过[at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)、[服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation)或[hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation)实现方法进行部署。</li><li>不支持[Edge分段](../../../segmentation/methods/edge-segmentation.md)。</li><li>[不支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md)。</li><li>您可以为[!DNL Adobe Target]默认生产沙盒&#x200B;*和非默认沙盒将受众和配置文件属性共享到*&#x200B;连接。</li><li>要在不使用数据流的情况下配置下一会话个性化，请使用[at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html)。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>Edge分段按预期工作。</li><li>[支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md#use-cases)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>在[配置数据流](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)时，请勿选中&#x200B;**Edge分段**&#x200B;复选框。</li><li>支持[下一会话个性化](../../ui/activate-edge-personalization-destinations.md#next-session)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
 
 
 ## 先决条件 {#prerequisites}
@@ -60,10 +60,10 @@ ht-degree: 8%
 
 在[!DNL Adobe Target]中，确保您的用户具有：
 
-* 访问[默认工作区](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=zh-Hans#default-workspace)；
-* **审批者** [角色](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html?lang=zh-Hans#roles-and-permissions)。
+* 访问[默认工作区](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html#default-workspace)；
+* **审批者** [角色](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/property-channel.html#roles-and-permissions)。
 
-有关授予[Target Premium](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html?lang=zh-Hans#section_8C425E43E5DD4111BBFC734A2B7ABC80)和[Target Standard](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html?lang=zh-Hans#roles-permissions)权限的详细信息。
+有关授予[Target Premium](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/enterprise/properties-overview.html#section_8C425E43E5DD4111BBFC734A2B7ABC80)和[Target Standard](https://experienceleague.adobe.com/docs/target/using/administer/manage-users/users/user-management.html#roles-permissions)权限的详细信息。
 
 ## 支持的受众 {#supported-audiences}
 
@@ -114,7 +114,7 @@ ht-degree: 8%
 >id="platform_destinations_target_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中。下拉菜单仅显示已启用目标配置的数据流。要使用边缘分段，您必须选择一个数据流。选择“无”将禁用所有使用边缘分段的用例。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html?lang=zh-Hans#parameters" text="了解有关选择数据流的更多信息"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/catalog/personalization/adobe-target-connection.html#parameters" text="了解有关选择数据流的更多信息"
 
 >[!IMPORTANT]
 >
@@ -130,7 +130,7 @@ ht-degree: 8%
 >id="platform_destinations_target_workspace"
 >title="关于 [!DNL Adobe Target] 工作区"
 >abstract="选择受众将共享到这里的 [!DNL Adobe Target] 工作区。您可以为每个 [!DNL Adobe Target] 连接选择一个工作区。激活后，受众将会被路由到选定的工作区，同时遵循适用的 Experience Platform 数据使用标签。"
->additional-url="https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans#" text="了解有关  [!DNL Adobe Target]  工作区的详细信息"
+>additional-url="https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html#" text="了解有关  [!DNL Adobe Target]  工作区的详细信息"
 
 在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
 
@@ -150,9 +150,9 @@ ht-degree: 8%
 
   | [!DNL Adobe Target]实现&#x200B;*不带* Web SDK | 使用[!DNL Adobe Target] Web SDK的&#x200B;*实现* | 已关闭[!DNL Adobe Target]实现&#x200B;*的* Web SDK *和* Edge分段 |
   |---|---|---|
-  | <ul><li>数据流不是必需的。 [!DNL Adobe Target]可以通过[at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=zh-Hans)、[服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=zh-Hans#server-side-implementation)或[hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html?lang=zh-Hans#hybrid-implementation)实现方法进行部署。</li><li>不支持[Edge分段](../../../segmentation/methods/edge-segmentation.md)。</li><li>[不支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md)。</li><li>您可以为[!DNL Adobe Target]默认生产沙盒&#x200B;*和非默认沙盒将受众和配置文件属性共享到*&#x200B;连接。</li><li>要在不使用数据流的情况下配置下一会话个性化，请使用[at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html?lang=zh-Hans)。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>Edge分段按预期工作。</li><li>[支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md#use-cases)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>在[配置数据流](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)时，请勿选中&#x200B;**Edge分段**&#x200B;复选框。</li><li>支持[下一会话个性化](../../ui/activate-edge-personalization-destinations.md#next-session)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
+  | <ul><li>数据流不是必需的。 [!DNL Adobe Target]可以通过[at.js](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)、[服务器端](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#server-side-implementation)或[hybrid](https://experienceleague.adobe.com/docs/target-dev/developer/overview.html#hybrid-implementation)实现方法进行部署。</li><li>不支持[Edge分段](../../../segmentation/methods/edge-segmentation.md)。</li><li>[不支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md)。</li><li>您可以为[!DNL Adobe Target]默认生产沙盒&#x200B;*和非默认沙盒将受众和配置文件属性共享到*&#x200B;连接。</li><li>要在不使用数据流的情况下配置下一会话个性化，请使用[at.js](https://experienceleague.adobe.com/docs/target/using/implement-target/client-side/at-js-implementation/at-js/how-atjs-works.html)。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>Edge分段按预期工作。</li><li>[支持同一页面和下一页面个性化](../../ui/activate-edge-personalization-destinations.md#use-cases)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> | <ul><li>需要将[!DNL Adobe Target]和Experience Platform配置为服务的数据流。</li><li>在[配置数据流](/help/destinations/ui/activate-edge-personalization-destinations.md#configure-datastream)时，请勿选中&#x200B;**Edge分段**&#x200B;复选框。</li><li>支持[下一会话个性化](../../ui/activate-edge-personalization-destinations.md#next-session)。</li><li>支持从其他沙盒共享受众和配置文件属性。</li></ul> |
 
-* **Workspace**：选择受众将共享到的[!DNL Adobe Target] [工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html?lang=zh-Hans#)。 您可以为每个 [!DNL Adobe Target] 连接选择一个工作区。激活后，在遵循适用的[Experience Platform数据使用标签](../../../data-governance/labels/overview.md)时，受众将被路由到所选工作区。
+* **Workspace**：选择受众将共享到的[!DNL Adobe Target] [工作区](https://experienceleague.adobe.com/docs/target-learn/tutorials/administration/set-up-workspaces.html#)。 您可以为每个 [!DNL Adobe Target] 连接选择一个工作区。激活后，在遵循适用的[Experience Platform数据使用标签](../../../data-governance/labels/overview.md)时，受众将被路由到所选工作区。
 
 >[!NOTE]
 >
@@ -176,7 +176,7 @@ ht-degree: 8%
 
 ## 从Target目标删除受众 {#remove}
 
-如果现有[!DNL Adobe Target]连接中的某个受众已在[!DNL Adobe Target] [活动](https://experienceleague.adobe.com/zh-hans/docs/target/using/activities/activities)中使用，则从该连接中删除该受众需要执行额外的步骤。 尝试从[!DNL Adobe Target]连接中删除受众时，如果该受众被[!DNL Adobe Target]活动使用，则会导致错误。
+如果现有[!DNL Adobe Target]连接中的某个受众已在[!DNL Adobe Target] [活动](https://experienceleague.adobe.com/en/docs/target/using/activities/activities)中使用，则从该连接中删除该受众需要执行额外的步骤。 尝试从[!DNL Adobe Target]连接中删除受众时，如果该受众被[!DNL Adobe Target]活动使用，则会导致错误。
 
 ![Experience Platform UI图像显示因尝试删除Target活动使用的受众而导致的错误。](../../assets/catalog/personalization/adobe-target-connection/remove-audience-error.png)
 

@@ -58,9 +58,9 @@ Adobe Advertising Demand-Side Platform (DSP)目标允许用户与DSP帐户或帐
 
 * Experience Platform帐户的Experience Cloud组织ID。 您可以在Adobe [!DNL Real-Time Customer Data Platform] ([!DNL Real-Time CDP])用户配置文件页面上找到您的ID。
 
-* DSP[[!DNL Real-Time CDP] 中用于接收营销活动激活受众的](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)源。 您的Adobe客户团队将使用您的Experience Cloud组织ID创建源。
+* DSP[[!DNL Real-Time CDP] 中用于接收营销活动激活受众的](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)源。 您的Adobe客户团队将使用您的Experience Cloud组织ID创建源。
 
-* 在[!DNL DSP][[!DNL Real-Time CDP] 中创建 [!DNL DSP]源时生成的](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)帐户或广告商的源密钥。 您的[!DNL DSP]帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建与Advertising DSP目标的目标连接，如下所述。
+* 在[!DNL DSP][[!DNL Real-Time CDP] 中创建 [!DNL DSP]源时生成的](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)帐户或广告商的源密钥。 您的[!DNL DSP]帐户团队将与您共享此密钥。 您将在Experience Platform中使用它来创建与Advertising DSP目标的目标连接，如下所述。
 
 ### 设置ID同步以共享Cookie {#cookie-sync}
 
@@ -133,7 +133,7 @@ Adobe Advertising DSP目标支持激活下表中描述的标识。 了解有关[
 
 若要连接到目标，请在[!UICONTROL Connection type]部分提供以下参数，然后选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[[!DNL Real-Time CDP] 源时生成此](https://experienceleague.adobe.com/zh-hans/docs/advertising/dsp/audiences/sources/source-manage)。 您的Adobe客户团队将在创建源后与您共享此密钥。
+* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[[!DNL Real-Time CDP] 源时生成此](https://experienceleague.adobe.com/en/docs/advertising/dsp/audiences/sources/source-manage)。 您的Adobe客户团队将在创建源后与您共享此密钥。
 
 ![显示“帐户”或“广告商密钥”字段的连接类型部分的屏幕截图。](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 

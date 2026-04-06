@@ -85,7 +85,7 @@ ht-degree: 4%
 
 **对于基于[!DNL The Trade Desk]**&#x200B;的Cookie定位，请确保在ECID和[!DNL Trade Desk ID]之间建立映射。 完成以下步骤以执行此操作：
 
-1. **启用ID同步功能**：如果您是第一次设置[!DNL The Trade Desk ID]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/zh-hans/docs/id-service/using/id-service-api/methods/idsync)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
+1. **启用ID同步功能**：如果您是第一次设置[!DNL The Trade Desk ID]激活，并且以前未在Experience Cloud ID服务中启用[ID同步功能](https://experienceleague.adobe.com/en/docs/id-service/using/id-service-api/methods/idsync)（使用Adobe Audience Manager或其他应用程序），请与Adobe Consulting或客户关怀部门联系以启用ID同步。
    * 如果您之前在Audience Manager中设置了[!DNL The Trade Desk]集成，则您现有的ID同步会自动转移到Experience Platform。
 
 2. **检测您的网页**：在您的网页上实施代码以创建[!DNL The Trade Desk ID]和Adobe ECID之间的映射。 这允许Experience Platform将交易台ID与客户配置文件相关联。

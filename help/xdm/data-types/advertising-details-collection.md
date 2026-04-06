@@ -23,15 +23,15 @@ ht-degree: 8%
 
 | 显示名称 | 属性 | 数据类型 | 必需 | 描述 |
 |-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-----------|----------|-----------------------------------------------------------------------------------------------------------------------|
-| [[!UICONTROL Ad Advertiser]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#advertiser) | `advertiser` | 字符串 | 否 | 广告中展现的产品所属的公司或品牌。 |
-| [[!UICONTROL Ad Campaign]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#campaign-id) | `campaignID` | 字符串 | 否 | 广告营销活动的ID。 |
-| [[!UICONTROL Ad Creative ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#creative-id) | `creativeID` | 字符串 | 否 | 广告创意的ID。 |
-| [[!UICONTROL Ad Creative URL]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#creative-url) | `creativeURL` | 字符串 | 否 | 广告创意的URL。 |
-| [[!UICONTROL Ad In Pod Position (Ad Start)]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#ad-start) | `podPosition` | 整数 | 是 | 父广告开始内部的广告索引，例如，第一个广告的索引为0，第二个广告的索引为1。 |
-| [[!UICONTROL Ad Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#ad-length) | `length` | 整数 | 是 | 视频广告的长度，以秒为单位。 |
-| [[!UICONTROL Ad Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#ad-name) | `friendlyName` | 字符串 | 是 | 易于用户识别的广告名称。 在报表中，“广告名称”是分类，“广告名称（变量）”是eVar。 |
-| [[!UICONTROL Ad Placement ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#placement-id) | `placementID` | 字符串 | 否 | 广告的版面ID。 |
-| [[!UICONTROL Ad Player Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#ad-player-name) | `playerName` | 字符串 | 是 | 负责呈现广告的播放器的名称。 |
-| [[!UICONTROL Ad Site ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html?lang=zh-Hans#site-id) | `siteID` | 字符串 | 否 | 广告网站的ID。 |
+| [[!UICONTROL Ad Advertiser]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#advertiser) | `advertiser` | 字符串 | 否 | 广告中展现的产品所属的公司或品牌。 |
+| [[!UICONTROL Ad Campaign]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#campaign-id) | `campaignID` | 字符串 | 否 | 广告营销活动的ID。 |
+| [[!UICONTROL Ad Creative ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#creative-id) | `creativeID` | 字符串 | 否 | 广告创意的ID。 |
+| [[!UICONTROL Ad Creative URL]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#creative-url) | `creativeURL` | 字符串 | 否 | 广告创意的URL。 |
+| [[!UICONTROL Ad In Pod Position (Ad Start)]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-start) | `podPosition` | 整数 | 是 | 父广告开始内部的广告索引，例如，第一个广告的索引为0，第二个广告的索引为1。 |
+| [[!UICONTROL Ad Length Or Duration]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-length) | `length` | 整数 | 是 | 视频广告的长度，以秒为单位。 |
+| [[!UICONTROL Ad Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-name) | `friendlyName` | 字符串 | 是 | 易于用户识别的广告名称。 在报表中，“广告名称”是分类，“广告名称（变量）”是eVar。 |
+| [[!UICONTROL Ad Placement ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#placement-id) | `placementID` | 字符串 | 否 | 广告的版面ID。 |
+| [[!UICONTROL Ad Player Name]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#ad-player-name) | `playerName` | 字符串 | 是 | 负责呈现广告的播放器的名称。 |
+| [[!UICONTROL Ad Site ID]](https://experienceleague.adobe.com/docs/media-analytics/using/implementation/variables/ad-parameters.html#site-id) | `siteID` | 字符串 | 否 | 广告网站的ID。 |
 
 {style="table-layout:auto"}
