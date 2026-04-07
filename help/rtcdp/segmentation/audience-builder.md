@@ -2,11 +2,11 @@
 title: Real-Time Customer Data Platform中的Audience Builder
 description: 了解如何使用Real-Time Customer Data Platform中的受众生成器创建受众。
 feature: Get Started, Audiences
-badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html?lang=zh-Hans#rtcdp-editions" newtab=true
+badgeB2B: label="B2B edition" type="Informative" url="https://experienceleague.adobe.com/docs/experience-platform/rtcdp/intro/rtcdp-intro/overview.html#rtcdp-editions" newtab=true
 exl-id: da87baad-b82a-4a45-89c3-cf20d66fe657
-source-git-commit: ec31766ade15eb04907803c8cfe450fd9bdc1406
+source-git-commit: fed1c2e2fea0b2de67c75b24cb636f68a1a3e035
 workflow-type: tm+mt
-source-wordcount: '1115'
+source-wordcount: '1146'
 ht-degree: 7%
 
 ---
@@ -54,13 +54,13 @@ ht-degree: 7%
 
 ![受众生成器中会显示“属性”选项卡](../assets/segmentation/audience-builder/attributes.png)
 
->[!NOTE]
+>[!AVAILABILITY]
 >
->摘要数据处于&#x200B;**有限可用性**&#x200B;中。
+>摘要数据处于&#x200B;**有限可用性**&#x200B;中，用于B2B edition和B2P版本。
 
 选择属性时，您可以通过选择[信息图标](../../images/icons/info.png)来查看摘要数据。 摘要数据包括诸如顶值、字段内容的说明、值的记录计数以及包含此属性值的帐户的百分比等信息。
 
-**[!UICONTROL Populated]**&#x200B;部分显示填充了属性的记录数与可用记录总数的对比，以及具有此字段值的帐户的百分比。
+**[!UICONTROL Populated]**&#x200B;部分显示具有此字段值的帐户的百分比。
 
 **[!UICONTROL Top values]**&#x200B;部分显示该属性最常出现的值，并包括诸如值、具有该值的记录数以及该值所代表的记录总数百分比等详细信息。 每个字段的记录数由用户档案快照决定，该快照会在合并所有参与的数据集数据后提供记录的合并视图。
 
@@ -74,11 +74,17 @@ ht-degree: 7%
 
 ![一个弹出窗口，当一个属性由少于25%的帐户填充时，该弹出窗口会显示该属性的摘要数据版本。](../assets/segmentation/audience-builder/empty-summary-data.png){width="300"}
 
+添加包含摘要数据的属性时，您还可以在规则构建画布中查看摘要数据。
+
+![显示具有摘要数据的属性。](/help/rtcdp/assets/segmentation/audience-builder/attribute-summary.png)
+
+您可以使用下拉菜单从最高值中进行选择，也可以输入值，该值会自动解析为最高值之一。
+
+![可添加属性值的下拉列表突出显示。](/help/rtcdp/assets/segmentation/audience-builder/attribute-summary-dialog.png)
+
 >[!NOTE]
 >
->仅当属性属于Account 、 Person或Opportunity架构时，摘要数据才可用。 此外，仅当字段&#x200B;**不**&#x200B;包含太多不同的值并且这些字段的值通常重复时，才会显示最大值。
->
->此摘要数据按&#x200B;**每天**&#x200B;更新。
+>摘要数据以&#x200B;**每日**&#x200B;为基础进行更新。 此外，对于其值为数组或键/值对的属性，摘要数据&#x200B;**不支持**。
 
 此外，该属性还具有&#x200B;**[!UICONTROL Ingestion Type]**。 摄取类型让您知道数据的来源，并且可以是以下值之一： **[!UICONTROL Batch]**、**[!UICONTROL Streaming/Edge]**&#x200B;或&#x200B;**[!UICONTROL No Data Ingested]**。
 
