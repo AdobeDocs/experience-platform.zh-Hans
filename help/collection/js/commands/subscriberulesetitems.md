@@ -2,9 +2,9 @@
 title: subscribeRulesetItems
 description: 使用subscribeRulesetItems命令订阅特定界面的内容卡。
 exl-id: bc932ba5-a810-4fa6-82cc-998af39fdd34
-source-git-commit: db7e6df1b1a0eb19518d9c6ccd6e6bb9131d5a3e
+source-git-commit: 3ecfc2258e63a34a739ab8b296437c357d1dd9d1
 workflow-type: tm+mt
-source-wordcount: '366'
+source-wordcount: '436'
 ht-degree: 3%
 
 ---
@@ -13,11 +13,11 @@ ht-degree: 3%
 
 `subscribeRulesetItems`命令允许您订阅由满意的规则集产生的建议。 为此，可指定要过滤的曲面和方案，并提供回调函数。
 
-无论何时评估规则集，回调函数都会接收一个包含建议数组的`result`对象。
+每次发送[`sendEvent`](sendevent/overview.md)命令时都会评估规则集。 回调函数接收一个包含建议数组的`result`对象。
 
 >[!IMPORTANT]
 >
->`subscribeRulesetItems`命令是获取来自规则集的建议的唯一方法，因为它们未与[`sendEvent`](sendevent/overview.md)结果一起返回。
+>`subscribeRulesetItems`命令是获取来自规则集的建议的唯一方法，因为它们未与[`sendEvent`](sendevent/overview.md)结果一起返回。 在调用`sendEvent`之前，您必须设置订阅，以确保捕获建议。
 
 
 ```js
@@ -42,7 +42,11 @@ alloy("subscribeRulesetItems", {
 | --- | --- | --- |
 | `surfaces` | 字符串数组 | 曲面列表。 仅当建议与此处提供的某个表面匹配时，回调函数才会接收建议。 |
 | `schemas` | 字符串数组 | 架构列表。 仅当建议与此处提供的某个架构匹配时，回调函数才会接收建议。 |
-| `callback` | 函数 | 当建议是满足的规则集的结果时将调用的回调函数。 调用时，回调函数接收两个参数： `result`和`collectEvent`。 有关详细信息，请参阅[回调参数](#callback-parameters)。 |
+| `callback` | 函数 | 当建议是满足的规则集的结果时调用的回调函数。 调用时，回调函数接收两个参数： `result`和`collectEvent`。 有关详细信息，请参阅[回调参数](#callback-parameters)。 |
+
+>[!TIP]
+>
+>通过将其他值传递给`surfaces`和`schemas`数组，您可以在单个命令中订阅多个表面和架构。
 
 ### Callback参数 {#callback-parameters}
 
@@ -61,6 +65,13 @@ alloy("subscribeRulesetItems", {
 | --- | --- | --- |
 | 事件类型 | 字符串 | 一个字符串，指明要发出的建议事件类型。 支持的事件类型为`display`、`interact`或`dismiss`。 |
 | `propositions` | 数组 | 对应于事件的建议数组。 |
+
+
+可以在回调之外独立调用`collectEvent`函数。 在跟踪稍后发生的交互或撤消（例如，响应用户操作）时，调用此函数很有用。
+
+```js
+collectEvent("interact", propositions);
+```
 
 ## 使用Web SDK标记扩展订阅内容卡
 
