@@ -1,87 +1,90 @@
 ---
 keywords: 自定义个性化；目标；experience platform自定义目标；
-title: 自定义个性化连接
-description: 此目标提供外部个性化、内容管理系统、广告服务器以及在您的网站上运行的其他应用程序，以便从Adobe Experience Platform检索受众信息。 此目标根据用户个人资料受众成员资格提供实时个性化。
+title: 自定义Personalization连接
+description: 了解如何设置自定义Personalization目标，以从Adobe Experience Platform检索受众数据以实现实时网站个性化。
 exl-id: 2382cc6d-095f-4389-8076-b890b0b900e3
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: 3779531814cbf7e5718db0ac88aca266f14a1b21
 workflow-type: tm+mt
-source-wordcount: '1111'
-ht-degree: 9%
+source-wordcount: '1136'
+ht-degree: 8%
 
 ---
 
 
-# 自定义个性化连接 {#custom-personalization-connection}
+# 自定义Personalization连接 {#custom-personalization-connection}
 
 ## 目标更改日志 {#changelog}
 
+使用此更改日志跟踪对自定义Personalization目标的更新。
+
 | 发行月份 | 更新类型 | 描述 |
-|---|---|---|
-| 2023 年 5 月 | 功能和文档更新 | 自2023年5月起，**[!UICONTROL Custom personalization]**&#x200B;连接支持基于[属性的个性化](../../ui/activate-edge-personalization-destinations.md#map-attributes)，通常向所有客户提供。 |
+| --- | --- | --- |
+| 2023 年 5 月 | 功能和文档更新 | 自2023年5月起，**[!UICONTROL Custom personalization]**&#x200B;连接支持基于[属性的个性化](/help/destinations/ui/activate-edge-personalization-destinations.md#map-attributes)，通常向所有客户提供。 |
 
 {style="table-layout:auto"}
 
 >[!IMPORTANT]
 >
->配置文件属性可能包含敏感数据。 要保护此数据，在为基于属性的个性化配置[目标时，必须使用](https://developer.adobe.com/data-collection-apis/docs/)Edge Network API **[!UICONTROL Custom Personalization]**。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
+>配置文件属性可能包含敏感数据。 要保护此数据，请在为基于属性的个性化配置[目标时使用](https://developer.adobe.com/data-collection-apis/docs/)Edge Network API **[!UICONTROL Custom Personalization]**。 所有Edge Network API调用必须在[经过身份验证的上下文](https://developer.adobe.com/data-collection-apis/docs/getting-started/authentication)中进行。
 >
-><br>您可以添加一个服务器端集成，该集成利用您已经用于Web或Mobile SDK实施的相同数据流，从而通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)检索配置文件属性。
+>通过添加使用您已经用于Web或Mobile SDK实施的相同数据流的服务器端集成，通过[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)检索配置文件属性。
 >
-><br>如果不遵循上述要求，则仅基于受众成员资格进行个性化。
+>如果不遵循上述要求，则仅基于受众会员资格进行个性化。
 
 ## 概述 {#overview}
 
-设置此目标以允许外部个性化平台、内容管理系统、广告服务器以及在客户网站上运行的其他应用程序从[!DNL Adobe Experience Platform]检索受众信息。
+设置此目标以允许客户网站上运行的外部个性化平台、内容管理系统、广告服务器和其他应用程序从[!DNL Adobe Experience Platform]检索受众信息。
 
 ## 先决条件 {#prerequisites}
 
-根据您的实施，此目标需要使用以下数据收集方法之一：
+根据您的实施，此目标需要以下数据收集方法之一：
 
-* 如果要从您的网站收集数据，请使用[Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)。
-* 如果要从移动应用程序收集数据，请使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)。
+* 使用[Adobe Experience Platform Web SDK](/help/collection/js/js-overview.md)从您的网站收集数据。
+* 使用[Adobe Experience Platform Mobile SDK](https://developer.adobe.com/client-sdks/documentation/)从移动应用程序中收集数据。
 * 如果您未使用Web SDK或Mobile SDK，或者要根据配置文件属性个性化用户体验，请使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)。
 
 >[!IMPORTANT]
 >
->**基于属性的个性化要求：**&#x200B;如果您要基于配置文件属性（而不仅仅是受众成员资格）进行个性化，则&#x200B;**必须**&#x200B;使用具有经过身份验证的服务器端集成的[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)，无论您同时使用Web SDK还是Mobile SDK进行数据收集。
+>**基于属性的个性化要求：**&#x200B;要根据配置文件属性（而不仅仅是受众成员资格）进行个性化，您&#x200B;**必须**&#x200B;结合经过身份验证的服务器端集成使用[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/)，无论您是否还在使用Web SDK或Mobile SDK进行数据收集。
 >
->仅Web SDK和Mobile SDK支持基于受众成员资格的个性化。 需要&#x200B;**Edge Network API**&#x200B;才能安全检索用于个性化的配置文件属性。
+>仅Web SDK和移动SDK支持基于受众会员资格的个性化。 需要&#x200B;**Edge Network API**&#x200B;才能安全检索用于个性化的配置文件属性。
 
 >[!IMPORTANT]
 >
->在创建自定义个性化连接之前，请阅读有关如何[将受众数据激活到边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)的指南。 本指南将指导您跨多个Experience Platform组件完成相同页面和下一页面个性化用例所需的配置步骤。
+>在创建自定义Personalization连接之前，请阅读有关如何[将受众数据激活到边缘个性化目标](/help/destinations/ui/activate-edge-personalization-destinations.md)的指南。 本指南将指导您跨多个Experience Platform组件完成相同页面和下一页面个性化用例所需的配置步骤。
 
 ## 支持的受众 {#supported-audiences}
 
-此部分介绍哪些类型的受众可以导出到此目标。
+下表列出了您可以导出到此目标的受众类型。
 
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
-| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li> 相似的受众， </li><li> 联合受众， </li><li> 其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
+| [!DNL Segmentation Service] | 是 | 通过Experience Platform [分段服务](/help/segmentation/home.md)生成的受众。 |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li>自定义上传受众[从CSV文件导入](/help/segmentation/ui/audience-portal.md#import-audience)到Experience Platform，</li><li>相似的受众，</li><li>联合受众，</li><li>其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中生成的受众，</li><li>等等。</li></ul> |
 
 {style="table-layout:auto"}
-
-
 
 按受众数据类型划分的受众支持：
 
 | 受众数据类型 | 受支持 | 描述 | 用例 |
 |--------------------|-----------|-------------|-----------|
-| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户个人资料，允许您针对特定的营销活动人群组进行定位。 | 频繁购买者，购物车放弃者 |
+| [人员受众](/help/segmentation/types/people-audiences.md) | 是 | 根据客户配置文件定位特定的人员组。 | 频繁购买者，购物车放弃者 |
 | [帐户受众](/help/segmentation/types/account-audiences.md) | 否 | 针对特定组织内的个人，制定基于帐户的营销策略。 | B2B营销 |
 | [潜在客户受众](/help/segmentation/types/prospect-audiences.md) | 否 | 定位尚未成为客户但与目标受众具有共同特征的个人。 | 利用第三方数据发现潜在客户 |
 | [数据集导出](/help/catalog/datasets/overview.md) | 否 | 存储在[!DNL Adobe Experience Platform]数据湖中的结构化数据的集合。 | 报告、数据科学工作流 |
 
 {style="table-layout:auto"}
 
-
 ## 导出类型和频率 {#export-type-frequency}
 
+下表描述了此目标的导出类型和频率。
+
 | 项目 | 类型 | 注释 |
-|---------|----------|---------|
-| 导出类型 | **[!DNL Profile request]** | 您正在请求在单个配置文件的自定义个性化目标中映射的所有受众。 可以为不同的[Adobe数据收集数据流](../../../datastreams/overview.md)设置不同的自定义个性化目标。 |
-| 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+| --- | --- | --- |
+| 导出类型 | **[!UICONTROL Profile request]** | 请求单个配置文件在自定义Personalization目标中映射的所有受众。 可以为其他[Adobe数据收集数据流](/help/datastreams/overview.md)设置其他自定义Personalization目标。 |
+| 导出频率 | **[!UICONTROL Streaming]** | 流式目标始终基于API连接。 根据受众评估在Experience Platform中更新用户档案后，连接器会立即将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
+
+{style="table-layout:auto"}
 
 ## 连接到目标 {#connect}
 
@@ -89,26 +92,26 @@ ht-degree: 9%
 >id="platform_destinations_custom_personalization_datastream"
 >title="关于数据流"
 >abstract="此选项确定受众将包含在哪个数据收集数据流中以响应页面。下拉菜单仅显示已启用目标配置的数据流。您必须先配置数据流，然后才能配置目标。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html?lang=zh-Hans#" text="了解如何配置数据流"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/datastreams/configure.html#" text="了解如何配置数据流"
 
 >[!IMPORTANT]
 >
 >若要连接到目标，您需要&#x200B;**[!UICONTROL View Destinations]**&#x200B;和&#x200B;**[!UICONTROL Manage Destinations]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-要连接到此目标，请按照[目标配置教程](../../ui/connect-destination.md)中描述的步骤操作。
+要连接到此目标，请按照[目标配置教程](/help/destinations/ui/connect-destination.md)中描述的步骤操作。
 
 ### 连接参数 {#parameters}
 
-在[设置](../../ui/connect-destination.md)此目标时，必须提供以下信息：
+在[设置](/help/destinations/ui/connect-destination.md)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Name]**：填写此目标的首选名称。
 * **[!UICONTROL Description]**：输入目标的描述。 例如，您可以提及要将此目标用于哪个营销活动。 此字段为可选字段。
-* **[!UICONTROL Integration alias]**：此值作为JSON对象名称发送到Experience Platform Web SDK。
-* **[!UICONTROL Datastream]**：这将确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](../../../datastreams/overview.md)。
+* **[!UICONTROL Integration alias]**：在个性化响应中标识此目标的必需字符串。 别名值将与与此目标关联的受众（以及属性，如果已配置）一起返回到您的网站或应用程序。 当同一数据流上有多个个性化目标活动时，请使用客户端或服务器端代码中的别名来查找和处理正确的个性化对象。 在所有自定义Personalization目标的沙盒中，别名必须是唯一的。
+* **[!UICONTROL Datastream]**：这将确定在对页面的响应中将包含受众的数据收集数据流。 下拉菜单仅显示已启用目标配置的数据流。有关详细信息，请参阅[配置数据流](/help/datastreams/overview.md)。
 
 ### 启用警报 {#enable-alerts}
 
-您可以启用警报，以接收有关发送到目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](../../ui/alerts.md)。
+启用警报，以接收有关此目标的数据流状态的通知。 从列表中选择警报以订阅接收有关数据流状态的通知。 有关警报的详细信息，请参阅[使用UI订阅目标警报的指南](/help/destinations/ui/alerts.md)。
 
 完成提供目标连接的详细信息后，选择&#x200B;**[!UICONTROL Next]**。
 
@@ -118,11 +121,11 @@ ht-degree: 9%
 >
 >若要激活数据，您需要&#x200B;**[!UICONTROL View Destinations]**、**[!UICONTROL Activate Destinations]**、**[!UICONTROL View Profiles]**&#x200B;和&#x200B;**[!UICONTROL View Segments]** [访问控制权限](/help/access-control/home.md#permissions)。 阅读[访问控制概述](/help/access-control/ui/overview.md)或联系您的产品管理员以获取所需的权限。
 
-有关将受众激活到此目标的说明，请阅读[激活配置文件和受众边缘个性化目标](../../ui/activate-edge-personalization-destinations.md)。
+有关将受众激活到此目标的说明，请阅读[将配置文件和受众激活到边缘个性化目标](/help/destinations/ui/activate-edge-personalization-destinations.md)。
 
 ## 导出的数据 {#exported-data}
 
-如果您使用Adobe Experience Platform中的[Tags](/help/tags/home.md)来部署Experience Platform Web SDK，请使用[发送事件完成](/help/tags/extensions/client/web-sdk/event-types.md)功能，您的自定义代码操作将具有`event.destinations`变量，您可以使用它查看导出的数据。
+如果您使用Adobe Experience Platform[中的](/help/tags/home.md)标记来部署Experience Platform Web SDK，请使用[发送事件完成](/help/tags/extensions/client/web-sdk/event-types.md)功能。 您的自定义代码操作将具有`event.destinations`变量，您可以使用它查看导出的数据。
 
 以下是`event.destinations`变量的示例值：
 
@@ -146,7 +149,7 @@ ht-degree: 9%
 
 如果您没有使用[标记](/help/tags/home.md)来部署Experience Platform Web SDK，请使用[命令响应](/help/collection/js/commands/command-responses.md)来查看导出的数据。
 
-可以解析来自[!DNL Adobe Experience Platform]的JSON响应，以查找要与[!DNL Adobe Experience Platform]集成的应用程序的相应集成别名。 受众ID可以作为定位参数传递到应用程序的代码中。 以下是目标响应特有的内容示例。
+解析来自[!DNL Adobe Experience Platform]的JSON响应，以查找您与[!DNL Adobe Experience Platform]集成的应用程序的集成别名。 将受众ID作为定位参数传递到应用程序的代码中。 以下是目标响应特有的示例。
 
 ```js
 alloy("sendEvent", {
@@ -163,7 +166,7 @@ alloy("sendEvent", {
   }
 }).then(function(result) {
     if(result.destinations) { // Looking to see if the destination results are there
- 
+
         // Get the destination with a particular alias
         var personalizationDestinations = result.destinations.filter(x => x.alias == "personalizationAlias")
         if(personalizationDestinations.length > 0) {
@@ -180,7 +183,7 @@ alloy("sendEvent", {
   });
 ```
 
-### [!UICONTROL Custom Personalization With Attributes]的示例响应 {#example-response-custom-personalization-with-attributes}
+### 具有属性的自定义Personalization的示例响应 {#example-response-attributes}
 
 使用&#x200B;**[!UICONTROL Custom Personalization With Attributes]**&#x200B;时，API响应将与以下示例类似。
 
@@ -199,7 +202,7 @@ alloy("sendEvent", {
              "membershipStatus": {
                    "value" : "PREMIUM"
               }
-         },         
+         },
         "segments": [
             {
                 "id": "399eb3e7-3d50-47d3-ad30-a5ad99e8ab77"
@@ -214,4 +217,4 @@ alloy("sendEvent", {
 
 ## 数据使用和治理 {#data-usage-governance}
 
-在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](../../../data-governance/home.md)。
+在处理您的数据时，所有[!DNL Adobe Experience Platform]目标都符合数据使用策略。 有关[!DNL Adobe Experience Platform]如何实施数据治理的详细信息，请阅读[数据治理概述](/help/data-governance/home.md)。
