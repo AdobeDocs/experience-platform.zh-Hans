@@ -2,13 +2,14 @@
 title: Reddit自定义受众
 description: Reddit Ads将品牌与积极实时探索爱好和问题的用户联系起来。 Reddit Ads通过将高意图、社区驱动的对话与灵活的广告格式和强大的定位功能相结合，帮助广告商触及参与的受众、推动业绩成果并直接从塑造在线文化的社区中学习。 本指南适用于使用Adobe Experience Platform将受众发送到Reddit广告的广告商和媒体团队。 它涵盖了连接帐户、映射身份和激活受众所需的功能。
 last-substantial-update: 2026-03-31T00:00:00Z
-source-git-commit: c7c74ba9b5c6a66f92dc6a5403d4f2c5614c0049
+exl-id: bcce02bd-d508-47a0-8f5c-bf162db1859d
+badgeBeta: label="Beta 版" type="Informative"
+source-git-commit: 28bbad7ccbec0b669082658b912d0b52e0374667
 workflow-type: tm+mt
-source-wordcount: '1230'
-ht-degree: 3%
+source-wordcount: '1231'
+ht-degree: 4%
 
 ---
-
 
 # [!DNL Reddit Custom Audience]连接 {#reddit-custom-audience-connection}
 
