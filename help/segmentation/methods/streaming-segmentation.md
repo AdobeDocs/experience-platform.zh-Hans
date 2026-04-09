@@ -3,7 +3,7 @@ solution: Experience Platform
 title: 流式分段指南
 description: 了解流式分段，包括内容、如何创建使用流式分段评估的受众，以及如何查看使用流式分段创建的受众。
 exl-id: cb9b32ce-7c0f-4477-8c49-7de0fa310b97
-source-git-commit: ff25ba5c519e02000ac5725031a15627052e8eb2
+source-git-commit: 0be405c34f7fa9d01691059658429652318c13bb
 workflow-type: tm+mt
 source-wordcount: '2117'
 ht-degree: 3%
@@ -476,5 +476,3 @@ inSegment("e3be6d7f-1727-401f-a41e-c296b45f607a") and inSegment("9e1646bb-57ff-4
 如果没有活动的合并策略集，您需要[配置合并策略](../../profile/merge-policies/ui-guide.md#configure)并将它设置为在边缘上处于活动状态。
 
 +++
-
->[!ENDSHADEBOX]

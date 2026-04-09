@@ -3,9 +3,9 @@ solution: Experience Platform
 title: 区段生成器UI指南
 description: Adobe Experience Platform UI中的区段生成器提供了一个丰富的工作区，允许您与配置文件数据元素进行交互。 工作区为构建和编辑规则提供了直观的控件，例如用于表示数据属性的拖放图块。
 exl-id: b27516ea-8749-4b44-99d0-98d3dc2f4c65
-source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
+source-git-commit: eaa256ff7574b1b6221869c290cae8b8e3606f2a
 workflow-type: tm+mt
-source-wordcount: '6574'
+source-wordcount: '6708'
 ht-degree: 10%
 
 ---
@@ -149,7 +149,7 @@ ht-degree: 10%
 | 时段 | 该值在选定的月或年内出现。 | 三月期间的销售&#x200B;**为** |
 | 范围(+/-) | 该值出现在选定日期后的天、周、月或年内。 此时间段是两个日期的&#x200B;**包含**。 | 购物车放弃时间为&#x200B;**在**&#x200B;内3天 |
 | 早于 | 该值发生在选定日期之前。 | 成员资格加入日期为&#x200B;**早于** 2025年1月3日 |
-| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**&#x200B;** 2024年3月14日之后 |
+| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**** 2024年3月14日之后 |
 | 滚动范围 | 该值出现在两个相对日期之间。 | 上次购买日期处于7天前到3天前的滚动范围内。 |
 | 下一 | 该值出现在所选的下一个时间段内。 | 购物车放弃在未来2天内 |
 
@@ -407,7 +407,7 @@ ht-degree: 10%
 
 | 时间约束 | 描述 | 可以启用忽略年份 | 示例 |
 | --------------- | ----------- | ------------------- | ------- |
-| 今天 | 正在比较的属性或事件必须&#x200B;**发生在今天。** | 是 | ![正在使用的“今天”时间限制的示例。](../images/ui/segment-builder/time-constraints/today.png){width="100" zoomable="yes"} |
+| 今天 | 正在比较的属性或事件必须&#x200B;**发生在今天。**&#x200B;这是选定的默认时间限制。 | 是 | ![正在使用的“今天”时间限制的示例。](../images/ui/segment-builder/time-constraints/today.png){width="100" zoomable="yes"} |
 | 昨天 | 进行比较的属性或事件必须&#x200B;**发生在昨天。** | 是 | ![正在使用的“昨天”时间约束的示例。](../images/ui/segment-builder/time-constraints/yesterday.png){width="100" zoomable="yes"} |
 | 本月 | 正在比较的属性或事件必须&#x200B;**发生在此日历月。** | 是 | ![正在使用的“本月”时间限制示例。](../images/ui/segment-builder/time-constraints/this-month.png){width="100" zoomable="yes"} |
 | 今年 | 正在比较的属性或事件必须&#x200B;**发生在此日历年。** | 否 | ![正在使用的“今年”时间限制的示例。](../images/ui/segment-builder/time-constraints/this-year.png){width="100" zoomable="yes"} |
@@ -422,6 +422,16 @@ ht-degree: 10%
 | 下一 | 要比较的属性或事件必须在所选的下一个时间段内发生。 选定的时间段包括分钟、小时、天、周、月和年。 | 否 | ![正在使用的“下次”时间约束的示例。](../images/ui/segment-builder/time-constraints/in-next.png){width="100" zoomable="yes"} |
 | 存在 | 属性存在。 | 否 | ![正在使用“存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/exists.png){width="100" zoomable="yes"} |
 | 不存在 | 属性不存在。 | 否 | ![正在使用“不存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/does-not-exist.png){width="100" zoomable="yes"} |
+| 现在 | 正在比较的属性或事件在评估受众时必须发生&#x200B;****。 此时间限制只能用作时间限制（如“之前”或“之后”）内的二级选项。 | 是 | ![正在使用的“现在”时间约束的示例。](../images/ui/segment-builder/time-constraints/now.png){width="100" zoomable="yes"} |
+
+>[!TIP]
+>
+>“今天”时间限制和“现在”时间限制之间的区别微妙，但意义重大。
+>
+>- 使用“今天”时间限制检查要比较的属性或事件是否发生在当天的&#x200B;**午夜**。
+>- 使用“现在”时间限制检查正在比较的属性或事件是否正在&#x200B;**当前**&#x200B;发生。
+>
+>但是，有一个主要异常 — 如果您使用“今天”作为顶级时间限制，这意味着您正在检查属性或事件是否发生在今天&#x200B;**任意**&#x200B;点。
 
 +++
 
@@ -499,7 +509,7 @@ ht-degree: 10%
 
 +++ 混合布尔逻辑
 
-以下示例在单个表达式中混合了&#x200B;**1&rbrace;和&lbrace;AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
+以下示例在单个表达式中混合了&#x200B;**1}和{AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
 
 ![显示如何使用容器混合布尔逻辑以及使用包含/排除逻辑的图像。](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
 
@@ -549,7 +559,7 @@ ht-degree: 10%
 >id="platform_segments_createsegment_segmentbuilder_refreshestimate"
 >title="刷新估计值"
 >abstract="您可以刷新区段定义的估计值，以立即预览符合建议的区段定义资格的轮廓数目。受众估计值是通过使用当天的示例数据的示例大小生成的。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html?lang=zh-Hans#estimate-and-preview-an-audience" text="估计和预览受众"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/segmentation/tutorials/create-a-segment.html#estimate-and-preview-an-audience" text="估计和预览受众"
 
 >[!CONTEXTUALHELP]
 >id="platform_segments_createsegment_segmentbuilder_qualifiedprofiles"
