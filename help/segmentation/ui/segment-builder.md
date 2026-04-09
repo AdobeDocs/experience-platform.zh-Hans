@@ -149,7 +149,7 @@ ht-degree: 10%
 | 时段 | 该值在选定的月或年内出现。 | 三月期间的销售&#x200B;**为** |
 | 范围(+/-) | 该值出现在选定日期后的天、周、月或年内。 此时间段是两个日期的&#x200B;**包含**。 | 购物车放弃时间为&#x200B;**在**&#x200B;内3天 |
 | 早于 | 该值发生在选定日期之前。 | 成员资格加入日期为&#x200B;**早于** 2025年1月3日 |
-| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**** 2024年3月14日之后 |
+| 之后 | 该值发生在选定日期之后。 | 购买日期为&#x200B;**&#x200B;** 2024年3月14日之后 |
 | 滚动范围 | 该值出现在两个相对日期之间。 | 上次购买日期处于7天前到3天前的滚动范围内。 |
 | 下一 | 该值出现在所选的下一个时间段内。 | 购物车放弃在未来2天内 |
 
@@ -422,7 +422,7 @@ ht-degree: 10%
 | 下一 | 要比较的属性或事件必须在所选的下一个时间段内发生。 选定的时间段包括分钟、小时、天、周、月和年。 | 否 | ![正在使用的“下次”时间约束的示例。](../images/ui/segment-builder/time-constraints/in-next.png){width="100" zoomable="yes"} |
 | 存在 | 属性存在。 | 否 | ![正在使用“存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/exists.png){width="100" zoomable="yes"} |
 | 不存在 | 属性不存在。 | 否 | ![正在使用“不存在”时间约束的示例。](../images/ui/segment-builder/time-constraints/does-not-exist.png){width="100" zoomable="yes"} |
-| 现在 | 正在比较的属性或事件在评估受众时必须发生&#x200B;****。 此时间限制只能用作时间限制（如“之前”或“之后”）内的二级选项。 | 是 | ![正在使用的“现在”时间约束的示例。](../images/ui/segment-builder/time-constraints/now.png){width="100" zoomable="yes"} |
+| 现在 | 正在比较的属性或事件在评估受众时必须发生&#x200B;**&#x200B;**。 此时间限制只能用作时间限制（如“之前”或“之后”）内的二级选项。 | 是 | ![正在使用的“现在”时间约束的示例。](../images/ui/segment-builder/time-constraints/now.png){width="100" zoomable="yes"} |
 
 >[!TIP]
 >
@@ -509,7 +509,7 @@ ht-degree: 10%
 
 +++ 混合布尔逻辑
 
-以下示例在单个表达式中混合了&#x200B;**1}和{AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
+以下示例在单个表达式中混合了&#x200B;**1&rbrace;和&lbrace;AND和OR逻辑。**&#x200B;如果不使用容器，则无法在单个级别中将AND与OR逻辑混合使用。
 
 ![显示如何使用容器混合布尔逻辑以及使用包含/排除逻辑的图像。](/help/segmentation/images/ui/segment-builder/mixed-boolean-container.png)
 
