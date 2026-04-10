@@ -2,9 +2,9 @@
 title: Graph Simulation UI指南
 description: 了解如何在Identity Service UI中使用图形模拟。
 exl-id: 89f0cf6e-c43f-40ec-859a-f3b73a6da8c8
-source-git-commit: 28eab3488dccdcc6239b9499e875c31ff132fd48
+source-git-commit: 22c0678ded73e9f840957707c14aed7c761138a2
 workflow-type: tm+mt
-source-wordcount: '1409'
+source-wordcount: '1493'
 ht-degree: 3%
 
 ---
@@ -16,165 +16,172 @@ ht-degree: 3%
 >title="图形模拟"
 >abstract="模拟图形以了解身份标识服务如何链接身份标识，以及身份标识优化算法是如何工作的。"
 
-[!DNL Graph Simulation]是Identity Service UI中的一个工具，可用于模拟给定特定身份组合时身份图的行为方式以及配置[身份优化算法](./identity-optimization-algorithm.md)的方式。
+[!DNL Graph Simulation]是Identity Service UI中的一个工具，可用于根据您提供的身份模拟身份图的行为方式，以及配置[身份优化算法](./identity-optimization-algorithm.md)的方式。
 
-观看以下视频，了解有关在Identity Service UI工作区中使用[!DNL Graph Simulation]界面的更多信息：
+在将[!DNL Identity Graph Linking Rules]应用于生产数据之前，使用此插件可安全地测试图形行为。 通过定义示例事件并配置身份优化算法（包括命名空间优先级和“每个图形唯一”设置），您可以查看身份是合并到一个图形中还是保持独立，然后根据需要调整配置。 使用此功能可以：
 
->[!VIDEO](https://video.tv.adobe.com/v/3444053/?captions=chi_hans&learn=on&enablevpops)
+* 防止图形折叠（例如，当多人共享一台设备或一个电话号码时）
+* 调整命名空间优先级（例如，EMAIL或CRM_ID是否应占主导地位）
+* 评估低质量或重复使用的标识符对环境中拼接的影响。
 
-阅读本文档以了解如何使用[!DNL Graph Simulation]更好地了解身份图行为以及图算法如何运行。
+您还可以演练在下游应用程序中显示的配置更改和调试身份问题。 例如，如果受众规模或合并的配置文件看起来错误，您可以在[!DNL Graph Simulation]中重新构建相关事件，以查看当前规则如何影响图形并尝试更安全的替代方案。
 
-## 了解[!DNL Graph Simulation]界面 {#interface}
+内置示例场景可帮助您向利益相关者解释身份行为和图形折叠风险，并支持数据质量和身份治理的认可。
 
-您可以在Adobe Experience Platform用户界面中访问[!DNL Graph Simulation]。 从左侧导航中选择&#x200B;**[!UICONTROL Identities]**，然后从顶部标题中选择&#x200B;**[!UICONTROL Graph Simulation]**。
+## 了解[!DNL Graph Simulation]接口
 
-![Adobe Experience Platform UI中的图形模拟界面。](../images/graph-simulation/graph-simulation.png)
+要访问[!DNL Graph Simulation]，请在Adobe Experience Platform用户界面中导航到Identity Service工作区，然后选择&#x200B;**[!UICONTROL Graph Simulation]**。
 
-[!DNL Graph Simulation]接口可以分为三个部分：
+![Identity Service中的Graph Simulation Workspace显示用于构建和预览身份图的Activity、Algorithm配置和模拟的图形区域。](../images/graph-simulation/graph-simulation-interface.png)
+
+该界面分为三个主要部分：
 
 >[!BEGINTABS]
 
->[!TAB 事件]
+>[!TAB 活动]
 
-事件：使用&#x200B;**[!UICONTROL Events]**&#x200B;面板添加身份以模拟图形。 完全限定的身份必须具有身份命名空间及其相应的身份值。 您必须至少添加两个身份才能模拟图形。 您还可以选择&#x200B;**[!UICONTROL Load Example]**&#x200B;来输入预配置的事件和算法设置。
+使用&#x200B;**[!UICONTROL Activity]**&#x200B;面板添加身份以模拟图形。 每个身份都需要一个命名空间和一个值。 您必须至少添加两个身份才能运行模拟。 您还可以选择&#x200B;**[!UICONTROL Load]**&#x200B;以导入预配置的事件和算法设置或打开现有图形。
 
-![图形模拟工具的事件面板。](../images/graph-simulation/events.png)
+![活动面板，带有用于添加完全限定的标识（命名空间和值）的字段和用于导入已保存设置或现有图形的加载控件。](../images/graph-simulation/activities-panel.png)
 
 >[!TAB 算法配置]
 
-算法配置：使用&#x200B;**[!UICONTROL Algorithm configuration]**&#x200B;面板为命名空间添加和配置优化算法。 您可以拖放命名空间以修改其各自的优先级排名。 您还可以选择&#x200B;**[!UICONTROL Unique Per Graph]**&#x200B;以确定命名空间是否唯一。
+使用&#x200B;**[!UICONTROL Algorithm configuration]**&#x200B;面板为命名空间添加和配置优化算法。 拖放命名空间行以更改优先级顺序。 您还可以选择&#x200B;**[!UICONTROL Unique Per Graph]**&#x200B;来标记命名空间在图形中是否必须是唯一的。
 
-![图形模拟工具的算法配置。](../images/graph-simulation/algorithm-configuration.png)
+![算法配置面板以优先级顺序列出命名空间，每行的拖动手柄和每个图形的唯一选项均适用。](../images/graph-simulation/algo-panel.png)
 
->[!TAB 模拟图形查看器]
+>[!TAB 模拟图形]
 
-模拟的图形查看器：模拟的图形查看器根据您添加的事件和您配置的算法显示生成的图形。 两个身份之间的直线表示已建立链接。 虚线表示链接已被删除。
+使用&#x200B;**[!UICONTROL Simulated graph]**&#x200B;显示查看从您的活动和算法设置生成的图形。 两个身份之间的实线表示保留链接；虚线表示算法删除了该链接。
 
-![模拟图形查看器面板，带有模拟图形的示例。](../images/graph-simulation/simulated-graph.png)
+![带有标识节点的模拟图形画布；实线显示活动链接，虚线显示算法删除的链接。](../images/graph-simulation/simulation-panel.png)
 
 >[!ENDTABS]
 
-## 添加事件 {#add-events}
+## [!DNL Graph Simulation]工作流
 
-要开始，请选择&#x200B;**[!UICONTROL Add events]**。
+### 添加活动
 
-![已选择“添加事件”按钮。](../images/graph-simulation/add-events.png)
+要开始模拟身份图，请选择&#x200B;**[!UICONTROL Add Activity]**。
 
-此时会出现[!UICONTROL Event #1]的弹出窗口。 在此处，输入您的身份命名空间和身份值组合。 您可以使用下拉菜单选择身份命名空间。 或者，您可以键入命名空间的前几个字母，然后选择下拉菜单中提供的选项。 选择命名空间后，请提供与命名空间对应的身份值。
+![突出显示添加活动的活动部分，以打开用于新标识事件的对话框。](../images/graph-simulation/add-activity.png)
 
-![带有空接口的Event #1窗口。](../images/graph-simulation/event-one.png)
+当出现[!UICONTROL Activity #1]的弹出窗口时，请选择身份命名空间并输入其值。 您可以从下拉列表中选取命名空间或键入几个字母以筛选列表。 选择命名空间后，请输入匹配的身份值。
 
 >[!TIP]
 >
->您在[!DNL Graph Simulation]练习中输入的标识值不必是真实标识值，也可以是简单的占位符。
+>使用[!DNL Graph Simulation]时不必使用真实身份值。
 
-完成第一个身份后，选择添加图标(**`+`**)以添加第二个身份。
+[!UICONTROL Activity]界面将更新以显示您的第一个活动。
 
-![在“图形模拟”的“事件”面板中输入{Email： tom@acme.com}的第一个完全限定标识。](../images/graph-simulation/event-one-added.png)
+![添加第一个事件后，显示具有选定命名空间和标识值的活动#1的活动列表。](../images/graph-simulation/activity-one.png)
 
-接下来，重复相同的步骤并添加第二个标识。 要生成标识图，需要两个完全限定的标识。 在以下示例中，ECID被添加为命名空间，并且被提供值为`111`。 完成后，选择&#x200B;**[!UICONTROL Save]**。
+再次选择&#x200B;**[!UICONTROL Add Activity]**&#x200B;并完成第二个活动。 您至少需要两个完全限定的身份（命名空间加值）才能生成图形。
 
-![已将{ECID： 111}的第二个标识添加到事件#1。](../images/graph-simulation/first-event.png)
+![包含两个事件（Activity #1和Activity #2）的活动列表，每个事件都具有命名空间和值，可随时进行模拟。](../images/graph-simulation/activity-two.png)
 
-[!UICONTROL Events]界面将更新以显示您的第一个事件，在本例中为： `{Email: tom@acme.com, ECID: 111}`。
-
-![更新的事件界面带有{Email： tom@acme.com，ECID： 111}。](../images/graph-simulation/add-second-event.png)
-
-接下来，重复相同的步骤以添加第二个事件。 对于事件#2，添加`{Email: summer@acme.com}`作为您的第一个标识，然后添加相同的`{ECID: 111}`作为第二个标识，从而创建第二个事件： `{Email: summer@acme.com}, {ECID: 111}`。 完成后，您应该有两个事件，一个用于`{Email: tom@acme.com, ECID: 111}`，另一个用于`{Email: summer@acme.com}, {ECID: 111}`。
-
-![更新的事件界面包含两个事件。](../images/graph-simulation/two-events.png)
-
-### 加载示例 {#load-example}
-
-选择&#x200B;**[!UICONTROL Load example]**&#x200B;以使用预设算法和事件配置设置示例图形。
-
-![已选择“加载示例”选项。](../images/graph-simulation/load-example.png)
-
-此时会出现一个弹出窗口，为您提供可以从以下内容中选择的可用图形方案：
-
-| 示例图表 | 描述 | 示例 |
-| --- | --- | --- |
-| 共享设备 | 共享设备是指两个不同的用户登录到同一台设备的情况。 | 夫妻共享一个iPad用于互联网浏览和电子商务。 |
-| 无效（非唯一）电话 | 无效或非唯一电话是指两个不同的用户使用相同的电话号码创建帐户的情况。 | 母亲和女儿使用共享的家庭电话号码注册任何电子商务帐户。 |
-| “坏”的身份标识值 | “错误”标识值是指标识服务因错误实施而生成非唯一IDFA的情况。 | 由于代码实施问题，WebSDK错误地为每个事件发送了`user_null`值。 |
-
-![显示可用预配置示例的窗口：共享设备、无效电话和错误标识值。](../images/graph-simulation/example-options.png)
-
-选择任何选项以使用预配置的事件和算法加载[!DNL Graph Simulation]。 您仍然可以对任何预加载的图形方案示例进行进一步的配置。
-
-![为无效电话配置的事件和算法。](../images/graph-simulation/example-loaded.png)
-
-完成后，选择&#x200B;**[!UICONTROL Simulate]**。
-
-![为无效电话模拟的示例图形。](../images/graph-simulation/example-simulated.png)
-
-### 使用文本版本 {#use-text-version}
-
-您还可以使用文本模式配置事件。 要使用文本模式，请选择设置图标，然后选择&#x200B;**[!UICONTROL Text (Advanced users)]**。
-
-![选择的设置图标。](../images/graph-simulation/settings.png)
-
-您可以使用文本模式手动输入身份。 使用冒号(`:`)区分与您输入的命名空间对应的标识值，然后使用逗号(`,`)分隔您的标识。 要区分不同的事件，请为每个事件使用新行。
-
-![事件面板使用文本模式版本。](../images/graph-simulation/text-version.png)
-
-### 编辑事件 {#edit-event}
-
-要编辑事件，请选择给定事件旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Edit]**。
-
-![选定的编辑事件图标。](../images/graph-simulation/edit.png)
-
-### 删除事件 {#delete-event}
-
-要删除某个事件，请选择给定事件旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Delete]**。
-
-![选择的删除事件图标。](../images/graph-simulation/delete.png)
-
-## 配置算法 {#configure-algorithm}
+### 配置算法
 
 >[!IMPORTANT]
 >
->您配置的算法规定了Identity Service如何处理您在事件中输入的命名空间。 您在[!DNL Graph Simulation UI]中组合的任何配置都不会保存在身份设置中。
+>您配置的算法控制Identity Service如何处理活动中的命名空间。 您在[!DNL Graph Simulation UI]中设置的任何内容都不会保存到Identity Service标识设置。
 
-添加事件后，您现在可以配置将用于模拟图形的算法。 要开始，请选择&#x200B;**[!UICONTROL Add config]**。
+活动就绪后，配置用于模拟的算法。 选择 **[!UICONTROL Add config]**。
 
-![算法配置面板。](../images/graph-simulation/add-config.png)
+![已选择“添加配置”的算法配置区域，以开始添加命名空间优先级和唯一性规则。](../images/graph-simulation/add-config.png)
 
-出现空的配置行。 首先，输入您用于事件的同一命名空间。 在这种情况下，请先输入电子邮件。 输入命名空间后，[!UICONTROL Identity Symbol]和[!UICONTROL Identity Type]的列将自动填充。
+添加您希望算法考虑的每个命名空间。 使用下拉菜单进行搜索，或键入前几个字母以缩小列表范围。
 
-![第一个配置条目。](../images/graph-simulation/add-namespace.png)
+* **命名空间优先级**：您可以控制身份图中每个命名空间的重要性顺序。 例如，如果您的图形使用CRMID、ECID、电子邮件和Apple IDFA，则可以设置其优先级以反映在关联身份时应首先考虑哪些因素。 列表顶部的命名空间具有最高优先级。
+* **唯一命名空间**：当命名空间标记为唯一时，身份服务可确保图形中只显示一个具有该命名空间的身份。 例如，如果电子邮件设置为唯一，则每个图表将仅包含一个电子邮件标识。 如果存在具有相同电子邮件的多个身份，则将删除最早的连接以保持唯一性。
 
-接下来，重复相同的步骤并添加第二个命名空间，在本例中为ECID。 输入所有命名空间后，即可开始配置其优先级和唯一性。
+将命名空间行拖入优先级顺序：顶行优先级最高，底行优先级最低。 要将命名空间在图形中视为唯一，请选中其&#x200B;**[!UICONTROL Unique Per Graph]**&#x200B;复选框。
 
-* **命名空间优先级**：命名空间的优先级决定了它与给定身份图中其他命名空间相比的相对重要性。 例如，如果身份图有四个不同的命名空间：CRMID、ECID、Email和Apple IDFA，则可以配置优先级以确定四个命名空间的重要性顺序。
-* **唯一命名空间**：如果命名空间被指定为唯一，则标识服务将生成图形，并告诫只能存在一个具有给定唯一命名空间的标识。 例如，如果电子邮件命名空间指定为唯一的命名空间，则图表只能有一个电子邮件身份。 如果电子邮件命名空间中有多个身份，则将删除最早的链接。
+准备就绪后，选择&#x200B;**[!UICONTROL Simulate]**。
 
-要配置命名空间优先级，请选择命名空间行并将其拖动到所需的优先级排序，其中顶行表示较高的优先级，底行表示较低的优先级。 要将命名空间指定为唯一，请选中&#x200B;**[!UICONTROL Unique Per Graph]**&#x200B;复选框。
+![算法配置，命名空间按优先级重新排序，根据需要设置每个图形的唯一复选框，模拟可用于运行模拟。](../images/graph-simulation/add-namespaces.png)
 
-完成后，选择&#x200B;**[!UICONTROL Simulate]**。
+### 查看模拟图形
 
-![已配置所有命名空间。](../images/graph-simulation/all-namespaces.png)
-
-## 查看模拟图形
-
-[!UICONTROL Simulated Graph]部分显示基于您添加的事件和您配置的算法生成的身份图。
+[!UICONTROL Simulated Graph]部分显示从活动和算法配置生成的一个或多个图形。
 
 | 图表图标 | 描述 |
 | --- | --- |
 | 实线 | 实线表示两个身份之间已建立的链接。 |
 | 虚线 | 虚线表示两个身份之间删除的链接。 |
-| 联机编号 | 行中的数字表示生成该给定链接的时间戳。 最低数字(1)表示最早建立的链接。 |
+| 联机编号 | 行上的数字表示该链接相对于其他链接形成的时间。 最小值(1)是最早的链接。 |
 
-在下面的示例图形中，`{Email: tom@acme.com}`到`{ECID: 111}`之间有虚线，原因如下：
+![模拟图形输出：作为节点的身份，在适用的情况下标记为序列号的链接，与实线和虚线图例匹配。](../images/graph-simulation/simulated-graph.png)
 
-* 在算法配置步骤中，电子邮件被指定为唯一的。 因此，一个图中可能只有一个具有电子邮件命名空间的身份。
-* `{Email: tom@acme.com}`和`{ECID: 111}`之间的链接是第一个建立的标识(事件#1)。 它是最早的链接，因此被删除。
+## 附加功能
 
-![模拟图形查看器面板，带有模拟图形的示例。](../images/graph-simulation/simulated-graph.png)
+您还可以编辑或删除活动，在文本模式下输入活动，加载示例方案，或从Identity Service拉入现有图形。
+
+### 编辑活动 {#edit-activity}
+
+要编辑活动，请选择给定活动旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Edit]**。
+
+![在活动旁边的“行操作”菜单，该活动已打开，并已选择“编辑”来更改该活动的命名空间或值。](../images/graph-simulation/edit.png)
+
+### 删除活动 {#delete-activity}
+
+要删除某个活动，请选择给定活动旁边的省略号(`...`)，然后选择&#x200B;**[!UICONTROL Delete]**。
+
+![在活动旁边的“行操作”菜单，该活动已打开并已选择删除，以便将该活动从模拟中删除。](../images/graph-simulation/delete.png)
+
+### 使用文本模式 {#use-text-mode}
+
+您可以使用文本模式配置活动。 要使用文本模式，请选择设置图标，然后选择&#x200B;**[!UICONTROL Text (Advanced users)]**。
+
+![已打开设置控件以显示文本（高级用户），以将活动条目切换到文本模式。](../images/graph-simulation/use-text-mode.png)
+
+在文本模式下，将每个标识键入为`namespace:value`。 使用逗号(`,`)分隔同一事件中的多个标识。 为每个事件启动一个新行。
+
+![以纯文本显示的活动：每行都是一个事件，身份写入为命名空间:value对，用逗号分隔。](../images/graph-simulation/text-mode-display.png)
+
+### 加载示例 {#load-example}
+
+选择&#x200B;**[!UICONTROL Load example]**&#x200B;以加载包含预设活动和算法设置的现成图表。
+
+![加载控件用于打开选项，包括加载具有预设活动和算法的内置示例方案。](../images/graph-simulation/load.png)
+
+对话框列出了可以打开的场景：
+
+| 示例图表 | 描述 | 示例 |
+| --- | --- | --- |
+| 共享设备 | 两个不同的用户登录同一设备。 | 夫妻共享一个iPad用于浏览和电子商务。 |
+| 无效（非唯一）电话 | 两个不同的用户使用相同的电话号码注册。 | 母亲和女儿使用共享的家庭电话号码注册电子商务帐户。 |
+| “坏”的身份标识值 | 实施错误会发送重复的ID或占位符ID（例如，对于许多用户而言，相同的IDFA）。 | 由于代码缺陷，Web SDK会在每个活动上发送一个`user_null`值。 |
+
+![图形选择器对话框示例，其中列出了共享设备、无效（非唯一）电话以及标识值“错误”，并简短地描述了每个场景。](../images/graph-simulation/example-graph.png)
+
+选择要加载具有匹配活动和算法设置的[!DNL Graph Simulation]的方案。 您可以像编辑任何其他模拟一样编辑结果。
+
+加载示例场景后![图形模拟：活动和算法配置面板预填充在生成的模拟图形旁边。](../images/graph-simulation/shared-device.png)
+
+### 加载现有图表 {#load-existing-graph}
+
+您可以使用[!DNL Graph Simulation]加载现有图形并查看其活动、算法配置和图形。
+
+选择&#x200B;**[!UICONTROL Load]**，然后选择&#x200B;**[!UICONTROL Existing graph]**。
+
+![已选择现有图形展开的“加载”菜单以导入已存储在Identity Service中的图形。](../images/graph-simulation/load-existing.png)
+
+在对话框中，输入属于要检查的图形的命名空间和标识值。
+
+![使用字段标识现有图形对话框，以输入属于要加载的图形的命名空间和标识值。](../images/graph-simulation/identify-graph.png)
+
+加载成功后，[!DNL Graph Simulation]显示包含该标识的图形。
+
+>[!TIP]
+>
+>在前[身份设置](./identity-settings-ui.md)屏幕上配置设置后，可以使用&#x200B;**加载现有图形**&#x200B;选项基于这些确切设置模拟图形。 模拟将使用您定义的配置。
+
+![从现有图形填充的图形模拟：活动、算法设置和模拟的图形视图反映加载的身份图形。](../images/graph-simulation/existing-graph-loaded.png)
 
 ## 后续步骤
 
-通过阅读本文档，您现在知道如何使用[!DNL Graph Simulation]工具来更好地了解在给定一组特定的规则和配置的情况下如何对待您的身份数据。 有关详细信息，请阅读以下文档：
+在更改生产设置之前，您可以使用[!DNL Graph Simulation]查看Identity Service如何链接不同规则下的身份。 要更深入了解，请参阅以下文档：
 
 * [[!DNL Identity Graph Linking Rules] 概述](./overview.md)
 * [身份标识优化算法](./identity-optimization-algorithm.md)
