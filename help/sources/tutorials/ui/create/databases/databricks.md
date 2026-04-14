@@ -1,12 +1,10 @@
 ---
 title: 使用UI将数据库连接到Experience Platform
 description: 了解如何使用用户界面将Databricks连接到Experience Platform。
-badgeUltimate: label="Ultimate" type="Positive"
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: 877e22c0-cb77-45bb-88c9-54fdde2d6905
-source-git-commit: 6a30e1983a6dcf8e1340281a9385eb8e73b927f6
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '461'
+source-wordcount: '438'
 ht-degree: 4%
 
 ---
@@ -15,9 +13,7 @@ ht-degree: 4%
 
 >[!AVAILABILITY]
 >
->* [!DNL Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
->
->* [!DNL Databricks]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
+>[!DNL Databricks]源在源目录中可供已购买Real-Time CDP Ultimate的用户使用。
 
 阅读本指南，了解如何使用UI中的源工作区将您的[!DNL Databricks]帐户连接到Adobe Experience Platform。
 

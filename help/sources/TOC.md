@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: d284a2a833bca1770d6680987888368fe22736e8
+source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
 workflow-type: tm+mt
-source-wordcount: '1094'
+source-wordcount: '1091'
 ht-degree: 34%
 
 ---
@@ -74,10 +74,10 @@ ht-degree: 34%
       - [Amazon Redshift连接器](connectors/databases/redshift.md)
       - [Azure HDInsights连接器上的Apache Hive](connectors/databases/hive.md)
       - [Azure HDInsights连接器上的Apache Spark](connectors/databases/spark.md)
-      - [Azure数据库连接器](connectors/databases/databricks.md)
       - [Azure Data Explorer连接器](connectors/databases/data-explorer.md)
       - [Azure Synapse Analytics连接器](connectors/databases/synapse-analytics.md)
       - [Azure表存储连接器](connectors/databases/ats.md)
+      - [数据库连接器](connectors/databases/databricks.md)
       - [Google BigQuery连接器](connectors/databases/bigquery.md)
       - [GreenPlum连接器](connectors/databases/greenplum.md)
       - [HP Vertica连接器](connectors/databases/hp-vertica.md)
@@ -167,10 +167,10 @@ ht-degree: 34%
          - [Amazon Redshift](tutorials/api/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/api/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/api/create/databases/spark.md)
-         - [Azure Databricks](tutorials/api/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/api/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/api/create/databases/synapse-analytics.md)
          - [Azure 数据表存储](tutorials/api/create/databases/ats.md)
+         - [数据块](tutorials/api/create/databases/databricks.md)
          - [Google BigQuery](tutorials/api/create/databases/bigquery.md)
          - [GreenPlum](tutorials/api/create/databases/greenplum.md)
          - [HP Vertica](tutorials/api/create/databases/hp-vertica.md)
@@ -290,10 +290,10 @@ ht-degree: 34%
          - [Amazon Redshift](tutorials/ui/create/databases/redshift.md)
          - [Azure HDInsights上的Apache Hive](tutorials/ui/create/databases/hive.md)
          - [Azure HDInsights上的Apache Spark](tutorials/ui/create/databases/spark.md)
-         - [Azure Databricks](tutorials/ui/create/databases/databricks.md)
          - [Azure Data Explorer](tutorials/ui/create/databases/data-explorer.md)
          - [Azure Synapse Analytics](tutorials/ui/create/databases/synapse-analytics.md)
          - [Azure 数据表存储](tutorials/ui/create/databases/ats.md)
+         - [数据块](tutorials/ui/create/databases/databricks.md)
          - [Google Big Query](tutorials/ui/create/databases/bigquery.md)
          - [GreenPlum](tutorials/ui/create/databases/greenplum.md)
          - [HP Vertica](tutorials/ui/create/databases/hp-vertica.md)
