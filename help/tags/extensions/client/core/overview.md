@@ -2,9 +2,9 @@
 title: 核心扩展概述
 description: 了解Adobe Experience Platform中的核心标记扩展。
 exl-id: 841f32ad-a6a8-49fb-a131-ef4faab47187
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 0750a684c7383bd3f7cb18749078989ad5571816
 workflow-type: tm+mt
-source-wordcount: '5380'
+source-wordcount: '5387'
 ht-degree: 61%
 
 ---
@@ -122,7 +122,7 @@ ht-degree: 61%
 
 #### Data Element Changed
 
-如果指定的数据元素发生更改，则会触发该事件。 必须提供数据元素的名称。 您可以在文本字段中键入数据元素的名称，或者选择文本字段右侧的数据元素图标，然后从显示的对话框中提供的列表中选择数据元素。
+如果指定的数据元素发生更改，则会触发该事件。 每秒进行一次更改轮询。 必须提供数据元素的名称。 您可以在文本字段中键入数据元素的名称，或者选择文本字段右侧的数据元素图标，然后从显示的对话框中提供的列表中选择数据元素。
 
 #### Direct Call {#direct-call-event}
 
@@ -440,7 +440,7 @@ return new Promise(function(resolve, reject) {
 
 ### URL
 
-#### Domain
+#### 域
 
 指定访客的域。
 
@@ -497,7 +497,7 @@ return new Promise(function(resolve, reject) {
 1. 指定用于 URL 参数的值。
 1. （可选）如果这是正则表达式，则启用 Regex。
 
-#### Subdomain
+#### 子域
 
 指定 URL 中必须存在的一个或多个子域。
 

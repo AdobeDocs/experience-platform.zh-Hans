@@ -1,19 +1,15 @@
 ---
 title: sendPushSubscription
 description: 在Adobe Experience Platform中注册推送通知订阅。
-source-git-commit: 3abe25a9c538bf4d1b439d48f624d8cad109a99e
+exl-id: 7cb13834-46f4-481c-bd9d-600083eb6cfb
+source-git-commit: 76ba5719bd922c4ff9bff6fda4a359b18f549c5e
 workflow-type: tm+mt
-source-wordcount: '416'
+source-wordcount: '398'
 ht-degree: 2%
 
 ---
 
-
 # `sendPushSubscription` {#send-push-subscription}
-
->[!AVAILABILITY]
->
->Web SDK的推送通知当前处于&#x200B;**测试版**&#x200B;中。 功能和文档可能会发生更改。
 
 `sendPushSubscription`命令向Adobe Experience Platform注册推送通知订阅。 此命令处理从浏览器检索推送订阅详细信息并将它们发送到您配置的数据流。 它在Web SDK版本2.29.0或更高版本中可用。
 
