@@ -4,10 +4,10 @@ title: HTTP API连接
 description: 使用Adobe Experience Platform中的HTTP API目标将配置文件数据发送到第三方HTTP端点，以运行您自己的Analytics或对从Experience Platform导出的配置文件数据执行您可能所需的任何其他操作。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 165a8085-c8e6-4c9f-8033-f203522bb288
-source-git-commit: 0fc433689ac351bff3fc6930f5e4781f9cde5ade
+source-git-commit: ac1955cd617c1231a44146c2962d6a294a082f49
 workflow-type: tm+mt
 source-wordcount: '2898'
-ht-degree: 7%
+ht-degree: 8%
 
 ---
 
@@ -15,9 +15,9 @@ ht-degree: 7%
 
 ## 概述 {#overview}
 
->[!IMPORTANT]
+>[!AVAILABILITY]
 >
-> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform.html)客户。
+> 此目标仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform.html)客户。
 
 HTTP API目标是一个Experience Platform流目标，可帮助您将配置文件数据发送到第三方HTTP端点。
 
@@ -198,7 +198,7 @@ curl --location --request POST 'https://some-api.com/token' \
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_endpoint"
 >title="HTTP 端点"
->abstract="要将轮廓数据发送到的 HTTP 端点的 URL。 这是您的数据接收端点，如果配置了，则支持mTLS。"
+>abstract="要将轮廓数据发送到的 HTTP 端点的 URL。 这是您的数据接收端点，如已配置则支持 mTLS。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_connect_http_includesegmentnames"
