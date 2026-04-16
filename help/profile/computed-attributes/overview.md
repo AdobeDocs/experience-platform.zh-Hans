@@ -20,7 +20,7 @@ ht-degree: 2%
 - 整合的配置文件行为数据以实现跨平台和应用程序使用的标准化
 - 通过将旧的用户档案事件数据整合到有意义的行为分析中，实现了更好的数据管理
 
-这些聚合是根据引入到Adobe Experience Platform中的用户创建的启用配置文件的体验事件数据集计算的。 这意味着无法使用通过SDK的服务令牌创建的系统生成数据集，例如Adobe Journey Optimizer系统数据集&#x200B;****。
+这些聚合是根据引入到Adobe Experience Platform中的用户创建的启用配置文件的体验事件数据集计算的。 这意味着无法使用通过SDK的服务令牌创建的系统生成数据集，例如Adobe Journey Optimizer系统数据集&#x200B;**&#x200B;**。
 
 每个计算属性都是在配置文件合并架构中创建的配置文件属性，并且被分组到合并架构中的“SystemComputedAttribute”字段组下。
 
