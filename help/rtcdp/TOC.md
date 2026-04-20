@@ -5,10 +5,10 @@ audience: user
 user-guide-title: Real-Time Customer Data Platform 指南
 user-guide-description: 合并多个企业来源的已知数据和匿名数据，以创建客户轮廓、从这些轮廓创建受众，以及将这些受众激活到第三方目标。
 role: Admin
-source-git-commit: 74a73b568c850f8e749afea039afd2821858bd69
+source-git-commit: 70dcebedd06c342e02ee2307042d4a5267b364d9
 workflow-type: tm+mt
-source-wordcount: '311'
-ht-degree: 62%
+source-wordcount: '320'
+ht-degree: 60%
 
 ---
 
@@ -47,12 +47,12 @@ ht-degree: 62%
    * [Real-Time CDP B2B 版本中的目标](destinations/b2b.md)
 * 护栏 {#guardrails}
    * [Real-Time CDP护栏概述](guardrails/overview.md)
-   * [用于数据引入的护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [&#x200B; [!DNL Edge Network API]的护栏](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}
+   * 用于数据引入的[护栏](https://experienceleague.adobe.com/docs/experience-platform/ingestion/guardrails.html){target="_blank"}
+   * [ [!DNL Edge Network API]的](https://developer.adobe.com/data-collection-apis/docs/getting-started/guardrails/){target="_blank"}护栏
    * [针对 [!DNL Real-Time Customer Profile] 数据和分段的护栏](https://experienceleague.adobe.com/docs/experience-platform/profile/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [数据 [!DNL Identity Service] 的护栏](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [&#x200B; [!DNL Query Service]的护栏](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html?lang=zh-Hans){target="_blank"}
-   * [通过目标激活数据的护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html?lang=zh-Hans){target="_blank"}
+   * [数据 [!DNL Identity Service] 的](https://experienceleague.adobe.com/docs/experience-platform/identity/guardrails.html){target="_blank"}护栏
+   * [ [!DNL Query Service]的](https://experienceleague.adobe.com/docs/experience-platform/query/guardrails.html){target="_blank"}护栏
+   * 通过目标激活数据的[护栏](https://experienceleague.adobe.com/docs/experience-platform/destinations/guardrails.html){target="_blank"}
 * 身份标识 {#identity}
    * [身份标识和身份标识命名空间](profile/identities-overview.md)
 * 合并策略 {#merge-policies}
@@ -66,7 +66,7 @@ ht-degree: 62%
 * Real-Time CDP B2B edition AI/ML服务 {#b2b-cdp-ai-ml}
    * [相关帐户](b2b-ai-ml-services/related-accounts.md)
    * [导致账户匹配](b2b-ai-ml-services/lead-to-account-matching.md)
-   * 预测性商机和客户评分 {#predictive-lead-and-account-scoring-intro}
+   * 预测性销售线索和帐户评分 {#predictive-lead-and-account-scoring-intro}
       * [预测性商机和客户评分概述](b2b-ai-ml-services/predictive-lead-and-account-scoring.md)
       * [管理预测性商机和客户评分](b2b-ai-ml-services/manage-predictive-lead-and-account-scoring.md)
 * 架构 {#schemas}
@@ -77,6 +77,7 @@ ht-degree: 62%
    * [Real-Time CDP B2B 版本中的源](sources/b2b.md)
 * 用例 {#use-cases}
    * [示例用例概述](/help/rtcdp/use-case-guides/overview.md)
+   * [利用客户体验用例推动业务目标](/help/rtcdp/use-case-guides/business-use-case-framework.md)
    * 客户获取 {#customer-acquisition}
       * [在不依赖第三方Cookie的情况下吸引和获取新客户](/help/rtcdp/partner-data/prospecting.md)
       * [使用合作伙伴辅助的访客识别功能，为未知访客提供个性化的现场体验](/help/rtcdp/partner-data/onsite-personalization.md)
