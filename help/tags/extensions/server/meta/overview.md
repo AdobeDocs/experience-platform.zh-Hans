@@ -2,9 +2,9 @@
 title: Meta转化API扩展概述
 description: 了解Adobe Experience Platform中用于事件转发的Meta Conversions API扩展。
 exl-id: 6b5836d6-6674-4978-9165-0adc1d7087b7
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: ee615de825e6c415c356b7933a661f0da2121f08
 workflow-type: tm+mt
-source-wordcount: '2437'
+source-wordcount: '2220'
 ht-degree: 0%
 
 ---
@@ -118,7 +118,7 @@ ht-degree: 0%
 
 >[!IMPORTANT]
 >
->* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用快速入门功能。 有关更多信息，请联系您的Adobe代表。
+>* 已购买Real-Time CDP Prime和Ultimate软件包的客户可以使用快速入门功能。 有关更多信息，请与您的 Adobe 代表联系。
 >* 此功能适用于全新实施，当前不支持在现有标记和事件转发属性上自动安装扩展和配置。
 
 >[!NOTE]
@@ -140,40 +140,9 @@ ht-degree: 0%
 
 >[!NOTE]
 >
->此功能旨在帮助您开始实施事件转发。 它不会提供可容纳所有用例的端到端、完全正常的实施。
+>引导式设置功能可帮助您轻松高效地完成设置。 此工具可自动执行在Adobe标记和事件转发中执行的多个步骤。 它不会提供可容纳所有用例的端到端、完全正常的实施。
 
-此设置会自动安装Meta Conversions API和Meta Pixel扩展。 Meta建议使用此混合实施来收集和转发事件转换。
-快速设置功能旨在帮助客户开始事件转发实施，而不是提供可适应所有用例的端到端、功能齐全的实施。
-
-要安装该功能，请在Adobe Experience Platform数据收集&#x200B;**[!UICONTROL Get Started]**&#x200B;页面上为&#x200B;**[!DNL Send Conversions Data to Meta]**&#x200B;选择&#x200B;**[!UICONTROL Home]**。
-
-![数据收集主页，显示转换到meta](../../../images/extensions/server/meta/conversion-data-to-meta.png)的数据
-
-输入您的&#x200B;**[!UICONTROL Domain]**，然后选择&#x200B;**[!UICONTROL Next]**。 此域将用作自动生成的标记和事件转发属性、规则、数据元素、数据流等的命名约定。
-
-![请求域名的欢迎屏幕](../../../images/extensions/server/meta/welcome.png)
-
-在&#x200B;**[!UICONTROL Initial Setup]**&#x200B;对话框中，输入您的&#x200B;**[!UICONTROL Meta Pixel ID]**、**[!UICONTROL Meta Conversion API Access Token]**&#x200B;和&#x200B;**[!UICONTROL Data Layer Path]**，然后选择&#x200B;**[!UICONTROL Next]**。
-
-![初始设置对话框](../../../images/extensions/server/meta/initial-setup.png)
-
-请等待几分钟以完成初始设置过程，然后选择&#x200B;**[!UICONTROL Next]**。
-
-![初始设置完成确认屏幕](../../../images/extensions/server/meta/setup-complete.png)
-
-从&#x200B;**[!UICONTROL Add Code on Your Site]**&#x200B;对话框中，复制使用复制![复制](/help/images/icons/copy.png)函数提供的代码，并将其粘贴到源网站的`<head>`中。 实施后，选择&#x200B;**[!UICONTROL Start Validation]**
-
-![在您的网站对话框中添加代码](../../../images/extensions/server/meta/add-code-on-your-site.png)
-
-[!UICONTROL Validation Results]对话框显示Meta扩展实施结果。 选择 **[!UICONTROL Next]**。您还可以通过选择&#x200B;**[!UICONTROL Assurance]**&#x200B;链接来查看其他验证结果。
-
-![显示实施结果的测试结果对话框](../../../images/extensions/server/meta/test-results.png)
-
-**[!UICONTROL Next Steps]**&#x200B;屏幕显示确认安装完成。 在此处，您可以选择通过添加新事件来优化实施，下一部分将显示这些事件。
-
-如果不想添加其他事件，请选择&#x200B;**[!UICONTROL Close]**。
-
-![后续步骤对话框](../../../images/extensions/server/meta/next-steps.png)
+要开始引导式设置，请按照[事件转发引导式设置](../../../ui/event-forwarding/guided-setup.md)中的说明操作。
 
 #### 添加其他事件
 
