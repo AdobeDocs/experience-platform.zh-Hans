@@ -5,9 +5,9 @@ title: 通过临时激活API将受众激活到批处理目标
 description: 本文说明了用于通过临时激活API激活受众的端到端工作流，包括在激活之前执行的分段作业。
 type: Tutorial
 exl-id: 1a09f5ff-0b04-413d-a9f6-57911a92b4e4
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 944cb03ae8a432b09b54b148e94b2ee1e1bcbc5d
 workflow-type: tm+mt
-source-wordcount: '1670'
+source-wordcount: '1695'
 ht-degree: 0%
 
 ---
@@ -83,6 +83,10 @@ Experience Platform中的资源可以隔离到特定的虚拟沙箱。 在对Exp
 所有包含有效负载(POST、PUT、PATCH)的请求都需要一个额外的媒体类型标头：
 
 * 内容类型： `application/json`
+
+### API参考文档 {#api-reference-documentation}
+
+您可以在本教程中找到所有API操作的随附参考文档。 请参阅[Ad Hoc Activation API引用](https://developer.adobe.com/experience-platform-apis/references/ad-hoc-activation)。
 
 ## 步骤3：在Experience Platform UI中创建激活流程 {#activation-flow}
 
