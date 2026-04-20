@@ -2,20 +2,15 @@
 title: Marketo Engage人员同步
 description: 使用Marketo Engage人员同步连接器将人员受众的更新流式传输到Marketo Engage中的相应记录。
 last-substantial-update: 2025-01-14T00:00:00Z
-badgeBeta: label="Beta 版" type="Informative"
 exl-id: 2c909633-b169-4ec8-9f58-276395cb8df2
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: bfff4cd5ffc57abda2f9672d5db487e9ebebee9d
 workflow-type: tm+mt
-source-wordcount: '1196'
-ht-degree: 6%
+source-wordcount: '1176'
+ht-degree: 5%
 
 ---
 
 # Marketo Engage人员同步连接 {#marketo-engage-person-sync}
-
->[!IMPORTANT]
->
->此目标连接器处于测试阶段，仅提供给特定客户。要请求访问权限，请与 Adobe 代表联系。
 
 >[!IMPORTANT]
 >
@@ -91,7 +86,7 @@ ht-degree: 6%
 
 >[!IMPORTANT]
 >
->设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
+>设置目标的用户必须在Marketo实例和分区中具有[编辑人员](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/users-and-roles/descriptions-of-role-permissions#access-database)权限。
 
 ![连接到目标](../../assets/catalog/adobe/marketo-engage-person-sync/connect-to-destination.png)
 
@@ -102,7 +97,7 @@ ht-degree: 6%
 * **[!UICONTROL First searchable field]**：要删除重复项的字段。 字段必须出现在输入的每个潜在客户记录中。 默认为电子邮件
 * **[!UICONTROL First searchable field]**：要消除重复项的辅助字段。 字段必须出现在输入的每个潜在客户记录中。 可选
 
-选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/zh-hans/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
+选择实例后，您还需要选择要与配置集成的Lead分区。 [潜在客户分区](https://experienceleague.adobe.com/en/docs/marketo/using/product-docs/administration/workspaces-and-person-partitions/understanding-workspaces-and-person-partitions)是Marketo Engage中的一个概念，用于按业务部门（如品牌或销售区域）划分潜在客户记录。 如果您的Marketo订阅没有工作区和分区功能，或者您的订阅中未创建其他分区，则只有默认分区可用。 单个配置只能更新其配置分区中存在的潜在客户记录。
 
 >[!IMPORTANT]
 >
