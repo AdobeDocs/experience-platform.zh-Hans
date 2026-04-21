@@ -7,7 +7,7 @@ exl-id: 8eb7bb3c-f2dc-4dbc-9cf5-3d5d3224f5f1
 source-git-commit: 6aacade76b31268b8f6a9db2b8c191d8c7702a1b
 workflow-type: tm+mt
 source-wordcount: '3577'
-ht-degree: 9%
+ht-degree: 11%
 
 ---
 
@@ -70,7 +70,7 @@ ht-degree: 9%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesfailed_streaming"
 >title="失败的身份标识"
->abstract="为所选目标失败的单个配置文件身份计数。 有关详细信息，请查看错误诊断。"
+>abstract="针对所选目标失败的单个轮廓身份标识的计数。检查错误诊断，以获取详细信息。"
 
 对于流目标，[!UICONTROL Dataflow runs]选项卡会每小时更新数据流运行中的量度数据。 标记的最突出的统计数据是身份信息。
 
@@ -142,12 +142,12 @@ ht-degree: 9%
 >id="platform_monitoring_dataflow_run_details_activation"
 >title="数据流运行详细信息"
 >abstract="目标数据流运行详细信息包含有关受众激活状态的信息，以及从实时客户轮廓中获取的量度，以生成唯一身份标识。若要了解更多信息，请查看量度定义指南。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html?lang=zh-Hans#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/dataflows/ui/monitor-destinations.html#dataflow-runs-for-streaming-destinations" text="流式处理目标的数据流运行"
 
 >[!CONTEXTUALHELP]
 >id="platform_monitoring_profiles_received_batch"
 >title="收到的轮廓"
->abstract="数据流运行中接收的配置文件总数。 对于计划的导出，这包括最新受众快照中的配置文件，以及在快照创建时间和导出时间之间受众成员资格或身份发生更改的任何配置文件。 因此，此计数可能会高于受众中的用户档案数。"
+>abstract="数据流运行中接收的轮廓总数。对于计划导出，这包括来自最新受众快照的轮廓，以及在快照创建时间和导出时间之间受众成员资格或身份发生变化的任何轮廓。因此，此计数可能会高于受众中的轮廓数量。"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_dataflow_identitiesactivated_batch"
@@ -208,7 +208,7 @@ ht-degree: 9%
 >
 >现在，您可以在监视仪表板中查看有关数据流及其关联的数据流运行的信息。 有关详细信息，请阅读以下部分。
 
-## 监视目标仪表板 {#monitoring-destinations-dashboard}
+## 监控目标仪表板 {#monitoring-destinations-dashboard}
 
 >[!NOTE]
 >
