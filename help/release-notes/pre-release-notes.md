@@ -2,7 +2,7 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 5d1825bad97d3ec4beece416dc3e0fc9f6ca636d
+source-git-commit: d052230ec5ddc4a28495f4928ab32957bf9038ac
 workflow-type: tm+mt
 source-wordcount: '1136'
 ht-degree: 20%
