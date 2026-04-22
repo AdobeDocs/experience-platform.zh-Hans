@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 2be649980ecff5931ae61060ff43f6c98abe16d2
+source-git-commit: 52e41add31114a858e4f726101ab38a73dce6923
 workflow-type: tm+mt
-source-wordcount: '1348'
+source-wordcount: '1347'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * UI 指南  {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -69,9 +69,9 @@ ht-degree: 5%
       * [Experience Cloud 受众](/help/destinations/catalog/adobe/experience-cloud-audiences.md)
       * [Marketo Engage连接](./catalog/adobe/marketo-engage-connection.md)
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
-      * [(Beta) Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
+      * [Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [Acxiom受众连接](./catalog/advertising/acxiom-audience-connection.md)
