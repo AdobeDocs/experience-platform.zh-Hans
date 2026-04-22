@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: d052230ec5ddc4a28495f4928ab32957bf9038ac
+source-git-commit: 8f898e618fbc2b414a3c899511ac410465f280d8
 workflow-type: tm+mt
-source-wordcount: '1136'
-ht-degree: 20%
+source-wordcount: '1344'
+ht-degree: 17%
 
 ---
 
@@ -45,10 +45,13 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 | 目标 | 描述 |
 | --- | --- |
-| [!BADGE Beta]{type=Informative} [Microsoft广告客户匹配](../destinations/catalog/advertising/microsoft-ads-customer-match.md) | 按电子邮件地址匹配客户并在[!DNL Microsoft Advertising Network]中重新与客户互动，包括搜索和受众广告。 将您的[!DNL Microsoft Advertising]帐户关联到Real-Time CDP，以直接从Experience Platform自动创建和管理客户匹配列表。 |
+| [!BADGE Beta]{type=Informative} [Microsoft广告客户匹配](../destinations/catalog/advertising/microsoft-ads-customer-match.md) | 按电子邮件地址匹配客户并在[!DNL Microsoft Advertising Network]中重新与客户互动，包括搜索和受众广告。 将您的[!DNL Microsoft Advertising]帐户关联到Real-Time CDP，以直接从Experience Platform自动创建和管理客户匹配列表。 要获取访问权限，请联系您的Adobe客户经理。 |
 | [!BADGE Beta]{type=Informative} [Reddit自定义受众](../destinations/catalog/advertising/reddit-custom-audience.md) | 将受众从Experience Platform发送到[!DNL Reddit Ads]。 连接您的[!DNL Reddit]帐户、映射身份并激活受众以联系在[!DNL Reddit]上积极探索其兴趣的人员。 |
 | [Amazon Ads v2](../destinations/catalog/advertising/amazon-ads-v2.md) | [!DNL Amazon Ads v2]是所有新[!DNL Amazon Ads]连接的当前目标。 如果您现有[（旧版） [!DNL Amazon Ads]](../destinations/catalog/advertising/amazon-ads.md)连接，则它将继续运行，而不需要任何更改。 [!DNL Amazon Ads v2]连接到[!DNL Ads Data Manager]，后者支持扩展身份类型、与地址相关的字段以及跨[!DNL Amazon Ads]产品的数据共享，与[（旧版） [!DNL Amazon Ads]](../destinations/catalog/advertising/amazon-ads.md)相比，提高了定位和受众匹配率。 |
 | [!DNL Rokt] | 使用[!DNL Rokt]将Experience Platform受众关联到AI驱动的实时决策，通过更精确的定位、抑制和个性化来提高营销活动性能。 |
+| [Criteo](../destinations/catalog/advertising/criteo.md)的外部受众支持 | 将受众从分段服务以外的源激活到[!DNL Criteo]，包括自定义上传受众（从CSV导入）、相似受众、联合受众和在其他Experience Platform应用程序（如[!DNL Adobe Journey Optimizer]）中创建的受众。 有关详细信息，请参阅[支持的受众](../destinations/catalog/advertising/criteo.md#supported-audiences)部分。 |
+| [Acxiom受众连接](../destinations/catalog/advertising/acxiom-audience-connection.md) | [!DNL Acxiom Audience Connection]目标现已正式可用。 使用它通过[!DNL Acxiom's Real ID]技术增强受众并将它们激活到其他平台，包括[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]、[!DNL Cox]、[!DNL LG Ads]、[!DNL Spectrum]和[!DNL Viant]。 |
+| [Acxiom Real ID受众连接](../destinations/catalog/advertising/acxiom-real-id-audience-connection.md) | [!DNL Acxiom Real ID Audience Connection]目标现已正式可用。 使用它激活受众，将[!DNL Acxiom's Real ID]用作同一组受支持平台中的匹配键，包括[!DNL Altice]、[!DNL Ampersand]、[!DNL Comcast]、[!DNL Cox]、[!DNL LG Ads]、[!DNL Spectrum]和[!DNL Viant]。 |
 
 {style="table-layout:auto"}
 
@@ -57,6 +60,10 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 | 修复 | 描述 |
 | --- | --- |
 | 自定义Personalization监控支持 | 目标的监视仪表板现在支持[!DNL Custom Personalization]目标。 已移除从监视中排除[!DNL Custom Personalization]的限制说明。 |
+| 激活审核中的配置文件计数 | 激活审核步骤现在显示已激活受众的个人资料计数。 还显示流式目标（而不仅仅是批处理目标）的配置文件计数。 |
+| [!DNL Pinterest]令牌到期可见性 | [!DNL Pinterest]目标现在显示直接从[!DNL Pinterest]返回的令牌过期时间，以便您查看何时需要重新身份验证。 |
+| 现在已为无效计划禁用导出文件 | 当受众计划无效或过期时，**[!UICONTROL Export file now]**&#x200B;操作现在被禁用。 工具提示将说明操作不可用的原因。 |
+| 修复了激活工作流中的列可见性 | 修复了一个问题，该问题导致更改一个表中的可见列错误地影响激活工作流中的其他表。 |
 
 {style="table-layout:auto"}
 
