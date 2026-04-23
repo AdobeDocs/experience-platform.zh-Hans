@@ -1,23 +1,24 @@
 ---
-title: Adobe Advertising Cloud ExperienceEvent完整扩展架构字段组
-description: 了解Adobe Advertising Cloud ExperienceEvent完整扩展架构字段组。
+title: Adobe Advertising ExperienceEvent完整扩展架构字段组
+description: 了解Adobe Advertising ExperienceEvent完整扩展架构字段组。
 badgeBeta: label="Beta 版" type="Informative"
-source-git-commit: adfd0220b8bc53c44abc76a711b148a7e03edb7a
+exl-id: 4a9f6bff-6098-424a-b8f4-0f14ec52d906
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1581'
-ht-degree: 7%
+source-wordcount: '1558'
+ht-degree: 8%
 
 ---
 
-# [!UICONTROL Adobe Advertising Cloud ExperienceEvent完整扩展]架构字段组
+# [!UICONTROL Adobe Advertising ExperienceEvent Full Extension]架构字段组
 
 >[!AVAILABILITY]
 >
->[!UICONTROL Adobe Advertising Cloud ExperienceEvent Full Extension]字段组当前为测试版。 文档和功能可能会发生变化。
+>[!UICONTROL Adobe Advertising ExperienceEvent Full Extension]字段组当前为测试版。 文档和功能可能会发生变化。
 
-[!UICONTROL Adobe Advertising Cloud ExperienceEvent Full Extension]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于捕获Adobe Advertising收集的常用量度（以前称为“[!DNL Advertising Cloud]”）。
+[!UICONTROL Adobe Advertising ExperienceEvent Full Extension]是[[!DNL XDM ExperienceEvent] 类](../../classes/experienceevent.md)的标准架构字段组，用于捕获Adobe Advertising（以前称为“[!DNL Advertising Cloud]”）收集的通用指标。
 
-本文档介绍了[!DNL Advertising Cloud]扩展字段组的结构和用例。
+本文档介绍了[!DNL Advertising]扩展字段组的结构和用例。
 
 >[!NOTE]
 >
@@ -27,7 +28,7 @@ ht-degree: 7%
 
 字段组为架构提供单个`_experience`对象，它本身包含单个`adcloud`对象。
 
-![字段组[!DNL Advertising Cloud]的顶级字段](../../images/field-groups/advertising-full-extension/full-schema.png "字段组 [!DNL Advertising Cloud] 的顶级字段")
+![字段组[!DNL Advertising]的顶级字段](../../images/field-groups/advertising-full-extension/full-schema.png "字段组 [!DNL Advertising] 的顶级字段")
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
@@ -86,7 +87,7 @@ adDeliveryDetails对象提供有关投放广告的位置和方式的信息，包
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
 | `accountId` | 字符串 | 帐户的标识符。 |
-| `dspId` | 字符串 | 定义营销活动的Demand Side Platform (DSP)的标识符。 通常，此标识符是Adobe Advertising Cloud DSP的ID。 |
+| `dspId` | 字符串 | 定义营销活动的Demand Side Platform (DSP)的标识符。 通常，此标识符是Adobe Advertising DSP的ID。 |
 | `campaignId` | 字符串 | 营销活动的标识符。 |
 | `placementId` | 字符串 | 投放位置的标识符。 |
 | `packageId` | 字符串 | Advertising DSP包的标识符。 |
@@ -103,8 +104,8 @@ conversionDetails对象可捕获广告转化的跟踪信息，包括跟踪代码
 
 | 属性 | 数据类型 | 描述 |
 | --- | --- | --- |
-| `trackingCode` | 字符串 | 事件的转化跟踪代码。 有关可能格式的列表，请参阅[AMO ID格式](https://experienceleague.adobe.com/zh-hans/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats)。 |
-| `trackingIdentities` | 字符串 | 事件的EF ID或跟踪身份详细信息。 有关可能格式的列表，请参阅[EF ID格式](https://experienceleague.adobe.com/zh-hans/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats)。 |
+| `trackingCode` | 字符串 | 事件的转化跟踪代码。 有关可能格式的列表，请参阅[AMO ID格式](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#amo-id-formats)。 |
+| `trackingIdentities` | 字符串 | 事件的EF ID或跟踪身份详细信息。 有关可能格式的列表，请参阅[EF ID格式](https://experienceleague.adobe.com/en/docs/advertising/integrations/customer-journey-analytics/ids#ef-id-formats)。 |
 | `conversionProperties` | 对象 | 转化属性的映射，表示为键值对字符串的数组（如`subscriptions=253`）。 |
 
 ## `fees` {#fees}
@@ -142,10 +143,10 @@ conversionDetails对象可捕获广告转化的跟踪信息，包括跟踪代码
 | --- | --- | --- |
 | `sessionId` | 字符串 | 与体验事件关联的会话ID，用于链接同一会话中发生的独立事件。 |
 | `feedID` | 字符串 | 发布者、广告交换和其他功能的复合ID。 |
-| `sspPartnerCode` | 字符串 | Adobe Advertising Cloud接收库存机会的合作伙伴（交换）。 |
+| `sspPartnerCode` | 字符串 | Adobe Advertising接收库存机会的合作伙伴（交换）。 |
 | `siteID` | 字符串 | 提供广告展示的网站的标识符。 |
 | `costCurrency` | 字符串 | 用于为广告机会向合作伙伴付款的ISO 4217货币代码。 该值必须遵循正则表达式模式^[A-Z]{3}$（三个大写字母）。 例如：USD、EUR。 |
-| `inventorySourceId` | 字符串 | 投放此机会的Adobe Advertising Cloud库存来源的ID。 |
+| `inventorySourceId` | 字符串 | 投放此机会的Adobe Advertising库存来源的ID。 |
 | `segment` | 对象 | 与用户分段规则相关的详细信息。 其属性包括：<ul><li>`attributablePartnerId` （字符串）：拥有attributeSegmentId的区段提供程序的标识符。</li><li>`attributableSegmentId` （字符串）：投放位置定位规则中用于用户定位的点数区段。 用于跟踪成本和支付合作伙伴。</li><li>`segments`（字符串）：用户所属的用户区段a\)与广告所定位的用户区段b\)的交集。 这不是拍卖时用户所属的区段的完整列表。</li></ul> |
 | `optimizationTag` | 字符串 | 与优化相关的标记。 |
 | `attributableDeviceGraphId` | 字符串 | 归因于转化事件的设备图的标识符。 |
@@ -167,6 +168,6 @@ conversionDetails对象可捕获广告转化的跟踪信息，包括跟踪代码
 
 ## 后续步骤
 
-本文档介绍了[!DNL Advertising Cloud]扩展字段组的结构和用例。 有关字段组本身的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/adcloud/experienceevent-all.schema.json)。
+本文档介绍了[!DNL Adobe Advertising]扩展字段组的结构和用例。 有关字段组本身的更多详细信息，请参阅[公共XDM存储库](https://github.com/adobe/xdm/blob/master/extensions/adobe/experience/adcloud/experienceevent-all.schema.json)。
 
 如果您使用此字段组通过Adobe Experience Platform Web SDK收集[!DNL Advertising]数据，请参阅[配置数据流](../../../datastreams/overview.md)指南，了解如何将数据映射到服务器端的XDM。

@@ -1,15 +1,15 @@
 ---
-title: 旧版Adobe Advertising Cloud DSP连接
-description: Adobe Advertising Cloud DSP是Adobe Real-Time Customer Data Platform的集成目标，允许您与批准广告商和用户共享经过身份验证的第一方受众，以便激活促销活动。
+title: 旧版Adobe Advertising DSP连接
+description: Adobe Advertising DSP是Adobe Real-Time Customer Data Platform的一个集成目标，允许您与批准广告商和用户共享经过身份验证的第一方受众，以便激活campaign。
 exl-id: 11ff7797-a9c6-4334-b843-ae9df9a48e54
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1033'
+source-wordcount: '1027'
 ht-degree: 2%
 
 ---
 
-# 旧版[!DNL Adobe Advertising Cloud] DSP连接
+# 旧版[!DNL Adobe Advertising] DSP连接
 
 >[!NOTE]
 >
@@ -17,15 +17,15 @@ ht-degree: 2%
 
 ## 概述 {#overview}
 
-[!DNL Adobe Advertising Cloud] [!DNL Demand-Side Platform] (DSP)目标与已批准的广告商和用户共享经过身份验证的第一方受众，以便通过DSP激活营销活动。 要了解有关[!DNL Real-Time CDP]与DSP集成的更多信息，请参阅[关于从受众源激活经过身份验证的受众](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html?lang=zh-Hans)。
+[!DNL Adobe Advertising] [!DNL Demand-Side Platform] (DSP)目标与已批准的广告商和用户共享经过身份验证的第一方受众，以便通过DSP激活营销活动。 要了解有关[!DNL Real-Time CDP]与DSP集成的更多信息，请参阅[关于从受众源激活经过身份验证的受众](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-about.html)。
 
 >[!IMPORTANT]
 >
->此页面由DSP团队创建。 如有任何查询或更新请求，请直接通过`adcloud_support@adobe.com`联系Advertising Cloud支持。
+>此页面由DSP团队创建。 如有任何查询或更新请求，请直接通过`adcloud_support@adobe.com`联系Advertising支持部门。
 
 ## 用例 {#use-cases}
 
-为了帮助您更好地了解您应该如何以及何时使用Advertising Cloud DSP目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
+为了帮助您更好地了解您应如何以及何时使用Advertising DSP目标，以下是[!DNL Adobe Experience Platform]客户可以通过使用此目标解决的示例用例。
 
 ### 品牌广告用例 {#brand-advertising}
 
@@ -39,13 +39,13 @@ ht-degree: 2%
 
 * DSP帐户级别和营销活动级别设置启用与[!DNL LiveRamp RampID]的受众共享，这会将客户数据转换为[!DNL RampIDs]以创建可定位的区段。 您的DSP客户团队将执行此配置。 [!DNL RampID]可通过DSP与[!DNL LiveRamp]之间的合作伙伴关系使用，您无需拥有自己的[!DNL LiveRamp]会员资格即可使用它。
 * Experience Platform帐户的Experience Cloud组织ID。 您可以在[!DNL Real-Time CDP]用户配置文件页面上找到您的ID。
-* DSP[[!DNL Real-Time CDP] 中用于接收营销活动激活受众的](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)源。 您的DSP客户团队将使用您的Experience Cloud组织ID创建源。
-* DSP帐户或广告商的源密钥，在DSP[[!DNL Real-Time CDP] 中创建](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)源时生成。 您的DSP客户团队将会与您共享此密钥。 您将在Experience Platform中使用它来创建到Advertising Cloud DSP目标的目标连接，如下面的[所述](#authenticate)。
+* DSP[[!DNL Real-Time CDP] 中用于接收营销活动激活受众的](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)源。 您的DSP客户团队将使用您的Experience Cloud组织ID创建源。
+* DSP帐户或广告商的源密钥，在DSP[[!DNL Real-Time CDP] 中创建](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)源时生成。 您的DSP客户团队将会与您共享此密钥。 您将在Experience Platform中使用它来创建到Advertising DSP目标的目标连接，如下面[所述](#authenticate)。
 * 包含电子邮件或经过哈希处理的电子邮件的客户数据。
 
 ## 支持的身份 {#supported-identities}
 
-[!DNL Adobe Advertising Cloud] DSP目标支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
+[!DNL Adobe Advertising] DSP目标支持激活下表中描述的标识。 了解有关[标识](/help/identity-service/features/namespaces.md)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 |---|---|---|
@@ -59,7 +59,7 @@ ht-degree: 2%
 
 | 项目 | 类型 | 注释 |
 |---------|----------|---------|
-| 导出类型 | **[!UICONTROL Audience export]** | 您正在导出具有Advertising Cloud DSP目标中使用的标识符（电子邮件或哈希电子邮件）的受众的所有成员。 |
+| 导出类型 | **[!UICONTROL Audience export]** | 您正在使用Advertising DSP目标中使用的标识符（电子邮件或哈希电子邮件）导出受众的所有成员。 |
 | 导出频率 | **[!UICONTROL Streaming]** | 流目标为基于API的“始终运行”连接。 当基于受众评估在Experience Platform中更新用户档案时，连接器会将更新发送到下游目标平台。 阅读有关[流式目标](/help/destinations/destination-types.md#streaming-destinations)的更多信息。 |
 
 {style="table-layout:auto"}
@@ -76,7 +76,7 @@ ht-degree: 2%
 
 要连接到目标，请在[!UICONTROL Connection type]部分提供以下参数，然后选择&#x200B;**[!UICONTROL Connect to destination]**：
 
-* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[[!DNL Real-Time CDP] 源时生成此](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html?lang=zh-Hans)。 您的DSP客户团队将在创建源后与您共享此密钥。
+* **[!UICONTROL Account or Advertiser Key]**：在DSP用户界面[!UICONTROL Source Key]中创建[[!DNL Real-Time CDP] 源时生成此](https://experienceleague.adobe.com/docs/advertising-cloud/dsp/audiences/sources/source-create.html)。 您的DSP客户团队将在创建源后与您共享此密钥。
 
 ![连接类型字段](/help/destinations/assets/catalog/advertising/adobe-advertising-cloud-connection/authenticate-destination.png)
 
@@ -106,7 +106,7 @@ ht-degree: 2%
 
 ## 验证数据导出 {#exported-data}
 
-要验证数据受众是否已与Advertising Cloud共享，请检查以下各项：
+要验证是否与Adobe Advertising共享了数据受众，请检查以下各项：
 
 * [!DNL Real-Time CDP]目标中的数据流成功。
 

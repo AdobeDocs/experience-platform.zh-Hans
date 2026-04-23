@@ -2,7 +2,7 @@
 title: Real-time Customer Profile概述
 description: Real-time Customer Profile可合并来自各种来源的数据，并以单个客户配置文件和相关时间序列事件的形式提供对这些数据的访问。 此功能使营销人员能够跨多个渠道与其受众推动协调、一致且相关的体验。
 exl-id: c93d8d78-b215-4559-a806-f019c602c4d2
-source-git-commit: 82e41af32468febeda2dce6b471d72ef74359ea9
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
 source-wordcount: '1826'
 ht-degree: 1%
@@ -113,7 +113,7 @@ Adobe Experience Platform [!DNL Segmentation Service]会生成为您的个别客
 
 >[!NOTE]
 >
->通过Adobe解决方案（包括[!DNL Analytics Cloud]、[!DNL Marketing Cloud]和[!DNL Advertising Cloud]）收集的数据流入[!DNL Experience Platform]并已摄取到[!DNL Profile]。
+>通过Adobe解决方案（包括[!DNL Analytics Cloud]、[!DNL Marketing Cloud]和[!DNL Adobe Advertising]）收集的数据流入[!DNL Experience Platform]并已摄取到[!DNL Profile]。
 
 ### 配置文件摄取量度
 

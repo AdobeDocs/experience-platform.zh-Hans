@@ -1,11 +1,11 @@
 ---
-keywords: 目标；experience cloud解决方案；target；target目标；ad cloud；advertising cloud；audience manager；adobe target目标；target；audience manager目标；
+keywords: 目标；experience cloud解决方案；target；target目标；ad cloud；广告；audience manager；adobe target目标；target；audience manager目标；
 title: Adobe目标概述
 description: 通过将Experience Platform中的数据连接到其他Adobe Experience Cloud解决方案来管理您的客户体验，以实现广告定位、个性化、营销自动化等
 exl-id: 15a22a93-b4d6-4b94-bc6c-3634920c7689
-source-git-commit: 2bbd36db21363b20575db6a5fc5ecce8b9a31224
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '224'
+source-wordcount: '221'
 ht-degree: 7%
 
 ---
@@ -34,7 +34,7 @@ ht-degree: 7%
 
 ### 扩展 {#extensions}
 
-* [Adobe Advertising Cloud扩展](../advertising/adobe-advertising-cloud.md)
+* [Adobe Advertising扩展](../advertising/adobe-advertising-cloud.md)
 * [Adobe Analytics 扩展](../analytics/adobe-analytics.md)
 * [Adobe Media Analytics for Audio and Video扩展](../analytics/adobe-video-analytics.md)
 * [Adobe Target 扩展](../personalization/adobe-target.md)
@@ -49,4 +49,4 @@ ht-degree: 7%
 
 使用Experience Platform受众共享功能可将您的Experience Platform受众共享到其他Adobe目标。 有关更多信息（在Audience Manager文档门户中打开），请参阅以下页面：
 
-* 通过核心服务集成，与Adobe Audience Manager、Adobe Advertising Cloud和Adobe Target共享[Experience Platform受众](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+* 通过核心服务集成，与Adobe Audience Manager、Adobe Advertising和Adobe Target共享[Experience Platform受众](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)

@@ -6,10 +6,10 @@ user-guide-description: 了解如何部署和管理分析、营销和广告标�
 feature: Tags
 solution: Data Collection
 role: Developer
-source-git-commit: cc4abd44dc7fc5facd3011fbc533a08a55ebe33f
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '828'
-ht-degree: 37%
+source-wordcount: '827'
+ht-degree: 36%
 
 ---
 
@@ -72,7 +72,7 @@ ht-degree: 37%
       * [Activity Map自定义程序](https://exchange.adobe.com/apps/ec/101531)
       * [操作页面刷新](https://exchange.adobe.com/apps/ec/102848)
       * [Adform网站跟踪](https://exchange.adobe.com/apps/ec/103195)
-      * [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)
+      * [Adobe Advertising](https://exchange.adobe.com/apps/ec/100155)
       * Adobe Analytics {#analytics}
          * [概述](./extensions/client/analytics/overview.md)
          * [共享模块](./extensions/client/analytics/shared-modules.md)
@@ -157,7 +157,7 @@ ht-degree: 37%
          * [概述](./extensions/client/target-v2/overview.md)
          * [发行说明](./extensions/client/target-v2/release-notes.md)
       * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)
-      * [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)
+      * [Adobe Advertising](https://exchange.adobe.com/apps/ec/100640)
       * [AEM资产分析](https://exchange.adobe.com/apps/ec/103406)
       * [Airbrake JS通告程序](https://exchange.adobe.com/apps/ec/103342)
       * [!DNL Algolia]分析 {#algolia-insights}
@@ -231,7 +231,7 @@ ht-degree: 37%
       * [!DNL Snap Pixel] {#snap-pixel}
          * [概述](./extensions/client/snap-pixel/overview.md)
       * [存储扳手](https://exchange.adobe.com/apps/ec/102990)
-      * [按循环水平线的标记](https://exchange.adobe.com/apps/ec/106092)
+      * 按循环水平线的[标记](https://exchange.adobe.com/apps/ec/106092)
       * [Tealium收集](https://exchange.adobe.com/apps/ec/104217)
       * [Tealium数据扩充](https://exchange.adobe.com/apps/ec/104217)
       * [TMMData基础平台](https://exchange.adobe.com/apps/ec/100148)
@@ -260,7 +260,7 @@ ht-degree: 37%
          * [概述](./extensions/server/aws/overview.md)
       * [!DNL Braze] {#braze}
          * [概述](./extensions/server/braze/overview.md)
-      * [适用于Google Analytics的Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
+      * 适用于Google Analytics的[Cloud Connector](https://exchange.adobe.com/apps/ec/106542)
       * 核心 {#core}
          * [概述](./extensions/server/core/overview.md)
       * [Epsilon事件API](https://exchange.adobe.com/apps/ec/109127)

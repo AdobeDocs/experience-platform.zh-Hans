@@ -3,10 +3,10 @@ title: Auditor选项卡
 description: 了解如何使用Adobe Experience Platform Debugger中的Auditor选项卡来测试Adobe Experience Cloud实施。
 keywords: debugger;experience platform debugger 扩展程序;chrome;扩展程序;审计员;dtm;target
 exl-id: 409094f8-a7d9-45f7-ba12-b5e6250abc0f
-source-git-commit: df1a67e4b6f3d2eaeaba2b8d3c9b1588ee0b1461
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '368'
-ht-degree: 35%
+source-wordcount: '361'
+ht-degree: 36%
 
 ---
 
@@ -17,7 +17,7 @@ ht-degree: 35%
 要使用此功能，请执行以下操作：
 
 1. 在左侧导航中选择&#x200B;**[!UICONTROL Auditor]**。
-1. 选择&#x200B;**[!UICONTROL 运行Auditor测试]**。 测试完成后，其结果显示在下方。
+1. 选择 **[!UICONTROL Run Auditor Tests]**。测试完成后，其结果显示在下方。
 
 ![Auditor选项卡上测试结果的屏幕截图](../images/auditor-results.png)
 
@@ -46,12 +46,12 @@ ht-degree: 35%
 
 Auditor功能可以对以下Adobe技术进行评级：
 
-* Adobe Advertising Cloud DSP
-* Adobe Advertising Cloud Search
+* Adobe Advertising DSP
+* Adobe Advertising搜索
 * Adobe Analytics
-* Adobe Experience Cloud Identity Service
+* Adobe Experience Cloud 身份标识服务
 * Adobe Target
-* 标记(以前称为Adobe Experience Platform Launch)
+* 标记（以前称为Adobe Experience Platform Launch）
 
 ## 测试评分标准
 

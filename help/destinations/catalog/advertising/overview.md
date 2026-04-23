@@ -3,9 +3,9 @@ keywords: 广告目标；目标；平台目标
 title: Advertising目标概述
 description: 将Adobe Experience Platform连接到第三方广告平台（例如DSP、广告网络、SSP），并在这些平台上共享假名受众。
 exl-id: 072743a4-fc62-4a61-92ec-8f9640a47ab2
-source-git-commit: 2084f45ca89e78f980a8d2a53a08966e0588fcdd
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '291'
+source-wordcount: '289'
 ht-degree: 1%
 
 ---
@@ -29,7 +29,7 @@ ht-degree: 1%
 * [(Beta) Acxiom Audience Distribution](acxiom-audience-connection.md)
 * [(Beta) Acxiom Real ID受众连接](acxiom-real-id-audience-connection.md)
 * [Adobe Advertising DSP连接](adobe-advertising-dsp-connection.md)
-* [旧版Adobe Advertising Cloud DSP连接](adobe-advertising-cloud-dsp-connection-legacy.md)
+* [旧版Adobe Advertising DSP连接](adobe-advertising-cloud-dsp-connection-legacy.md)
 * [Amazon Ads连接](amazon-ads.md)
 * [Amazon Ads v2连接](amazon-ads-v2.md)
 * [庞博拉连接](bombora.md)
@@ -53,7 +53,7 @@ ht-degree: 1%
 
 ### 扩展 {#extensions}
 
-* [Adobe Advertising Cloud扩展](adobe-advertising-cloud.md)
+* [Adobe Advertising扩展](adobe-advertising-cloud.md)
 * [Awin Advertising转化标记扩展](awin-conversiontag.md)
 * [Awin Advertising Mastertag扩展](awin-mastertag.md)
 * [Bing Ads通用事件跟踪扩展](bing-ads.md)

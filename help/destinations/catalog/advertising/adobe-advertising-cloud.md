@@ -1,26 +1,26 @@
 ---
-keywords: Advertising Cloud；Advertising Cloud扩展；Advertising Cloud目标
-title: Adobe Advertising Cloud扩展
-description: Adobe Advertising Cloud扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
+keywords: 广告扩展；广告目标
+title: Adobe Advertising扩展
+description: Adobe Advertising扩展是Adobe Experience Platform中的一个广告目标。 有关扩展功能的更多信息，请参阅Adobe Exchange上的扩展页面。
 exl-id: 3415a85f-5678-4f5b-b7cf-e185a66d084f
-source-git-commit: d946d3dbb09c1fe0163fba3a892b4c0f1b331f87
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '415'
+source-wordcount: '409'
 ht-degree: 4%
 
 ---
 
-# [!DNL Adobe Advertising Cloud] 扩展 {#adobe-advertising-cloud-extension}
+# [!DNL Adobe Advertising] 扩展 {#adobe-advertising-cloud-extension}
 
 ## 概述 {#overview}
 
-这是[!DNL Advertising Cloud]扩展，用于为DSP和Search实现[!DNL Advertising Cloud]转化和受众标记（当前不支持DCO）。
+这是[!DNL Adobe Advertising]扩展，用于为DSP和Search实施广告转化和受众标记（当前不支持DCO）。
 
-[!DNL Adobe Advertising Cloud]是[!DNL Adobe Experience Platform]中的Advertising扩展。
+[!DNL Adobe Advertising]是[!DNL Adobe Experience Platform]中的Advertising扩展。
 
 此目标是标记扩展。 有关标记扩展如何在Experience Platform中工作的更多信息，请参阅[标记扩展概述](../launch-extensions/overview.md)。
 
-![Adobe Advertising Cloud扩展](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
+![Adobe Advertising扩展](../../assets/catalog/advertising/adobe-advertising-cloud/catalog.png)
 
 ## 先决条件 {#prerequisites}
 
@@ -30,7 +30,7 @@ ht-degree: 4%
 
 ## 安装扩展 {#install-extension}
 
-要安装[!DNL Adobe Advertising Cloud]扩展，请执行以下操作：
+要安装[!DNL Adobe Advertising]扩展，请执行以下操作：
 
 在[Experience Platform界面](https://platform.adobe.com/)中，转到&#x200B;**[!UICONTROL Destinations]** > **[!UICONTROL Catalog]**。
 

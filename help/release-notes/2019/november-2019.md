@@ -5,9 +5,9 @@ doc-type: release notes
 last-update: November 18, 2019
 author: crhoades, ens28527
 exl-id: 2c417c56-cc61-4788-b248-d98ea6cf89f0
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1889'
+source-wordcount: '1888'
 ht-degree: 8%
 
 ---
@@ -121,14 +121,14 @@ Adobe Experience Platform [!DNL Data Science Workspace]通过构建和运行机�
 
 标准化和互操作性是[!DNL Experience Platform]背后的关键概念。 由Adobe驱动的[!DNL Experience Data Model] (XDM)致力于标准化客户体验数据并定义用于客户体验管理的架构。
 
-XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Adobe Experience Platform上的服务进行通信。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户行为中获得有价值的见解，通过区段定义客户受众，并使用客户属性实现个性化目的。
+XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 它为任何应用程序提供通用结构和定义，以便与Adobe Experience Platform上的服务进行通信。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。 您可以从客户行为中获得有价值的洞察，通过区段定义客户受众，并使用客户属性实现个性化目的。
 
 **新增功能**
 
 | 功能 | 描述 |
 | ---------- | ------------ |
 | 通知模式 | 新架构，表示在数据摄取过程中发送的通知数据。 |
-| Adobe AdCloud DSP架构 | 添加了五个新架构，分别表示位置、促销活动、包、广告商、帐户，这些架构代表Adobe Advertising Cloud需求方平台(DSP)元数据。 |
+| Adobe AdCloud DSP架构 | 添加了五个新架构，以表示Adobe Advertising需求方平台(DSP)元数据：投放位置、营销活动、包、广告商、帐户。 |
 | ExperienceEvent实施详细信息架构字段组 | 新的ExperienceEvent字段组，用于添加标准字段以存储有关用于收集事件的软件的信息。 |
 | [!DNL Profile Privacy]字段组 | 新的配置文件字段组添加了字段以接受[!DNL Real-Time Customer Profile]的常规退出和销售/共享选择退出信号。 |
 | `xdm:alternateDisplayInfo`的格式约束 | `xdm:alternateDisplayInfo`的“标题”和“描述”字段都必须为字符串才能通过验证。 |
@@ -136,7 +136,7 @@ XDM是一个公开记录的规范，旨在提高数字体验的强大功能。 �
 
 **已知问题**
 
-* 无。
+* 无.
 
 要了解有关使用[!DNL Schema Registry] API和[!DNL Schema Editor]用户界面使用XDM的更多信息，请阅读[XDM系统文档](../../xdm/home.md)。
 
@@ -158,7 +158,7 @@ Adobe Experience Platform 使您能够为客户提供协调、一致且相关的
 
 **已知问题**
 
-* 无。
+* 无.
 
 有关[!DNL Real-Time Customer Profile]的更多信息，包括有关使用[!DNL Profile]数据的教程和最佳实践，请阅读[实时客户资料概述](../../profile/home.md)。
 
@@ -187,6 +187,6 @@ Adobe Experience Platform [!DNL Segmentation Service]提供了一个用户界面
 
 **已知问题**
 
-* 无。
+* 无.
 
 若要了解有关[!DNL Segmentation Service]的更多信息，请阅读[分段服务概述](../../segmentation/home.md)。

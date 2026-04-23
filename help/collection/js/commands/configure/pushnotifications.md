@@ -1,18 +1,15 @@
 ---
 title: pushNotifications
 description: 配置Web SDK的推送通知以启用基于浏览器的推送消息。
-source-git-commit: 60447ef6f881bf2a34f5502f2259328bf73d08c0
+exl-id: a5cf4817-a4c2-4cf1-8f3a-7e92b807de8f
+source-git-commit: d38cfb7d2ace7c1bb45dcb584a2cdf10063da06a
 workflow-type: tm+mt
-source-wordcount: '432'
+source-wordcount: '414'
 ht-degree: 3%
 
 ---
 
 # `pushNotifications` {#push-notifications}
-
->[!AVAILABILITY]
->
->Web SDK的推送通知当前处于&#x200B;**测试版**&#x200B;中。 功能和文档可能会发生更改。
 
 `pushNotifications`属性允许您为Web应用程序配置推送通知。 此功能允许您的Web应用程序接收从服务器推送的消息，即使该网站当前未加载到浏览器中也是如此。
 

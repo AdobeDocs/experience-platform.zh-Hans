@@ -2,7 +2,7 @@
 title: 部署JavaScript标记以管理客户同意
 description: 了解如何在Adobe Experience Platform中管理各种Adobe解决方案的客户选择启用和选择禁用信号。
 exl-id: 7762c42f-71c8-4f29-a96b-c6c04b838a91
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
 source-wordcount: '565'
 ht-degree: 77%
@@ -19,9 +19,9 @@ Adobe Experience Platform扩展开发人员使用扩展和规则生成器，来�
 
 本文档介绍了有关如何在获得同意之前阻止触发 Adobe 标记的信息。
 
-## Advertising Cloud
+## Adobe Advertising
 
-Adobe Experience Platform不会自动触发[!DNL Advertising Cloud]。 仅当您在规则操作中明确给出指示时，[!DNL Advertising Cloud] 才会触发。可使用规则条件确定触发的时间和内容。例如，要使用 Cookie 确定“选择启用”状态，可设置一个数据元素来读取该 Cookie 并将其用作规则中的条件，以便确定何时触发 Track Conversion 操作。
+Adobe Experience Platform不会自动触发[!DNL Adobe Advertising]。 仅当您在规则操作中明确给出指示时，[!DNL Advertising] 才会触发。可使用规则条件确定触发的时间和内容。例如，要使用 Cookie 确定“选择启用”状态，可设置一个数据元素来读取该 Cookie 并将其用作规则中的条件，以便确定何时触发 Track Conversion 操作。
 
 与同意管理器（例如 OneTrust）的集成可以设置和跟踪客户的同意 Cookie，然后可以在规则生成器中使用它们。
 
@@ -34,13 +34,13 @@ Adobe Experience Platform不会自动触发[!DNL Advertising Cloud]。 仅当您
 
 未选择这些设置时，Experience Platform不会自动触发[!DNL Adobe Analytics]。 仅当您在规则操作中明确给出指示时，[!DNL Analytics] 才会触发。可使用规则条件确定触发的时间和内容。例如，要使用 Cookie 确定“选择启用”状态，可设置一个数据元素来读取该 Cookie 并将其用作规则中的条件，以便确定何时触发 Send Beacon 操作。
 
-另外，您可以考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans)来控制此标记的触发，以便与您的同意管理平台相一致。
+另外，您可以考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html)来控制此标记的触发，以便与您的同意管理平台相一致。
 
 与同意管理器（例如 OneTrust）的集成可以设置和跟踪客户的同意 Cookie，然后可以在规则生成器中使用它们。
 
 ## Audience Manager
 
-如果将 DIL 置于客户页面上，则 DIL 当前会设置为自动触发。请考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans)来控制此标记的触发，以便与您的同意管理平台相一致。
+如果将 DIL 置于客户页面上，则 DIL 当前会设置为自动触发。请考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html)来控制此标记的触发，以便与您的同意管理平台相一致。
 
 [!DNL Adobe] 建议您在 [!DNL Analytics] 内使用服务器端转发。
 
@@ -48,12 +48,12 @@ Adobe Experience Platform不会自动触发[!DNL Advertising Cloud]。 仅当您
 
 如果将 [!DNL Experience Cloud ID] 置于客户页面上，则其当前会自动触发。
 
-请考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans)来控制此标记的触发，以便与您的同意管理平台相一致。
+请考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html)来控制此标记的触发，以便与您的同意管理平台相一致。
 
-## 目标
+## Target
 
 Adobe Experience Platform不会自动触发[!DNL Target]。 仅当您在规则操作中明确给出指示时，[!DNL Target] 才会触发。可使用规则条件确定触发的时间和内容。例如，要使用 Cookie 确定“选择启用”状态，可设置一个数据元素来读取该 Cookie 并将其用作规则中的条件，以便确定何时触发 Load [!DNL Target] 操作。
 
-另外，您可以考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html?lang=zh-Hans)来控制此标记的触发，以便与您的同意管理平台相一致。
+另外，您可以考虑使用 [Adobe 选择启用对象](https://experienceleague.adobe.com/docs/id-service/using/implementation/opt-in-service/optin-overview.html)来控制此标记的触发，以便与您的同意管理平台相一致。
 
 与同意管理器（例如 OneTrust）的集成可以设置和跟踪客户的同意 Cookie，然后可以在规则生成器中使用它们。

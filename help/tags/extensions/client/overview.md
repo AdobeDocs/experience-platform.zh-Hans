@@ -2,9 +2,9 @@
 title: 标记扩展参考
 description: 在Adobe Experience Platform中查找有关标记扩展的文档。
 exl-id: 226948f4-7738-4cfd-ad22-5934820b1399
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '427'
+source-wordcount: '423'
 ht-degree: 3%
 
 ---
@@ -21,7 +21,7 @@ ht-degree: 3%
 * [Activity Map自定义程序](https://exchange.adobe.com/apps/ec/101531)*
 * [操作页面刷新](https://exchange.adobe.com/apps/ec/102848)*
 * [Adform网站跟踪](https://exchange.adobe.com/apps/ec/103195)*
-* [Adobe Advertising Cloud](https://exchange.adobe.com/apps/ec/100155)*
+* [Adobe Advertising](https://exchange.adobe.com/apps/ec/100155)*
 * [Adobe Analytics](./analytics/overview.md)
 * [Adobe Analytics和Adobe Target](https://exchange.adobe.com/apps/ec/105363/*6sense-for-analytics-and-target)*
 * [Adobe Analytics和Microsoft Dynamics](https://exchange.adobe.com/apps/ec/102966)*
@@ -45,7 +45,6 @@ ht-degree: 3%
 * [Adobe Target](./target/overview.md)
 * [Adobe Target v2](./target-v2/overview.md)
 * [Adobe Target Toolkit](https://exchange.adobe.com/apps/ec/100640)*
-* [Advertising Cloud](https://exchange.adobe.com/apps/ec/100640)*
 * [AEM资产分析](https://exchange.adobe.com/apps/ec/103406)*
 * [Airbrake JS通告程序](https://exchange.adobe.com/apps/ec/103342)*
 * [振幅](https://exchange.adobe.com/apps/ec/108010)*

@@ -2,10 +2,10 @@
 title: 推送通知设置
 description: 为Web SDK标记扩展配置推送通知设置。
 exl-id: 96ab7ea8-7180-46bb-9c15-eecba2009c52
-source-git-commit: 6c05d8abde0e4d6b07fe37d6e3eacd5d3dd67ec2
+source-git-commit: d38cfb7d2ace7c1bb45dcb584a2cdf10063da06a
 workflow-type: tm+mt
-source-wordcount: '196'
-ht-degree: 9%
+source-wordcount: '178'
+ht-degree: 10%
 
 ---
 
@@ -15,10 +15,6 @@ ht-degree: 9%
 >id="platform_tags_websdk_pushnotifications"
 >title="推送通知"
 >abstract="设置用于推送通知身份验证的 VAPID 公钥。"
-
->[!AVAILABILITY]
->
->Web SDK的推送通知当前处于&#x200B;**测试版**&#x200B;中。 功能和文档可能会发生更改。
 
 此配置部分允许您为推送通知身份验证设置VAPID公钥。
 

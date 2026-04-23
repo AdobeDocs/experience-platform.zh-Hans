@@ -5,9 +5,9 @@ breadcrumb-title: 体验数据模型 (XDM) 指南
 user-guide-description: 浏览 Experience Platform 中的体验数据模型 (XDM) 系统概述，并了解如何使用类和架构字段组使体验数据标准化。
 feature: Schemas
 role: Developer
-source-git-commit: 511c93342d112056ead54c0d82184cc262a43383
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '711'
+source-wordcount: '710'
 ht-degree: 21%
 
 ---
@@ -116,7 +116,7 @@ ht-degree: 21%
       * [Partner Prospect详细信息（示例）](./field-groups/prospect-profile/partner-prospect-details.md)
    * XDM ExperienceEvent {#event}
       * [Adobe Analytics完整扩展](./field-groups/event/analytics-full-extension.md)
-      * [Adobe Advertising Cloud完整扩展](./field-groups/event/advertising-full-extension.md)
+      * [Adobe Advertising完整扩展](./field-groups/event/advertising-full-extension.md)
       * [Advertising详细信息](./field-groups/event/advertising-details.md)
       * [应用程序详细信息](./field-groups/event/application-details.md)
       * [余额转帐](./field-groups/event/balance-transfers.md)

@@ -5,9 +5,9 @@ title: Privacy Service API指南附录
 description: 本文档包含有关使用Privacy Service API的其他信息。
 role: Developer
 exl-id: 7099e002-b802-486e-8863-0630d66e330f
-source-git-commit: 9b3fb0d545408369d96a3fc7c5c6e9c098af9933
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '552'
+source-wordcount: '551'
 ht-degree: 6%
 
 ---
@@ -26,7 +26,7 @@ ht-degree: 6%
 | --- | --- | --- |
 | 电子邮件 | `Email` | `6` |
 | 电话 | `Phone` | `7` |
-| Adobe Advertising Cloud ID | `AdCloud` | `411` |
+| ADOBE ADVERTISING ID | `AdCloud` | `411` |
 | ADOBE AUDIENCE MANAGER UUID | `CORE` | `0` |
 | ADOBE EXPERIENCE CLOUD ID | `ECID` | `4` |
 | ADOBE TARGET ID | `TNTID` | `9` |

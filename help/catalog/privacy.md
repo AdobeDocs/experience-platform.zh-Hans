@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 数据湖中的隐私请求处理
 description: Adobe Experience Platform Privacy Service会根据法律和组织隐私法规处理客户访问、选择退出销售或删除其个人数据的请求。 本文档介绍了与处理存储在数据湖中的客户数据的隐私请求相关的基本概念。
 exl-id: c06b0a44-be1a-4938-9c3e-f5491a3dfc19
-source-git-commit: db781526fc7b9813b9982f45b8a5aa36175a1f34
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
-source-wordcount: '1446'
+source-wordcount: '1443'
 ht-degree: 1%
 
 ---
@@ -34,7 +34,7 @@ Adobe Experience Platform [!DNL Privacy Service]处理客户访问、选择退�
 
 ## 了解身份标识命名空间 {#namespaces}
 
-Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service]使用身份命名空间通过将身份值与原始系统关联来提供身份值的上下文。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising Cloud ID (“AdCloud”)或Adobe Target ID (“TNTID”)。
+Adobe Experience Platform [!DNL Identity Service]跨系统和设备桥接客户身份数据。 [!DNL Identity Service]使用身份命名空间通过将身份值与原始系统关联来提供身份值的上下文。 命名空间可以表示通用概念，例如电子邮件地址（“电子邮件”），也可以将身份与特定应用程序关联，例如Adobe Advertising ID或Adobe Target ID。
 
 [!DNL Identity Service]维护全局定义（标准）和用户定义（自定义）身份命名空间的存储。 标准命名空间适用于所有组织（例如，“Email”和“ECID”），而您的组织也可以创建自定义命名空间以满足其特定需求。
 

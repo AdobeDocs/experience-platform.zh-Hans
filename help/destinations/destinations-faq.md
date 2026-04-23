@@ -3,7 +3,7 @@ keywords: 目标；问题；常见问题解答；常见问题解答；目标常�
 title: 常见问题
 description: 关于Adobe Experience Platform目标最常见问题的解答
 exl-id: 2c34ecd0-a6d0-48dd-86b0-a144a6acf61a
-source-git-commit: e4ee4accdb28dafda7e37625eb84062bb6e53644
+source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
 workflow-type: tm+mt
 source-wordcount: '1632'
 ht-degree: 2%
@@ -69,7 +69,7 @@ See the table below for a feature comparison between the Experience Cloud Audien
 
 ||Experience Cloud Audiences|Adobe Target|
 |---|---|---|
-| **Supported Experience Cloud apps** | Supports audience activation to Audience Manager, [!DNL Adobe Target], [!DNL Adobe Analytics], Advertising Cloud, Marketo, [!DNL Adobe Campaign] | Supports audience activation only to [!DNL Adobe Target] |
+| **Supported Experience Cloud apps** | Supports audience activation to Audience Manager, [!DNL Adobe Target], [!DNL Adobe Analytics], Adobe Advertising, Marketo, [!DNL Adobe Campaign] | Supports audience activation only to [!DNL Adobe Target] |
 | **Supports audience activation** | ✓ | ✓ |
 | **Supports attribute activation** | X | ✓ |
 | **Latency** | Profiles begin activating in 6 hours. Full population is visible in 48 hours​. |Depends on implementation​ type. <ul><li>Web SDK enables same-page/next-page​ personalization.</li><li>AT.js enables next-session personalization.</li></ul> |
@@ -199,7 +199,7 @@ Google要求受众名称是唯一的。 您看到的数字是[UNIX时间戳](htt
 +++回答
 不需要，不需要Web SDK才能将受众激活到[[!DNL Adobe Target]](catalog/personalization/adobe-target-connection.md)。
 
-但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html?lang=zh-Hans)而不是Web SDK，则仅支持下一会话个性化。
+但是，如果使用[[!DNL at.js]](https://experienceleague.adobe.com/docs/target-dev/developer/client-side/at-js-implementation/overview.html)而不是Web SDK，则仅支持下一会话个性化。
 
 对于[同一页面和下一页面个性化](ui/activate-edge-personalization-destinations.md)用例，您必须使用Web SDK或[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)。 有关更多实施详细信息，请参阅有关[将受众激活到边缘目标](ui/activate-edge-personalization-destinations.md)的文档。
 +++
@@ -231,7 +231,7 @@ Yes, you can activate a maximum of 150 edge audiences per sandbox.  For more inf
 ### 我可以在哪里查看[!DNL Adobe Target]中的激活属性？ {#target-activated-attributes-location}
 
 +++回答
-可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html?lang=zh-Hans)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html?lang=zh-Hans)选件的Target中使用属性。
+可在[JSON](https://experienceleague.adobe.com/docs/target/using/experiences/offers/create-json-offer.html)和[HTML](https://experienceleague.adobe.com/docs/target/using/experiences/offers/manage-content.html)选件的Target中使用属性。
 +++
 
 ### 我是否可以创建没有数据流的目标，然后在以后将数据流添加到同一目标？ {#destination-without-datastream}
