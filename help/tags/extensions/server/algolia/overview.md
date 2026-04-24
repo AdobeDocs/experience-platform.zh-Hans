@@ -3,9 +3,9 @@ title: Algolia事件转发扩展概述
 description: 了解如何在Adobe Experience Platform中设置并使用Algolia事件转发扩展。 通过分析API转发用户行为数据，配置规则，映射XDM字段，以及验证事件交付。
 last-substantial-update: 2025-05-09T00:00:00Z
 exl-id: 397c8761-9bff-4b85-9f3f-4cbbd782c139
-source-git-commit: 44e2b8241a8c348d155df3061d398c4fa43adcea
+source-git-commit: 61aeec69f782968a8c157b604ba1cd9e990b7f02
 workflow-type: tm+mt
-source-wordcount: '970'
+source-wordcount: '966'
 ht-degree: 1%
 
 ---
@@ -69,15 +69,15 @@ Adobe Experience Platform中的Algolia事件转发扩展的![配置屏幕](../..
 
 ![阿尔及利亚事件字段组配置](../../../images/extensions/server/algolia/algolia-field-groups.png)
 
-### 将[!DNL Algolia]事件字段组添加到您的架构 {#add-algolia-field-group}
+### 将[!UICONTROL Algolia Event Details]字段组添加到您的架构 {#add-algolia-field-group}
 
-添加[!DNL Algolia]事件字段组：
+添加[!UICONTROL Algolia Event Details]字段组：
 
 导航到&#x200B;**[!UICONTROL Schemas]**&#x200B;并选择&#x200B;**[!UICONTROL Browse]**。
 
 添加新架构或更新用于发送Web事件的现有架构，并将鼠标悬停在&#x200B;**[!UICONTROL Add]**&#x200B;图标上。 在搜索框中输入&#x200B;*[!DNL Algolia]*&#x200B;以缩小结果范围。
 
-选择&#x200B;**[!DNL Algolia]事件详细信息**&#x200B;字段组> **[!UICONTROL Add field group]**&#x200B;按钮> **[!UICONTROL Save]**。
+选择&#x200B;**[!UICONTROL Algolia Event Details]**&#x200B;字段组> **[!UICONTROL Add field group]**&#x200B;按钮> **[!UICONTROL Save]**。
 
 Experience Platform中的![阿尔及利亚配置文件字段组配置](../../../images/extensions/server/algolia/algolia-profile-field-group.png)
 
@@ -167,5 +167,5 @@ Experience Platform中的![阿尔及利亚配置文件字段组配置](../../../
 
 - [[!DNL Algolia] 分析API文档](https://www.algolia.com/doc/rest-api/insights/)
 - [[!DNL Algolia] 事件文档](https://www.algolia.com/doc/guides/sending-events/getting-started/)
-- [[!DNL Adobe Experience Platform] 事件转发文档](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html?lang=zh-Hans)
+- [[!DNL Adobe Experience Platform] 事件转发文档](https://experienceleague.adobe.com/docs/experience-platform/tags/event-forwarding/overview.html)
 - [[!DNL Algolia] AI功能概述](https://www.algolia.com/products/ai-search/)
