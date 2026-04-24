@@ -10,9 +10,10 @@ role: User, Developer
 level: Beginner, Intermediate
 hide: true
 hidefromtoc: true
-source-git-commit: 4805570178a923206565c4ee1b55ab6532579d66
+exl-id: 48dba0d2-7df9-4d76-bc87-5af49a8a40cc
+source-git-commit: b340d118051e2c38e1098b601e9944a7029129dc
 workflow-type: tm+mt
-source-wordcount: '2376'
+source-wordcount: '2379'
 ht-degree: 0%
 
 ---
@@ -23,7 +24,7 @@ ht-degree: 0%
 
 >[!AVAILABILITY]
 >
->Real-Time CDP MCP服务器作为&#x200B;**远程HTTP传输服务器**&#x200B;进行分发，用户可以在支持的MCP客户端和应用程序平台（例如，Claude、ChatGPT、Claude Code、Codex、Cursor或VS Code）中安装和配置该服务器。 身份验证通过&#x200B;**基于浏览器的登录流程**&#x200B;来处理 — 当您的客户端首次连接到服务器时，它会打开您的默认浏览器，以便您可以使用您的Adobe凭据登录并授权访问。
+>Real-Time CDP MCP服务器作为&#x200B;**远程HTTP传输服务器**&#x200B;进行分发，用户可以在支持的MCP客户端和应用程序平台（例如，Claude、ChatGPT、Claude Code、Codex、Cursor或VS Code）中安装和配置该服务器。 身份验证通过&#x200B;**基于浏览器的登录流程**&#x200B;来处理 — 当您的客户端首次连接到服务器时，它会打开您的默认浏览器，以便您可以使用您的Adobe凭据登录并授权访问。 请联系您的Adobe代表以访问此Beta计划。
 
 ## Beta、安全和法律声明 {#mcp-notices}
 
@@ -57,18 +58,7 @@ Real-Time CDP MCP服务器允许您直接从AI助手检查、汇总受众和目�
 
 ## 可用工具 {#mcp-tools}
 
-Real-Time CDP MCP服务器公开以下工具：
-
-| 工具 | 描述 |
-| --- | --- |
-| **搜索现有受众** | 使用可选过滤器（名称、实体类型、生命周期状态、命名空间、来源）列出受众，或按ID获取特定受众。 |
-| **预览受众成员资格** | 估算区段查询（PQL适用于配置文件受众，SDD适用于关系/帐户受众）的大小，包括置信区间元数据。 |
-| **列出目标类型** | 查看沙盒中可用的目标连接器类型目录。 |
-| **列出配置的帐户** | 浏览配置的目标帐户（基本连接）及其身份验证详细信息。 |
-| **列出已配置的目标** | 浏览目标数据流，可按名称、状态、流规范或源/目标连接进行筛选。 |
-| **列出Source连接** | 检查保存目标数据流的数据集映射信息的源连接。 |
-| **列出目标连接** | 检查保留目标的数据格式和路径配置的目标连接。 |
-| **检查激活运行** | 查看目标数据流运行历史记录，可按流ID、状态（成功、失败、进行中）和完成时间范围进行筛选。 |
+当我们启用新工具时，工具可用性正在迅速变化。 请联系您的Adobe代表以获取最新可用工具的列表。
 
 >[!NOTE]
 >
@@ -111,7 +101,7 @@ Real-Time CDP MCP服务器公开以下工具：
 
 在开始之前，请确保您具备以下条件：
 
-* MCP服务器终结点URL： `https://rtcdp-mcp.adobe.io/mcp`。
+* MCP服务器终结点URL： `Available to Beta customers through your Adobe representative`。
 * 确认您的Adobe用户有权访问目标Experience Platform组织和沙盒。
 
 Real-Time CDP MCP服务器是&#x200B;**远程HTTP MCP服务器**。 在每个客户端中，设置遵循相同的模式：
@@ -125,15 +115,19 @@ Real-Time CDP MCP服务器是&#x200B;**远程HTTP MCP服务器**。 在每个客
 
 #### 克劳德
 
-对于`claude.ai`和Claude Desktop，使用&#x200B;**将Real-Time CDP MCP服务器添加为**&#x200B;自定义连接器`https://rtcdp-mcp.adobe.io/mcp`。 在单个Claude计划中，将其添加到&#x200B;**自定义>连接器**&#x200B;下。 在“团队”和“企业”计划中，所有者可能需要先在&#x200B;**组织设置>连接器**&#x200B;下添加它，然后每个用户使用他们自己的“克劳德”设置连接它。 配置完毕后，在对话中启用连接器，并在首次使用时完成Adobe浏览器登录。
+对于`claude.ai`和Claude Desktop，使用Real-Time CDP代表提供的端点将Adobe MCP服务器添加为&#x200B;**自定义连接器**。 在单个Claude计划中，将其添加到&#x200B;**自定义>连接器**&#x200B;下。 在“团队”和“企业”计划中，所有者可能需要先在&#x200B;**组织设置>连接器**&#x200B;下添加它，然后每个用户使用他们自己的“克劳德”设置连接它。 配置完毕后，在对话中启用连接器，并在首次使用时完成Adobe浏览器登录。
 
 #### ChatGPT
 
-在ChatGPT中，使用&#x200B;**将Real-Time CDP MCP服务器添加为**&#x200B;自定义应用程序/连接器`https://rtcdp-mcp.adobe.io/mcp`。 根据您的ChatGPT计划，这可能需要&#x200B;**开发人员模式**&#x200B;和工作区管理员批准。 创建或启用应用程序/连接器后，从&#x200B;**设置>应用程序**&#x200B;或&#x200B;**设置>应用程序和连接器**&#x200B;中连接该应用程序/连接器，然后在出现提示时通过Adobe浏览器登录进行身份验证。
+在ChatGPT中，使用Real-Time CDP代表提供的端点将Adobe MCP服务器添加为&#x200B;**自定义应用程序/连接器**。 根据您的ChatGPT计划，这可能需要&#x200B;**开发人员模式**&#x200B;和工作区管理员批准。 创建或启用应用程序/连接器后，从&#x200B;**设置>应用程序**&#x200B;或&#x200B;**设置>应用程序和连接器**&#x200B;中连接该应用程序/连接器，然后在出现提示时通过Adobe浏览器登录进行身份验证。
+
+#### 光标
+
+在光标中，使用Real-Time CDP代表提供的端点将Adobe MCP服务器添加为远程MCP服务器。 打开&#x200B;**设置> MCP**，添加新服务器，并粘贴终结点URL。 添加后，选择&#x200B;**连接**&#x200B;以通过浏览器进行身份验证，为您的工作区启用服务器。
 
 #### 其他基于用户界面的客户端
 
-对于客户端（如Cursor、VS Code或其他支持远程MCP的桌面和Web应用程序），请将Real-Time CDP MCP服务器添加为&#x200B;**远程HTTP**&#x200B;服务器并使用`https://rtcdp-mcp.adobe.io/mcp`。 如果客户端支持可选标头或持有者令牌，请将其留空，除非Adobe另有说明；身份验证在首次使用时通过基于浏览器的Adobe登录流处理。
+对于客户端（如VS Code或其他支持远程MCP的桌面和Web应用程序），请使用Real-Time CDP代表提供的端点将Adobe MCP服务器添加为&#x200B;**远程HTTP**&#x200B;服务器。 如果客户端支持可选标头或持有者令牌，请将其留空，除非Adobe另有说明；身份验证在首次使用时通过基于浏览器的Adobe登录流处理。
 
 ### 在技术客户端中安装 {#mcp-connect-technical}
 
@@ -142,7 +136,7 @@ Real-Time CDP MCP服务器是&#x200B;**远程HTTP MCP服务器**。 在每个客
 从终端添加服务器：
 
 ```bash
-claude mcp add --transport http rtcdp https://rtcdp-mcp.adobe.io/mcp
+claude mcp add --transport http rtcdp <endpoint provided by your Adobe representative>
 ```
 
 然后启动Claude Code并运行：
@@ -158,7 +152,7 @@ claude mcp add --transport http rtcdp https://rtcdp-mcp.adobe.io/mcp
 从终端添加服务器：
 
 ```bash
-codex mcp add rtcdp --url https://rtcdp-mcp.adobe.io/mcp
+codex mcp add rtcdp --url <endpoint provided by your Adobe representative>
 ```
 
 验证服务器：
@@ -177,7 +171,7 @@ codex mcp list
 
 ```toml
 [mcp_servers.rtcdp]
-url = "https://rtcdp-mcp.adobe.io/mcp"
+url = "<endpoint provided by your Adobe representative>"
 ```
 
 ### 必需的请求参数 {#mcp-connect-params}
