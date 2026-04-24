@@ -43,7 +43,7 @@ alloy("sendEvent", {
 
 | 参数 | 必需/可选 | 描述 |
 | --- | --- | --- |
-| `type` | 必需 | 将此参数设置为`decisioning.propositionFetch`。 此特殊事件类型告知Adobe Analytics删除此事件。 在使用Customer Journey Analytics时，您还可以设置过滤器以删除这些事件。 有关详细信息，请参阅Adobe Analytics中的[Edge Network事件类型](https://experienceleague.adobe.com/en/docs/analytics/implementation/aep-edge/hit-types)。 |
+| `type` | 必需 | 将此参数设置为`decisioning.propositionFetch`。 此特殊事件类型告知Adobe Analytics删除此事件。 在使用Customer Journey Analytics时，您还可以设置过滤器以删除这些事件。 有关详细信息，请参阅Adobe Analytics中的[Edge Network事件类型](https://experienceleague.adobe.com/zh-hans/docs/analytics/implementation/aep-edge/hit-types)。 |
 | `renderDecisions` | 必需 | 将此参数设置为`true`。 此参数可告知Web SDK呈现由Edge Network返回的决策。 |
 | `personalization.sendDisplayEvent` | 必需 | 将此参数设置为`false`。 此参数可停止发送显示事件。 |
 
