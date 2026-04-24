@@ -2,10 +2,10 @@
 title: 机器学习的工程师功能
 description: 了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 使用Data Distiller可大规模计算ML功能，并与您的机器学习环境共享这些功能。
 exl-id: 7fe017c9-ec46-42af-ac8f-734c4c6e24b5
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '1140'
-ht-degree: 13%
+source-wordcount: '1146'
+ht-degree: 18%
 
 ---
 
@@ -58,11 +58,11 @@ df_labels.head()
 
 |   | 事件类型 | userId | subscriptionOcked | random_row_number_for_user |
 | ---  |   ---  |   ---  |   ---  |   --- |
-| 0 | directMarketing.emailClicked | 01027994177972439148069092698714414382 | 0 | 1 |
+| 0 | directmarketing.emailClicked | 01027994177972439148069092698714414382 | 0 | 1 |
 | 1 | directMarketing.emailOpened | 01054714817856066632264746967668888198 | 0 | 1 |
 | 2 | web.formFilledOut | 01117296890525140996735553609305695042 | 1 | 15 |
-| 3 | directMarketing.emailClicked | 01149554820363915324573708359099551093 | 0 | 1 |
-| 4 | directMarketing.emailClicked | 01172121447143590196349410086995740317 | 0 | 1 |
+| 3 | directmarketing.emailClicked | 01149554820363915324573708359099551093 | 0 | 1 |
+| 4 | directmarketing.emailClicked | 01172121447143590196349410086995740317 | 0 | 1 |
 
 {style="table-layout:auto"}
 
@@ -239,18 +239,18 @@ df_training_set.head()
 
 {style="table-layout:auto"}
 
-## 创建查询模板以增量计算培训数据
+## Create a query template to incrementally compute training data
 
-通常使用更新的训练数据定期重新训练模型，以保持随时间变化的模型精度。 作为有效更新训练数据集的最佳实践，您可以从训练集查询创建模板以增量计算新训练数据。 这样，您就只能根据自上次更新训练数据以来添加到原始Experience Events数据集的数据计算标签和功能，并将新标签和功能插入现有训练数据集。
+It is typical to periodically retrain a model with updated training data to maintain accuracy of the model over time. As a best practice for efficiently updating your training dataset, you can create a template from your training set query to compute new training data incrementally. This allows you compute labels and features only from data that was added to the original Experience Events dataset since the training data was last updated, and insert the new labels and features into the existing training dataset.
 
-这样做需要对训练集查询进行一些修改：
+Doing so requires a few modifications to the training set query:
 
-- 添加逻辑以创建新训练数据集（如果不存在），否则，将新标签和功能插入到现有训练数据集中。 这需要训练集查询的一系列两个版本：
-   - 首先，使用`CREATE TABLE IF NOT EXISTS {table_name} AS`语句
-   - 接下来，对训练数据集已存在的情况下使用`INSERT INTO {table_name}`语句
-- 添加`SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id`语句以将查询限制为在指定间隔内添加的事件数据。 快照ID上的`$`前缀表示它们是在执行查询模板时要传入的变量。
+- Add logic to create a new training dataset if it doesn&#39;t exist, and insert the new labels and features into the existing training dataset otherwise. This requires a series of two versions of the training set query:
+   - First, using the `CREATE TABLE IF NOT EXISTS {table_name} AS` statement
+   - Next, using the `INSERT INTO {table_name}` statement for the case where the training dataset already exists
+- Add a `SNAPSHOT BETWEEN $from_snapshot_id AND $to_snapshot_id` statement to limit the query to event data that was added within a specified interval. The `$` prefix on the snapshot IDs indicates that thy are variables that will be passed in when the query template is executed.
 
-应用这些更改会导致以下查询：
+Applying those changes results in the following query:
 
 +++选择以查看示例查询
 
@@ -381,7 +381,7 @@ WHERE
 ORDER BY timestamp;
 
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 
 END $$;
@@ -390,7 +390,7 @@ END $$;
 
 +++
 
-最后，以下代码将查询模板保存在Data Distiller中：
+Finally, the following code saves the query template in Data Distiller:
 
 ```python
 template_res = dd.createQueryTemplate({
@@ -407,7 +407,7 @@ print(f"Template for propensity training data created as ID {template_id}")
 
 `Template for propensity training data created as ID f3d1ec6b-40c2-4d13-93b6-734c1b3c7235`
 
-保存模板后，您可以随时通过引用模板ID并执行查询，并指定应包含在查询中的快照ID的范围。 以下查询可检索原始Experience Events数据集的快照：
+With the template saved, you can execute the query at any time by referencing the template ID and specify the range of snapshot IDs that should be included in the query. The following query retrieves the snapshots of the original Experience Events dataset:
 
 ```python
 query_snapshots = f"""
@@ -422,7 +422,7 @@ ORDER BY snapshot_generation ASC
 df_snapshots = dd_cursor.query(query_snapshots, output="dataframe")
 ```
 
-以下代码演示了如何使用第一个和最后一个快照来查询整个数据集，从而执行查询模板：
+The following code demonstrates execution of the query template, using the first and last snapshots to query the entire dataset:
 
 ```python
 snapshot_start_id = str(df_snapshots["snapshot_id"].iloc[0])
@@ -445,7 +445,7 @@ print(f"Query started successfully and got assigned ID {query_final_id} - it wil
 
 `Query started successfully and got assigned ID c6ea5009-1315-4839-b072-089ae01e74fd - it will take some time to execute`
 
-您可以定义以下函数以定期检查查询的状态：
+You can define the following function to periodically check the status of the query:
 
 ```python
 def wait_for_query_completion(query_id):
@@ -482,6 +482,6 @@ Query is still in progress, sleeping…
 Query completed successfully in 473.8 seconds
 ```
 
-## 后续步骤：
+## Next steps:
 
-通过阅读本文档，您已了解如何将Adobe Experience Platform中的数据转换为机器学习模型可以使用的功能或变量。 从Experience Platform创建功能管道以在机器学习环境中馈送自定义模型的下一步是[导出功能数据集](./export-data.md)。
+By reading this document you have learned how to transform data in Adobe Experience Platform into features, or variables, that can be consumed by a machine learning model. The next step in creating feature pipelines from Experience Platform to feed custom models in your machine learning environment is to [export feature datasets](./export-data.md).

@@ -2,9 +2,9 @@
 title: 查询服务中的增量加载
 description: 增量加载功能同时使用匿名块和快照功能，为在忽略匹配数据的同时将数据从数据湖移动到数据仓库提供了近乎实时的解决方案。
 exl-id: 1418d041-29ce-4153-90bf-06bd8da8fb78
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '671'
+source-wordcount: '672'
 ht-degree: 0%
 
 ---
@@ -84,7 +84,7 @@ ht-degree: 0%
          cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
    
    EXCEPTION
-     WHEN OTHER THEN
+     WHEN OTHERS THEN
        SELECT 'ERROR';
    END 
    $$;
@@ -116,7 +116,7 @@ ht-degree: 0%
          cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
    
    EXCEPTION
-     WHEN OTHER THEN
+     WHEN OTHERS THEN
        SELECT 'ERROR';
    END
    $$;
@@ -154,7 +154,7 @@ Insert Into
       cast( @to_snapshot_id AS string) last_snapshot_id,
       cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 END
 $$;
@@ -162,4 +162,4 @@ $$;
 
 ## 后续步骤
 
-通过阅读本文档，您应该更好地了解如何使用匿名块和快照功能执行增量加载，并且可以将此逻辑应用于您自己的特定查询。 有关查询执行的一般指导，请阅读查询服务[&#128279;](../best-practices/writing-queries.md)中查询执行的指南。
+通过阅读本文档，您应该更好地了解如何使用匿名块和快照功能执行增量加载，并且可以将此逻辑应用于您自己的特定查询。 有关查询执行的一般指导，请阅读查询服务](../best-practices/writing-queries.md)中查询执行的[指南。

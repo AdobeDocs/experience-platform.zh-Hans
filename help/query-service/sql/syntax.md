@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务中的SQL语法
 description: 本文档详细介绍并说明Adobe Experience Platform查询服务支持的SQL语法。
 exl-id: 2bd4cc20-e663-4aaa-8862-a51fde1596cc
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '4686'
+source-wordcount: '4737'
 ht-degree: 1%
 
 ---
@@ -17,7 +17,7 @@ ht-degree: 1%
 
 ## 选择查询 {#select-queries}
 
-以下语法定义了`SELECT`支持的[!DNL Query Service]查询：
+以下语法定义了[!DNL Query Service]支持的`SELECT`查询：
 
 ```sql
 [ WITH with_query [, ...] ]
@@ -124,7 +124,7 @@ SELECT * FROM (SELECT id FROM table_to_be_queried SNAPSHOT BETWEEN start_snapsho
 
 >[!NOTE]
 >
->在`HEAD`子句中使用`TAIL`或`SNAPSHOT`时，必须用单引号将它们括起来（例如，“HEAD”、“TAIL”）。 使用不带引号的这些变量会导致语法错误。
+>在`SNAPSHOT`子句中使用`HEAD`或`TAIL`时，必须用单引号将它们括起来（例如，“HEAD”、“TAIL”）。 使用不带引号的这些变量会导致语法错误。
 
 下表说明了SNAPSHOT子句中每个语法选项的含义。
 
@@ -134,30 +134,30 @@ SELECT * FROM (SELECT id FROM table_to_be_queried SNAPSHOT BETWEEN start_snapsho
 | `AS OF end_snapshot_id` | 以指定的快照ID（包括）读取数据。 |
 | `BETWEEN start_snapshot_id AND end_snapshot_id` | 读取指定的开始快照ID和结束快照ID之间的数据。 它不包括`start_snapshot_id`且包括`end_snapshot_id`。 |
 | `BETWEEN HEAD AND start_snapshot_id` | 将数据从开头（第一个快照之前）读取到指定的启动快照ID（包括）。 请注意，这仅返回`start_snapshot_id`中的行。 |
-| `BETWEEN end_snapshot_id AND TAIL` | 从指定的`end_snapshot_id`之后将数据读取到数据集结尾（不包括快照ID）。 这意味着，如果`end_snapshot_id`是数据集中的最后一个快照，则查询将返回零行，因为除了最后一个快照之外，没有任何快照。 |
-| `SINCE start_snapshot_id INNER JOIN table_to_be_joined AS OF your_chosen_snapshot_id ON table_to_be_queried.id = table_to_be_joined.id` | 从`table_to_be_queried`中读取从指定的快照ID开始的数据，并将其与来自`table_to_be_joined`的数据联接，因为它位于`your_chosen_snapshot_id`。 该连接基于来自要连接的两个表的ID列的匹配ID。 |
+| `BETWEEN end_snapshot_id AND TAIL` | 从指定的`end_snapshot_id`之后将数据读取到数据集结尾（不包括快照ID）。 This means that if `end_snapshot_id` is the last snapshot in the dataset, the query will return zero rows because there are no snapshots beyond that last snapshot. |
+| `SINCE start_snapshot_id INNER JOIN table_to_be_joined AS OF your_chosen_snapshot_id ON table_to_be_queried.id = table_to_be_joined.id` | Reads data starting from the specified snapshot ID from `table_to_be_queried` and joins it with the data from `table_to_be_joined` as it was at `your_chosen_snapshot_id`. The join is based on matching IDs from the ID columns of the two tables being joined. |
 
-`SNAPSHOT`子句与表或表别名一起使用，但不能在子查询或视图的顶部。 `SNAPSHOT`子句适用于对表应用`SELECT`查询的任何位置。
+A `SNAPSHOT` clause works with a table or table alias but not on top of a subquery or view. A `SNAPSHOT` clause works anywhere a `SELECT` query on a table can be applied.
 
-此外，还可以使用`HEAD`和`TAIL`作为快照子句的特殊偏移值。 使用`HEAD`是指第一个快照之前的偏移量，而`TAIL`是指最后一个快照之后的偏移量。
+Also, you can use `HEAD` and `TAIL` as special offset values for snapshot clauses. Using `HEAD` refers to an offset before the first snapshot, while `TAIL` refers to an offset after the last snapshot.
 
 >[!NOTE]
 >
->如果在两个快照ID之间进行查询，如果启动快照已过期且设置了可选的回退行为标志(`resolve_fallback_snapshot_on_failure`)，则可能会出现以下两种情况：
+>If you are querying between two snapshot IDs, the following two scenarios can occur if the start snapshot is expired and the optional fallback behavior flag (`resolve_fallback_snapshot_on_failure`) is set:
 >
->- 如果设置了可选的回退行为标志，查询服务会选择最早可用的快照，将其设置为开始快照，并返回最早可用快照与指定结束快照之间的数据。 此数据是&#x200B;**包含最早可用快照的**。
+>- If the optional fallback behavior flag is set, Query Service chooses the earliest available snapshot, sets it as the start snapshot, and returns the data between the earliest available snapshot and the specified end snapshot. This data is **inclusive** of the earliest available snapshot.
 
-### WHERE子句
+### WHERE clause
 
-默认情况下，`WHERE`查询上的`SELECT`子句生成的匹配项区分大小写。 如果您希望匹配项不区分大小写，则可以使用关键字`ILIKE`而不是`LIKE`。
+By default, matches produced by a `WHERE` clause on a `SELECT` query are case-sensitive. If you want matches to be case-insensitive, you can use the keyword `ILIKE` instead of `LIKE`.
 
 ```sql
     [ WHERE condition { LIKE | ILIKE | NOT LIKE | NOT ILIKE } pattern ]
 ```
 
-下表解释了LIKE和ILIKE子句的逻辑：
+The logic of the LIKE and ILIKE clauses are explained in the following table:
 
-| 子句 | 运算符 |
+| Clause | 运算符 |
 | ------ | -------- |
 | `WHERE condition LIKE pattern` | `~~` |
 | `WHERE condition NOT LIKE pattern` | `!~~` |
@@ -171,11 +171,11 @@ SELECT * FROM Customers
 WHERE CustomerName ILIKE 'a%';
 ```
 
-此查询返回名称以“A”或“a”开头的客户。
+This query returns customers with names beginning in &quot;A&quot; or &quot;a&quot;.
 
-### 加入
+### JOIN
 
-使用联接的`SELECT`查询具有以下语法：
+A `SELECT` query that uses joins has the following syntax:
 
 ```sql
 SELECT statement
@@ -184,9 +184,9 @@ FROM statement
 ON join condition
 ```
 
-### UNION、INTERSECT和EXCEPT
+### UNION, INTERSECT, and EXCEPT
 
-`UNION`、`INTERSECT`和`EXCEPT`子句用于组合或排除两个或多个表中的类似行：
+The `UNION`, `INTERSECT`, and `EXCEPT` clauses are used to combine or exclude like rows from two or more tables:
 
 ```sql
 SELECT statement 1
@@ -194,13 +194,13 @@ SELECT statement 1
 SELECT statement 2
 ```
 
-### 创建表作为选择 {#create-table-as-select}
+### CREATE TABLE AS SELECT {#create-table-as-select}
 
-使用`CREATE TABLE AS SELECT` (CTAS)命令将`SELECT`查询的结果实体化为新表。 这有助于在模型中使用特征工程数据之前创建转换的数据集、执行聚合或预览特征工程数据。
+Use the `CREATE TABLE AS SELECT` (CTAS) command to materialize the results of a `SELECT` query into a new table. This is useful for creating transformed datasets, performing aggregations, or previewing feature-engineered data before using it in a model.
 
-如果您已准备好使用转换的功能训练模型，请参阅[模型文档](../advanced-statistics/models.md)以了解有关将`CREATE MODEL`与`TRANSFORM`子句结合使用的指导。
+If you&#39;re ready to train a model using transformed features, see the [Models documentation](../advanced-statistics/models.md) for guidance on using `CREATE MODEL` with the `TRANSFORM` clause.
 
-您可以选择包含`TRANSFORM`子句以直接在CTAS语句中应用一个或多个功能工程函数。 使用`TRANSFORM`在模型训练之前检查转换逻辑的结果。
+You can optionally include a `TRANSFORM` clause to apply one or more feature engineering functions directly within the CTAS statement. 使用`TRANSFORM`在模型训练之前检查转换逻辑的结果。
 
 此语法适用于永久表和临时表。
 
@@ -284,29 +284,29 @@ AS SELECT * FROM movie_review;
 
 - 如果有任何变换函数生成矢量输出，则它会自动转换为数组。
 - 因此，使用`TRANSFORM`创建的表不能直接在`CREATE MODEL`语句中使用。 必须在模型创建期间重新定义转换逻辑，以生成相应的特征向量。
-- 转换仅在表创建期间应用。 插入到具有`INSERT INTO`的表中的新数据是&#x200B;**未自动转换**。 要将转换应用到新数据，必须使用带有`CREATE TABLE AS SELECT`子句的`TRANSFORM`重新创建表。
-- 此方法旨在预览和验证某个时间点的转换，而不是构建可重用的转换管道。
+- 转换仅在表创建期间应用。 插入到具有`INSERT INTO`的表中的新数据是&#x200B;**未自动转换**。 To apply transformations to new data, you must recreate the table using `CREATE TABLE AS SELECT` with the `TRANSFORM` clause.
+- This method is intended for previewing and validating transformations at a point in time, not for building reusable transformation pipelines.
 
 >[!NOTE]
 >
->有关可用转换函数及其输出类型的更多详细信息，请参阅[功能转换输出数据类型](../advanced-statistics/feature-transformation.md#available-transformations)。
+>For more details about available transformation functions and their output types, see [Feature transformation output data types](../advanced-statistics/feature-transformation.md#available-transformations).
 
 
-### TRANSFORM子句 {#transform}
+### TRANSFORM clause {#transform}
 
-使用`TRANSFORM`子句在模型训练或表创建之前将一个或多个功能工程函数应用到数据集。 此子句允许您预览、验证或定义输入特征的确切形状。
+Use the `TRANSFORM` clause to apply one or more feature engineering functions to a dataset before model training or table creation. This clause lets you preview, validate, or define the exact shape of your input features.
 
-`TRANSFORM`子句可用于以下语句：
+The `TRANSFORM` clause can be used in the following statements:
 
 - `CREATE MODEL`
 - `CREATE TABLE`
 - `CREATE TEMP TABLE`
 
-有关使用CREATE MODEL的详细说明，包括如何定义转换、设置模型选项和配置训练数据，请参阅[模型文档](../advanced-statistics/models.md)。
+See the [Models documentation](../advanced-statistics/models.md) for detailed instructions on using CREATE MODEL, including how to define transformations, set model options, and configure training data.
 
-有关`CREATE TABLE`的使用情况，请参阅[CREATE TABLE AS SELECT部分](#create-table-as-select)。
+For usage with `CREATE TABLE`, see the [CREATE TABLE AS SELECT section](#create-table-as-select).
 
-#### 创建模型示例
+#### CREATE MODEL example
 
 ```sql
 CREATE MODEL review_model
@@ -327,18 +327,18 @@ AS SELECT * FROM movie_review_e2e_DND;
 
 #### 限制 {#limitations}
 
-以下限制适用于将`TRANSFORM`与`CREATE TABLE`一起使用的情况。 请参阅`CREATE TABLE AS SELECT`限制和行为部分，详细解释如何存储转换后的数据、如何处理矢量输出以及为什么无法在模型训练工作流中直接重用结果。
+The following limitations apply when using `TRANSFORM` with `CREATE TABLE`. See `CREATE TABLE AS SELECT` limitations and behavior section for a detailed explanation of how transformed data is stored, how vector outputs are handled, and why the results cannot be reused directly in model training workflows.
 
-- 矢量输出自动转换为数组，不能直接在`CREATE MODEL`中使用。
-- 转换逻辑不会作为元数据保留，并且无法跨批次重用。
+- Vector outputs are automatically converted to arrays, which cannot be used directly in `CREATE MODEL`.
+- Transformation logic is not persisted as metadata and cannot be reused across batches.
 
-## 插入到
+## INSERT INTO
 
-`INSERT INTO`命令的定义如下：
+The `INSERT INTO` command is defined as follows:
 
 >[!IMPORTANT]
 >
->查询服务支持使用ITAS引擎的&#x200B;**仅附加操作**。 `INSERT INTO`是唯一受支持的数据操作命令，**更新**&#x200B;和&#x200B;**删除**&#x200B;操作不可用。 要反映数据中的更改，请插入表示所需状态的新记录。
+>Query Service supports **append-only operations** using the ITAS engine. `INSERT INTO` is the only supported data manipulation command, **update** and **delete** operations are not available. To reflect changes in your data, insert new records that represent the desired state.
 
 ```sql
 INSERT INTO table_name select_query
@@ -346,14 +346,14 @@ INSERT INTO table_name select_query
 
 | 参数 | 描述 |
 | ----- | ----- |
-| `table_name` | 要插入查询的表的名称。 |
-| `select_query` | `SELECT`语句。 `SELECT`查询的语法可在[SELECT查询节](#select-queries)中找到。 |
+| `table_name` | The name of the table that you want to insert the query into. |
+| `select_query` | A `SELECT` statement. The syntax of the `SELECT` query can be found in the [SELECT queries section](#select-queries). |
 
 **示例**
 
 >[!NOTE]
 >
->以下是一个精心设计的示例，仅供参考。
+>The following is a contrived example and simply for instructional purposes.
 
 ```sql
 INSERT INTO Customers SELECT SupplierName, City, Country FROM OnlineCustomers;
@@ -363,11 +363,11 @@ INSERT INTO Customers AS (SELECT * from OnlineCustomers SNAPSHOT AS OF 345)
 
 >[!INFO]
 > 
->请&#x200B;**不**&#x200B;将`SELECT`语句括在圆括号()中。 此外，`SELECT`语句结果的架构必须符合`INSERT INTO`语句中定义的表的架构。 您可以提供`SNAPSHOT`子句以将增量增量增量增量读入目标表。
+>Do **not** enclose the `SELECT` statement in parentheses (). Also, the schema of the result of the `SELECT` statement must conform to that of the table defined in the `INSERT INTO` statement. You can provide a `SNAPSHOT` clause to read incremental deltas into the target table.
 
-在根级别未找到实际XDM架构中的大多数字段，并且SQL不允许使用点表示法。 要使用嵌套字段获得逼真的结果，您必须映射`INSERT INTO`路径中的每个字段。
+Most fields in a real XDM schema are not found at the root level and SQL does not permit the use of dot notation. To achieve a realistic result using nested fields, you must map each field in your `INSERT INTO` path.
 
-要`INSERT INTO`嵌套路径，请使用以下语法：
+To `INSERT INTO` nested paths, use the following syntax:
 
 ```sql
 INSERT INTO [dataset]
@@ -383,9 +383,9 @@ FROM [dataset]
 INSERT INTO Customers SELECT struct(SupplierName as Supplier, City as SupplierCity, Country as SupplierCountry) _Adobe FROM OnlineCustomers;
 ```
 
-## 删除表
+## DROP TABLE
 
-`DROP TABLE`命令删除现有的表，如果它不是外部表，则从文件系统中删除与该表关联的目录。 如果该表不存在，则会发生异常。
+The `DROP TABLE` command drops an existing table and deletes the directory associated with the table from the file system if it is not an external table. If the table does not exist, an exception occurs.
 
 ```sql
 DROP TABLE [IF EXISTS] [db_name.]table_name
@@ -393,19 +393,19 @@ DROP TABLE [IF EXISTS] [db_name.]table_name
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则在表&#x200B;**不**&#x200B;存在时不会引发异常。 |
+| `IF EXISTS` | If this is specified, no exception is thrown if the table does **not** exist. |
 
-## 创建数据库
+## CREATE DATABASE
 
-`CREATE DATABASE`命令创建Azure Data Lake Storage (ADLS)数据库。
+The `CREATE DATABASE` command creates an Azure Data Lake Storage (ADLS) database.
 
 ```sql
 CREATE DATABASE [IF NOT EXISTS] db_name
 ```
 
-## 删除数据库
+## DROP DATABASE
 
-`DROP DATABASE`命令从实例中删除数据库。
+The `DROP DATABASE` command deletes the database from an instance.
 
 ```sql
 DROP DATABASE [IF EXISTS] db_name
@@ -413,11 +413,11 @@ DROP DATABASE [IF EXISTS] db_name
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此项，则在数据库&#x200B;**不**&#x200B;存在时不会引发异常。 |
+| `IF EXISTS` | If this is specified, no exception is thrown if the database does **not** exist. |
 
-## 删除架构
+## DROP SCHEMA
 
-`DROP SCHEMA`命令删除现有架构。
+The `DROP SCHEMA` command drops an existing schema.
 
 ```sql
 DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
@@ -425,15 +425,15 @@ DROP SCHEMA [IF EXISTS] db_name.schema_name [ RESTRICT | CASCADE]
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `IF EXISTS` | 如果指定此参数且架构&#x200B;**不**&#x200B;存在，则不会引发异常。 |
-| `RESTRICT` | 模式的默认值。 如果指定，则仅当架构&#x200B;**不**&#x200B;包含任何表时才会丢弃。 |
-| `CASCADE` | 如果指定，将删除该架构以及该架构中存在的所有表。 |
+| `IF EXISTS` | If this parameter is specified and the schema does **not** exist, no exception is thrown. |
+| `RESTRICT` | The default value for the mode. If specified, the schema only drops if it does **not** contain any tables. |
+| `CASCADE` | If specified, the schema is dropped along with all the tables present in the schema. |
 
-## 创建视图 {#create-view}
+## CREATE VIEW {#create-view}
 
-SQL视图是基于SQL语句的结果集的虚拟表。 使用`CREATE VIEW`语句创建视图并为其命名。 然后，您可以使用该名称来引用回查询的结果。 这使得重复使用复杂的查询更加容易。
+An SQL view is a virtual table based on the result-set of an SQL statement. Create a view with the `CREATE VIEW` statement and give it a name. You can then use that name to refer back to the results of the query. This makes it easier to reuse complex queries.
 
-以下语法为数据集定义了`CREATE VIEW`查询。 此数据集可以是ADLS或加速存储数据集。
+The following syntax defines a `CREATE VIEW` query for a dataset. 此数据集可以是ADLS或加速存储数据集。
 
 ```sql
 CREATE VIEW view_name AS select_query
@@ -525,7 +525,7 @@ $$BEGIN
 $$END
 
 exceptionHandler:
-      WHEN OTHER
+      WHEN OTHERS
       THEN statementList
 
 statementList:
@@ -543,7 +543,7 @@ $$BEGIN
      AS SELECT _id AS id FROM email_tracking_experience_event_dataset SNAPSHOT BETWEEN @v_snapshot_from AND @v_snapshot_to;
 
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     DROP TABLE IF EXISTS tracking_email_id_incrementally;
     SELECT 'ERROR';
 $$END;
@@ -647,7 +647,7 @@ $$BEGIN
     ELSE    
        SELECT 'DEFAULT';
     END IF;  
-EXCEPTION WHEN OTHER THEN 
+EXCEPTION WHEN OTHERS THEN 
   SELECT 'THERE WAS AN ERROR';    
  END$$;
 ```
@@ -702,7 +702,7 @@ SELECT * FROM TABLE_WITH_COMPLEX_FIELDS LIMIT 2;
 SET resolve_fallback_snapshot_on_failure=true;
 ```
 
-以下代码行使用元数据中最早可用的`@from_snapshot_id`覆盖`snapshot_id`。
+以下代码行使用元数据中最早可用的`snapshot_id`覆盖`@from_snapshot_id`。
 
 ```sql
 $$ BEGIN
@@ -724,7 +724,7 @@ Insert Into
       cast( @to_snapshot_id AS string) last_snapshot_id,
       cast( @last_updated_timestamp AS TIMESTAMP) process_timestamp;
 EXCEPTION
-  WHEN OTHER THEN
+  WHEN OTHERS THEN
     SELECT 'ERROR';
 END
 $$;
@@ -750,7 +750,7 @@ ALTER TABLE t2 ADD FOREIGN KEY (c1) REFERENCES t1(c1) NOT ENFORCED;
 
 ## 表存在
 
-`table_exists` SQL命令用于确认系统中当前是否存在表。 如果表`true`确实存在&#x200B;**，则命令返回布尔值：**；如果表确实存在`false`确实不存在&#x200B;**，则返回**。
+`table_exists` SQL命令用于确认系统中当前是否存在表。 如果表&#x200B;**确实存在**，则命令返回布尔值： `true`；如果表确实存在&#x200B;**确实不存在**，则返回`false`。
 
 通过在运行语句之前验证表是否存在，`table_exists`功能简化了编写匿名块以涵盖`CREATE`和`INSERT INTO`用例的过程。
 
@@ -775,7 +775,7 @@ CREATE TABLE IF NOT EXISTS target_table_name AS
                      WHERE  @mytableexist = 'true' limit 20
               ) ;
 EXCEPTION
-WHEN other THEN SELECT 'ERROR';
+WHEN OTHERS THEN SELECT 'ERROR';
 
 END $$; 
 ```
@@ -837,7 +837,7 @@ SET property_key = property_value
 | `property_key` | 要列出或更改的属性的名称。 |
 | `property_value` | 您希望属性设置为的值。 |
 
-要返回任何设置的值，请使用不带`SET [property key]`的`property_value`。
+要返回任何设置的值，请使用不带`property_value`的`SET [property key]`。
 
 ## [!DNL PostgreSQL]命令
 
@@ -845,7 +845,7 @@ SET property_key = property_value
 
 ### 分析表 {#analyze-table}
 
-`ANALYZE TABLE`命令对命名表执行分布分析和统计计算。 根据数据集是存储在`ANALYZE TABLE`加速存储[还是](#compute-statistics-accelerated-store)数据湖[中，](#compute-statistics-data-lake)的使用会有所不同。 有关其使用的更多信息，请参阅各自的部分。
+`ANALYZE TABLE`命令对命名表执行分布分析和统计计算。 根据数据集是存储在[加速存储](#compute-statistics-accelerated-store)还是[数据湖](#compute-statistics-data-lake)中，`ANALYZE TABLE`的使用会有所不同。 有关其使用的更多信息，请参阅各自的部分。
 
 #### 加速存储的计算统计信息 {#compute-statistics-accelerated-store}
 
@@ -859,23 +859,23 @@ ANALYZE TABLE <original_table_name>
 
 以下是使用`ANALYZE TABLE`命令:-后可用的统计计算列表
 
-| 计算值 | 描述 |
+| Calculated values | 描述 |
 |---|---|
-| `field` | 表中列的名称。 |
-| `data-type` | 每列可接受的数据类型。 |
-| `count` | 包含此字段的非null值的行数。 |
-| `distinct-count` | 此字段的唯一值或非重复值的数量。 |
-| `missing` | 此字段具有null值的行数。 |
-| `max` | 分析表中的最大值。 |
-| `min` | 分析表的最小值。 |
-| `mean` | 分析表的平均值。 |
-| `stdev` | 分析表的标准偏差。 |
+| `field` | The name of the column in a table. |
+| `data-type` | The acceptable type of data for each column. |
+| `count` | The number of rows that contain a non-null value for this field. |
+| `distinct-count` | The number of unique or distinct values for this field. |
+| `missing` | The number of rows that have a null value for this field. |
+| `max` | The maximum value from the analyzed table. |
+| `min` | The minimum value from the analyzed table. |
+| `mean` | The average value of the analyzed table. |
+| `stdev` | The standard deviation of the analyzed table. |
 
-#### 计算数据湖上的统计信息 {#compute-statistics-data-lake}
+#### COMPUTE STATISTICS on the data lake {#compute-statistics-data-lake}
 
-您现在可以使用[!DNL Azure Data Lake Storage] SQL命令计算`COMPUTE STATISTICS` (ADLS)数据集的列级统计信息。 计算整个数据集、数据集子集、所有列或列子集的列统计信息。
+You can now calculate column-level statistics on [!DNL Azure Data Lake Storage] (ADLS) datasets with the `COMPUTE STATISTICS` SQL command. Compute column statistics on either the entire dataset, a subset of a dataset, all columns, or a subset of columns.
 
-`COMPUTE STATISTICS`扩展`ANALYZE TABLE`命令。 但是，加速存储表上不支持`COMPUTE STATISTICS`、`FILTERCONTEXT`和`FOR COLUMNS`命令。 当前，只有ADLS表支持`ANALYZE TABLE`命令的这些扩展。
+`COMPUTE STATISTICS` extends the `ANALYZE TABLE` command. However, the `COMPUTE STATISTICS`, `FILTERCONTEXT`, and `FOR COLUMNS` commands are not supported on accelerated store tables. These extensions for the `ANALYZE TABLE` command are currently only supported for ADLS tables.
 
 **示例**
 
@@ -883,13 +883,13 @@ ANALYZE TABLE <original_table_name>
 ANALYZE TABLE tableName FILTERCONTEXT (timestamp >= to_timestamp('2023-04-01 00:00:00') and timestamp <= to_timestamp('2023-04-05 00:00:00')) COMPUTE STATISTICS  FOR COLUMNS (commerce, id, timestamp);
 ```
 
-`FILTER CONTEXT`命令根据提供的筛选条件计算数据集子集的统计信息。 `FOR COLUMNS`命令将目标定位到特定列以供分析。
+The `FILTER CONTEXT` command calculates statistics on a subset of the dataset based on the filter condition provided. The `FOR COLUMNS` command targets specific columns for analysis.
 
 >[!NOTE]
 >
->生成的`Statistics ID`和统计信息只对每个会话有效，不能跨不同的PSQL会话访问。<br><br>限制：<ul><li>数组或映射数据类型不支持生成统计信息</li><li>计算统计信息是&#x200B;**而不是**&#x200B;跨会话持久保留。</li></ul><br><br>选项：<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>默认情况下，标志设置为true。 因此，当请求有关不支持的数据类型的统计信息时，它不会出错但会静默跳过具有不支持的数据类型的字段。<br>要在请求不支持的数据类型上的统计信息时启用错误通知，请使用： `SET skip_stats_for_complex_datatypes = false`。
+>The `Statistics ID` and the statistics generated are only valid for each session and cannot be accessed across different PSQL sessions.<br><br>Limitations:<ul><li>Statistics generation is not supported for array or map data types</li><li>Computed statistics are **not** persisted across sessions.</li></ul><br><br>选项：<br><ul><li>`skip_stats_for_complex_datatypes`</li></ul><br>By default, the flag is set to true. As a result, when statistics are requested on a datatype that is not supported, it does not error out but silently skips fields with the unsupported datatypes.<br>To enable notifications on errors when statistics are requested on unsupported datatype, use: `SET skip_stats_for_complex_datatypes = false`.
 
-控制台输出如下所示。
+The console output appears as seen below.
 
 ```console
 |     Statistics ID      |
@@ -929,7 +929,7 @@ Adobe Experience Platform查询服务提供了示例数据集，作为其近似�
 
 当不需要对数据集进行聚合操作的确切答案时，最好使用数据集示例。 若要通过发出近似查询以返回近似答案来对大型数据集执行更有效的探索性查询，请使用`TABLESAMPLE`功能。
 
-使用来自现有[!DNL Azure Data Lake Storage] (ADLS)数据集的统一随机样本创建样本数据集，仅使用来自原始数据集的记录百分比。 数据集示例功能使用`ANALYZE TABLE`和`TABLESAMPLE` SQL命令扩展`SAMPLERATE`命令。
+使用来自现有[!DNL Azure Data Lake Storage] (ADLS)数据集的统一随机样本创建样本数据集，仅使用来自原始数据集的记录百分比。 数据集示例功能使用`TABLESAMPLE`和`SAMPLERATE` SQL命令扩展`ANALYZE TABLE`命令。
 
 在下面的示例中，第一行演示如何计算表格的5%样本。 第二行演示如何从表中数据的过滤视图中计算5%的样本。
 
@@ -1023,7 +1023,7 @@ EXPLAIN FORMAT { TEXT | JSON } statement
 
 >[!IMPORTANT]
 >
->使用`SELECT`关键字运行时，`EXPLAIN`语句可能返回的任何输出都将被丢弃。 这一声明的其他副作用照常发生。
+>使用`EXPLAIN`关键字运行时，`SELECT`语句可能返回的任何输出都将被丢弃。 这一声明的其他副作用照常发生。
 
 **示例**
 
@@ -1128,7 +1128,7 @@ SHOW ALL
 
 | 参数 | 描述 |
 | ------ | ------ |
-| `name` | 您希望了解其信息的运行时参数的名称。 运行时参数的可能值包括以下值： <br>`SERVER_VERSION`：此参数显示服务器的版本号。<br>`SERVER_ENCODING`：此参数显示服务器端字符集编码。<br>`LC_COLLATE`：此参数显示用于归类（文本排序）的数据库区域设置。<br>`LC_CTYPE`：此参数显示数据库的字符分类区域设置。<br>`IS_SUPERUSER`：此参数显示当前角色是否具有超级用户权限。 |
+| `name` | 您希望了解其信息的运行时参数的名称。 运行时参数可能值包括： <br>`SERVER_VERSION`：此参数显示服务器的版本号。<br>`SERVER_ENCODING`：此参数显示服务器端字符集编码。<br>`LC_COLLATE`：此参数显示数据库的归类（文本排序）区域设置。<br>`LC_CTYPE`：此参数显示数据库的字符分类区域设置。<br>`IS_SUPERUSER`：此参数显示当前角色是否具有超级用户权限。 |
 | `ALL` | 显示所有配置参数的值及其说明。 |
 
 **示例**
@@ -1258,7 +1258,7 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 
 下表列出了向Azure SQL中具有[!DNL Postgres SQL]、XDM和[!DNL Accelerated Database Recovery] (ADR)的表添加列时接受的数据类型。
 
-| — | PSQL客户端 | XDM | ADR | 描述 |
+| --- | PSQL客户端 | XDM | ADR | 描述 |
 |---|---|---|---|---|
 | 1 | `bigint` | `int8` | `bigint` | 一种数值数据类型，用于存储从 — 9,223,372,036,854,775,807到9,223,372,036,854,775,807之间的大整数，以8字节为单位。 |
 | 2 | `integer` | `int4` | `integer` | 用于存储 — 2,147,483,648到2,147,483,647 （以4字节为单位）的整数的数字数据类型。 |
@@ -1266,14 +1266,14 @@ ALTER TABLE table_name ADD COLUMN column_name_1 data_type1, column_name_2 data_t
 | 4 | `tinyint` | `int1` | `tinyint` | 用于存储0到255之间的整数（以1字节为单位）的数字数据类型。 |
 | 5 | `varchar(len)` | `string` | `varchar(len)` | 可变大小的字符数据类型。 当列数据项的大小差别很大时，最好使用`varchar`。 |
 | 6 | `double` | `float8` | `double precision` | `FLOAT8`和`FLOAT`是`DOUBLE PRECISION`的有效同义词。 `double precision`是浮点数据类型。 浮点值以8字节为单位存储。 |
-| 7 | `double precision` | `float8` | `double precision` | `FLOAT8`是`double precision`的有效同义词。`double precision`是浮点数据类型。 浮点值以8字节为单位存储。 |
+| 7 | `double precision` | `float8` | `double precision` | `FLOAT8`是`double precision`.`double precision`的有效同义词 是浮点数据类型。 浮点值以8字节为单位存储。 |
 | 8 | `date` | `date` | `date` | `date`数据类型是4字节存储的日历日期值，没有任何时间戳信息。 有效日期的范围为01-01-0001到12-31-9999。 |
 | 9 | `datetime` | `datetime` | `datetime` | 一种数据类型，用于存储以日历日期和时间表示的时间瞬间。 `datetime`包含限定符：年、月、日、小时、秒和分数。 `datetime`声明可以包括在该序列中连接这些时间单位的任何子集，或者甚至只包括单个时间单位。 |
 | 10 | `char(len)` | `string` | `char(len)` | `char(len)`关键字用于指示该项为固定长度字符。 |
 
-#### 添加架构
+#### ADD SCHEMA
 
-以下SQL查询显示了向数据库/模式添加表的示例。
+The following SQL query shows an example of adding a table to a database / schema.
 
 ```sql
 ALTER TABLE table_name ADD SCHEMA database_name.schema_name
@@ -1281,12 +1281,12 @@ ALTER TABLE table_name ADD SCHEMA database_name.schema_name
 
 >[!NOTE]
 >
-> 无法将ADLS表和视图添加到DWH数据库/架构中。
+> ADLS tables and views cannot be added to DWH databases / schemas.
 
 
-#### 删除架构
+#### REMOVE SCHEMA
 
-以下SQL查询显示了从数据库/模式中删除表的示例。
+The following SQL query shows an example of removing a table from a database / schema.
 
 ```sql
 ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
@@ -1294,7 +1294,7 @@ ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
 
 >[!NOTE]
 >
-> 无法从物理链接的DWH数据库/架构中删除DWH表和视图。
+> DWH tables and views cannot be removed from physically linked DWH databases / schemas.
 
 
 **参数**
@@ -1302,12 +1302,12 @@ ALTER TABLE table_name REMOVE SCHEMA database_name.schema_name
 | 参数 | 描述 |
 | ------ | ------ |
 | `table_name` | 正在编辑的表的名称。 |
-| `column_name` | 要添加列的名称。 |
-| `data_type` | 要添加列的数据类型。 支持的数据类型包括：bigint、char、string、date、datetime、double、double precision、integer、smallint、tinyint、varchar。 |
+| `column_name` | The name of the column you want to add. |
+| `data_type` | The data type of the column you want to add. Supported data types include the following: bigint, char, string, date, datetime, double, double precision, integer, smallint, tinyint, varchar. |
 
-### 显示主键
+### SHOW PRIMARY KEYS
 
-`SHOW PRIMARY KEYS`命令列出给定数据库的所有主键约束。
+The `SHOW PRIMARY KEYS` command lists all the primary key constraints for the given database.
 
 ```sql
 SHOW PRIMARY KEYS
@@ -1320,9 +1320,9 @@ SHOW PRIMARY KEYS
  table_name_2 | column_name2  | text     | "AAID"
 ```
 
-### 显示外键
+### SHOW FOREIGN KEYS
 
-`SHOW FOREIGN KEYS`命令列出了给定数据库的所有外键约束。
+The `SHOW FOREIGN KEYS` command lists all the foreign key constraints for the given database.
 
 ```sql
 SHOW FOREIGN KEYS
@@ -1336,9 +1336,9 @@ SHOW FOREIGN KEYS
 ```
 
 
-### 显示数据组
+### SHOW DATAGROUPS
 
-`SHOW DATAGROUPS`命令返回所有关联数据库的表。 对于每个数据库，该表都包括方案、组类型、子类型、子名称和子ID。
+The `SHOW DATAGROUPS` command returns a table of all associated databases. For each database, the table includes schema, group type, child type, child name, and child ID.
 
 ```sql
 SHOW DATAGROUPS
@@ -1354,9 +1354,9 @@ SHOW DATAGROUPS
 ```
 
 
-### 显示表的数据组
+### SHOW DATAGROUPS FOR table
 
-`SHOW DATAGROUPS FOR 'table_name'`命令返回包含参数作为其子项的所有关联数据库的表。 对于每个数据库，该表都包括方案、组类型、子类型、子名称和子ID。
+The `SHOW DATAGROUPS FOR 'table_name'` command returns a table of all associated databases that contain the parameter as its child. For each database, the table includes schema, group type, child type, child name, and child ID.
 
 ```sql
 SHOW DATAGROUPS FOR 'table_name'
@@ -1364,7 +1364,7 @@ SHOW DATAGROUPS FOR 'table_name'
 
 **参数**
 
-- `table_name`：要为其查找关联数据库的表的名称。
+- `table_name`: The name of the table that you want to find associated databases for.
 
 ```console
    Database   |      Schema       | GroupType |      ChildType       |                     ChildName                      |               ChildId

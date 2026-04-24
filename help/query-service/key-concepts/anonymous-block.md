@@ -2,9 +2,9 @@
 title: 查询服务中的匿名块
 description: 匿名块是Adobe Experience Platform查询服务支持的SQL语法，它允许您高效地执行一系列查询
 exl-id: ec497475-9d2b-43aa-bcf4-75a430590496
-source-git-commit: 65eeeb1df1d512c4cd6c67892905a63cc1cc4fc5
+source-git-commit: f2d81f05c8c19c6f28849fc4dbe9bfa26be64645
 workflow-type: tm+mt
-source-wordcount: '603'
+source-wordcount: '619'
 ht-degree: 0%
 
 ---
@@ -30,21 +30,21 @@ Adobe Experience Platform查询服务支持匿名块。 匿名块功能允许您
 
 ## 示例匿名块查询
 
-以下查询显示链接SQL语句的示例。 有关使用的任何SQL语法的详细信息，请参阅查询服务[&#128279;](../sql/syntax.md)文档中的SQL语法。
+以下查询显示链接SQL语句的示例。 有关使用的任何SQL语法的详细信息，请参阅查询服务](../sql/syntax.md)文档中的[SQL语法。
 
 ```SQL
 $$ BEGIN
     CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
     ....
     CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....; 
-    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+    EXCEPTION WHEN OTHERS THEN SET @ret = SELECT 'ERROR';
 END
 $$;
 ```
 
 在以下示例中，`SET`在指定的局部变量中保留`SELECT`查询的结果。 变量的作用域为匿名块。
 
-快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。 有关snapshot子句[&#128279;](../sql/syntax.md#SNAPSHOT-clause)的更多信息，请参阅SQL语法文档。
+快照ID存储为局部变量(`@current_sid`)。 然后，在下一个查询中使用它来返回来自同一数据集/表的基于SNAPSHOT的结果。 有关snapshot子句](../sql/syntax.md#SNAPSHOT-clause)的更多[信息，请参阅SQL语法文档。
 
 ```SQL
 $$ BEGIN                                             
@@ -66,7 +66,7 @@ $$ BEGIN
     CREATE TABLE ADLS_TABLE_A AS SELECT * FROM ADLS_TABLE_1....;
     ....
     CREATE TABLE ADLS_TABLE_D AS SELECT * FROM ADLS_TABLE_C....;
-    EXCEPTION WHEN OTHER THEN SET @ret = SELECT 'ERROR';
+    EXCEPTION WHEN OTHERS THEN SET @ret = SELECT 'ERROR';
 END
 $$;
 /
