@@ -5,9 +5,9 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。 了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 79527635a61a43e2995f08d8c5981cd2030c5840
+source-git-commit: 1939a3914b796985a837aee00b6ad14299b976ec
 workflow-type: tm+mt
-source-wordcount: '1113'
+source-wordcount: '1115'
 ht-degree: 34%
 
 ---
@@ -107,7 +107,6 @@ ht-degree: 34%
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
    - 忠诚度 {#loyalty}
       - [毛细管流事件](connectors/loyalty/capillary.md)
-      - [科比](tutorials/ui/create/loyalty/kobie.md)
       - [爪子.One](connectors/loyalty/talon-one.md)
    - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
@@ -323,6 +322,7 @@ ht-degree: 34%
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 忠诚度 {#loyalty}
          - [毛细管流事件](tutorials/ui/create/loyalty/capillary.md)
+         - [Kobie流事件](tutorials/ui/create/loyalty/kobie-streaming.md)
          - [Talon.One流事件](tutorials/ui/create/loyalty/talon-one-streaming.md)
          - [Talon.One批处理Source连接器](tutorials/ui/create/loyalty/talon-one-batch.md)
       - 营销自动化 {#marketing-automation}
