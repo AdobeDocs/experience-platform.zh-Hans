@@ -5,7 +5,7 @@ breadcrumb-title: 源连接器指南
 user-guide-description: 从多种来源引入数据。 了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 8a9dd740bb210ef125bca65a8358bb6b51f6d28f
+source-git-commit: 79527635a61a43e2995f08d8c5981cd2030c5840
 workflow-type: tm+mt
 source-wordcount: '1113'
 ht-degree: 34%
@@ -107,7 +107,7 @@ ht-degree: 34%
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
    - 忠诚度 {#loyalty}
       - [毛细管流事件](connectors/loyalty/capillary.md)
-      - [科比](tutorials/ui/create/loyalty/kobie-streaming.md)
+      - [科比](tutorials/ui/create/loyalty/kobie.md)
       - [爪子.One](connectors/loyalty/talon-one.md)
    - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
