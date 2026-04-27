@@ -2,9 +2,9 @@
 title: 查询服务中的数据治理
 description: 此概述涵盖Experience Platform查询服务中的数据治理的主要元素。
 exl-id: 37543d43-bd8c-4bf9-88e5-39de5efe3164
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: c98ae492b12fb5b9596f19a3d64785090439f7e1
 workflow-type: tm+mt
-source-wordcount: '3131'
+source-wordcount: '3182'
 ht-degree: 0%
 
 ---
@@ -39,7 +39,7 @@ Adobe Experience Platform将来自多个企业系统的数据整合在一起，�
 
 ### 访问控制 {#access-control}
 
-Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](https://adminconsole.adobe.com/)，通过基于角色的权限来管理对查询服务功能的访问。 同样，您可以通过架构和数据字段上的标签管理来控制对特定数据属性的访问。
+Adobe Experience Platform中的访问控制由基于角色的权限管理，这些权限可确定哪些用户可以使用查询服务功能。 同样，您可以通过架构和数据字段上的标签管理来控制对特定数据属性的访问。
 
 本节概述用户必须具有哪些必要的访问控制权限，才能充分利用查询服务功能。 有关将访问权限分配给产品配置文件的详细说明，请参阅[管理权限](../../access-control/ui/permissions.md)和[管理用户](../../access-control/ui/users.md)上的文档。
 
@@ -95,7 +95,7 @@ Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](
 
 通过基于[属性的访问控制功能](../../access-control/abac/overview.md)，您可以在[加速存储](../data-distiller/sql-insights/send-accelerated-queries.md)中的事实和维度数据集上定义组织或数据使用范围。 这允许管理员管理对特定区段的访问，并更好地管理授予用户或用户组的访问权限。
 
-要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询创建加速数据集，并基于现有XDM架构或临时架构构建这些数据集。 然后，管理员可以[添加和编辑架构](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field)或[临时架构](./ad-hoc-schema-labels.md#edit-governance-labels)的数据使用标签。 您可以在[!UICONTROL Labels] UI中从[!UICONTROL Schemas]工作区应用、创建和编辑架构的标签。
+要对加速数据集创建基于字段的访问限制，您可以使用查询服务CTAS查询创建加速数据集，并基于现有XDM架构或临时架构构建这些数据集。 然后，管理员可以[添加和编辑架构](../../xdm/tutorials/labels.md#edit-the-labels-for-the-schema-or-field)或[临时架构](./ad-hoc-schema-labels.md#edit-governance-labels)的数据使用标签。 您可以在[!UICONTROL Schemas] UI中从[!UICONTROL Labels]工作区应用、创建和编辑架构的标签。
 
 还可以通过数据集UI将数据使用标签[直接应用或编辑到数据集](../../data-governance/labels/user-guide.md#add-labels)，或者从访问控制[!UICONTROL Labels]工作区创建。 有关详细信息，请参阅有关如何[创建新标签](../../access-control/abac/ui/labels.md)的指南。
 
@@ -129,7 +129,7 @@ Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](
 
 为了提高安全性，查询服务为SSL连接提供本机支持，以加密客户端/服务器通信。 Experience Platform支持各种SSL选项，以满足您的数据安全需求并平衡加密和密钥交换的处理开销。
 
-有关详细信息（包括如何使用[&#x200B; SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用`verify-full`SSL选项的指南。
+有关详细信息（包括如何使用`verify-full` SSL参数值连接），请参阅关于与查询服务](../clients/ssl-modes.md)的第三方客户端连接的可用[SSL选项的指南。
 
 ### 加密和客户管理的密钥(CMK) {#encryption-and-customer-managed-keys}
 
@@ -137,7 +137,7 @@ Adobe Experience Platform中的访问控制允许您使用[Adobe Admin Console](
 
 查询服务数据合规性确保数据始终加密。 传输中的数据始终符合HTTPS标准，静态数据在Azure Data Lake存储中使用系统级别的密钥进行加密。 有关详细信息，请参阅有关[如何在Adobe Experience Platform](../../landing/governance-privacy-security/encryption.md)中加密数据的文档。 有关如何在Azure Data Lake Storage中加密静态数据的详细信息，请参阅[Azure官方文档](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-encryption)。
 
-传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。请参阅[客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys/overview.md)，了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
+传输中的数据始终符合HTTPS，同样，当数据在数据湖中静止时，使用客户管理密钥(CMK)进行加密，该密钥已受Data Lake Management支持。 当前支持的版本为TLS1.2。 请参阅[客户管理的密钥(CMK)文档](../../landing/governance-privacy-security/customer-managed-keys/overview.md)，了解如何为Adobe Experience Platform中存储的数据设置您自己的加密密钥。
 
 
 ## 审核 {#audit}
@@ -150,7 +150,7 @@ Experience Platform用户可以根据需要请求任何日志类别。 此部分
 
 查询日志UI允许您监视和查看已通过查询编辑器或查询服务API运行的所有查询的执行详细信息。 这提高了查询服务活动的透明度，允许您检查跨查询服务执行的&#x200B;**所有**&#x200B;查询的元数据。 它包括所有类型的查询，无论是探索性查询、批量查询还是计划查询。
 
-可通过[!UICONTROL Logs]工作区的[!UICONTROL Queries]选项卡中的Experience Platform UI访问查询日志。
+可通过[!UICONTROL Queries]工作区的[!UICONTROL Logs]选项卡中的Experience Platform UI访问查询日志。
 
 ![查询日志选项卡，详细信息面板突出显示。](../images/data-governance/overview/queries-log.png)
 
@@ -200,7 +200,7 @@ Experience Platform中的数据治理框架提供了一种统一的方式，可�
 
 用于数据管理的查询服务功能简化并简化了数据分类和遵守数据使用法规的过程。 识别数据后，可使用查询服务在所有输出数据集上分配主身份。 您&#x200B;**必须**&#x200B;将身份添加到数据集，以方便数据隐私请求并努力实现数据合规性。
 
-架构数据字段可以通过Experience Platform UI设置为标识字段，并且查询服务还允许您使用SQL命令“ALTER TABLE”[来](../sql/syntax.md#alter-table)标记主标识。 使用`ALTER TABLE`命令设置标识在数据集使用SQL创建时特别有用，而不是通过Experience Platform UI直接从架构创建。 有关在使用标准架构时如何[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的说明，请参阅文档。
+架构数据字段可以通过Experience Platform UI设置为标识字段，并且查询服务还允许您使用SQL命令“ALTER TABLE”](../sql/syntax.md#alter-table)来[标记主标识。 使用`ALTER TABLE`命令设置标识在数据集使用SQL创建时特别有用，而不是通过Experience Platform UI直接从架构创建。 有关在使用标准架构时如何[在UI](../../xdm/ui/fields/identity.md)中定义标识字段的说明，请参阅文档。
 
 ## 数据卫生 {#data-hygiene}
 

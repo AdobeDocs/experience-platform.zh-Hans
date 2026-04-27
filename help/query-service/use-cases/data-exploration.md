@@ -2,9 +2,9 @@
 title: 使用SQL浏览、排除和验证批量摄取
 description: 了解如何在Adobe Experience Platform中了解和管理数据摄取过程。 本文档包括如何验证批次和查询摄取的数据。
 exl-id: 8f49680c-42ec-488e-8586-50182d50e900
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 7fac5ebd3f81e6f4b9f601ab1d9252402cad52b6
 workflow-type: tm+mt
-source-wordcount: '1170'
+source-wordcount: '1163'
 ht-degree: 0%
 
 ---
@@ -37,13 +37,13 @@ ht-degree: 0%
 
 ![显示并突出显示movie_data表及其元数据列的DBVisualizer UI。](../images/use-cases/movie_data-table-with-metadata-columns.png)
 
-当数据被摄取到Experience Platform中时，会根据传入数据为其分配一个逻辑分区。 此逻辑分区由`_acp_system_metadata.sourceBatchId`表示。 此ID有助于在处理和存储数据批次之前对其进行逻辑分组和识别。
+当数据被摄取到Experience Platform中时，会根据传入数据为其分配一个逻辑分区。 此逻辑分区由`_acp_system_metadata.acp_sourceBatchId`表示。 此ID有助于在处理和存储数据批次之前对其进行逻辑分组和识别。
 
 在处理数据并将其引入数据湖后，将为其分配一个由`_ACP_BATCHID`表示的物理分区。 此ID反映摄取的数据所在的数据湖中的实际存储分区。
 
 ### 使用SQL了解逻辑分区和物理分区 {#understand-partitions}
 
-为了帮助了解数据在引入后如何分组和分发，请使用以下查询对每个逻辑分区(`_acp_system_metadata.sourceBatchId`)的不同物理分区(`_ACP_BATCHID`)的数量进行计数。
+为了帮助了解数据在引入后如何分组和分发，请使用以下查询对每个逻辑分区(`_acp_system_metadata.acp_sourceBatchId`)的不同物理分区(`_ACP_BATCHID`)的数量进行计数。
 
 ```SQL
 SELECT  _acp_system_metadata, COUNT(DISTINCT _ACP_BATCHID) FROM movie_data
@@ -80,7 +80,7 @@ GROUP  BY _acp_system_metadata
 
 ![显示输入批次如何按记录计数一次进行掌握的分布的表。](../images/use-cases/distribution-of-input-batches.png)
 
-结果表明，该方法能够快速有效地获取海量数据。 尽管创建了三个输入批次(每个输入批次包含2000、24000和9000条记录)，但在合并记录并消除重复项时，只保留了一个唯一批次。
+结果表明，该方法能够快速有效地获取海量数据。 尽管创建了三个输入批次（每个输入批次包含2000、24000和9000条记录），但在合并记录并消除重复项时，只保留了一个唯一批次。
 
 >[!NOTE]
 >
@@ -92,17 +92,17 @@ GROUP  BY _acp_system_metadata
 
 >[!TIP]
 >
->要检索批次ID并查询与该批次ID关联的记录，您必须首先在Experience Platform中创建批次。 如果您希望自己测试该过程，则可以将CSV数据摄取到Experience Platform。 阅读有关如何使用AI生成的推荐[&#128279;](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件映射到现有XDM架构的指南。
+>要检索批次ID并查询与该批次ID关联的记录，您必须首先在Experience Platform中创建批次。 如果您希望自己测试该过程，则可以将CSV数据摄取到Experience Platform。 阅读有关如何使用AI生成的推荐](../../ingestion/tutorials/map-csv/recommendations.md)将CSV文件[映射到现有XDM架构的指南。
 
-摄取批次后，您必须导航到将数据摄取到的数据集的[!UICONTROL 数据集活动选项卡]。
+摄取批次后，必须导航到将数据摄取到的数据集的[!UICONTROL Datasets activity tab]。
 
-在Experience Platform UI中，在左侧导航中选择&#x200B;**[!UICONTROL 数据集]**&#x200B;以打开[!UICONTROL 数据集]仪表板。 接下来，从[!UICONTROL 浏览]选项卡中选择数据集的名称以访问[!UICONTROL 数据集活动]屏幕。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Datasets]**&#x200B;以打开[!UICONTROL Datasets]仪表板。 接下来，从[!UICONTROL Browse]选项卡中选择数据集的名称以访问[!UICONTROL Dataset activity]屏幕。
 
 ![左侧导航中突出显示了数据集的Experience Platform UI数据集仪表板。](../images/use-cases/datasets-workspace.png)
 
-将显示[!UICONTROL 数据集活动]视图。 此视图包含选定数据集的详细信息。 它包括以表格式显示的任何摄取的批次。
+出现[!UICONTROL Dataset activity]视图。 此视图包含选定数据集的详细信息。 它包括以表格式显示的任何摄取的批次。
 
-从可用批次列表中选择一个批次，然后从右侧的详细信息面板中复制[!UICONTROL 批次ID]。
+从可用批次列表中选择一个批次，然后从右侧的详细信息面板中复制[!UICONTROL Batch ID]。
 
 ![Experience Platform数据集UI显示已摄取记录，批次ID突出显示。](../images/use-cases/batch-id.png)
 
@@ -114,7 +114,7 @@ WHERE  _acp_batchid='01H00BKCTCADYRFACAAKJTVQ8P'
 LIMIT 1;
 ```
 
-`_ACP_BATCHID`关键字用于筛选[!UICONTROL 批次ID]。
+`_ACP_BATCHID`关键字用于筛选[!UICONTROL Batch ID]。
 
 >[!TIP]
 >
