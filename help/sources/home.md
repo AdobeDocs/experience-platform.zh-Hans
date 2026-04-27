@@ -2,18 +2,18 @@
 keywords: Experience Platform；主页；热门主题；源连接器；源连接器；源；数据源；数据源；数据源连接
 solution: Experience Platform
 title: Source连接器概述
-description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源（如Adobe应用程序、基于云的存储、数据库和许多其他源）中摄取数据。
+description: Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。 您可以从各种源（如Adobe应用程序、基于云的存储、数据库和许多其他源）中摄取数据。
 exl-id: efdbed4d-5697-43ef-a47a-a8bcf0f13237
-source-git-commit: f3026e0a717c07d95f12e3aeaf380ddc1b87c712
+source-git-commit: 8c78ef8897bd160ad50688deeef83f029e6940cf
 workflow-type: tm+mt
-source-wordcount: '1724'
+source-wordcount: '1764'
 ht-degree: 11%
 
 ---
 
 # Source连接器概述
 
-Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
+Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。 您可以从各种源中摄取数据，如 Adobe 应用程序、基于云的存储、数据库和许多其他源。
 
 [!DNL Flow Service]用于收集和集中Experience Platform中各种不同来源的客户数据。 该服务提供了一个用户界面和RESTful API，可让您轻松设置到各种数据提供商的源连接。 通过这些源连接，您可以验证第三方系统、设置摄取运行的时间，以及管理数据摄取吞吐量。
 
@@ -65,7 +65,7 @@ Experience Platform允许从其他Adobe应用程序（包括Adobe Analytics和Ad
 
 ### 高级企业源 {#advanced-enterprise-sources}
 
-以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/cn/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
+以下源仅适用于[Adobe Real-Time Customer Data Platform Ultimate](https://helpx.adobe.com/legal/product-descriptions/real-time-customer-data-platform-b2c-edition-prime-and-ultimate-packages.html)或已获得独立高级企业Source连接器SKU许可的客户。
 
 | 来源 | 类别 | 摄取类型 | 云 |
 | --- | --- | --- | --- |
@@ -225,7 +225,7 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 
 ### 忠诚度 {#loyalty}
 
-您可以使用以下源将数据忠诚度摄取到Experience Platform。
+您可以使用以下源将忠诚度数据摄取到Experience Platform。
 
 | 来源 | 摄取类型 | 云 |
 | --- | --- | --- |
@@ -294,7 +294,7 @@ Experience Platform支持从第三方数据库引入数据。 有关特定源连
 | 权限级别 | 描述 |
 | ---- | ----|
 | **[!UICONTROL View Sources]**&#x200B;于 | 授予对“目录”选项卡中每种源类型以及“浏览”、“帐户”和“数据流”选项卡中的源的只读访问权限。 |
-| **[!UICONTROL Manage Sources]**&#x200B;于 | 除了&#x200B;**[!UICONTROL View Sources]**&#x200B;中包含的函数之外，还授予对&#x200B;**[!UICONTROL Connect Source]**&#x200B;中&#x200B;**[!UICONTROL Catalog]**&#x200B;选项和&#x200B;**[!UICONTROL Select Data]**&#x200B;中&#x200B;**[!UICONTROL Browse]**&#x200B;选项的访问权限。 **[!UICONTROL Manage Sources]**&#x200B;还允许您启用或禁用&#x200B;**[!UICONTROL DataFlows]**&#x200B;并编辑其计划。 |
+| **[!UICONTROL Manage Sources]**&#x200B;于 | 除了&#x200B;**[!UICONTROL View Sources]**&#x200B;中包含的函数之外，还授予对&#x200B;**[!UICONTROL Catalog]**&#x200B;中&#x200B;**[!UICONTROL Connect Source]**&#x200B;选项和&#x200B;**[!UICONTROL Browse]**&#x200B;中&#x200B;**[!UICONTROL Select Data]**&#x200B;选项的访问权限。 **[!UICONTROL Manage Sources]**&#x200B;还允许您启用或禁用&#x200B;**[!UICONTROL DataFlows]**&#x200B;并编辑其计划。 |
 | **[!UICONTROL View Sources]**&#x200B;关，**[!UICONTROL Manage Sources]**&#x200B;关 | 撤销对源的所有访问权限。 |
 
 有关通过Adobe权限授予的可用权限的详细信息，请阅读[访问控制概述](../access-control/home.md)。

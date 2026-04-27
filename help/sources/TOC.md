@@ -2,12 +2,12 @@
 audience: user
 user-guide-title: Adobe Experience Platform 源连接器帮助
 breadcrumb-title: 源连接器指南
-user-guide-description: 从多种来源引入数据。了解如何构建、赋予标签和增强已摄取的数据。
+user-guide-description: 从多种来源引入数据。 了解如何构建、赋予标签和增强已摄取的数据。
 feature: Sources
 role: Developer
-source-git-commit: 23b8d5d49e217d587dfe3d68631e6056c61b2cb8
+source-git-commit: 8a9dd740bb210ef125bca65a8358bb6b51f6d28f
 workflow-type: tm+mt
-source-wordcount: '1091'
+source-wordcount: '1113'
 ht-degree: 34%
 
 ---
@@ -107,8 +107,8 @@ ht-degree: 34%
       - [本地文件上载连接器](connectors/local-system/local-file-upload.md)
    - 忠诚度 {#loyalty}
       - [毛细管流事件](connectors/loyalty/capillary.md)
-      - [科比](connectors/loyalty/kobie.md)
-      - [Talon.One](connectors/loyalty/talon-one.md)
+      - [科比](tutorials/ui/create/loyalty/kobie-streaming.md)
+      - [爪子.One](connectors/loyalty/talon-one.md)
    - 营销自动化 {#marketing-automation}
       - [Braze Currents](connectors/marketing-automation/braze.md)
       - [查特利奥](connectors/marketing-automation/chatlio-webhook.md)
@@ -323,8 +323,6 @@ ht-degree: 34%
          - [本地文件上传](tutorials/ui/create/local-system/local-file-upload.md)
       - 忠诚度 {#loyalty}
          - [毛细管流事件](tutorials/ui/create/loyalty/capillary.md)
-         - [Kobie（批次）](tutorials/ui/create/loyalty/kobie-batch.md)
-         - [Kobie（流）](tutorials/ui/create/loyalty/kobie-streaming.md)
          - [Talon.One流事件](tutorials/ui/create/loyalty/talon-one-streaming.md)
          - [Talon.One批处理Source连接器](tutorials/ui/create/loyalty/talon-one-batch.md)
       - 营销自动化 {#marketing-automation}
@@ -412,4 +410,4 @@ ht-degree: 34%
 - [IP地址允许列表](ip-address-allow-list.md)
 - [常见问题](./troubleshooting.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/flow-service/)
-- [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [Experience Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

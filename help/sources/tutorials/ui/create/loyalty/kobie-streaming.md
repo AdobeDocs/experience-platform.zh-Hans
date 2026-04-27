@@ -1,19 +1,25 @@
 ---
 title: 使用UI将数据从Kobie流式传输到Experience Platform
 description: 了解如何使用UI将数据从Kobie流式传输到Adobe Experience Platform中。
-badge: Beta 版
 hide: true
 hidefromtoc: true
-source-git-commit: 3cba7ab5ddadc0f3b940f25280eb66a85725d1a6
+exl-id: 4e2e3287-3673-4426-8666-5f2ee284ca3d
+source-git-commit: 8c78ef8897bd160ad50688deeef83f029e6940cf
 workflow-type: tm+mt
-source-wordcount: '825'
-ht-degree: 2%
+source-wordcount: '881'
+ht-degree: 1%
 
 ---
 
-# 使用UI将数据从[!DNL Kobie]流式传输到Experience Platform
+# 使用UI将数据从[!DNL Kobie Streaming Events]流式传输到Experience Platform
 
-阅读本指南，了解如何使用UI中的源工作区将您的数据从[!DNL Kobie]连接并流式传输到Adobe Experience Platform。
+[!DNL Kobie Alchemy Loyalty Cloud (KALC)]是一个高度可配置、安全且可扩展的MACH平台，可适应您的忠诚度策略 — 加快实现价值的时间，提高效率，并通过企业级治理保护您的品牌。 通过跨CDP、CRM、CMS等产品的无缝集成，[!DNL KALC]使营销人员能够在每个渠道中提供实时个性化，同时提供灵活性和可跟踪性，以随着品牌忠诚度的增长而不断发展。
+
+阅读本指南，了解如何使用UI中的源工作区将您的数据从[!DNL Kobie Streaming Events]连接并流式传输到Adobe Experience Platform。
+
+>[!IMPORTANT]
+>
+>有关先决条件设置和映射的信息，请直接联系您的[!DNL Kobie Client Services]代表。
 
 ## 快速入门
 
@@ -24,15 +30,11 @@ ht-degree: 2%
    * [架构编辑器教程](../../../../../xdm/tutorials/create-schema-ui.md)：了解如何使用架构编辑器UI创建自定义架构。
 * [[!DNL Real-Time Customer Profile]](../../../../../profile/home.md)：根据来自多个源的汇总数据，提供统一的实时使用者个人资料。
 
->[!IMPORTANT]
->
->请阅读[[!DNL Kobie] 概述](../../../../connectors/loyalty/kobie.md)，了解将帐户连接到Experience Platform之前需要完成的先决步骤。
-
 ## 导航源目录
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问&#x200B;*[!UICONTROL Sources]*&#x200B;工作区。 在&#x200B;*[!UICONTROL Categories]*&#x200B;面板中选择相应的类别。 或者，使用搜索栏导航到要使用的特定源。
 
-若要从[!DNL Kobie]流式传输数据，请选择&#x200B;**[!UICONTROL Kobie Streaming Events]**&#x200B;下的&#x200B;*[!UICONTROL Loyalty]*&#x200B;源卡，然后选择&#x200B;**[!UICONTROL Add data]**。
+若要从[!DNL Kobie]流式传输数据，请选择&#x200B;*[!UICONTROL Loyalty]*&#x200B;下的&#x200B;**[!UICONTROL Kobie Streaming Events]**&#x200B;源卡，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 >[!TIP]
 >
@@ -85,7 +87,7 @@ ht-degree: 2%
 
 ## 映射
 
-在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。 有关详细信息，请阅读UI[中的](../../../../../data-prep/ui/mapping.md)映射指南。
+在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。 有关详细信息，请阅读UI](../../../../../data-prep/ui/mapping.md)中的[映射指南。
 
 ![工作流的映射步骤](../../../../images/tutorials/create/kobie/mapping.png)
 
@@ -108,4 +110,4 @@ ht-degree: 2%
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅有关UI[中](../../monitor-streaming.md)监视帐户和数据流的教程。
+创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅有关UI](../../monitor-streaming.md)中[监视帐户和数据流的教程。
