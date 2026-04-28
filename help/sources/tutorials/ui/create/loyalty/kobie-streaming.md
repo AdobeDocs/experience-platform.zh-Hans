@@ -3,15 +3,20 @@ title: 使用UI将数据从Kobie流式传输到Experience Platform
 description: 了解如何使用UI将数据从Kobie流式传输到Adobe Experience Platform中。
 hide: true
 hidefromtoc: true
+badge: Beta 版
 exl-id: 4e2e3287-3673-4426-8666-5f2ee284ca3d
-source-git-commit: 1939a3914b796985a837aee00b6ad14299b976ec
+source-git-commit: 90b197a632a5210c4502094de665cab53b76378b
 workflow-type: tm+mt
-source-wordcount: '881'
+source-wordcount: '904'
 ht-degree: 1%
 
 ---
 
 # 使用UI将数据从[!DNL Kobie Streaming Events]流式传输到Experience Platform
+
+>[!AVAILABILITY]
+>
+>[!DNL Kobie Streaming Events]源为测试版。 有关使用测试版标记源的更多信息，请阅读源概述中的[条款和条件](../../../../home.md#terms-and-conditions)。
 
 [!DNL Kobie Alchemy Loyalty Cloud (KALC)]是一个高度可配置、安全且可扩展的MACH平台，可适应您的忠诚度策略 — 加快实现价值的时间，提高效率，并通过企业级治理保护您的品牌。 通过跨CDP、CRM、CMS等产品的无缝集成，[!DNL KALC]使营销人员能够在每个渠道中提供实时个性化，同时提供灵活性和可跟踪性，以随着品牌忠诚度的增长而不断发展。
 
@@ -87,7 +92,7 @@ ht-degree: 1%
 
 ## 映射
 
-在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。 有关详细信息，请阅读UI[&#128279;](../../../../../data-prep/ui/mapping.md)中的映射指南。
+在将数据摄取到Experience Platform之前，使用映射界面将源数据映射到相应的架构字段。 有关详细信息，请阅读UI](../../../../../data-prep/ui/mapping.md)中的[映射指南。
 
 ![工作流的映射步骤](../../../../images/tutorials/create/kobie/mapping.png)
 
@@ -110,4 +115,4 @@ ht-degree: 1%
 
 ## 监测数据流
 
-创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅有关UI[&#128279;](../../monitor-streaming.md)中监视帐户和数据流的教程。
+创建数据流后，您可以监视通过它摄取的数据，以查看有关摄取率、成功和错误的信息。 有关如何监视数据流的详细信息，请参阅有关UI](../../monitor-streaming.md)中[监视帐户和数据流的教程。
