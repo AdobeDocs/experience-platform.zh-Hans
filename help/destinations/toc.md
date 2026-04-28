@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 343f9e9fa01b06196106126235508059836e391c
+source-git-commit: a90c6cde6d1052f068265a92fc27e32ad87cd0f1
 workflow-type: tm+mt
-source-wordcount: '1413'
+source-wordcount: '1414'
 ht-degree: 5%
 
 ---
@@ -33,7 +33,7 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
 * UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
@@ -71,11 +71,11 @@ ht-degree: 5%
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [Acxiom受众连接](./catalog/advertising/acxiom-audience-connection.md)
-      * [Acxiom RealID受众连接](./catalog/advertising/acxiom-real-id-audience-connection.md)
+      * [Acxiom Real ID™受众连接](./catalog/advertising/acxiom-real-id-audience-connection.md)
       * [Advertising目标概述](./catalog/advertising/overview.md)
       * [Adobe Advertising DSP连接](./catalog/advertising/adobe-advertising-dsp-connection.md)
       * [旧版Adobe Advertising DSP连接](./catalog/advertising/adobe-advertising-cloud-dsp-connection-legacy.md)
