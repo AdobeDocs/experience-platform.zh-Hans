@@ -5,9 +5,9 @@ user-guide-description: 激活您对于跨渠道营销活动、电子邮件营�
 description: 本文档列出了Adobe Experience Platform目标的目录
 feature: Destinations
 role: Admin,User
-source-git-commit: 36871289743f384207bb149df6e5e1af14d4d371
+source-git-commit: 343f9e9fa01b06196106126235508059836e391c
 workflow-type: tm+mt
-source-wordcount: '1345'
+source-wordcount: '1413'
 ht-degree: 5%
 
 ---
@@ -33,8 +33,8 @@ ht-degree: 5%
    * [删除目标帐户](./api/delete-destination-account.md)
    * [删除目标数据流](./api/delete-destination-dataflow.md)
    * [导出数据集](/help/destinations/api/export-datasets.md)
-   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html?lang=zh-Hans#use-cases)
-* UI 指南  {#ui}
+   * [排序和筛选目标的API响应](https://experienceleague.adobe.com/docs/experience-platform/dataflows/api/sort-and-filter.html#use-cases)
+* UI 指南 {#ui}
    * [目标工作区](./ui/destinations-workspace.md)
    * [创建新的目标连接](./ui/connect-destination.md)
    * 将数据激活到目标{#activate}
@@ -71,7 +71,7 @@ ht-degree: 5%
       * [（旧版） (V2) Marketo Engage连接](./catalog/adobe/marketo-engage.md)
       * [Marketo Engage人员同步连接](./catalog/adobe/marketo-engage-person-sync.md)
       * [Marketo Measure Ultimate连接](./catalog/adobe/marketo-measure-ultimate.md)
-      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html?lang=zh-Hans)
+      * [Experience Platform受众共享](https://experienceleague.adobe.com/docs/audience-manager/user-guide/implementation-integration-guides/integration-experience-platform/aam-aep-audience-sharing.html)
       * [联合受众组合连接](https://www.adobe.com/go/destinations-federated-audience-composition)
    * Advertising目标{#advertising}
       * [Acxiom受众连接](./catalog/advertising/acxiom-audience-connection.md)
@@ -116,6 +116,7 @@ ht-degree: 5%
       * [Pinterest连接升级](./catalog/advertising/pinterest-upgrade.md)
       * [PubMatic Connect连接](./catalog/advertising/pubmatic.md)
       * [(Beta) Reddit自定义受众连接](./catalog/advertising/reddit-custom-audience.md)
+      * [Rokt连接](./catalog/advertising/rokt.md)
       * [Snapchat Ads连接](./catalog/advertising/snap-inc.md)
       * [交易台连接](./catalog/advertising/tradedesk.md)
       * [交易台CRM连接](./catalog/advertising/tradedesk-emails.md)
@@ -287,7 +288,7 @@ ht-degree: 5%
          * [使用预定义的文件格式选项和自定义文件名配置来配置SFTP目标](../destinations/destination-sdk/guides/batch/configure-sftp-destination-with-predefined-file-formatting.md)
          * [配置基于文件的目标以导出目标受众](/help/destinations/destination-sdk/guides/batch/configure-prospect-audience-destination.md)
    * 目标创作API参考 {#authoring-api}
-      * [Destination SDK （目标创作） API引用](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
+      * [Destination SDK（目标创作） API参考](https://www.adobe.io/experience-platform-apis/references/destination-authoring/)
       * 目标服务器操作 {#server-operations}
          * [创建目标服务器配置](./destination-sdk/authoring-api/destination-server/create-destination-server.md)
          * [检索目标服务器配置](./destination-sdk/authoring-api/destination-server/retrieve-destination-server.md)
@@ -332,4 +333,4 @@ ht-degree: 5%
       * [文档自助服务模板](./destination-sdk/docs-framework/self-service-template.md)
       * [创作最佳实践](./destination-sdk/docs-framework/authoring-best-practices.md)
 * [常见问题](./destinations-faq.md)
-* [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+* [Experience Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
