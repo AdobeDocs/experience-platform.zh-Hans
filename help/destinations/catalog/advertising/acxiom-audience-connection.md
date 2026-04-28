@@ -34,7 +34,7 @@ ht-degree: 7%
 在配置[!DNL Acxiom Audience Connection]目标之前，请完成以下先决条件。
 
 * **确认使用条款：**&#x200B;阅读并签署[!DNL Acxiom]的使用条款协议。 在您执行的销售订单完成后，您将收到指向协议的链接。 在您签署协议之前，[!DNL Acxiom Audience Connection]目标卡不会出现在[!DNL Experience Platform]目标目录中。 在您接受并签署协议后，[!DNL Adobe]将完成您的设置并显示[!DNL Acxiom Audience Connection]目标卡。
-* **知道您的[!DNL Adobe]组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的使用条款协议。 有关如何[查看组织ID](https://experienceleague.adobe.com/en/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)的详细信息，请参阅[!DNL Adobe]的Experience Cloud中的&#x200B;*组织*&#x200B;主题。
+* **知道您的[!DNL Adobe]组织ID：**&#x200B;需要您的[!DNL Adobe]组织ID才能完成您的使用条款协议。 有关如何[查看组织ID](https://experienceleague.adobe.com/zh-hans/docs/core-services/interface/administration/organizations#concept_EA8AEE5B02CF46ACBDAD6A8508646255)的详细信息，请参阅[!DNL Adobe]的Experience Cloud中的&#x200B;*组织*&#x200B;主题。
 
 ## 支持的受众 {#supported-audiences}
 
