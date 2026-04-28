@@ -146,7 +146,7 @@ ht-degree: 4%
 
 以下是完整映射的示例：
 
-![ [!DNL Experience Platform]中[!DNL Rokt]目标激活工作流的映射步骤，已配置源和目标标识字段。](/help/destinations/assets/catalog/advertising/rokt/aep-identity-mapping.png)
+![&#x200B; [!DNL Experience Platform]中[!DNL Rokt]目标激活工作流的映射步骤，已配置源和目标标识字段。](/help/destinations/assets/catalog/advertising/rokt/aep-identity-mapping.png)
 
 >[!NOTE]
 >
