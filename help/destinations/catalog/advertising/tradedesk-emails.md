@@ -1,11 +1,11 @@
 ---
 title: 交易台 — CRM连接
 description: 激活交易台帐户中的配置文件，以根据CRM数据进行受众定位和抑制。
-last-substantial-update: 2025-01-16T00:00:00Z
+last-substantial-update: 2026-04-29T00:00:00Z
 exl-id: e09eaede-5525-4a51-a0e6-00ed5fdc662b
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: a052203dce4949bc795fe181821a8d890c341673
 workflow-type: tm+mt
-source-wordcount: '1799'
+source-wordcount: '1861'
 ht-degree: 2%
 
 ---
@@ -101,10 +101,9 @@ ht-degree: 2%
 * 将所有ASCII字符转换为小写。
 * 在`gmail.com`电子邮件地址中，从电子邮件地址的用户名部分删除以下字符：
 
-      *句点(“。”) 字符（ASCII代码46）。 例如，将“jane.doe@gmail.com”标准化为“janedoe@gmail.com”。
+      *句点(“。”)字符（ASCII代码46）。 例如，将“jane.doe@gmail.com”标准化为“janedoe@gmail.com”。
      *加号(“+”)字符（ASCII代码43）和所有后续字符。 例如，将“janedoe+home@gmail.com”标准化为“janedoe@gmail.com”。
   
-
 ## 电话号码规范化和哈希处理要求 {#phone-hashing}
 
 以下是关于上传电话号码的须知信息：
@@ -124,10 +123,10 @@ ht-degree: 2%
 * E.164电话号码最多可有15位。
 * 规范化E.164电话号码使用以下语法： `[+][country code][subscriber number including area code]`不含空格、连字符、括号或其他特殊字符。 下面是一些示例：
 
-      *美国： 1 (234) 567-8901被标准化为+12345678901。
-     *新加坡： 65 1243 5678已标准化为+6512345678。
-     *澳大利亚：手机号码0491 570 006已规范化，添加国家/地区代码并去除前导零： +61491570006。
-     *英国：手机号码07812 345678已标准化，以添加国家/地区代码并丢弃前导零： +447812345678。
+      *美国：1 (234) 567-8901规范化为+12345678901.
+     *新加坡：65 1243 5678规范化为+6512345678.
+     *澳大利亚：手机号码0491 570 006规范化为添加国家/地区代码并删除前导零： +61491570006.
+     *英国：手机号码07812 345678规范化为添加国家/地区代码并删除前导零： +447812345678.
   
 确保规范化的电话号码是UTF-8，而不是其他编码系统，如UTF-16。
 
@@ -156,6 +155,10 @@ ht-degree: 2%
 
 {style="table-layout:auto"}
 
+>[!NOTE]
+>
+>**[立即导出文件](/help/destinations/ui/export-file-now.md)**&#x200B;功能不适用于[!DNL The Trade Desk] CRM目标。 要导出受众，请使用[计划的每日批量导出](#activate)。
+
 ## 连接到目标 {#connect}
 
 ### 验证目标 {#authenticate}
@@ -164,12 +167,12 @@ ht-degree: 2%
 
 ### 填写目标详细信息 {#fill-in-details}
 
-在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html?lang=zh-Hans)此目标时，必须提供以下信息：
+在将受众数据发送到或激活到目标之前，您必须先设置与自己的目标平台的连接。 在[设置](https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/connect-destination.html)此目标时，必须提供以下信息：
 
 * **[!UICONTROL Account Type]**：请选择&#x200B;**[!UICONTROL Existing Account]**&#x200B;选项。
 * **[!UICONTROL Name]**：将来用于识别此目标的名称。
 * **[!UICONTROL Description]**：可帮助您将来识别此目标的描述。
-* **[!UICONTROL Advertiser ID]**：您的[!DNL Trade Desk Advertiser ID]，可以由您的[!DNL Trade Desk]帐户管理员共享或在[!DNL Advertiser Preferences] UI中的[!DNL Trade Desk]下找到。
+* **[!UICONTROL Advertiser ID]**：您的[!DNL Trade Desk Advertiser ID]，可以由您的[!DNL Trade Desk]帐户管理员共享或在[!DNL Trade Desk] UI中的[!DNL Advertiser Preferences]下找到。
 
 ![Experience Platform UI屏幕截图显示如何填写目标详细信息。](/help/destinations/assets/catalog/advertising/tradedesk/configuredestination2.png)
 
