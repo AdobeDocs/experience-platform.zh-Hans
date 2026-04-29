@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 区段匹配概述
 description: 区段匹配是Adobe Experience Platform中的区段共享服务，它允许两个或更多Experience Platform用户以安全、受管理和隐私友好的方式交换区段数据。
 exl-id: 4e6ec2e0-035a-46f4-b171-afb777c14850
-source-git-commit: d4b6b83e37762f73f628b8922bf77f1739492eef
+source-git-commit: bf5a474d7ba6ef27d196bc88c10ff9f19151e111
 workflow-type: tm+mt
-source-wordcount: '2000'
+source-wordcount: '2123'
 ht-degree: 3%
 
 ---
@@ -15,9 +15,9 @@ ht-degree: 3%
 
 >[!IMPORTANT]
 >
->Adobe在2021年引入了[!DNL Segment Match]供客户协作和交换受众。 2025年初，Adobe引入了[Real-Time CDP Collaboration](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/home)，这是满足此用例的较长期方法。
+>Adobe在2021年引入了[!DNL Segment Match]供客户协作和交换受众。 2025年初，Adobe引入了[Real-Time CDP Collaboration](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home)，这是满足此用例的较长期方法。
 >
->* 对于美国、加拿大、澳大利亚、新西兰和EMEA的客户： Adobe建议Real-Time CDP Prime和Ultimate客户将数据协作用例从[!DNL Segment Match]过渡到Real-Time CDP Collaboration。 查看Real-Time CDP Collaboration的[文档](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/home)和[快速入门指南](https://experienceleague.adobe.com/zh-hans/docs/real-time-cdp-collaboration/using/quick-start-guide)，并联系Adobe客户团队以了解详情。
+>* 对于美国、加拿大、澳大利亚、新西兰和EMEA的客户： Adobe建议Real-Time CDP Prime和Ultimate客户将数据协作用例从[!DNL Segment Match]过渡到Real-Time CDP Collaboration。 查看Real-Time CDP Collaboration的[文档](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/home)和[快速入门指南](https://experienceleague.adobe.com/en/docs/real-time-cdp-collaboration/using/quick-start-guide)，并联系Adobe客户团队以了解详情。
 >* 对于所有其他地区的客户：[!DNL Segment Match]是推荐选项，直到2026年在这些地区中发布Real-Time CDP Collaboration为止。
 
 Adobe Experience Platform区段匹配是一项区段共享服务，允许两个或更多Experience Platform用户以安全、受管且隐私友好的方式交换区段数据。 [!DNL Segment Match]使用Experience Platform隐私标准和个人标识符，例如经过哈希处理的电子邮件、经过哈希处理的电话号码以及设备标识符（如IDFA和GAID）。
@@ -51,7 +51,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 | 命名空间 | 描述 |
 | --------- | ----------- |
-| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Experience Platform提供两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html?lang=zh-Hans#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)来支持数据收集中的哈希处理。 |
+| 电子邮件（SHA256，小写） | 预哈希电子邮件地址的命名空间。 使用SHA256进行哈希处理之前，此命名空间中提供的值将转换为小写。 在规范化电子邮件地址之前，需要修剪前导空格和尾随空格。 此设置不能进行追溯性更改。 Experience Platform提供两种方法，通过[`setCustomerIDs`](https://experienceleague.adobe.com/docs/id-service/using/reference/hashing-support.html#hashing-support)和通过[数据准备](../../../data-prep/functions.md#hashing)来支持数据收集中的哈希处理。 |
 | 电话(SHA256_E.164) | 表示需要使用 SHA256 和 E.164 格式进行哈希处理的原始电话号码的命名空间。 |
 | ECID | 表示Experience Cloud ID (ECID)值的命名空间。 此命名空间还可以由以下别名引用：“Adobe Marketing Cloud ID”、“Adobe Experience Cloud ID”、“Adobe Experience Platform ID”。 有关详细信息，请参阅[ECID概述](../../../identity-service/features/ecid.md)。 |
 | Apple IDFA（广告商的ID） | 表示广告商的Apple ID的命名空间。 有关详细信息，请参阅以下有关[基于兴趣的广告](https://support.apple.com/en-us/HT202074)的文档。 |
@@ -59,11 +59,11 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ### 设置同意配置
 
-您必须提供同意配置并将其默认值设置为`opt-in`或`opt-out`以进行同意检查。
+您必须提供同意配置，并将其默认值设置为同意检查的选择加入或选择退出。
 
-选择加入和选择退出同意检查确定默认情况下您能否在同意共享用户数据的情况下进行操作。 如果同意配置默认设置为`opt-out`，则除非用户明确选择退出，否则可以共享用户数据。 如果默认设置为`opt-in`，则无法共享用户数据，除非用户明确选择加入。
+选择加入和选择退出同意检查确定默认情况下您能否在同意共享用户数据的情况下进行操作。 如果同意配置默认设置为选择加入，则除非用户明确选择退出，否则可以共享用户数据。 如果默认设置为选择退出，则除非用户明确选择加入，否则无法共享用户数据。
 
-[!DNL Segment Match]的默认同意配置设置为`opt-out`。 要为您的数据强制实施选择加入模型，请向您的Adobe客户团队发送电子邮件请求。
+区段匹配的默认同意配置设置为选择退出。 要为您的数据强制实施选择加入模型，请向您的Adobe客户团队发送电子邮件请求。
 
 有关用于设置数据共享同意值的`share`属性的更多信息，请参阅以下有关[隐私和同意字段组](../../../xdm/field-groups/profile/consents.md)的文档。 有关用于捕获消费者同意收集和使用隐私、个性化和营销偏好设置相关数据的特定字段组的信息，请参阅以下[隐私同意、Personalization和营销偏好设置GitHub示例](https://github.com/adobe/xdm/blob/master/docs/reference/datatypes/consent/consent-preferences.schema.md)。
 
@@ -84,7 +84,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 | 权限 | 描述 |
 | --- | --- |
 | 管理受众共享连接 | 此权限允许您完成伙伴握手过程，该过程连接两个组织以启用[!DNL Segment Match]流。 |
-| 管理受众共享 | 此权限允许您通过活动合作伙伴（具有[!DNL Segment Match]访问权限的管理员用户已连接的合作伙伴）创建、编辑和发布信息源（用于&#x200B;**[!UICONTROL Audience Share Connections]**&#x200B;的数据包）。 |
+| 管理受众共享 | 此权限允许您通过活动合作伙伴（具有&#x200B;**[!UICONTROL Audience Share Connections]**&#x200B;访问权限的管理员用户已连接的合作伙伴）创建、编辑和发布信息源（用于[!DNL Segment Match]的数据包）。 |
 
 有关访问控制和权限的详细信息，请参阅[访问控制概述](../../../access-control/home.md)。
 
@@ -112,7 +112,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ![建立 — 连接.png](./images/establish-connection.png)
 
-要创建新[!UICONTROL connect ID]，请选择&#x200B;**[!UICONTROL Regenerate]**&#x200B;下的[!UICONTROL Share setting]，然后选择新生成的ID旁边的复制图标。
+要创建新[!UICONTROL connect ID]，请选择[!UICONTROL Share setting]下的&#x200B;**[!UICONTROL Regenerate]**，然后选择新生成的ID旁边的复制图标。
 
 ![share-setting.png](./images/share-setting.png)
 
@@ -130,7 +130,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 **馈送**&#x200B;是一组数据（区段）、如何公开或使用该数据的规则以及确定如何将数据与合作伙伴的数据进行匹配的配置。 可通过[!DNL Segment Match]独立管理馈送并与其他Experience Platform用户交换。
 
-要创建新信息源，请从&#x200B;**[!UICONTROL Create feed]**&#x200B;仪表板中选择[!UICONTROL Feeds]。
+要创建新信息源，请从[!UICONTROL Feeds]仪表板中选择&#x200B;**[!UICONTROL Create feed]**。
 
 ![create-feed.png](./images/create-feed.png)
 
@@ -184,7 +184,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ### 更新馈送
 
-要添加或删除区段，请从&#x200B;**[!UICONTROL Create feed]**&#x200B;页面中选择[!UICONTROL Feeds]，然后选择&#x200B;**[!UICONTROL Existing feed]**。 在显示的现有馈送列表中，选择要更新的馈送，然后选择&#x200B;**[!UICONTROL Next]**。
+要添加或删除区段，请从[!UICONTROL Feeds]页面中选择&#x200B;**[!UICONTROL Create feed]**，然后选择&#x200B;**[!UICONTROL Existing feed]**。 在显示的现有馈送列表中，选择要更新的馈送，然后选择&#x200B;**[!UICONTROL Next]**。
 
 ![信息源列表](./images/feed-list.png)
 
@@ -198,7 +198,7 @@ Adobe Experience Platform区段匹配是一项区段共享服务，允许两个�
 
 ### 接受传入馈送
 
-要查看传入馈送，请从&#x200B;**[!UICONTROL Received]**&#x200B;页面的标题中选择[!UICONTROL Feeds]，然后从列表中选择要查看的馈送。 要接受馈送，请选择&#x200B;**[!UICONTROL Enable for profile]**&#x200B;并等待片刻让状态从[!UICONTROL Pending]更新为[!UICONTROL Enabled]。
+要查看传入馈送，请从[!UICONTROL Feeds]页面的标题中选择&#x200B;**[!UICONTROL Received]**，然后从列表中选择要查看的馈送。 要接受馈送，请选择&#x200B;**[!UICONTROL Enable for profile]**&#x200B;并等待片刻让状态从[!UICONTROL Pending]更新为[!UICONTROL Enabled]。
 
 ![已接收.png](./images/received.png)
 
