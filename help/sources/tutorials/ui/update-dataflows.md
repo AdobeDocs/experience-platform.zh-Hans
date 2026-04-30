@@ -2,9 +2,9 @@
 description: 了解如何在Experience Platform UI中更新现有源数据流。
 title: 在UI中更新Source连接数据流
 exl-id: 0499a2a3-5a22-47b1-ac0e-76a432bd26c0
-source-git-commit: 4c4f221a5060360fa0381c8532227e854ad40a77
+source-git-commit: 2139566a7c44de8736f7433ba826796dad44715f
 workflow-type: tm+mt
-source-wordcount: '885'
+source-wordcount: '893'
 ht-degree: 7%
 
 ---
@@ -25,7 +25,7 @@ ht-degree: 7%
 >[!CONTEXTUALHELP]
 >id="platform_sources_dataflows_daysRemaining"
 >title="数据集有效期限"
->abstract="此列指示目标数据集在自动到期之前剩余的天数。<br>如果目标数据集到期，则数据流将失败。要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。请参阅文档以了解如何更新过期日期。"
+>abstract="此列指示目标数据集在自动过期前剩余的天数。<br>如果目标数据集已过期，数据流将失败。 要防止数据流失败，请确保将目标数据集设置为在正确的日期到期。 请参阅文档以了解如何更新过期日期。"
 
 在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**，然后从顶部标题中选择&#x200B;**[!UICONTROL Dataflows]**。
 
@@ -33,7 +33,7 @@ ht-degree: 7%
 
 >[!TIP]
 >
->您可以使用过滤功能对数据流进行排序和过滤。 有关详细信息，请阅读在UI[中筛选](./filter.md)源对象的指南。
+>您可以使用过滤功能对数据流进行排序和过滤。 有关详细信息，请阅读在UI](./filter.md)中筛选[源对象的指南。
 
 [!UICONTROL Dataflows]页面显示贵组织中所有现有数据流的列表。 找到要更新的数据流，然后选择它旁边的省略号(`...`)。 此时会显示一个下拉菜单，其中显示了可供选择的选项列表，用于对现有数据流进行其他配置。
 
@@ -47,7 +47,7 @@ ht-degree: 7%
 
 >[!NOTE]
 >
->以下源当前不支持编辑映射功能： Adobe Analytics、Adobe Audience Manager、HTTP API和[!DNL Marketo Engage]。
+>以下源当前不支持编辑映射功能：Adobe Analytics、Adobe Audience Manager和HTTP API。
 
 在此过程中，您还可以更新与数据流关联的映射集。  映射界面显示数据流的现有映射，而不是新的推荐映射集。 映射更新仅适用于计划在未来运行的数据流。 计划进行一次性摄取的数据流无法更新其映射集。
 
