@@ -3,9 +3,9 @@ title: 庞博拉意图
 description: 了解Experience Platform上的Bombora Intent源。
 last-substantial-update: 2025-03-26T00:00:00Z
 exl-id: d2e81207-8ef5-4e52-bbac-a2fa262d8d08
-source-git-commit: 627d939678a6bde0e7298e71f0dc142d46dc8e99
+source-git-commit: 6d86b6cfe966b210d105c9561428c001908007af
 workflow-type: tm+mt
-source-wordcount: '1591'
+source-wordcount: '1775'
 ht-degree: 1%
 
 ---
@@ -69,7 +69,7 @@ Experience Platform上的[!DNL Bombora]由[!DNL Google Cloud Storage]托管。 �
 | 访问密钥 | [!DNL Bombora]访问密钥。 这是一个40字符、以base-64编码的字符串，向Experience Platform验证您的帐户时需要使用该字符串。 |
 | 存储桶名称 | 将从其中提取数据的[!DNL Bombora]存储段。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读[源概述 [!DNL Google Cloud Storage] 中的](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的[先决条件指南。
 
 ## [!DNL Bombora]架构 {#schema}
 
@@ -195,7 +195,7 @@ Experience Platform上的[!DNL Bombora]由[!DNL Google Cloud Storage]托管。 �
 
 +++回答
 
-Experience Platform中的域匹配基于与已清理的域字段值的精确匹配。 Experience Platform会自动删除前缀（例如https:/<span>/www.），并保留顶级域（例如adobe.com）。 匹配需要精确的域值，不支持模糊匹配或子域。
+Experience Platform中的域匹配基于与已清理的域字段值的精确匹配。 Experience Platform会自动删除前缀（例如https:/<span>/www。） 并保留顶级域（例如adobe.com）。 匹配需要精确的域值，不支持模糊匹配或子域。
 
 +++
 
@@ -204,5 +204,28 @@ Experience Platform中的域匹配基于与已清理的域字段值的精确匹�
 +++回答
 
 可在[帐户受众](../../../segmentation/types/account-audiences.md)中使用意图数据来增强定位、分段和个性化。 通过利用意图信号，企业可以识别对特定主题表现出高度兴趣的客户，并与他们互动，从而优化营销和销售推广。
+
++++
+
+### 标准[!DNL Account Key]字段组是否与[!DNL Bombora Account Intent]架构兼容？
+
++++回答
+
+不是。 使用`accountID`字段与B2B帐户架构建立关系。 这无需在引用或源架构中引入整个字段组。
++++
+
+### [!DNL Bombora Account Intent]架构如何与B2B帐户架构建立关系？
+
++++回答
+
+[!DNL Bombora Account Intent]架构使用`accountID`字段链接到相应的B2B帐户记录。 当在两个数据集中都找到匹配域时，会在引入期间自动填充此字段。 具体而言，[!DNL Bombora]架构中的`accountID`引用了标准B2B帐户架构中的`accountKey.sourceKey`。
+
++++
+
+### 为什么[!DNL Bombora Account Intent]架构使用`accountID`而不是典型的[!DNL Account Key]字段组结构？
+
++++回答
+
+[!DNL Bombora Intent]架构侧重于存储和处理效率。 架构不使用整个字段组，而是使用简化的单个字段(`accountID`)来建立关系。 这降低了复杂性并符合目的数据的最佳处理模式。
 
 +++

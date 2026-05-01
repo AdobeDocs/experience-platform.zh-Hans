@@ -3,9 +3,9 @@ title: Demandbase意图
 description: 了解Experience Platform上的Demandbase意图源。
 last-substantial-update: 2025-03-26T00:00:00Z
 exl-id: 62dd27e0-b846-4c04-977f-8a3ab99bc464
-source-git-commit: 04af34d439ba76b0d0053ba9de45ca962458d3e8
+source-git-commit: 6d86b6cfe966b210d105c9561428c001908007af
 workflow-type: tm+mt
-source-wordcount: '1500'
+source-wordcount: '1675'
 ht-degree: 2%
 
 ---
@@ -24,7 +24,7 @@ ht-degree: 2%
 
 ### IP地址允许列表
 
-在使用源连接器之前，必须将IP地址列表添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 列入允许列表有关详细信息，请参阅[IP地址](../../ip-address-allow-list.md)页。
+在使用源连接器之前，必须将IP地址列表添加到允许列表。 未能将特定于地区的IP地址添加到允许列表中，可能会导致使用源时出现错误或性能不佳。 有关详细信息，请参阅[IP地址](../../ip-address-allow-list.md)页。
 
 ### 在Experience Platform上配置权限
 
@@ -52,7 +52,7 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 | 存储桶名称 | 将从其中提取数据的[!DNL Demandbase]存储段。 |
 | 文件夹路径 | 要提供访问权限的文件夹的路径。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读[源概述 [!DNL Google Cloud Storage] 中的](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的[先决条件指南。
 
 ## [!DNL Demandbase]架构
 
@@ -188,7 +188,7 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 
 +++回答
 
-Experience Platform中的域匹配基于与已清理的域字段值的精确匹配。 Experience Platform会自动删除前缀(例如https:/<span>/www.)，并保留顶级域(例如adobe.com)。 匹配需要精确的域值，不支持模糊匹配或子域。
+Experience Platform中的域匹配基于与已清理的域字段值的精确匹配。 Experience Platform会自动删除前缀（例如https:/<span>/www。） 并保留顶级域（例如adobe.com）。 匹配需要精确的域值，不支持模糊匹配或子域。
 
 +++
 
@@ -197,5 +197,28 @@ Experience Platform中的域匹配基于与已清理的域字段值的精确匹�
 +++回答
 
 可在[帐户受众](../../../segmentation/types/account-audiences.md)中使用意图数据来增强定位、分段和个性化。 通过利用意图信号，企业可以识别对特定主题表现出高度兴趣的客户，并与他们互动，从而优化营销和销售推广
+
++++
+
+### 标准[!DNL Account Key]字段组是否与[!DNL Demandbase Account Intent]架构兼容？
+
++++回答
+
+不是。 使用`accountID`字段与B2B帐户架构建立关系。 这无需在引用或源架构中引入整个字段组。
++++
+
+### [!DNL Demandbase Account Intent]架构如何与B2B帐户架构建立关系？
+
++++回答
+
+[!DNL Demandbase Account Intent]架构使用`accountID`字段链接到相应的B2B帐户记录。 当在两个数据集中都找到匹配域时，会在引入期间自动填充此字段。 具体而言，[!DNL Demandbase]架构中的`accountID`引用了标准B2B帐户架构中的`accountKey.sourceKey`。
+
++++
+
+### 为什么[!DNL Demandbase Account Intent]架构使用`accountID`而不是典型的[!DNL Account Key]字段组结构？
+
++++回答
+
+[!DNL Demandbase Intent]架构侧重于存储和处理效率。 架构不使用整个字段组，而是使用简化的单个字段(`accountID`)来建立关系。 这降低了复杂性并符合目的数据的最佳处理模式。
 
 +++
