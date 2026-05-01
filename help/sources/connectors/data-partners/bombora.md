@@ -69,7 +69,7 @@ Experience Platform上的[!DNL Bombora]由[!DNL Google Cloud Storage]托管。 �
 | 访问密钥 | [!DNL Bombora]访问密钥。 这是一个40字符、以base-64编码的字符串，向Experience Platform验证您的帐户时需要使用该字符串。 |
 | 存储桶名称 | 将从其中提取数据的[!DNL Bombora]存储段。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的[先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述[&#128279;](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的先决条件指南。
 
 ## [!DNL Bombora]架构 {#schema}
 

@@ -52,7 +52,7 @@ Experience Platform上的[!DNL Demandbase]由[!DNL Google Cloud Storage]托管�
 | 存储桶名称 | 将从其中提取数据的[!DNL Demandbase]存储段。 |
 | 文件夹路径 | 要提供访问权限的文件夹的路径。 |
 
-有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的[先决条件指南。
+有关这些凭据的详细信息，请阅读[[!DNL Google Cloud Storage] HMAC密钥指南](https://cloud.google.com/storage/docs/authentication/hmackeys#overview)。 有关如何生成自己的访问密钥的步骤，请阅读 [!DNL Google Cloud Storage] 源概述[&#128279;](../cloud-storage/google-cloud-storage.md#prerequisite-setup-for-connecting-your-google-cloud-storage-account)中的先决条件指南。
 
 ## [!DNL Demandbase]架构
 
