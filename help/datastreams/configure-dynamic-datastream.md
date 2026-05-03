@@ -2,25 +2,25 @@
 title: 创建动态数据流配置
 description: 了解如何根据规则创建动态数据流配置，以将您的数据路由到各种Experience Cloud服务。
 exl-id: 528ddf89-ad87-4021-b5a6-8e25b4469ac4
-source-git-commit: bdcea238740661b453032bbab3ec7e414efd63e3
+source-git-commit: 79d724eec4903b8a3eee6f717d94fcd70a4ffcb7
 workflow-type: tm+mt
-source-wordcount: '1092'
+source-wordcount: '1040'
 ht-degree: 3%
 
 ---
 
 # 创建动态数据流配置
 
-默认情况下，Experience Platform Edge Network会将到达数据流的所有事件发送到您为数据流启用的所有Experience Cloud [服务](configure.md#add-services)。 根据您的用例，这可能并不总是您的理想工作流程。
+默认情况下，[!DNL Adobe Experience Platform Edge Network]会将到达数据流的所有事件发送到您为数据流启用的所有[!DNL Experience Cloud] [服务](/help/datastreams/configure.md#add-services)。 根据您的用例，这可能并不总是理想的工作流。
 
-动态数据流配置通过用户可配置的规则集解决此问题，这些规则集可为为数据流启用的每个服务定义，并规定了哪些Experience Cloud解决方案应接收每种类型的数据。
+动态数据流配置通过您为数据流启用的每个服务定义的规则集解决此问题，这些规则集控制哪些[!DNL Experience Cloud]解决方案接收每种类型的数据。
 
 ## 先决条件 {#prerequisites}
 
 要为数据流创建动态配置，您必须满足两个条件：
 
-* 您必须已创建&#x200B;*至少*&#x200B;个要处理的数据流。 有关详细信息，请参阅有关如何[创建数据流](configure.md)的文档。
-* 您必须向数据流中添加至少&#x200B;*个* Experience Cloud服务。 有关详细信息，请参阅有关如何将服务[添加到数据流](configure.md#add-services)的文档。
+* 您必须已创建&#x200B;*至少*&#x200B;个要处理的数据流。 有关详细信息，请参阅有关如何[创建数据流](/help/datastreams/configure.md)的文档。
+* 您必须将&#x200B;*至少*&#x200B;个[!DNL Experience Cloud]服务添加到您的数据流。 有关详细信息，请参阅有关如何将服务[添加到数据流](/help/datastreams/configure.md#add-services)的文档。
 
 创建数据流并向其中添加Experience Cloud服务后，您可以[创建动态配置](#create-dynamic-configuration)。
 
@@ -32,19 +32,19 @@ ht-degree: 3%
 |---------|------------|------|
 | Experience Platform服务的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
 | 每个数据流用于事件转发的最大动态数据流配置数 | 5 | 性能护栏 |
-| Adobe Analytics每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
-| Adobe Target每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
-| Adobe Audience Manager每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| [!DNL Adobe Analytics]的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| [!DNL Adobe Target]的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
+| [!DNL Adobe Audience Manager]的每个数据流的最大动态数据流配置数 | 5 | 性能护栏 |
 | 单个规则中可组合的条件（谓词）的最大数量 | 100 | 性能护栏 |
 | 超时前每个数据流的所有动态数据流配置评估所允许的最长时间 | 25毫秒 | 系统强制的护栏 |
 
 ## 动态数据流配置与数据流配置覆盖 {#dynamic-versus-overrides}
 
-动态数据流配置和[数据流配置覆盖](overrides.md)是互斥功能。
+动态数据流配置和[数据流配置覆盖](/help/datastreams/overrides.md)是互斥功能。
 
-这意味着您不能将动态数据流配置与数据流配置覆盖一起使用。 你必须选择一个或另一个。
+您不能将动态数据流配置与数据流配置覆盖一起使用。 你必须选择一个或另一个。
 
-如果同时启用动态数据流配置和数据流配置覆盖，则配置覆盖将优先，并且动态数据流配置规则将被忽略。
+如果同时启用这两个选项，则配置覆盖优先，并且系统会忽略动态数据流配置规则。
 
 ## 创建动态数据流配置 {#create-dynamic-configuration}
 
@@ -72,13 +72,13 @@ ht-degree: 3%
 
    ![数据流用户界面显示正在拖动资源的动态配置规则生成器。](assets/configure-dynamic-datastream/drag-resources.png)
 
-1. 在&#x200B;**[!UICONTROL Configuration]**&#x200B;部分中，根据是否希望将数据发送到每个服务，切换要为每个规则启用或禁用的服务。 如果关闭切换开关，服务路由将禁用，并且&#x200B;*不会向下游服务发送任何数据*。
+1. 在&#x200B;**[!UICONTROL Configuration]**&#x200B;部分中，为每个规则启用或禁用服务，具体取决于您是否希望将数据发送到每个服务。 如果禁用服务，则路由被禁用，并且&#x200B;*没有数据*&#x200B;发送到下游服务。
 
    ![数据流用户界面显示具有服务切换的动态配置规则。](assets/configure-dynamic-datastream/enable-service.png)
 
 1. 配置完规则后，选择&#x200B;**[!UICONTROL Save]**。
 
-## 规则优先级注意事项 {#considerations}
+## 规则优先级注意事项 {#rule-priority}
 
 您可以为每个动态数据流配置定义多个规则。 但是，如果数据与多个规则的条件匹配，则只考虑列表中的第一个匹配规则，并忽略所有其他匹配规则。
 
@@ -86,7 +86,7 @@ ht-degree: 3%
 
 要配置规则顺序，您可以按所需的顺序拖放规则窗口。
 
-![GIF显示如何通过拖放更改规则顺序。](assets/configure-dynamic-datastream/move-rules.gif)
+![使用拖放对动态数据流规则重新排序。](assets/configure-dynamic-datastream/move-rules.gif)
 
 ## 规则资格标准 {#eligibility-criteria}
 
@@ -112,32 +112,32 @@ ht-degree: 3%
 
 | 数据类型 | 支持的运算符 |
 |-----------|-------------------|
-| **字符串** | `equals`，`starts with`，`ends with`，`contains`，`exists`，`does not equal`，`does not start with`，`does not end with`，`does not contain`，`does not exist` |
+| **字符串** | `equals`, `starts with`, `ends with`, `contains`, `exists`, `does not equal`, `does not start with`, `does not end with`, `does not contain`, `does not exist` |
 | **数字（长、整数、短、字节）** | `equals`、`does not equal`、`greater than`、`less than`、`greater than or equal to`、`less than or equal to`、`exists`、`does not exist` |
 | **布尔值** | `equals true/false`、`does not equal true/false` |
 | **枚举** | `equals`、`does not equal`、`exists`、`does not exist` |
-| **日期** | `today`、`yesterday`、`this month`、`this year`、`custom date`、`in last`、`from`、`during`、`within`、`before`、`after`、`rolling range`、`in next`、`exists`、`does not exist` |
-| **逻辑** | `INCLUDE`，`ANY/ALL` （等同于AND/OR） |
+| **日期** | `today`, `yesterday`, `this month`, `this year`, `custom date`, `in last`, `from`, `during`, `within`, `before`, `after`, `rolling range`, `in next`, `exists`, `does not exist` |
+| **逻辑** | `INCLUDE`，`ANY/ALL` （等同于[!DNL AND]/[!DNL OR]） |
 
 >[!NOTE]
 >
->不直接支持&#x200B;**[!UICONTROL EXCLUDE]**&#x200B;运算符，但可以使用带有否定比较运算符的&#x200B;**[!UICONTROL INCLUDE]**&#x200B;实现等效逻辑（例如，“不等于”）。
+>不直接支持&#x200B;**[!UICONTROL EXCLUDE]**&#x200B;运算符，但可以使用带有负比较运算符的&#x200B;**[!UICONTROL INCLUDE]**&#x200B;实现等效逻辑（例如，“不等于”）。
 
 ### 规则结构 {#rule-structure}
 
 在为动态数据流配置创建规则时，了解确保最佳性能和系统兼容性的结构要求至关重要。 规则结构将直接影响系统处理和路由数据的效率。
 
-**仅使用平面表达式**。 必须将规则定义为平面逻辑表达式。 不支持嵌套的逻辑表达式（使用容器或多个级别的AND/OR）。 如果需要复杂的逻辑，请将其分解为多个扁平规则。
+**仅使用平面表达式**。 必须将规则定义为平面逻辑表达式。 不支持嵌套逻辑表达式（使用[!DNL AND]/[!DNL OR]的容器或多个级别）。 如果需要复杂的逻辑，请将其分解为多个扁平规则。
 
-例如，请考虑下图中显示的复杂规则。
+例如，请考虑以下复杂规则。
 
-![显示复杂规则的平台UI图像。](assets/configure-dynamic-datastream/complex-rule.png)
+![具有多个AND/OR条件的嵌套复杂规则示例。](assets/configure-dynamic-datastream/complex-rule.png)
 
 您可以将此规则划分为以下更简单的规则：
 
-![Platform UI图像显示第一个简化规则。](assets/configure-dynamic-datastream/simple-rule-1.png)
+![第一个简化规则，替换嵌套的复杂规则。](assets/configure-dynamic-datastream/simple-rule-1.png)
 
-![Platform UI图像显示第二个简化规则。](assets/configure-dynamic-datastream/simple-rule-2.png)
+![第二个简化规则，替换嵌套的复杂规则。](assets/configure-dynamic-datastream/simple-rule-2.png)
 
 **避免复杂的规则**。 更简单的规则可确保更快的评估和更好的可维护性。
 
@@ -145,11 +145,7 @@ ht-degree: 3%
 
 创建动态数据流配置规则时，遵循最佳实践可确保最佳性能、系统可靠性和可维护配置。 这些准则可帮助您避免常见的陷阱并创建与平台的架构无缝配合的高效规则。
 
-* **保持规则简单平整。**&#x200B;如果需要表达复杂的逻辑，请使用多个规则而不是嵌套。
+* **保持规则简单平整。** 如果需要表达复杂的逻辑，请使用多个规则而不是嵌套。
 * **仅使用[支持的数据类型](#supported-data-types)和[运算符](#supported-operators)。**
-* **测试您的规则性能。**&#x200B;过于复杂或不支持的规则可能会导致系统拒绝这些规则或影响系统性能。
-
-
-
-
+* **测试规则性能。** 过于复杂或不支持的规则可能会导致系统拒绝这些规则或影响系统性能。
 

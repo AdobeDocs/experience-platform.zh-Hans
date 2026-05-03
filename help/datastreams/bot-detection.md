@@ -2,9 +2,9 @@
 title: 为数据流配置机器人检测
 description: 了解如何为数据流配置机器人检测，以区分人类和非人类流量。
 exl-id: 6b221d97-0145-4d3e-a32d-746d72534add
-source-git-commit: 0787876d80e308c1687304ace7538a51d9a754ff
+source-git-commit: 79d724eec4903b8a3eee6f717d94fcd70a4ffcb7
 workflow-type: tm+mt
-source-wordcount: '1485'
+source-wordcount: '1460'
 ht-degree: 1%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 1%
 
 来自自动化程序、网页抓取程序、蜘蛛程序和脚本扫描程序的非人为流量可能会使识别来自人为访客的事件变得困难。 这种类型的流量会对重要的业务指标产生负面影响，导致流量报告不正确。
 
-机器人检测允许您识别由[Web SDK](/help/collection/js/js-overview.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[[!DNL Edge Network API]](https://developer.adobe.com/data-collection-apis/docs/api/)生成的事件，这些事件是由已知的蜘蛛程序和机器人生成的。
+使用机器人检测来识别由已知蜘蛛程序和机器人生成的[Web SDK](/help/collection/js/js-overview.md)、[Mobile SDK](https://developer.adobe.com/client-sdks/home/)和[Edge Network API](https://developer.adobe.com/data-collection-apis/docs/api/)生成的事件。
 
 >[!NOTE]
 >
@@ -21,7 +21,7 @@ ht-degree: 1%
 
 通过为数据流配置机器人检测，您可以识别特定的IP地址、IP范围和请求标头，以分类为机器人事件。 这有助于更准确地测量您的网站或移动应用程序上的用户活动。
 
-当对Edge Network的请求与任何机器人检测规则匹配时，XDM架构将更新为机器人得分（始终设置为1），如下所示：
+当对[!DNL Edge Network]的请求与任何机器人检测规则匹配时，XDM架构将更新为机器人得分（始终设置为1）：
 
 ```json
 {
@@ -35,57 +35,57 @@ ht-degree: 1%
 
 >[!IMPORTANT]
 >
->机器人检测不会丢弃任何机器人请求。 它仅使用机器人评分更新XDM架构，并将事件转发到您配置的[数据流服务](configure.md)。
+>机器人检测不会丢弃任何机器人请求。 它仅使用机器人评分更新XDM架构，并将事件转发到您配置的[数据流服务](/help/datastreams/configure.md)。
 >
->Adobe解决方案可能会以不同的方式处理机器人评分。 例如，Adobe Analytics使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html?lang=zh-Hans)，而不使用Edge Network设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
+>Adobe解决方案可能会以不同的方式处理机器人评分。 例如，[!DNL Adobe Analytics]使用自己的[机器人过滤服务](https://experienceleague.adobe.com/docs/analytics/admin/admin-tools/manage-report-suites/edit-report-suite/report-suite-general/bot-removal/bot-rules.html)，而不使用[!DNL Edge Network]设置的分数。 这两个服务使用相同的[IAB机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)，因此机器人得分相同。
 
 ## 技术注意事项 {#technical-considerations}
 
 在数据流上启用机器人检测之前，请牢记以下几个要点，以确保准确的结果和平顺的实施：
 
 * 机器人检测仅适用于发送给`edge.adobedc.net`的未经身份验证的请求。
-* Authenticated requests sent to `server.adobedc.net` are not evaluated for bot traffic, as authenticated traffic is considered trustworthy.
-* Bot detection rules can take up to 15 minutes to propagate across the Edge Network after being created.
+* 发送到`server.adobedc.net`的经过身份验证的请求不计算机器人流量，因为经过身份验证的流量被视为可信。
+* 机器人检测规则在创建后最多可能需要15分钟才能在[!DNL Edge Network]中传播。
 
 ## 先决条件 {#prerequisites}
 
-For bot detection to work on your datastream, you must add the **[[!UICONTROL [Bot Detection Information]]](../xdm/field-groups/event/bot-detection-information.md)** field group to your schema. See the [XDM schema](../xdm/ui/resources/schemas.md#add-field-groups) documentation to learn how to add field groups to a schema.
+要使机器人检测在您的数据流上工作，您必须将&#x200B;**[机器人检测信息](/help/xdm/field-groups/event/bot-detection-information.md)**&#x200B;字段组添加到您的架构中。 请参阅[XDM架构](/help/xdm/ui/resources/schemas.md#add-field-groups)文档，了解如何将字段组添加到架构。
 
 ## 为数据流配置机器人检测 {#configure}
 
-You can configure bot detection after creating a datastream configuration. See the documentation on how to [create and configure a datastream](configure.md), then follow the instructions below to add bot detection capabilities to your datastream.
+您可以在创建数据流配置后配置机器人检测。 请参阅有关如何[创建和配置数据流](/help/datastreams/configure.md)的文档，然后按照以下说明向数据流添加机器人检测功能。
 
-Go to the datastreams list and select the datastream to which you want to add bot detection.
+转到数据流列表并选择要向其添加机器人检测的数据流。
 
-![Datastreams user interface showing the list of datastreams.](assets/bot-detection/datastream-list.png)
+![数据流用户界面显示数据流列表。](assets/bot-detection/datastream-list.png)
 
-In the datastream details page, select the **[!UICONTROL Bot Detection]** option on the right rail.
+在数据流详细信息页面中，选择右边栏上的&#x200B;**[!UICONTROL Bot Detection]**&#x200B;选项。
 
-![Bot detection option highlighted in the datastreams user interface.](assets/bot-detection/bot-detection.png)
+数据流用户界面中高亮显示的![机器人检测选项。](assets/bot-detection/bot-detection.png)
 
-The **[!UICONTROL Bot Detection Rules]** page is shown.
+将显示&#x200B;**[!UICONTROL Bot Detection Rules]**&#x200B;页。
 
-![Bot detection settings in the datastream settings page.](assets/bot-detection/bot-detection-page.png)
+数据流设置页面中的![机器人检测设置。](assets/bot-detection/bot-detection-page.png)
 
-From the Bot Detection Rules page, you can configure bot detection by using the following functionalities:
+在机器人检测规则页面中，您可以使用以下功能配置机器人检测：
 
-* Using the [IAB/ABC International Spiders and Bots List](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/).
-* Creating your own bot detection rules.
+* 使用[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)。
+* 创建自己的机器人检测规则。
 
-### Use the IAB/ABC International Spiders and Bots List {#iab-list}
+### 使用IAB/ABC国际蜘蛛程序和机器人列表 {#iab-list}
 
-The [IAB/ABC International Spiders and Bots List](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/) is a third-party, industry-standard list of internet spiders and bots. This list helps you identify automated traffic such as search engine crawlers, monitoring tools, and other nonhuman traffic that you may not want to include in your analytics counts.
+[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)是第三方行业标准的网络蜘蛛程序和机器人列表。 此列表可帮助您识别自动流量，例如搜索引擎爬虫、监控工具，以及其他您可能不希望包含在分析计数中的非人为流量。
 
-To configure your datastream to use the IAB/ABC International Spiders and Bots List:
+要将数据流配置为使用IAB/ABC国际蜘蛛程序和机器人列表，请执行以下操作：
 
-1. Toggle the **[!UICONTROL Use IAB/ABC International Spiders and Bots List for bot detection on this datastream]** option.
-2. Select **[!UICONTROL Save]** to apply the bot detection settings to your datastream.
+1. 切换&#x200B;**[!UICONTROL Use IAB/ABC International Spiders and Bots List for bot detection on this datastream]**&#x200B;选项。
+2. 选择&#x200B;**[!UICONTROL Save]**&#x200B;以将机器人检测设置应用于数据流。
 
-![IAB spiders and bot list enabled.](assets/bot-detection/bot-detection-list.png)
+![IAB蜘蛛程序和机器人列表已启用。](assets/bot-detection/bot-detection-list.png)
 
-### Create bot detection rules {#rules}
+### 创建机器人检测规则 {#rules}
 
-In addition to using the [IAB/ABC International Spiders and Bots List](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/), you can define your own bot detection rules for each datastream.
+除了使用[IAB/ABC国际蜘蛛程序和机器人列表](https://www.iab.com/guidelines/iab-abc-international-spiders-bots-list/)之外，您还可以为每个数据流定义自己的机器人检测规则。
 
 您可以根据&#x200B;**IP地址**&#x200B;和&#x200B;**IP地址范围**&#x200B;创建机器人检测规则。
 
@@ -123,19 +123,19 @@ In addition to using the [IAB/ABC International Spiders and Bots List](https://w
 
    >[!TIP]
    >
-   >IP条件基于逻辑`OR`操作。 如果请求与您定义的任何IP条件相匹配，则将其标记为来自机器人。
+   >IP条件基于逻辑[!DNL OR]操作。 如果请求与您定义的任何IP条件相匹配，则将其标记为来自机器人。
 
 4. 如果要向规则添加标头条件，请选择&#x200B;**[!UICONTROL Add header conditions group]**，然后选择要规则使用的标头。
 
-   ![标头条件高亮显示的Bot检测规则屏幕。](assets/bot-detection/header-conditions.png)
+   ![机器人检测规则屏幕显示“添加标头条件”组选项。](assets/bot-detection/header-conditions.png)
 
    然后，添加要用于所选标头的条件。
 
-   ![标头条件高亮显示的Bot检测规则屏幕。](assets/bot-detection/header-condition-rule.png)
+   ![机器人检测规则屏幕，显示填写的标题条件字段。](assets/bot-detection/header-condition-rule.png)
 
 5. 配置所需的机器人检测规则后，选择&#x200B;**[!UICONTROL Save]**&#x200B;以将规则应用于数据流。
 
-   ![标头条件高亮显示的Bot检测规则屏幕。](assets/bot-detection/bot-detection-save.png)
+   ![机器人检测规则屏幕显示“保存”按钮高亮显示。](assets/bot-detection/bot-detection-save.png)
 
 
 ## 机器人检测规则示例 {#examples}
@@ -144,39 +144,35 @@ In addition to using the [IAB/ABC International Spiders and Bots List](https://w
 
 ### 基于一个IP地址的机器人检测 {#one-ip}
 
-要将所有来自特定IP地址的请求标记为机器人流量，请创建一个新的机器人检测规则，以评估单个IP地址，如下图所示。
+要将来自特定IP地址的所有请求标记为机器人流量，请创建一个新的机器人检测规则，以评估单个IP地址。
 
-![基于一个IP地址的机器人检测规则。](assets/bot-detection/bot-detection-one-ip.png)
+![配置为评估单个IP地址的机器人检测规则。](assets/bot-detection/bot-detection-one-ip.png)
 
 ### 基于两个IP地址的机器人检测 {#two-ip}
 
-要将来自两个特定IP地址之一的所有请求标记为机器人流量，请创建一个新的机器人检测规则，该规则将评估两个IP地址，如下图所示。
+要将来自两个特定IP地址之一的所有请求标记为机器人流量，请新建一个机器人检测规则，以评估两个IP地址。
 
-![基于两个IP地址的机器人检测规则。](assets/bot-detection/bot-detection-two-ips.png)
+![机器人检测规则配置为评估两个特定的IP地址。](assets/bot-detection/bot-detection-two-ips.png)
 
 ### 基于IP地址范围的机器人检测 {#range}
 
-要将来自特定范围内任何IP地址的所有请求标记为机器人流量，请创建一个新的机器人检测规则，以评估整个IP地址范围，如下图所示。
+要将来自特定范围内任何IP地址的所有请求标记为机器人流量，请新建机器人检测规则，以评估整个IP地址范围。
 
-![基于IP范围的机器人检测规则。](assets/bot-detection/bot-detection-range.png)
+![机器人检测规则已配置为评估IP地址范围。](assets/bot-detection/bot-detection-range.png)
 
 ### 基于IP地址和请求头的机器人检测 {#ip-header}
 
-要将所有来自特定IP地址并包含特定请求标头的请求标记为机器人流量，请创建新的机器人检测规则，如下图所示。
+要将所有来自特定IP地址并包含特定请求标头的请求标记为机器人流量，请创建新的机器人检测规则。 此规则检查请求是否来自特定IP地址，以及`referer`请求标头是否以`www.adobe.com`开头。
 
-此规则检查请求是否来自特定IP地址，以及`referer`请求标头是否以`www.adobe.com`开头。
-
-![基于IP地址和请求标头的Bot检测规则。](assets/bot-detection/bot-detection-header-ip.png)
+![配置为评估IP地址和引用请求标头的Bot检测规则。](assets/bot-detection/bot-detection-header-ip.png)
 
 ### 基于多种条件的机器人检测 {#multiple-conditions}
 
 您可以根据以下内容创建机器人检测规则：
 
-* **Multiple different conditions**: Different conditions are evaluated as a logical `AND` operation, meaning that the conditions need to be met simultaneously in order for the request to be identified as originating from a bot.
-* **Multiple conditions of the same type**: Conditions of the same type are evaluated as a logical `OR` operation, meaning that if any of the conditions are met, the request is identified as originating from a bot.
+* **多个不同的条件**：不同的条件被评估为逻辑[!DNL AND]操作，这意味着系统必须同时满足所有条件，才能将请求识别为机器人流量。
+* **同一类型的多个条件**：将同一类型的条件作为逻辑[!DNL OR]操作进行评估，这意味着如果满足任何一个条件，则请求将被标识为机器人流量。
 
-The rule shown in the image below identifies a bot-originating request if the following conditions are met:
+如果满足以下条件，则以下规则标识机器人发起的请求：请求源自两个IP地址中的任意一个，`referer`标头以`www.adobe.com`开头，而`sec-ch-ua-mobile`标头标识请求源自桌面浏览器。
 
-The request originates from either one of the two IP addresses, the `referer` header starts with `www.adobe.com`, and the `sec-ch-ua-mobile` header identifies the request as originating from a desktop browser.
-
-![Bot detection rule based on multiple conditions.](assets/bot-detection/bot-detection-multiple.png)
+![机器人检测规则配置了多个IP、引用和用户代理条件。](assets/bot-detection/bot-detection-multiple.png)
