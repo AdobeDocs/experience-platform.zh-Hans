@@ -2,9 +2,9 @@
 title: 目标概述
 description: 目标是预先构建的与目标平台的集成，允许从Adobe Experience Platform无缝激活数据。 您可以使用Adobe Experience Platform中的“目标”来激活跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例的已知和未知数据。
 exl-id: afd07ddc-652e-4e22-b298-feba27332462
-source-git-commit: 20427c4c8826905a77fac04d055d523b12a6f739
+source-git-commit: 7f69bbafa5ccd6759b5afcc2b99cbec32220ad3b
 workflow-type: tm+mt
-source-wordcount: '1298'
+source-wordcount: '1379'
 ht-degree: 2%
 
 ---
@@ -99,6 +99,12 @@ Experience Platform中的目标功能具有[!DNL Adobe Experience Platform]访�
 ![目标监视页面示例。](./assets/overview/monitoring-page-example.png)
 
 您还可以验证数据是否已成功到达您的目标。 目录中的大多数目标文档页面都有&#x200B;*验证数据导出部分*，该部分指示您如何在目标平台中检查数据是否已成功从Experience Platform导入。 查看[Amazon广告目标](/help/destinations/catalog/advertising/amazon-ads.md#exported-data)的此部分示例。
+
+## 数据加密 {#encryption}
+
+从[!DNL Experience Platform]通过目标导出的所有在途数据将通过[HTTPS TLS 1.2](https://datatracker.ietf.org/doc/html/rfc5246)或更高版本的安全加密连接传输。 [!DNL Experience Platform]在出站通信中使用的TLS协议还支持[服务器名称指示(SNI)](https://www.rfc-editor.org/rfc/rfc6066#page-6)。
+
+有关如何摄取、加密和保留数据的详细信息，请参阅[Experience Platform中的数据加密](../landing/governance-privacy-security/encryption.md)。
 
 ## 将数据激活到目标的数据治理限制 {#data-governance}
 
