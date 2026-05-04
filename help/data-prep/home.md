@@ -4,17 +4,17 @@ solution: Experience Platform
 title: 数据准备概述
 description: 本文档介绍Adobe Experience Platform中的数据准备。
 exl-id: f15eeb50-a531-4560-a524-1a670fbda706
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 4df6f85701f2a509b3f9c7ceddb8d002dd81c6f0
 workflow-type: tm+mt
-source-wordcount: '790'
-ht-degree: 0%
+source-wordcount: '800'
+ht-degree: 3%
 
 ---
 
 
 # 数据准备概述
 
-数据准备允许数据工程师映射、转换和验证进出体验数据模型(XDM)的数据。 数据准备在数据提取流程（包括CSV提取工作流）中显示为“映射”步骤。 数据工程师可以使用数据准备在摄取期间执行以下数据操作：
+通过数据准备，数据工程师可从 Experience Data Model (XDM) 映射数据并将数据映射到它、转换和验证数据。 数据准备在数据提取流程（包括CSV提取工作流）中显示为“映射”步骤。 数据工程师可以使用数据准备在摄取期间执行以下数据操作：
 
 - 定义简单的传递映射以将输入属性分配给XDM属性
 - 创建计算字段以执行可分配给XDM属性的行内计算
@@ -42,7 +42,20 @@ ht-degree: 0%
 
 ### 转义特殊字符 {#escape-special-characters}
 
-您可以使用`${...}`对字段中的特殊字符进行转义。 但是，此机制不支持包含具有句点(`.`)的字段的JSON文件。 与层次结构交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)对特殊字符进行转义。 例如，`address`是包含属性`street.name`的对象，然后可以将其称为`address.street\.name`而不是`address.street.name`。
+您可以使用`${...}`对字段中的特殊字符进行转义。 但是，此机制不支持包含具有句点(`.`)的字段的JSON文件。
+
+与层次结构交互时，如果子属性具有句点(`.`)，则必须使用反斜杠(`\`)对特殊字符进行转义。 例如，以下`address`是包含属性`street.name`的对象：
+
+```json
+{ 
+  "address": 
+      { 
+        "street.name": "myId" 
+      }
+}
+```
+
+要在映射中引用此字段，必须使用`${address.street\.name}`。
 
 ## 映射集
 
