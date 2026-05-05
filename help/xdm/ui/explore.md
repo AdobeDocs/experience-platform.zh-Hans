@@ -5,9 +5,9 @@ title: 浏览UI中的架构资源
 description: 了解如何在Experience Platform用户界面中探索现有架构、类、架构字段组和数据类型。
 type: Tutorial
 exl-id: b527b2a0-e688-4cfe-a176-282182f252f2
-source-git-commit: ca90fd3f8615e21fb4c44104c2de7679db1e1025
+source-git-commit: 80d5e90dba710fcf8f1e941668f4a506e92f5bcf
 workflow-type: tm+mt
-source-wordcount: '1965'
+source-wordcount: '2820'
 ht-degree: 0%
 
 ---
@@ -24,13 +24,13 @@ ht-degree: 0%
 
 ![突出显示带有多个选项卡的架构工作区。](../images/ui/explore/tabs.png)
 
-筛选器图标（![筛选器图标图像](/help/images/icons/filter.png)）在左边栏中显示控件，以缩小列出的结果的范围。 资源筛选器分别可用于&#x200B;**[!UICONTROL Browse]**&#x200B;和&#x200B;**[!UICONTROL Relationships]**&#x200B;选项卡上的架构和关系。
+筛选器图标（![筛选器图标图像](/help/images/icons/filter.png)）在左边栏中显示控件，以缩小列出的结果的范围。 资源筛选器分别可用于&#x200B;**[!UICONTROL Browse]**&#x200B;和&#x200B;**[!UICONTROL Relationships]**&#x200B;选项卡上的架构和关系。 在&#x200B;**[!UICONTROL Field groups]**&#x200B;选项卡上，使用[字段组元数据和筛选](#field-group-metadata-and-filtering)中描述的筛选器，按兼容的类和行业标记缩小列表范围。
 
-在[!UICONTROL Browse]工作区的[!UICONTROL Schemas]选项卡上，您可以筛选架构清单。 使用&#x200B;**[!UICONTROL Included in Profile]**&#x200B;切换开关可仅显示已启用在[实时客户个人资料](../../profile/home.md)中使用的架构。 使用&#x200B;**[!UICONTROL Show adhoc schemas]**&#x200B;切换筛选创建的架构列表，这些架构的字段已命名为仅供单个数据集使用。
+在[!UICONTROL Schemas]工作区的[!UICONTROL Browse]选项卡上，您可以筛选架构清单。 使用&#x200B;**[!UICONTROL Included in Profile]**&#x200B;切换开关可仅显示已启用在[实时客户个人资料](../../profile/home.md)中使用的架构。 使用&#x200B;**[!UICONTROL Show adhoc schemas]**&#x200B;切换筛选创建的架构列表，这些架构的字段已命名为仅供单个数据集使用。
 
 ![突出显示过滤器面板的[!UICONTROL Schemas]工作区[!UICONTROL Browse]选项卡。](../images/ui/explore/filters.png)
 
-在[!UICONTROL Relationship]工作区的[!UICONTROL Schemas]选项卡上，您可以根据四个条件筛选关系列表。 这些筛选器包括[!UICONTROL Source schema]、[!UICONTROL Destination schema]、[!UICONTROL Source class]和[!UICONTROL Destination class]。 下表提供了这些过滤器的说明。
+在[!UICONTROL Schemas]工作区的[!UICONTROL Relationship]选项卡上，您可以根据四个条件筛选关系列表。 这些筛选器包括[!UICONTROL Source schema]、[!UICONTROL Destination schema]、[!UICONTROL Source class]和[!UICONTROL Destination class]。 下表提供了这些过滤器的说明。
 
 | 过滤器 | 描述 |
 |-----------------------------------|------------|
@@ -138,7 +138,7 @@ ht-degree: 0%
 
 ### 标准类和字段组指示器 {#standard-class-and-field-group-indicator}
 
-在架构编辑器中，标准（Adobe生成的）类和字段组以挂锁图标（![A挂锁图标）表示。](/help/images/icons/lock-closed.png)。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
+在架构编辑器中，标准（Adobe生成的）类和字段组以挂锁图标（![挂锁图标。](/help/images/icons/lock-closed.png)）表示。挂锁显示在左边栏中的类或字段组名称旁边，以及架构图中作为系统生成资源一部分的任意字段旁边。
 
 ![带有挂锁图标的架构编辑器突出显示](../images/ui/explore/schema-editor-padlock-icon.png)
 
@@ -164,7 +164,7 @@ ht-degree: 0%
 
 ### [!UICONTROL Field properties] {#field-properties}
 
-当您选择画布中任何字段的名称时，右边栏会更新以在&#x200B;**[!UICONTROL Field properties]**&#x200B;下显示有关该字段的详细信息。 这可以包括字段的预期用例、默认值、模式、格式、字段是否为必填等的描述。
+当您选择画布中任何字段的名称时，右边栏会更新以在&#x200B;**[!UICONTROL Field properties]**&#x200B;下显示有关该字段的详细信息。 这可以包括字段的预期用例、默认值、模式、格式、字段是否为必填等的描述。 浏览字段组时，所选字段的标签相关详细信息也会显示在此处；请参阅结构视图中的[标签](#field-group-labels-in-structure)。
 
 ![从Commerce数据类型中选择的字段具有突出显示的字段属性。](../images/ui/explore/field-properties.png)
 
@@ -190,11 +190,97 @@ ht-degree: 0%
 
 ![架构编辑器突出显示了关系字段和编辑关系。](../images/ui/explore/relationship-field.png)
 
-要查看引用架构的主要标识的标识命名空间，请选择关系字段，然后在&#x200B;**[!UICONTROL Edit relationship]**&#x200B;侧边栏中选择[!UICONTROL Field properties]。 关系的参数显示在显示的[!UICONTROL Edit relationship]对话框中。
+要查看引用架构的主要标识的标识命名空间，请选择关系字段，然后在[!UICONTROL Field properties]侧边栏中选择&#x200B;**[!UICONTROL Edit relationship]**。 关系的参数显示在显示的[!UICONTROL Edit relationship]对话框中。
 
 ![显示具有关系参数的“编辑关系”对话框。](../images/ui/explore/edit-relationship-dialog.png)
 
 有关在XDM架构中使用关系的详细信息，请参阅有关[在UI](../tutorials/relationship-ui.md)中创建关系的教程。
+
+## 浏览字段组：使用情况和元数据 {#explore-field-groups}
+
+导航到&#x200B;**[!UICONTROL Schemas]** > **[!UICONTROL Field groups]**&#x200B;以浏览字段组。 在&#x200B;**[!UICONTROL Field groups]**&#x200B;选项卡中，其他功能可帮助您了解字段组在架构中的使用位置及其包含的内容，例如兼容性、必填字段（强制执行引入要求）和治理信号。
+
+这些功能可帮助您在进行更改之前评估影响，并在架构设计期间更有效地识别相关字段组。
+
+### 查看字段组的架构用法 {#view-schema-usage-for-field-groups}
+
+从&#x200B;**[!UICONTROL Field groups]**&#x200B;表中，选择一个字段组以打开其详细信息视图。 画布将更新以显示字段组结构，而属性边栏会显示有关所选资源的其他信息。
+
+#### 使用此字段组的架构
+
+在右侧属性边栏中，**[!UICONTROL Schemas using this field group]**&#x200B;部分列出了当前包含字段组的架构。
+
+![字段组属性边栏显示使用此字段组部分的架构。](../images/ui/explore/field-group-properties.png)
+
+- 如果字段组由三个或更少架构使用，则会显示所有架构名称。
+- 如果它被三个以上的架构使用，则只显示一些名称，以及用于查看完整列表的选项。
+
+选择架构名称以在新选项卡中打开其详细信息视图，并检查字段组在该架构中的实施方式。
+
+#### 查看更多和完整的架构列表
+
+如果存在比内联显示的模式更多的模式，请选择&#x200B;**[!UICONTROL View more]**&#x200B;以打开完整的对话框。
+
+![使用此字段组的架构中的“查看更多”选项。](../images/ui/explore/view-more-schemas.png)
+
+此时将显示&#x200B;**[!UICONTROL Schemas using this field group]**&#x200B;对话框，其中显示了使用该字段组的架构的完整列表。
+
+![使用此字段组的架构对话框显示架构列表和列。](../images/ui/explore/schemas-using-this-field-group-dialog.png)
+
+在&#x200B;**[!UICONTROL Schemas using this field group]**&#x200B;对话框中，您可以：
+
+- 浏览使用字段组的所有架构
+- 浏览大型结果集
+- 选择架构以在新选项卡中打开其详细信息视图
+
+您可以查看架构详细信息，如架构名称、类和其他属性。
+
+此工作流仅用于&#x200B;**影响分析和探索**。 它不会修改架构或字段组。 要更改架构结构，请参阅[在UI中创建和编辑架构](./resources/schemas.md)。
+
+### 字段组元数据和筛选 {#field-group-metadata-and-filtering}
+
+**[!UICONTROL Field groups]**&#x200B;选项卡提供元数据和筛选工具，帮助您在选择字段组之前查找和评估字段组。
+
+#### 浏览表和过滤器
+
+字段组清单表包括直接在列表视图中公开元数据的其他列，如&#x200B;**[!UICONTROL Compatible classes]**，它指示字段组可以应用于哪些类。 字段组只能根据它们代表的数据的行为（例如，基于记录的或时间序列数据），添加到使用列出的兼容类之一的架构中。 当字段组与所有类兼容时，表可能会显示&#x200B;**[!UICONTROL All]**。 **[!UICONTROL Industry tags]**&#x200B;帮助对要发现的字段组进行分类。
+
+要优化列表，请选择过滤器图标（![过滤器图标图像](/help/images/icons/filter.png)）以打开左边栏中的过滤器面板。 下图显示了在左边栏中打开的过滤器面板。
+
+![显示兼容类、行业标签和过滤器面板的“字段组”选项卡。](../images/ui/explore/field-group-filters.png)
+
+在过滤器面板中，您可以：
+
+- **[!UICONTROL Compatible classes]** — 使用下拉菜单按类兼容性筛选字段组
+- **[!UICONTROL Industry tags]** — 使用复选框按一个或多个行业类别进行筛选
+
+浏览时，在表格中选择一行以更新信息边栏。 信息边栏显示元数据，例如兼容的类和行业标记，因此无需打开字段组即可查看关键详细信息。
+
+#### 字段组详细信息元数据
+
+打开字段组时，属性边栏显示与资源关联的其他元数据。
+
+属性边栏可以显示以下元数据：
+
+- **[!UICONTROL Compatible classes]** — 字段组可以扩展的类
+- **[!UICONTROL Required attributes]** — 当字段组在数据引入期间要求时，必须具有有效值的属性。 要求取决于数据结构，具有缺少的或无效的必需值的记录无法验证
+- **[!UICONTROL Labels]** — 标签未显示在字段组级别。 选择一个字段以在&#x200B;**[!UICONTROL Field properties]**&#x200B;边栏中查看标签详细信息
+
+此信息可帮助您了解在使用或修改字段组之前的限制和要求。
+
+#### 结构视图中的标签
+
+当在画布中打开字段组时，您可以直接在结构中查看标签信息。 选择设置图标（![设置图标。](../../images/icons/settings.png)） 并启用&#x200B;**[!UICONTROL Show labels on tree]**&#x200B;以在画布中的字段上显示标签指示符。
+
+![显示树显示选项对话框的字段组画布突出显示“在树上显示标签”。](../images/ui/explore/show-labels-on-tree.png)
+
+选择画布中的字段以查看&#x200B;**[!UICONTROL Field properties]**&#x200B;边栏中的标签详细信息，包括应用于该字段的标签。
+
+![字段组画布在字段属性边栏中显示字段标签和标签详细信息。](../images/ui/explore/field-group-labels.png)
+
+标签按类别（例如，身份和敏感标签）分组，可显示应用于数据的治理或与访问相关的限制。
+
+这些指标仅用于可见性，不会更改架构结构。 有关详细信息，请参阅[管理架构的数据使用标签](../tutorials/labels.md)。
 
 ## 后续步骤
 
