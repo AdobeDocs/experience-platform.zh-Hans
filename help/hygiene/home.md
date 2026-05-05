@@ -47,7 +47,7 @@ Experience Platform UI中的[!UICONTROL Data Lifecycle]工作区允许您配置�
 | 从数据湖中删除数据集 | 1 小时 | 该数据集从UI中的[数据集清单页面](../catalog/datasets/user-guide.md)中删除。 数据湖中的数据仅被软删除，并将保持软删除直到进程结束，之后这些数据将被硬删除。 |
 | 从配置文件服务中删除数据集 | 3 小时 | 从此时起，批处理分段和流式分段、预览或估计、导出和实体访问等操作将不再从此数据集中读取数据。 仅软删除配置文件服务中的数据，并将一直保留到流程结束为止，之后将硬删除这些数据。 |
 | 已更新配置文件计数和受众 | 48 小时 | 更新所有受影响的配置文件后，将更新所有相关的[受众](../segmentation/home.md)以反映其新大小。 根据删除的数据集以及您进行分段的属性，每个受众的大小可能会因删除而增加或减少。 此时，[仪表板小组件](../dashboards/guides/profiles.md#profile-count-trend)和其他报表中会反映所有配置文件计数中产生的任何更改。 |
-| 已更新历程和目标 | 50 小时 | 已根据相关区段中的更改更新[历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html)、[促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html)和[目标](../destinations/home.md)。 |
+| 已更新历程和目标 | 50 小时 | 已根据相关区段中的更改更新[历程](https://experienceleague.adobe.com/docs/journey-optimizer/using/orchestrate-journeys/about-journeys/journey.html?lang=zh-Hans)、[促销活动](https://experienceleague.adobe.com/docs/journey-optimizer/using/campaigns/get-started-with-campaigns.html?lang=zh-Hans)和[目标](../destinations/home.md)。 |
 | 硬删除完成 | 15 天 | 与数据集相关的所有数据都会从数据湖和配置文件服务中硬删除。 已删除数据集的数据生命周期作业[&#128279;](./ui/browse.md#view-details)的状态已更新以反映此情况。 |
 
 {style="table-layout:auto"}
