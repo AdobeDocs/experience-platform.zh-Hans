@@ -5,9 +5,9 @@ title: 在一个HTTP请求中发送多条消息
 type: Tutorial
 description: 本文档提供了一个教程，介绍如何使用流摄取，在单个HTTP请求中将多条消息发送到Adobe Experience Platform。
 exl-id: 04045090-8a2c-42b6-aefa-09c043ee414f
-source-git-commit: be2ad7a02d4bdf5a26a0847c8ee7a9a93746c2ad
+source-git-commit: 293aa66115ae4579c598e23bf1655d835c8694ae
 workflow-type: tm+mt
-source-wordcount: '1483'
+source-wordcount: '1724'
 ht-degree: 1%
 
 ---
@@ -39,7 +39,7 @@ ht-degree: 1%
 
 在注册流连接后，作为数据制作者，您将拥有一个唯一的URL，可用于将数据流式传输到Experience Platform。
 
-## 流到数据集
+## 流到数据集 {#stream-to-dataset}
 
 以下示例显示如何在单个HTTP请求中将多个消息发送到特定数据集。 在消息标头中插入数据集ID，以便将该消息直接摄取到其中。
 
@@ -509,7 +509,7 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
     },
 ```
 
-第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与尝试向其发布内容的{CONNECTION_ID}匹配。 要确定哪个组织ID与您正在使用的流连接匹配，您可以使用`GET inlet`[[!DNL Streaming Ingestion API]执行](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)请求。 有关如何检索先前创建的流连接的示例，请参阅[检索流连接](./create-streaming-connection.md#get-data-collection-url)。
+第三个消息失败，因为标头中使用了无效的组织ID。 组织必须与尝试向其发布内容的{CONNECTION_ID}匹配。 要确定哪个组织ID与您正在使用的流连接匹配，您可以使用[[!DNL Streaming Ingestion API]](https://developer.adobe.com/experience-platform-apis/references/streaming-ingestion/)执行`GET inlet`请求。 有关如何检索先前创建的流连接的示例，请参阅[检索流连接](./create-streaming-connection.md#get-data-collection-url)。
 
 第四条　消息失败，因为它未遵循预期的XDM架构。 请求标头和正文中包含的`xdmSchema`与`{DATASET_ID}`的XDM架构不匹配。 更正消息标头和正文中的架构可使其通过DCCS验证并成功发送到[!DNL Experience Platform]。 还必须更新消息正文以匹配`{DATASET_ID}`的XDM架构，才能使其在[!DNL Experience Platform]上传递流验证。 有关成功流式传输到Experience Platform的邮件发生情况的更多信息，请参阅本教程的[确认已摄取的邮件](#confirm-messages-ingested)部分。
 
@@ -520,11 +520,47 @@ curl -X POST https://dcs.adobedc.net/collection/batch/{CONNECTION_ID} \
 
 有关恢复失败的批处理消息的详细信息，请阅读[检索失败的批次](../quality/retrieve-failed-batches.md)指南。
 
+### 将多个XDM实体发送到数据流 {#send-multiple-xdm-entities-to-a-dataflow}
+
+要将多个XDM实体发送到数据流，您可以：
+
+- 将一个HTTP请求内`messages`数组中的一个或多个实体发送到流端点。
+- 使用批量摄取上载具有多个实体的文件。
+
+选择与您的数据量和用例匹配的方法。
+
+>[!BEGINTABS]
+
+>[!TAB 在HTTP请求中分组实体]
+
+您可以在单个HTTP请求到流式摄取端点的`messages`阵列中包含多个XDM实体。 所有消息都可以定位相同或不同的数据集和架构，前提是它们都属于&#x200B;**same**&#x200B;组织和沙盒。
+
+当您想要：
+
+- 通过在一个HTTP调用中发送多个XDM实体来减少请求。
+- 通过摄取端点实时流式传输数据。
+
+有关如何发送请求的更多信息和详细说明，请阅读[流式传输到数据集](#stream-to-dataset)部分。
+
+>[!TAB 上载批处理文件]
+
+您可以将包含一个或多个XDM实体的批处理文件上传到数据流。 在同一批次下上传的所有文件都作为单个摄取单元一起处理。
+
+在以下情况下使用此方法：
+
+- 摄取较大的数据卷（例如CSV、JSON或Parquet文件）。
+- 正在使用来自上游系统的基于文件的导出。
+- 首选计划摄取或批量摄取。
+
+有关分步说明，请参阅[批次摄取指南](../batch-ingestion/api-overview.md)。
+
+>[!ENDTABS]
+
 ## 确认消息已摄取
 
 通过DCCS验证的邮件将流式传输到[!DNL Experience Platform]。 在[!DNL Experience Platform]上，批处理消息在被引入[!DNL Data Lake]之前通过流式验证进行测试。 批次的状态（无论是否成功）将显示在`{DATASET_ID}`指定的数据集内。
 
-使用[!DNL Experience Platform]Experience Platform UI[可以查看成功流式传输到](https://platform.adobe.com)的批处理消息的状态，方法是转到&#x200B;**[!UICONTROL Datasets]**&#x200B;选项卡，单击要流式传输到的数据集，然后选中&#x200B;**[!UICONTROL Dataset Activity]**&#x200B;选项卡。
+使用[Experience Platform UI](https://platform.adobe.com)可以查看成功流式传输到[!DNL Experience Platform]的批处理消息的状态，方法是转到&#x200B;**[!UICONTROL Datasets]**&#x200B;选项卡，单击要流式传输到的数据集，然后选中&#x200B;**[!UICONTROL Dataset Activity]**&#x200B;选项卡。
 
 在[!DNL Experience Platform]上通过流验证的批处理消息将被摄取到[!DNL Data Lake]中。 然后，即可分析或导出消息。
 
