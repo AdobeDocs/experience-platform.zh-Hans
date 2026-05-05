@@ -140,7 +140,7 @@ Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各�
 | 来源 | 描述 |
 | --- | --- |
 | [!BADGE Beta]{type=Informative} [!DNL Talon.One] | 适用于Experience Platform的[[!DNL Talon.One] 源](../../sources/connectors/loyalty/talon-one.md)现在在批处理模式和流式模式下均可用。 使用[[!DNL Talon.One Batch Source Connector]](../../sources/tutorials/ui/create/loyalty/talon-one-batch.md)定期摄取已关闭的会话和历史忠诚度交易记录，使用[[!DNL Talon.One Streaming Events]](../../sources/tutorials/ui/create/loyalty/talon-one-streaming.md)源近乎实时地将[!DNL Talon.One]事件引入Experience Platform。 这些功能结合起来，可更轻松地在Real-Time CDP、Adobe Journey Optimizer和Offer Decisioning中加载和激活[!DNL Talon.One]忠诚度数据。 |
-| 使用SOQL对[!DNL Salesforce]的行级筛选支持 | 您现在可以直接在[!DNL Salesforce]源连接中应用[!DNL Salesforce]对象查询语言(SOQL)筛选器，从而允许您在将数据引入Experience Platform之前限制行级数据。 使用功能可以： <ul><li>在Salesforce对象上定义SOQL where-clause样式条件（例如，仅电子邮件为null!=潜在客户或特定阶段的商机）</li><li>将摄取限制为仅包含符合条件的行，从而减少不必要的数据移动、存储和下游处理</li><li>通过从源头控制将哪些记录引入Experience Platform，使Experience Platform引入与您的CRM数据访问和合规性规则更紧密地保持一致</li></ul>. 有关详细信息，请阅读有关源](../../sources/tutorials/api/filter.md)的[行级筛选的指南。 |
+| 使用SOQL对[!DNL Salesforce]的行级筛选支持 | 您现在可以直接在[!DNL Salesforce]源连接中应用[!DNL Salesforce]对象查询语言(SOQL)筛选器，从而允许您在将数据引入Experience Platform之前限制行级数据。 使用功能可以： <ul><li>在Salesforce对象上定义SOQL where-clause样式条件（例如，仅电子邮件为null!=潜在客户或特定阶段的商机）</li><li>将摄取限制为仅包含符合条件的行，从而减少不必要的数据移动、存储和下游处理</li><li>通过从源头控制将哪些记录引入Experience Platform，使Experience Platform引入与您的CRM数据访问和合规性规则更紧密地保持一致</li></ul>. 有关详细信息，请阅读有关源[&#128279;](../../sources/tutorials/api/filter.md)的行级筛选的指南。 |
 
 {style="table-layout:auto"}
 
