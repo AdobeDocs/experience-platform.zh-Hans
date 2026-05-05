@@ -70,7 +70,7 @@ ht-degree: 10%
 
 >[!IMPORTANT]
 >
->为同一页面和下一页面个性化用例&#x200B;*激活*&#x200B;边缘受众时，受众&#x200B;*必须*&#x200B;使用[active-on-edge合并策略](../../../segmentation/ui/segment-builder.md#merge-policies)。 [!DNL active-on-edge]合并策略可确保在](../../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众[，并可用于实时和下一页个性化用例。  已阅读[所有可用的用例](#parameter)（基于实现类型）。
+>为同一页面和下一页面个性化用例&#x200B;*激活*&#x200B;边缘受众时，受众&#x200B;*必须*&#x200B;使用[active-on-edge合并策略](../../../segmentation/ui/segment-builder.md#merge-policies)。 [!DNL active-on-edge]合并策略可确保在[&#128279;](../../../segmentation/methods/edge-segmentation.md)边缘上持续评估受众，并可用于实时和下一页个性化用例。  已阅读[所有可用的用例](#parameter)（基于实现类型）。
 >如果将使用不同合并策略的边缘受众映射到[!DNL Adobe Target]目标，则不会针对实时和下一页用例评估这些受众。
 >按照[创建合并策略](../../../profile/merge-policies/ui-guide.md#create-a-merge-policy)中的说明进行操作，并确保启用&#x200B;**[!UICONTROL Active-On-Edge Merge Policy]**&#x200B;切换开关。
 
@@ -164,7 +164,7 @@ ht-degree: 10%
 
 >[!NOTE]
 >
->为具有属性](../../ui/activate-edge-personalization-destinations.md)的[同一页面和下一页面个性化使用自定义Target工作区时，只将[选定的受众](../../ui/activate-edge-personalization-destinations.md#select-audiences)发送到选定的Target工作区。 [映射的属性](../../ui/activate-edge-personalization-destinations.md#mapping)将发送到默认的Target工作区。
+>为具有属性[&#128279;](../../ui/activate-edge-personalization-destinations.md)的同一页面和下一页面个性化使用自定义Target工作区时，只将[选定的受众](../../ui/activate-edge-personalization-destinations.md#select-audiences)发送到选定的Target工作区。 [映射的属性](../../ui/activate-edge-personalization-destinations.md#mapping)将发送到默认的Target工作区。
 ><br>>此行为将在以后的更新中更改。
 
 ### 启用警报 {#enable-alerts}
