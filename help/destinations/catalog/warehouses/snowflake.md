@@ -1,12 +1,12 @@
 ---
 title: Snowflake流连接
 description: 创建实时Snowflake数据共享，以直接将流式受众更新作为共享表发送到您的帐户。
-last-substantial-update: 2026-03-24T00:00:00Z
+last-substantial-update: 2026-04-28T00:00:00Z
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: 4a00e46a-dedb-4dd3-b496-b0f4185ea9b0
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: 0d5bb74473551c9eddd823439e8bbe18126242e9
 workflow-type: tm+mt
-source-wordcount: '1637'
+source-wordcount: '1681'
 ht-degree: 4%
 
 ---
@@ -15,7 +15,7 @@ ht-degree: 4%
 
 >[!AVAILABILITY]
 >
->此目标连接器的可用性有限，仅适用于[!DNL Real-Time CDP]VA7区域[中设置的](/help/landing/multi-cloud.md#azure-regions)个Ultimate客户。
+>此目标连接器的可用性有限，仅适用于[VA7区域](/help/landing/multi-cloud.md#azure-regions)中设置的[!DNL Real-Time CDP]个Ultimate客户。
 
 ## 概述 {#overview}
 
@@ -88,7 +88,7 @@ ht-degree: 4%
 | 受众来源 | 受支持 | 描述 |
 |---------|----------|----------|
 | [!DNL Segmentation Service] | 是 | 通过[!DNL Adobe Experience Platform] [分段服务](../../../segmentation/home.md)生成的受众。 |
-| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入](../../../segmentation/ui/audience-portal.md#import-audience)，[!DNL Adobe Experience Platform]</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他[!DNL Adobe Experience Platform]应用（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
+| 所有其他受众来源 | 是 | 此类别包括通过[!DNL Segmentation Service]生成的受众之外的所有受众来源。 了解[各种受众源](/help/segmentation/ui/audience-portal.md#customize)。 一些示例包括： <ul><li> 自定义上传受众[从CSV文件导入[!DNL Adobe Experience Platform]，](../../../segmentation/ui/audience-portal.md#import-audience)</li><li> 相似的受众， </li><li> 联合受众， </li><li> 在其他[!DNL Adobe Experience Platform]应用（如[!DNL Adobe Journey Optimizer]）中生成的受众， </li><li> 等等。 </li></ul> |
 
 {style="table-layout:auto"}
 
@@ -133,7 +133,7 @@ ht-degree: 4%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_snowflake_accountID"
 >title="输入您的 Snowflake 帐户 ID"
->abstract="如果您的帐户已关联到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未关联到任何组织，请使用以下格式：`AccountName` "
+>abstract="如果您的帐户已关联到某个组织，请使用以下格式：`OrganizationName.AccountName`<br><br> 如果您的帐户未关联到任何组织，请使用以下格式：`AccountName`"
 
 要配置目标的详细信息，请填写下面的必需和可选字段。 UI中字段旁边的星号表示该字段为必填字段。
 
@@ -148,11 +148,11 @@ ht-degree: 4%
 
 >[!NOTE]
 >
-> 创建目标后，无法通过&#x200B;**[!UICONTROL Snowflake Account ID]**&#x200B;编辑目标[工作流编辑](../../ui/edit-destination.md)。 若要使用其他帐户，请[创建新的目标连接](../../ui/connect-destination.md)。
+> 创建目标后，无法通过[编辑目标](../../ui/edit-destination.md)工作流编辑&#x200B;**[!UICONTROL Snowflake Account ID]**。 若要使用其他帐户，请[创建新的目标连接](../../ui/connect-destination.md)。
 
 >[!IMPORTANT]
 >
-> 目标名称和[!DNL Adobe Experience Platform]沙盒名称中使用的特殊字符在`_`中自动转换为下划线([!DNL Snowflake])。 为避免混淆，请勿在您的目标和沙盒名称中使用任何特殊字符。
+> 目标名称和[!DNL Adobe Experience Platform]沙盒名称中使用的特殊字符在[!DNL Snowflake]中自动转换为下划线(`_`)。 为避免混淆，请勿在您的目标和沙盒名称中使用任何特殊字符。
 
 ### 启用警报 {#enable-alerts}
 
@@ -183,12 +183,13 @@ Snowflake目标支持将配置文件属性映射到自定义属性。
 
 以下示例显示了共享表中的示例行：某些列将身份和区段成员资格存储为JSON；映射的配置文件属性显示为单独的字符串列。
 
-![显示IDENTITYMAP、SEGMENT_MEMBERSHIP和映射的属性列的示例Snowflake工作表行](../../assets/catalog/warehouses/snowflake/snowflake-streaming-exported-data.png) {align="center" zoomable="yes"}
+![显示TS、IDENTITYMAP、SEGMENT_MEMBERSHIP和映射的属性列的示例Snowflake工作表行。](../../assets/catalog/warehouses/snowflake/snowflake-streaming-exported-data.png) {align="center" zoomable="yes"}
 
 ### 数据结构 {#data-structure}
 
 上面的屏幕截图显示了以下列：
 
+* **TS**：一个时间戳，指示每个行上次更新的时间。
 * **IDENTITYMAP**：每个配置文件标识映射的JSON对象。
 * **SEGMENT_MEMBERSHIP**：数据流上激活的每个受众的JSON对象。 值包括`lastQualificationTime`和`status`（例如，当配置文件符合区段资格时`realized`）。
 * **映射属性**：在激活工作流期间选择的每个映射属性都表示为[!DNL Snowflake]中的列标题。
