@@ -1,11 +1,11 @@
 ---
 keywords: 广告；标准；
 title: 标准连接
-description: Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
+description: Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。 Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
 exl-id: e6f394b2-ab82-47bb-8521-1cf9d01a203b
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: 495becf1bd5b6dc418a7bc849eeec352e049d898
 workflow-type: tm+mt
-source-wordcount: '1147'
+source-wordcount: '1183'
 ht-degree: 12%
 
 ---
@@ -18,13 +18,13 @@ ht-degree: 12%
 >
 >此目标连接器和文档页面由标准创建和维护。 如有任何查询或更新请求，请直接[此处](mailto:criteoTechnicalPartnerships@criteo.com)与Criteo联系。
 
-Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
+Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上为每位消费者带来更丰富的体验。 Criteo 拥有全球最大的商业数据集和同类最佳 AI，可确保购物历程中的每个接触点都是个性化的，以便在合适的时间向客户推送合适的广告。
 
 ## 先决条件 {#prerequisites}
 
 * 您需要在[Criteo管理中心](https://marketing.criteo.com)拥有管理员用户帐户。
 * 您将需要您的Criteo广告商ID（如果您没有此ID，请咨询您的Criteo联系人）。
-* 如果您要使用[!DNL GUM caller ID]作为标识符，则需要提供[!DNL GUM ID]。
+* 如果您要使用[!DNL GUM ID]作为标识符，则需要提供[!DNL GUM caller ID]。
 
 ## 限制 {#limitations}
 
@@ -35,7 +35,7 @@ Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上�
 
 ## 支持的身份 {#supported-identities}
 
-标准支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
+标准支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 | --- | --- | --- |
