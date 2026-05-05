@@ -34,7 +34,7 @@ Adobe Experience Platform允许从外部源摄取数据，同时允许您使用[
 
 ### 正在读取示例 API 调用
 
-本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。 还提供了在 API 响应中返回的示例 JSON。 有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request)[!DNL Experience Platform]。
+本教程提供了示例API调用来演示如何格式化请求。 这些包括路径、必需的标头和格式正确的请求负载。 还提供了在 API 响应中返回的示例 JSON。 有关示例 API 调用的文档中所用惯例的信息，请参阅故障排除指南中的[如何读取示例 API 调用](../../landing/troubleshooting.md#how-do-i-format-an-api-request) [!DNL Experience Platform]。
 
 ### 收集所需标头的值
 
@@ -200,6 +200,6 @@ curl -X GET \
 
 ## 后续步骤
 
-按照本教程，您已使用[!DNL Flow Service] API检索有关数据流的量度和错误信息。 您现在可以继续根据摄取计划监视数据流，以跟踪其状态和摄取率。 有关如何监视源数据流的信息，请阅读使用用户界面](../ui/monitor-sources.md)的[监视源数据流的教程。 有关如何监视目标的数据流的详细信息，请阅读使用用户界面的[监视目标的数据流](../ui/monitor-destinations.md)教程。
+按照本教程，您已使用[!DNL Flow Service] API检索有关数据流的量度和错误信息。 您现在可以继续根据摄取计划监视数据流，以跟踪其状态和摄取率。 有关如何监视源数据流的信息，请阅读使用用户界面[&#128279;](../ui/monitor-sources.md)的监视源数据流的教程。 有关如何监视目标的数据流的详细信息，请阅读使用用户界面的[监视目标的数据流](../ui/monitor-destinations.md)教程。
 
 要将多个XDM实体发送到数据流，请在HTTP请求中使用`messages`数组或上传包含多个记录的文件（CSV、JSON或Parquet）。 有关详细指导和最佳实践，请阅读[如何将多个XDM实体发送到数据流](../../ingestion/tutorials/streaming-multiple-messages.md#send-multiple-xdm-entities-to-a-dataflow)。
