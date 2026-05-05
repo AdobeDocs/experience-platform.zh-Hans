@@ -2,9 +2,9 @@
 title: 高级数据生命周期管理的最佳实践
 description: 了解如何使用高级数据生命周期管理UI和数据卫生API在Adobe Experience Platform中高效管理数据卫生请求。 本指南涵盖了最佳实践，例如最大化每个请求的身份、指定单个数据集并注意API限制以防止速度减慢。 本文档包含设置自动数据集清理的指南、如何监视工作单状态和详细的响应检索方法。 按照以下惯例来简化请求处理并优化响应时间。
 exl-id: 75e2a97b-ce6c-4ebd-8fc8-597887f77037
-source-git-commit: f129c215ebc5dc169b9a7ef9b3faa3463ab413f3
+source-git-commit: 5f53720fe3d373573c24fd1847350a4ff27bf4ed
 workflow-type: tm+mt
-source-wordcount: '771'
+source-wordcount: '823'
 ht-degree: 0%
 
 ---
@@ -15,11 +15,11 @@ ht-degree: 0%
 
 ## 先决条件 {#prerequisites}
 
-本指南要求您对数据生命周期工作区和[数据卫生API](./api/overview.md)有一定的了解。 在继续此文档之前，请先熟悉有关[高级数据生命周期管理](./home.md)和[在UI](./ui/dataset-expiration.md)中或通过API创建记录删除请求[&#128279;](./ui/record-delete.md)或数据集过期时间的指南。
+本指南要求您对数据生命周期工作区和[数据卫生API](./api/overview.md)有一定的了解。 在继续此文档之前，请先熟悉有关[高级数据生命周期管理](./home.md)和[在UI](./ui/dataset-expiration.md)中或通过API创建记录删除请求](./ui/record-delete.md)或[数据集过期时间的指南。
 
 ## 工单创建准则 {#work-order-creation-guidelines}
 
-您可以使用数据卫生API中的`/workorder`端点以编程方式管理Experience Platform中的记录删除请求。 使用此端点，您可以创建删除请求、检查其状态或更新现有请求。 请参阅[工作单终结点文档](./api/workorder.md)，了解如何使用API执行这些操作。
+您可以使用数据卫生API中的`/workorder`端点以编程方式管理Experience Platform中的记录删除请求。 使用此端点，您可以创建删除请求、检查其状态或更新现有请求。 请参阅[工作单终结点文档](./api/workorder.md)，了解如何使用API执行这些操作。 记录删除请求会在处理开始前进行批处理，最多可能需要30天（标准SLA）或15天（Privacy and Security Shield或Healthcare Shield）才能完成。 有关每个阶段所发生情况的完整细分，请参阅[记录删除时间线](./home.md#record-delete-transparency)。
 
 >[!TIP]
 >
@@ -51,7 +51,7 @@ I/O事件警报可以发送到配置的webhook以实现活动监视的自动化�
 
 使用以下数据生命周期方法和准则来有效检索和监控作业状态：
 
-### I/O事件 {#io-events}
+### I/O 事件 {#io-events}
 
 要高效地监视数据生命周期任务的进度，请按照以下步骤设置和使用I/O事件：
 

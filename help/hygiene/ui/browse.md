@@ -2,10 +2,10 @@
 title: 浏览数据生命周期工作单
 description: 了解如何在Adobe Experience Platform用户界面中查看和管理现有数据生命周期工作单。
 exl-id: 76d4a809-cc2c-434d-90b1-23d88f29c022
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 5f53720fe3d373573c24fd1847350a4ff27bf4ed
 workflow-type: tm+mt
-source-wordcount: '812'
-ht-degree: 26%
+source-wordcount: '846'
+ht-degree: 25%
 
 ---
 
@@ -14,10 +14,10 @@ ht-degree: 26%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_workorders"
 >title="工单 ID"
->abstract="将数据生命周期请求发送到系统时，将创建工单以执行请求的任务。换句话说，工单代表一个特定的数据生命周期流程，而该流程包括该工单的当前状态和其他相关的详细信息。每个工单在创建后会自动获得其唯一 ID。"
+>abstract="将数据生命周期请求发送到系统时，将创建工单以执行请求的任务。 换句话说，工单代表一个特定的数据生命周期流程，而该流程包括该工单的当前状态和其他相关的详细信息。 每个工单在创建后会自动获得其唯一 ID。"
 >text="See the data lifecycle UI guide to learn more."
 
-将数据生命周期请求发送到系统时，将创建工单以执行请求的任务。工作单代表特定数据生命周期流程，如计划的数据集到期，其中包括其当前状态和其他相关详细信息。
+将数据生命周期请求发送到系统时，将创建工单以执行请求的任务。 工作单代表特定数据生命周期流程，如计划的数据集到期，其中包括其当前状态和其他相关详细信息。
 
 本指南介绍如何在Adobe Experience Platform UI中查看和管理现有工作单。
 
@@ -65,17 +65,17 @@ ht-degree: 26%
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_statusbyservice"
 >title="按服务显示的状态"
->abstract="由多个 Experience Platform 服务独立处理数据生命周期请求。此部分概述对于每个相应服务的请求的当前处理状态。要了解详情，请参阅数据生命周期 UI 指南。"
+>abstract="由多个 Experience Platform 服务独立处理数据生命周期请求。 此部分概述对于每个相应服务的请求的当前处理状态。 要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_numberofidentities"
 >title="身份标识数"
->abstract="其记录在此工单中被请求更新或删除的身份标识的数量。计数中包含的身份标识不一定存在于受影响的数据集中。要了解详情，请参阅数据生命周期 UI 指南。"
+>abstract="其记录在此工单中被请求更新或删除的身份标识的数量。 计数中包含的身份标识不一定存在于受影响的数据集中。 要了解详情，请参阅数据生命周期 UI 指南。"
 
 >[!CONTEXTUALHELP]
 >id="platform_hygiene_responsemessages"
 >title="记录删除响应"
->abstract="当记录删除进程收到来自系统的响应时，这些消息显示在&#x200B;**[!UICONTROL Result]**&#x200B;部分下。 如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。要了解详情，请参阅数据生命周期 UI 指南。"
+>abstract="当记录删除进程收到来自系统的响应时，这些消息显示在&#x200B;**[!UICONTROL Result]**&#x200B;部分下。 如果在处理工单时出现问题，任何相关的错误消息都会显示在此部分中，帮助您解决问题。 要了解详情，请参阅数据生命周期 UI 指南。"
 
 选择已列出工作单的ID以查看其详细信息。
 
@@ -86,6 +86,10 @@ ht-degree: 26%
 ### 记录删除详细信息 {#record-delete}
 
 记录删除请求的详细信息包括其当前状态和自发出请求以来经过的时间。 每个请求还包含一个&#x200B;**[!UICONTROL Status by service]**&#x200B;部分，该部分提供有关删除中涉及的每个下游服务的各个状态详细信息。 在右边栏中，您可以使用控件来更新工作单的名称和描述。
+
+>[!TIP]
+>
+>记录删除请求会在处理开始前进行批处理，在标准SLA下，最多可能需要30天才能完成。 有关每个阶段所发生情况的细分，请参阅[记录删除时间线](../home.md#record-delete-transparency)。
 
 ![显示记录删除工作单的详细信息页面的图像](../images/ui/browse/record-delete-details.png)
 
