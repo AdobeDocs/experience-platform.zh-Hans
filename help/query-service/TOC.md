@@ -5,9 +5,9 @@ breadcrumb-title: 查询服务指南
 user-guide-description: 在 Experience Platform 中使用标准 SQL 查询数据湖中的数据。
 feature: Queries
 role: User,Developer
-source-git-commit: d3b73124795cfdeb5f8f1890105bf9c174711b36
+source-git-commit: 71d8268a209036291c41da3fef84a331aec2172b
 workflow-type: tm+mt
-source-wordcount: '411'
+source-wordcount: '439'
 ht-degree: 26%
 
 ---
@@ -105,6 +105,7 @@ ht-degree: 26%
    - [UI概述](ui/overview.md)
    - [查询编辑器用户指南](ui/user-guide.md)
    - [查询模板](ui/query-templates.md)
+   - [数据Distiller加速器](ui/accelerators.md)
    - [参数化查询](ui/parameterized-queries.md)
    - [查询计划](ui/query-schedules.md)
    - [查询日志](ui/query-logs.md)
@@ -146,4 +147,4 @@ ht-degree: 26%
 - [常见问题](troubleshooting-guide.md)
 - [IP地址允许列表](ip-address-allowlist.md)
 - [API 参考](https://www.adobe.io/experience-platform-apis/references/query-service/)
-- [Experience Platform 发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)
+- [Experience Platform发行说明](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/release-notes/latest)

@@ -2,9 +2,9 @@
 title: 查询模板
 description: 查询模板是可重用的已保存SQL查询，其他用户可重复使用它们以节省时间和精力。 它们可以使用查询编辑器或查询服务API创建，并可用于所有Experience Platform数据集。
 exl-id: e74d058f-bb89-45ed-83cc-2e3a33401270
-source-git-commit: fded2f25f76e396cd49702431fa40e8e4521ebf8
+source-git-commit: 839d8ac398ca8523e9d726c6990c79b65334eb88
 workflow-type: tm+mt
-source-wordcount: '593'
+source-wordcount: '651'
 ht-degree: 0%
 
 ---
@@ -17,7 +17,7 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 ## 先决条件
 
-您必须启用[!UICONTROL 管理查询]权限才能在Experience Platform UI中访问查询编辑器和查看查询仪表板。 该权限是通过Adobe [Admin Console](https://adminconsole.adobe.com/)启用的。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console[&#128279;](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档。
+您必须启用[!UICONTROL Manage queries]权限才能访问查询编辑器，并在Experience Platform UI中查看查询仪表板。 该权限是通过Adobe [Admin Console](https://adminconsole.adobe.com/)启用的。 如果您没有启用此权限的管理员权限，请联系贵组织的管理员。 有关通过Admin Console](../../access-control/home.md)添加权限的完整说明，请参阅访问控制文档[。
 
 ## 创建查询模板
 
@@ -25,7 +25,15 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 ### 使用查询编辑器创作查询并将其另存为模板
 
-请参阅文档以了解如何使用查询编辑器[写入](./user-guide.md#query-authoring)和[保存查询](./user-guide.md#saving-queries)的说明。 命名并保存查询后，即可从[!UICONTROL 模板]选项卡中将其用作查询模板。
+请参阅文档以了解如何使用查询编辑器[写入](./user-guide.md#query-authoring)和[保存查询](./user-guide.md#saving-queries)的说明。 命名并保存查询后，即可从[!UICONTROL Templates]选项卡中将其用作查询模板。
+
+### 从Data Distiller加速器创建模板 {#create-from-accelerator}
+
+数据Distiller加速器是只读的。 要修改加速器，请在查询编辑器中从中创建可编辑模板。
+
+打开加速器，然后选择&#x200B;**[!UICONTROL Create custom template]**&#x200B;以克隆SQL。 保存模板以将其添加到&#x200B;**[!UICONTROL Templates]**&#x200B;选项卡。 克隆的模板是完全可编辑的，可以根据需要运行、计划或修改模板。
+
+有关详细说明，请参阅[Data Distiller加速器](./accelerators.md#create-custom-template)指南。
 
 >[!TIP]
 >
@@ -33,7 +41,7 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 ## 浏览查询模板 {#browse}
 
-从Experience Platform UI的“查询”工作区中，选择&#x200B;**[!UICONTROL 模板]**&#x200B;以显示可用的已保存查询列表。
+从Experience Platform UI的“查询”工作区中，选择&#x200B;**[!UICONTROL Templates]**&#x200B;以显示可用的已保存查询列表。
 
 ![突出显示“模板”选项卡的查询工作区。](../images/ui/query-templates/query-templates.png)
 
@@ -43,10 +51,10 @@ Adobe Experience Platform查询服务允许您以查询模板的形式保存和�
 
 从详细信息面板中，您可以执行以下操作：
 
-* 选择&#x200B;**[!UICONTROL 以CTAS身份运行]**&#x200B;以通过从一个或多个现有表中选择数据来创建新表。 此选项仅在您有SELECT查询时才可用。
-* 选择&#x200B;**[!UICONTROL 添加计划]**&#x200B;以开始编辑查询模板的计划。
-* 选择&#x200B;**[!UICONTROL 查看计划]**&#x200B;以导航到查询编辑器的[!UICONTROL 计划]选项卡。 此视图包含与查询关联的任何计划信息。
-* 选择&#x200B;**[!UICONTROL 删除查询]**&#x200B;以删除模板。
+* 选择&#x200B;**[!UICONTROL Run as CTAS]**&#x200B;以通过从现有表中选择数据来创建新表。 此选项仅在您有SELECT查询时才可用。
+* 选择&#x200B;**[!UICONTROL Add schedule]**&#x200B;开始编辑查询模板的计划。
+* 选择&#x200B;**[!UICONTROL View schedule]**&#x200B;以导航到查询编辑器的[!UICONTROL Schedules]选项卡。 此视图包含与查询关联的任何计划信息。
+* 选择&#x200B;**[!UICONTROL Delete query]**&#x200B;以删除模板。
 * 选择模板名称以导航到查询编辑器，在该编辑器中预填充了SQL以供编辑。
 
 ### 使用查询服务API创建模板

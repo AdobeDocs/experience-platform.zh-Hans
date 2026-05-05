@@ -4,9 +4,9 @@ solution: Experience Platform
 title: 查询服务UI指南
 description: Adobe Experience Platform查询服务提供了一个用户界面，可用于编写和执行查询、查看先前执行的查询以及访问由您组织内的用户保存的查询。
 exl-id: 99ad25e4-0ca4-4bd1-b701-ab463197930b
-source-git-commit: 1d2a8ef649c4454da7cf0949192b8b1eb3696e5a
+source-git-commit: 839d8ac398ca8523e9d726c6990c79b65334eb88
 workflow-type: tm+mt
-source-wordcount: '2409'
+source-wordcount: '2471'
 ht-degree: 1%
 
 ---
@@ -27,7 +27,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 1. 选择&#x200B;**[!UICONTROL Create query]**&#x200B;可快速导航到查询编辑器以编写和执行新查询。
 2. 选择&#x200B;**[!UICONTROL Learn more]**&#x200B;以查看有关如何&#x200B;**[!UICONTROL Write queries]**&#x200B;的详细文档。
-3. 在&#x200B;**[!UICONTROL Get started]**&#x200B;部分中选择&#x200B;**[!UICONTROL Discover Data Distiller]**&#x200B;以打开Data Distiller概述并了解可用的功能。
+3. 在&#x200B;**[!UICONTROL Discover Data Distiller]**&#x200B;部分中选择&#x200B;**[!UICONTROL Get started]**&#x200B;以打开Data Distiller概述并了解可用的功能。
 
 ![包含“创建查询”、“了解详情”和“开始使用”的查询服务工作区突出显示。](../images/ui/overview/main-panels.png)
 
@@ -42,17 +42,29 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 ![突出显示了Data Distiller功能部分的查询服务工作区。](../images/ui/overview/data-distiller-capabilities.png)
 
+### 加速器 {#accelerators}
+
+查询工作区中的&#x200B;**[!UICONTROL Accelerators]**&#x200B;选项卡提供了Adobe创作的参数化SQL模板的目录，用于常见分析用例。 每个加速器在表中显示为一行，其中包含名称、SQL预览和元数据。
+
+选择加速器以在查询编辑器中将其打开。 提供参数值并运行查询以生成结果。 加速器是只读的，并由Adobe进行维护以确保一致性。 要修改逻辑，请使用&#x200B;**[!UICONTROL Create custom template]**&#x200B;创建一个可编辑的副本。 请参阅[Data Distiller加速器](./accelerators.md)指南，了解如何发现、运行、计划和自定义加速器。
+
 ### 推荐的数据蒸馏器加速器 {#recommended-accelerators}
 
-选择快速链接以导航到相关的Data Distiller功能板[!UICONTROL Templates]。 每个加速器都提供了强大的工具和可视化图表来帮助您分析受众数据、优化分段和增强定位策略。
+通过“概述”选项卡上的&#x200B;**[!UICONTROL Recommended Data Distiller accelerators]**&#x200B;部分，可以快速访问常用的加速器。 这些组件显示为卡片，并支持两个工作流：
 
-- **[[!UICONTROL Advanced audience overlaps]](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md)**：通过此仪表板，您可以分析多个受众区段之间的受众交叉点，以揭示有价值的见解并优化分段策略。 您还可以导出您的见解以供进一步离线分析或报告。
-- **[[!UICONTROL Audience comparison]](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md)**：从此仪表板，您可以并排比较和对比关键受众量度，以详细分析两个受众组。 这些见解可帮助您了解受众规模、增长和其他关键绩效指标，使您能够利用数据驱动型决策优化分段和定位策略。
-- **[[!UICONTROL Audience trends]](../../dashboards/sql-insights-query-pro-mode/templates/trends.md)**：使用[!UICONTROL Audience trends]仪表板通过关键量度（受众增长、身份计数和单一身份配置文件）可视化受众如何随时间的演变。 跟踪趋势以揭示对受众行为的宝贵见解，从而让您能够优化分段、增强参与度并优化定位策略以实现更有效的营销活动。
-随时间跟踪受众量度，以监控受众规模、身份增长以及整体参与度的变化。
-- **[[!UICONTROL Audience identity overlaps]](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md)**：使用“受众身份重叠”仪表板分析选定受众中的身份重叠。 可视化图表和列表数据为优化身份拼接、减少冗余和改进分段提供了见解。 这些见解有助于更有效地定位、增强个性化并简化客户交互。
+- **与功能板关联的加速器**&#x200B;在包含预建可视化图表的功能板工作区中打开。 这些不需要输入参数或手动执行查询。
+- 在查询编辑器中打开&#x200B;**基于查询的加速器**，您可以在其中提供参数值、运行查询或安排查询。
 
-![高亮显示了Data Distiller加速器部分的查询服务工作区。](../images/ui/overview/data-distiller-accelerators.png)
+选择卡以打开加速器。 使用此部分可快速访问常用工作流，或导航到&#x200B;**[!UICONTROL Accelerators]**&#x200B;选项卡以浏览完整目录。 有关加速器的完整列表和详细说明，请参阅[加速器选项卡](./accelerators.md#discovery-paths)或[Data Distiller加速器指南](./accelerators.md)。
+
+可以使用以下与功能板关联的加速器：
+
+- **[[!UICONTROL Advanced audience overlaps]](../../dashboards/sql-insights-query-pro-mode/templates/overlaps.md)**：分析受众区段之间的交叉点以确定重叠模式并优化分段。
+- **[[!UICONTROL Audience comparison]](../../dashboards/sql-insights-query-pro-mode/templates/comparison.md)**：比较两个受众之间的关键量度，包括大小、构成和随时间发生的变化。
+- **[[!UICONTROL Audience trends]](../../dashboards/sql-insights-query-pro-mode/templates/trends.md)**：跟踪受众量度随时间的变化，包括受众大小和身份计数。
+- **[[!UICONTROL Audience identity overlaps]](../../dashboards/sql-insights-query-pro-mode/templates/identity-overlaps.md)**：检查受众中标识类型的重叠程度，以支持标识拼接和分段准确性。
+
+![查询服务概述，显示包含推荐的加速器卡的“数据Distiller加速器”部分。](../images/ui/overview/data-distiller-accelerators.png)
 
 ### 数据蒸馏器示例 {#data-distiller-examples}
 
@@ -72,7 +84,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 #### 设置日期过滤器 {#set-date-filter}
 
-若要对这些可视化应用全局日期过滤器，请选择过滤器图标（![过滤器图标）。](../../images/icons/filter-icon-white.png))，并在&#x200B;**[!UICONTROL Filters]**&#x200B;对话框中调整日期范围。 应用此过滤器可针对特定时间范围定制显示的量度，并增强分析的相关性。
+若要对这些可视化应用全局日期过滤器，请选择过滤器图标（![过滤器图标。](../../images/icons/filter-icon-white.png)） 并在&#x200B;**[!UICONTROL Filters]**&#x200B;对话框中调整日期范围。 应用此过滤器可针对特定时间范围定制显示的量度，并增强分析的相关性。
 
 ![查询服务Workspace中关键量度图表的“筛选器”对话框。](../images/ui/overview/filters-dialog.png)
 
@@ -100,7 +112,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 ![已突出显示“创建查询”的查询仪表板。](../images/ui/overview/overview-create-query.png)
 
-在查询编辑器中键入内容时，编辑器会自动完成表中的SQL保留字、表和字段名。 完成查询编写后，选择播放图标（![播放图标）。](../../images/icons/play.png))以运行查询。 编辑器下方的&#x200B;**[!UICONTROL Console]**&#x200B;选项卡显示查询服务当前正在执行的操作，并指示何时返回查询。 **[!UICONTROL Result]**&#x200B;旁边的[!UICONTROL Console]选项卡显示查询结果。 有关使用查询编辑器的详细信息，请参阅[查询编辑器指南](./user-guide.md)。
+在查询编辑器中键入内容时，编辑器会自动完成表中的SQL保留字、表和字段名。 完成查询编写后，请选择播放图标（![播放图标。](../../images/icons/play.png)） 运行查询。 编辑器下方的&#x200B;**[!UICONTROL Console]**&#x200B;选项卡显示查询服务当前正在执行的操作，并指示何时返回查询。 [!UICONTROL Console]旁边的&#x200B;**[!UICONTROL Result]**&#x200B;选项卡显示查询结果。 有关使用查询编辑器的详细信息，请参阅[查询编辑器指南](./user-guide.md)。
 
 ![查询编辑器工作区。](../images/ui/overview/query-editor.png)
 
@@ -178,7 +190,7 @@ Adobe Experience Platform查询服务提供了一个用户界面，可用于编�
 
 >[!NOTE]
 >
->选择铅笔图标(![A铅笔图标。](/help/images/icons/edit.png))，以导航到查询编辑器。 为方便编辑，已预填充查询。
+>选择铅笔图标（![A铅笔图标。](/help/images/icons/edit.png)） 从查询日志的任意行导航到查询编辑器。 为方便编辑，已预填充查询。
 
 有关查询事件自动生成的日志文件的详细信息，请参阅[查询日志文档](./query-logs.md)。
 
