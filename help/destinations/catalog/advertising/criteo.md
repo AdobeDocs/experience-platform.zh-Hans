@@ -35,7 +35,7 @@ Criteo 支持值得信赖且具有影响力的广告，在开放的互联网上�
 
 ## 支持的身份 {#supported-identities}
 
-标准支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html#getting-started)的更多信息。
+标准支持激活下表中描述的标识。 了解有关[标识](https://experienceleague.adobe.com/docs/experience-platform/identity/namespaces.html?lang=zh-Hans#getting-started)的更多信息。
 
 | 目标身份 | 描述 | 注意事项 |
 | --- | --- | --- |
