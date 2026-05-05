@@ -2,10 +2,10 @@
 title: Experience Platform预发行说明
 description: Adobe Experience Platform最新发行说明预览。
 exl-id: f2c41dc8-9255-4570-b459-4f9fc28ee58b
-source-git-commit: 8f898e618fbc2b414a3c899511ac410465f280d8
+source-git-commit: 9b191535ba96c8791a4528361a1945ae27c6456c
 workflow-type: tm+mt
-source-wordcount: '1344'
-ht-degree: 17%
+source-wordcount: '1428'
+ht-degree: 21%
 
 ---
 
@@ -39,7 +39,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 ## 目标 {#destinations}
 
-[!DNL Destinations] 是预建的与目标平台的集成，可实现从 Experience Platform 无缝激活数据。您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
+[!DNL Destinations] 是预建的与目标平台的集成，可实现从 Experience Platform 无缝激活数据。 您可以使用目标激活已知和未知的数据，用于跨渠道营销活动、电子邮件营销活动、定向广告和许多其他用例。
 
 **新增或更新目标**
 
@@ -71,7 +71,7 @@ Adobe Experience Platform 中新功能和现有功能的更新：
 
 ## 体验数据模型 (XDM) {#xdm}
 
-XDM是一个开源规范，为引入Experience Platform的数据提供通用结构和定义（架构）。 通过遵守XDM标准，所有客户体验数据都可以纳入到通用表示中，从而以更快、更集成的方式提供见解。
+XDM是一个开源规范，为引入Experience Platform的数据提供通用结构和定义（架构）。 通过遵守 XDM 标准，所有客户体验数据都可以合并到一个通用的呈现中，以更快、更加集成的方式提供洞察。
 
 **新增功能或更新后的功能**
 
@@ -105,7 +105,7 @@ XDM是一个开源规范，为引入Experience Platform的数据提供通用结�
 
 | 功能 | 描述 |
 | --- | --- |
-| Real-Time CDP MCP (Beta) | 使用Real-Time CDP MCP将Real-Time CDP引入到AI代理和与MCP兼容的客户端中，使您能够通过本机LLM体验直接与Real-Time CDP工具交互。 通过将与MCP兼容的客户端（例如Claude、ChatGPT、Claude Code、Codex、Cursor或VS Code）连接到`https://rtcdp-mcp.adobe.io/mcp`，您可以使用自然语言检查受众、目标配置和激活运行历史记录，而无需编写Experience Platform REST API调用或导航多个UI工作流。 完成基于浏览器的Adobe登录后，您将拥有对工具的只读访问权限，包括： <ul><li>搜索现有受众</li><li>预览受众成员资格</li><li>列出目标类型</li><li>列出已配置的帐户</li><li>列出已配置的目标</li><li>列出Source连接</li><li>列出目标连接</li><li>检查激活运行</li></ul>。每个请求都需要`imsOrgId`和`sandboxName`参数，以确保操作范围限定在您的组织和沙盒中。 请注意，此Beta版本不支持写入操作。 |
+| Real-Time CDP MCP (Beta) | 使用Real-Time CDP MCP将Real-Time CDP引入到AI代理和与MCP兼容的客户端中，使您能够通过本机LLM体验直接与Real-Time CDP工具交互。 通过将与MCP兼容的客户端（例如Claude、ChatGPT、Claude Code、Codex、Cursor或VS Code）连接到Adobe代表提供的端点，您可以使用自然语言检查受众、目标配置和激活运行历史记录，而无需编写Experience Platform REST API调用或导航多个UI工作流。 完成基于浏览器的Adobe登录后，您将拥有对工具的只读访问权限，包括： <ul><li>搜索现有受众</li><li>预览受众成员资格</li><li>列出目标类型</li><li>列出已配置的帐户</li><li>列出已配置的目标</li><li>列出Source连接</li><li>列出目标连接</li><li>检查激活运行</li></ul>. 每个请求都需要`imsOrgId`和`sandboxName`参数，以确保操作范围限定在您的组织和沙盒中。 请注意，此Beta版本不支持写入操作。 |
 
 {style="table-layout:auto"}
 
@@ -113,7 +113,7 @@ XDM是一个开源规范，为引入Experience Platform的数据提供通用结�
 
 ## 沙盒 {#sandboxes}
 
-Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。公司通常并行运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。
+Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。 公司通常并行运行多个数字体验应用程序，并且需要满足这些应用程序的开发、测试和部署需要，同时确保操作法规遵从性。
 
 **新增功能或更新后的功能**
 
@@ -141,7 +141,7 @@ Adobe Experience Platform 旨在丰富全球范围内的数字体验应用。公
 
 ## 源 {#sources}
 
-Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
+Experience Platform 提供 RESTful API 和交互式 UI，可让您轻松为各种数据提供者设置源连接。 这些源连接允许您验证并连接到外部存储系统和 CRM 服务、设置运行摄取操作的时间以及管理数据摄取吞吐量。
 
 **新源或已更新的源**
 

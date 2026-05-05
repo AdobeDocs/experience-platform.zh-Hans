@@ -2,9 +2,9 @@
 title: 使用流服务API筛选Source的行级数据
 description: 本教程介绍了有关如何使用流服务API在源级别过滤数据的步骤
 exl-id: 224b454e-a079-4df3-a8b2-1bebfb37d11f
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: cf5c460f1db4970217b881688c994787696d1ce1
 workflow-type: tm+mt
-source-wordcount: '1820'
+source-wordcount: '2086'
 ht-degree: 3%
 
 ---
@@ -43,7 +43,7 @@ ht-degree: 3%
 
 过滤源的行级数据的第一步是检索源的连接规范，并确定源支持的运算符和语言。
 
-要检索给定源的连接规范，请向`/connectionSpecs` API的[!DNL Flow Service]端点发出GET请求，并在查询参数中提供源的属性名称。
+要检索给定源的连接规范，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，并在查询参数中提供源的属性名称。
 
 **API格式**
 
@@ -53,7 +53,7 @@ GET /connectionSpecs/{QUERY_PARAMS}
 
 | 参数 | 描述 |
 | --- | --- |
-| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用[!DNL Google BigQuery]属性并在搜索中指定`name`来检索`"google-big-query"`连接规范。 |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用`name`属性并在搜索中指定`"google-big-query"`来检索[!DNL Google BigQuery]连接规范。 |
 
 +++请求
 
@@ -156,7 +156,7 @@ curl -X GET \
 
 ### 预览数据 {#preview-your-data}
 
-您可以预览数据，方法是向`/explore` API的[!DNL Flow Service]端点发出GET请求，同时提供`filters`作为查询参数的一部分，并在[!DNL Base64]中指定PQL输入条件。
+您可以预览数据，方法是向[!DNL Flow Service] API的`/explore`端点发出GET请求，同时提供`filters`作为查询参数的一部分，并在[!DNL Base64]中指定PQL输入条件。
 
 **API格式**
 
@@ -401,6 +401,177 @@ curl -X POST \
     "id": "b7581b59-c603-4df1-a689-d23d7ac440f3",
     "etag": "\"ef05d265-0000-0200-0000-6019e0080000\""
 }
+```
+
++++
+
+## 筛选[!DNL Salesforce]数据流
+
+以下示例显示如何使用[!DNL Flow Service] API将行级筛选应用于现有[!DNL Salesforce]数据流的端到端方法。
+
+### 查询语言和转义
+
+在将OAuth 2.0客户端凭据与[!DNL Salesforce]源结合使用时，使用SOQL （[!DNL Salesforce]对象查询语言）执行行级筛选。
+
+* SOQL筛选器中的列名称使用完全相同的[!DNL Salesforce]字段API名称，不带反撇号或其他特殊字符。
+* 按照SOQL语法的要求，字符串值应用单引号括起来。
+* 对于Boolean值，请使用关键字`true`或`false`，而不是数值（`0`或`1`）。
+* 当过滤器指示`WHERE`子句中的日期和日期时间值表示日期/时间类型时，应将它们写入为不带引号的SOQL日期或dateTime文本，而不是写入为带引号的字符串。
+
+对于基于PQL的行级筛选，值为`boolean`或`dateTime`的每个文本节点都必须包含`literalType`，以便正确解释和转换值。
+
+PQL示例：
+
+>[!BEGINTABS]
+
+>[!TAB PQL示例1]
+
+```json
+{
+  "type": "PQL",
+  "format": "pql/json",
+  "value": {
+    "nodeType": "fnApply",
+    "fnName": "like",
+    "params": [
+      {
+        "nodeType": "fieldLookup",
+        "fieldName": "Name"
+      },
+      {
+        "nodeType": "literal",
+        "value": "ro%"
+      }
+    ]
+  }
+}
+```
+
+>[!TAB PQL示例2]
+
+```json
+{
+  "type": "PQL",
+  "format": "pql/json",
+  "value": {
+    "nodeType": "fnApply",
+    "fnName": ">",
+    "params": [
+      { "nodeType": "fieldLookup", "fieldName": "CreatedDate" },
+      {
+        "nodeType": "literal",
+        "literalType": "DateTime",
+        "value": "2024-05-15T00:00:00Z"
+      }
+    ]
+  }
+}
+```
+
+>[!TAB PQL示例3]
+
+```json
+  "type": "PQL",
+  "format": "pql/json",
+  "value": {
+    "nodeType": "fnApply",
+    "fnName": "=",
+    "params": [
+      { "nodeType": "fieldLookup", "fieldName": "IsDeleted" },
+      {
+        "nodeType": "literal",
+        "literalType": "boolean",
+        "value": false
+      }
+    ]
+  }
+}
+```
+
+>[!ENDTABS]
+
+#### 检索[!DNL Salesforce]的连接规范
+
+要检索[!DNL Salesforce]源的连接规范信息，请向[!DNL Flow Service] API的`/connectionSpecs`端点发出GET请求，并提供源的属性名称作为查询参数的一部分。
+
+**API格式**
+
+```http
+GET /connectionSpecs/{QUERY_PARAMS}
+```
+
+| 参数 | 描述 |
+| --- | --- |
+| `{QUERY_PARAMS}` | 用于筛选结果的可选查询参数。 您可以通过应用`name`属性并在搜索中指定`"salesforce"`来检索[!DNL Salesforce]连接规范。 |
+
++++请求
+
+以下请求检索[!DNL Salesforce]的连接规范。
+
+```shell
+curl -X GET \
+  'https://platform.adobe.io/data/foundation/flowservice/connectionSpecs?property=name=="salesforce"' \
+  -H 'Authorization: Bearer {ACCESS_TOKEN}' \
+  -H 'x-gw-ims-org-id: {ORG_ID}'
+  -H 'x-sandbox-name: {SANDBOX_NAME}' \
+  -H 'x-api-key: {API_KEY}'
+```
+
++++响应
+
+成功的响应返回[!DNL Salesforce]的状态代码200和连接规范，包括有关其支持的查询语言和逻辑运算符的信息。
+
+
+```json
+ "attributes": {
+    "filterAtSource": {
+      "enabled": true,
+      "queryLanguage": "SQL",
+      "logicalOperators": [
+        "and",
+        "or",
+        "not"
+      ],
+      "comparisonOperators": [
+        "=",
+        "!=",
+        "<",
+        "<=",
+        ">",
+        ">=",
+        "like",
+        "in",
+        "isNull",
+        "isNotNull"
+      ],
+      "columnNameEscapeChar": "`",
+      "valueEscapeChar": "'",
+      "v2": {
+        "oAuth2ClientCredential": {
+          "queryLanguage": "SOQL",
+          "logicalOperators": [
+            "and",
+            "or",
+            "not"
+          ],
+          "comparisonOperators": [
+            "=",
+            "!=",
+            "<",
+            "<=",
+            ">",
+            ">=",
+            "like",
+            "in",
+            "isNull",
+            "isNotNull"
+          ],
+          "columnNameEscapeChar": "",
+          "valueEscapeChar": "'"
+        }
+      }
+    }
+  }
 ```
 
 +++
