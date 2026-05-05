@@ -3,10 +3,10 @@ title: 将受众激活到批量配置文件导出目标
 type: Tutorial
 description: 了解如何通过在Adobe Experience Platform中将受众发送到基于配置文件的批处理目标来激活这些受众。
 exl-id: 82ca9971-2685-453a-9e45-2001f0337cda
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: ce9b0bd5cc733ed67909898b45f4ee42ae015608
 workflow-type: tm+mt
-source-wordcount: '4769'
-ht-degree: 11%
+source-wordcount: '4961'
+ht-degree: 12%
 
 ---
 
@@ -92,7 +92,7 @@ ht-degree: 11%
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_schedule_monthly_messaging"
 >title="每月导出"
->abstract="<sup>*</sup> 选择开始日期，后续导出将在一个月的这一天进行，直到选定的结束日期。对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。"
+>abstract="<sup>*</sup> 选择开始日期，后续导出将在一个月的这一天进行，直到选定的结束日期。 对于少于 30 或 31 天的月份，导出将在该月的最后一天进行。"
 
 [!DNL Adobe Experience Platform]将电子邮件营销和云存储目标的数据导出为[不同的文件类型](#supported-file-formats-export)。 在&#x200B;**[!UICONTROL Scheduling]**&#x200B;页面中，您可以为要导出的每个受众配置计划和文件名。
 
@@ -119,13 +119,13 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
->abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br>第一个增量文件导出包括符合受众资格的所有轮廓，充当回填。后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。 选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br> 第一个增量文件导出包含符合受众资格的所有轮廓，充当回填。 后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
 >title="在受众评估后激活"
->abstract="<p>在每日分段作业完成后立即运行激活。这将确保导出最新的轮廓。</p><p>受众评估后导出轮廓的选项<i>不</i>适用于每周和每月的导出频率。</p>"
+>abstract="<p>在每日分段作业完成后立即运行激活。 这将确保导出最新的轮廓。</p><p>受众评估后导出轮廓的选项<i>不</i>适用于每周和每月的导出频率。</p>"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_scheduled"
@@ -161,12 +161,12 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 
    >[!IMPORTANT]
    >
-   >如果您对已设置为在区段评估后激活的受众运行[灵活受众评估](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)，则无论之前有任何每日激活作业，这些受众都会在灵活受众评估作业完成后立即激活。这可能会导致根据您的操作，每天多次导出受众。
+   >如果您对已设置为在区段评估后激活的受众运行[灵活受众评估](../../segmentation/ui/audience-portal.md#flexible-audience-evaluation)，则无论之前有任何每日激活作业，这些受众都会在灵活受众评估作业完成后立即激活。 这可能会导致根据您的操作，每天多次导出受众。
 
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -210,7 +210,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_something"
 >title="轮廓名"
->abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。 使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 选择&#x200B;**[!UICONTROL Export incremental files]**&#x200B;以触发导出，其中第一个文件是选定受众的所有配置文件资格的完整快照，后续文件是自上次导出以来的增量配置文件资格。
 
@@ -241,7 +241,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_filename"
 >title="轮廓名"
->abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
+>abstract="对于基于文件的目标，为每个受众生成一个唯一的文件名。 使用文件名编辑器可创建和编辑唯一文件名或保留默认名称。"
 
 对于大多数目标，默认文件名由目标名称、受众ID以及日期和时间指示器组成。 例如，您可以编辑导出的文件名，以区分不同的促销活动，或者将数据导出时间附加到文件。 请注意，某些目标开发人员可能选择为其目标显示不同的默认文件名附加选项。
 
@@ -344,7 +344,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_mandatorykey"
 >title="关于强制属性"
->abstract="选择所有导出的轮廓应包含的 XDM 架构属性。不会将没有强制密钥的轮廓导出到目标。不选择强制密钥会导出所有合格的轮廓，而不管其属性如何。"
+>abstract="选择所有导出的轮廓应包含的 XDM 架构属性。 不会将没有强制密钥的轮廓导出到目标。 不选择强制密钥会导出所有合格的轮廓，而不管其属性如何。"
 
 必填属性是启用用户的复选框，可确保所有配置文件记录都包含所选属性。 例如：所有导出的用户档案都包含电子邮件地址&#x200B;。
 
@@ -359,7 +359,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activate_deduplicationkey"
 >title="关于重复数据删除键"
->abstract="通过选择重复数据删除键，消除导出文件中同一轮廓的多条记录。选择一个命名空间或最多两个 XDM 架构属性作为重复数据删除键。不选择重复数据删除键可能会导致导出文件中出现重复的轮廓条目。"
+>abstract="通过选择重复数据删除键，消除导出文件中同一轮廓的多条记录。 选择一个命名空间或最多两个 XDM 架构属性作为重复数据删除键。 不选择重复数据删除键可能会导致导出文件中出现重复的轮廓条目。"
 
 >[!IMPORTANT]
 >
@@ -496,7 +496,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。 此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项 {#key-considerations}
 
@@ -573,7 +573,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >
 >目录中的所有云存储目标都可以查看改进的[[!UICONTROL Mapping]步骤](#mapping)，该步骤取代了本节中描述的&#x200B;**[!UICONTROL Select attributes]**&#x200B;步骤。
 >
->对于&#x200B;**[!UICONTROL Select attributes]**、Oracle Responsys、Oracle Eloqua和Salesforce Marketing Cloud电子邮件营销目标，仍会显示此[!DNL Adobe Campaign]步骤。
+>对于[!DNL Adobe Campaign]、Oracle Responsys、Oracle Eloqua和Salesforce Marketing Cloud电子邮件营销目标，仍会显示此&#x200B;**[!UICONTROL Select attributes]**&#x200B;步骤。
 
 对于基于配置文件的目标，必须选择要发送到目标目标的配置文件属性。
 
@@ -615,9 +615,24 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >title="排除扩充属性"
 >abstract="启用此选项可将所选自定义上传受众的轮廓导出到您的目的地，同时排除其所有属性。"
 
+>[!CONTEXTUALHELP]
+>id="platform_destinations_enrichment_attributes_info_alert"
+>title="已启用分层输出"
+>abstract="此目标支持分层输出，因为启用导出数组、映射和对象切换开关处于打开状态。 您可以在一个映射中导出顶级数组、数组元素或来自同一数组的多个字段。 有关详细信息，请参阅文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_enrichment_attributes_source_field"
+>title="源字段"
+>abstract="选择要导出的扩充属性。 对于数组内的字段，源会自动填充转换表达式。 要导出一个映射中的多个字段，请先添加一个字段，然后编辑源表达式。 有关详细信息，请参阅文档。"
+
+>[!CONTEXTUALHELP]
+>id="platform_destinations_enrichment_attributes_target_field"
+>title="目标字段"
+>abstract="目标字段会自动填充源字段名称。 如果您希望字段在导出的文件中具有不同的名称，请编辑该字段以使用不同的别名。"
+
 >[!IMPORTANT]
 >
->仅当您在&#x200B;**[!UICONTROL Custom upload]**&#x200B;受众选择[步骤中选择了](#select-audiences)受众时，才会显示此步骤。
+>仅当您在[受众选择](#select-audiences)步骤中选择了&#x200B;**[!UICONTROL Custom upload]**&#x200B;受众时，才会显示此步骤。
 
 扩充属性对应于Experience Platform中作为&#x200B;**[!UICONTROL Custom uploads]**&#x200B;摄取的自定义上传受众。 在此步骤中，您可以为每个选定的外部受众选择要导出到目标的属性。
 
@@ -626,7 +641,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 请按照以下步骤为每个外部受众选择扩充属性：
 
 1. 在&#x200B;**[!UICONTROL Enrichment attributes]**&#x200B;列中，选择![编辑按钮](/help/images/icons/edit.png) （编辑）按钮。
-1. 选择 **[!UICONTROL Add enrichment attribute]**。将显示一个新的空架构字段。
+1. 选择 **[!UICONTROL Add enrichment attribute]**。 将显示一个新的空架构字段。
    ![显示扩充属性模式屏幕的UI图像。](../assets/ui/activate-batch-profile-destinations/add-enrichment-attribute.png)
 1. 选择空字段右侧的按钮以打开字段选择屏幕。
 1. 选择要为受众导出的属性。
@@ -649,7 +664,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >* 这些字段在受众定义中使用。
 >* 这些字段配置为目标目标的投影属性。
 >
-> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅[中的 [!DNL Adobe Experience Platform]](../../rtcdp/privacy/data-governance-overview.md#destinations)数据管理。
+> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅 [!DNL Adobe Experience Platform]](../../rtcdp/privacy/data-governance-overview.md#destinations)中的[数据管理。
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
