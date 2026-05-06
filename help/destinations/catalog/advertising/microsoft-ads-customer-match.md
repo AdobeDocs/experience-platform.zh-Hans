@@ -3,13 +3,11 @@ keywords: 广告；microsoft ads；客户匹配；
 title: Microsoft Ads客户匹配连接
 description: 使用Microsoft广告客户匹配目标按电子邮件地址匹配客户，并在Microsoft Advertising网络中重新与客户互动，包括搜索和受众广告。
 badge: label="Beta 版" type="Informative"
-hide: true
-hidefromtoc: true
 exl-id: 4d405ffb-f600-463b-a215-44e806b6d139
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: 50bd5be385f62a290fefae60c6ed286d893e430a
 workflow-type: tm+mt
-source-wordcount: '1511'
-ht-degree: 14%
+source-wordcount: '1642'
+ht-degree: 18%
 
 ---
 
@@ -94,9 +92,9 @@ ht-degree: 14%
 
 在IT管理员在Azure门户中批准请求后，您可以返回Experience Platform并使用您的工作帐户进行身份验证。 有关指导，请参阅Microsoft文档：
 
-* [审核管理员同意请求并采取行动](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/review-admin-consent-requests)
+* [审查管理员同意请求并对其执行操作](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/review-admin-consent-requests)
 * [配置管理员同意工作流](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-admin-consent-workflow)
-* [配置用户如何同意应用程序](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent)
+* [配置用户对应用程序的同意方式](https://learn.microsoft.com/en-us/entra/identity/enterprise-apps/configure-user-consent)
 
 如果IT管理员尚未批准请求，则身份验证将失败，并出现以下错误： `AADSTS650052: The app needs access to a service ('https://ads.microsoft.com') that your organization has not subscribed to or enabled. Contact your IT Admin to review the configuration of your service subscriptions.`
 
