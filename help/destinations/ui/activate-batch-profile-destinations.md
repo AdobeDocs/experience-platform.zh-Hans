@@ -120,7 +120,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
 >id="platform_destinations_activate_exportoptions"
 >title="文件导出选项"
 >abstract="选择&#x200B;**导出全部文件**&#x200B;以导出符合受众资格的所有轮廓的完整快照。 选择&#x200B;**导出增量文件**&#x200B;以仅导出自上次导出后符合受众资格的轮廓。<br> 第一个增量文件导出包含符合受众资格的所有轮廓，充当回填。 后续增量文件仅包含自第一个增量文件导出后符合受众资格的轮廓。"
->additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html?lang=zh-Hans#export-incremental-files" text="导出增量文件"
+>additional-url="https://experienceleague.adobe.com/docs/experience-platform/destinations/ui/activate/activate-batch-profile-destinations.html#export-incremental-files" text="导出增量文件"
 
 >[!CONTEXTUALHELP]
 >id="platform_destinations_activationchaining_aftersegmentevaluation"
@@ -166,7 +166,7 @@ Experience Platform会自动为每次文件导出设置默认计划。 您可以
    <!-- Batch segmentation currently runs at {{insert time of day}} and lasts for an average {{x hours}}. Adobe reserves the right to modify this schedule. -->
 
    ![在批处理目标的激活流程中，突出显示区段后评估选项。](../assets/ui/activate-batch-profile-destinations/after-segment-evaluation-option.png)
-使用&#x200B;**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
+使用**[!UICONTROL Scheduled]**&#x200B;选项可让激活作业在固定时间运行。 此选项可确保每天在同一时间导出Experience Platform配置文件数据。 但是，您导出的用户档案可能不是最新的，具体取决于批量分段作业是否在激活作业开始之前完成。
 
    ![突出显示批处理目标激活流中的“已计划”选项并显示时间选择器的图像。](../assets/ui/activate-batch-profile-destinations/scheduled-option.png)
 
@@ -496,7 +496,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 
 ### 具有相同时间戳的用户档案的重复数据删除行为 {#deduplication-same-timestamp}
 
-将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。 此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/zh-hans/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
+将轮廓导出到基于文件的目标时，重复数据删除可确保当多个轮廓共享相同的重复数据删除键和相同的参考时间戳时仅导出一个轮廓。 此时间戳表示个人资料的受众成员资格或身份图的上次更新时间。 有关如何更新和导出配置文件的更多信息，请参阅[配置文件导出行为](https://experienceleague.adobe.com/en/docs/experience-platform/destinations/how-destinations-work/profile-export-behavior#what-determines-a-data-export-and-what-is-included-in-the-export-2)文档。
 
 #### 关键注意事项 {#key-considerations}
 
@@ -664,7 +664,7 @@ Adobe建议选择身份命名空间（如[!DNL CRM ID]或电子邮件地址）�
 >* 这些字段在受众定义中使用。
 >* 这些字段配置为目标目标的投影属性。
 >
-> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅 [!DNL Adobe Experience Platform][&#128279;](../../rtcdp/privacy/data-governance-overview.md#destinations)中的数据管理。
+> 例如，如果字段`person.name.firstName`的某些数据使用标签与目标的营销操作冲突，您将在审核步骤中看到数据使用策略冲突。 有关详细信息，请参阅 [!DNL Adobe Experience Platform]](../../rtcdp/privacy/data-governance-overview.md#destinations)中的[数据管理。
 
 在&#x200B;**[!UICONTROL Review]**&#x200B;页面上，您可以看到所选内容的摘要。 选择&#x200B;**[!UICONTROL Cancel]**&#x200B;以中断流，**[!UICONTROL Back]**&#x200B;以修改您的设置，或&#x200B;**[!UICONTROL Finish]**&#x200B;以确认您的选择并开始将数据发送到目标。
 
