@@ -2,9 +2,9 @@
 title: Salesforce Source Connector概述
 description: 了解如何使用API或用户界面将Salesforce连接到Adobe Experience Platform。
 exl-id: 597778ad-3cf8-467c-ad5b-e2850967fdeb
-source-git-commit: 58f69a78fb3c622c8741d7a1618f15509c160a5b
+source-git-commit: 501cb5e34e565b40160b39aed306a23cf77328ea
 workflow-type: tm+mt
-source-wordcount: '1635'
+source-wordcount: '1639'
 ht-degree: 2%
 
 ---
@@ -15,11 +15,7 @@ ht-degree: 2%
 >
 >在Amazon Web Services (AWS)上运行Adobe Experience Platform时，您现在可以使用[!DNL Salesforce]源。 在AWS上运行的Experience Platform当前仅对有限数量的客户可用。 要了解有关支持的Experience Platform基础架构的更多信息，请参阅[Experience Platform multi-cloud概述](../../../landing/multi-cloud.md)。
 
->[!WARNING]
->
->[!DNL Salesforce]源的基本身份验证将于2026年1月被弃用。 您必须移至OAuth 2客户端凭据身份验证，才能继续使用该源并将数据从[!DNL Salesforce]帐户摄取到Experience Platform。
-
-Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。您可以从各种源（如Adobe应用程序、基于云的存储、数据库和许多其他源）中摄取数据。
+Adobe Experience Platform 允许从外部源摄取数据，同时让您能够使用 Experience Platform 服务来构建、赋予标签和增强传入数据。 您可以从各种源（如Adobe应用程序、基于云的存储、数据库和许多其他源）中摄取数据。
 
 Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的支持包括[!DNL Salesforce]。
 
@@ -239,21 +235,21 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 
 | Variable | 描述 | 示例 |
 | --- | --- | --- |
-| `CLIENT_SECRET` | 用于生成`{ACCESS_TOKEN}`的唯一标识符。 有关如何检索[的信息，请参阅有关](../../../landing/api-authentication.md)身份验证和访问Experience Platform API`{CLIENT_SECRET}`的教程。 | `{CLIENT_SECRET}` |
-| `JWT_TOKEN` | JSON Web令牌(JWT)是用于生成{ACCESS_TOKEN}的身份验证凭据。 有关如何生成[的信息，请参阅有关](../../../landing/api-authentication.md)身份验证和访问Experience Platform API`{JWT_TOKEN}`的教程。 | `{JWT_TOKEN}` |
-| `API_KEY` | 用于对调用Experience Platform API进行身份验证的唯一标识符。 有关如何检索[的信息，请参阅有关](../../../landing/api-authentication.md)身份验证和访问Experience Platform API`{API_KEY}`的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
-| `ACCESS_TOKEN` | 完成对Experience Platform API的调用所需的授权令牌。 有关如何检索[的信息，请参阅有关](../../../landing/api-authentication.md)身份验证和访问Experience Platform API`{ACCESS_TOKEN}`的教程。 | `Bearer {ACCESS_TOKEN}` |
+| `CLIENT_SECRET` | 用于生成`{ACCESS_TOKEN}`的唯一标识符。 有关如何检索`{CLIENT_SECRET}`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `{CLIENT_SECRET}` |
+| `JWT_TOKEN` | JSON Web令牌(JWT)是用于生成{ACCESS_TOKEN}的身份验证凭据。 有关如何生成`{JWT_TOKEN}`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `{JWT_TOKEN}` |
+| `API_KEY` | 用于对调用Experience Platform API进行身份验证的唯一标识符。 有关如何检索`{API_KEY}`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `c8d9a2f5c1e03789bd22e8efdd1bdc1b` |
+| `ACCESS_TOKEN` | 完成对Experience Platform API的调用所需的授权令牌。 有关如何检索`{ACCESS_TOKEN}`的信息，请参阅有关[身份验证和访问Experience Platform API](../../../landing/api-authentication.md)的教程。 | `Bearer {ACCESS_TOKEN}` |
 | `META_SCOPE` | 对于[!DNL Marketo]，此值是固定的，并且始终设置为： `ent_dataservices_sdk`。 | `ent_dataservices_sdk` |
 | `CONTAINER_ID` | `global`容器包含所有标准Adobe和Experience Platform合作伙伴提供的类、架构字段组、数据类型和架构。 对于[!DNL Marketo]，此值是固定的，并且始终设置为`global`。 | `global` |
-| `PRIVATE_KEY` | 用于向Experience Platform API验证您的[!DNL Postman]实例的凭据。 有关如何检索[的说明，请参阅有关设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)设置开发人员控制台和{PRIVATE_KEY}的教程。 | `{PRIVATE_KEY}` |
+| `PRIVATE_KEY` | 用于向Experience Platform API验证您的[!DNL Postman]实例的凭据。 有关如何检索{PRIVATE_KEY}的说明，请参阅有关设置开发人员控制台和[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)的教程。 | `{PRIVATE_KEY}` |
 | `TECHNICAL_ACCOUNT_ID` | 用于集成到Adobe I/O的凭据。 | `D42AEVJZTTJC6LZADUBVPA15@techacct.adobe.com` |
 | `IMS` | Identity Management System (IMS)提供了对Adobe服务进行身份验证的框架。 对于[!DNL Marketo]，此值是固定的，并且始终设置为： `ims-na1.adobelogin.com`。 | `ims-na1.adobelogin.com` |
-| `IMS_ORG` | 公司实体，可以拥有产品或服务，也可以为其授予产品和服务许可证，并允许其成员访问。 有关如何检索[信息的说明，请参阅有关 [!DNL Postman]](../../../landing/postman.md)设置开发人员控制台和`{ORG_ID}`的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
+| `IMS_ORG` | 公司实体，可以拥有产品或服务，也可以为其授予产品和服务许可证，并允许其成员访问。 有关如何检索`{ORG_ID}`信息的说明，请参阅有关[设置开发人员控制台和 [!DNL Postman]](../../../landing/postman.md)的教程。 | `ABCEH0D9KX6A7WA7ATQE0TE@adobeOrg` |
 | `SANDBOX_NAME` | 您正在使用的虚拟沙盒分区的名称。 | `prod` |
 | `TENANT_ID` | 一个ID，用于确保您创建的资源被正确命名并包含在您的组织内。 | `b2bcdpproductiontest` |
 | `PLATFORM_URL` | 您对其进行API调用的URL端点。 此值是固定的，并且始终设置为： `http://platform.adobe.io/`。 | `http://platform.adobe.io/` |
-| `munchkinId` | [!DNL Marketo]帐户的唯一ID。 有关如何检索[的信息，请参阅 [!DNL Marketo] 验证](../adobe-applications/marketo/marketo-auth.md)实例`munchkinId`的教程。 | `123-ABC-456` |
-| `sfdc_org_id` | 您的[!DNL Salesforce]帐户的组织ID。 有关获取[[!DNL Salesforce] 组织ID的更多信息，请参阅以下](https://help.salesforce.com/articleView?id=000325251&type=1&mode=1)指南[!DNL Salesforce]。 | `00D4W000000FgYJUA0` |
+| `munchkinId` | [!DNL Marketo]帐户的唯一ID。 有关如何检索`munchkinId`的信息，请参阅[验证 [!DNL Marketo] 实例](../adobe-applications/marketo/marketo-auth.md)的教程。 | `123-ABC-456` |
+| `sfdc_org_id` | 您的[!DNL Salesforce]帐户的组织ID。 有关获取[!DNL Salesforce]组织ID的更多信息，请参阅以下[[!DNL Salesforce] 指南](https://help.salesforce.com/articleView?id=000325251&type=1&mode=1)。 | `00D4W000000FgYJUA0` |
 | `has_abm` | 一个布尔值，指示您是否订阅了[!DNL Marketo Account-Based Marketing]。 | `false` |
 | `has_msi` | 一个布尔值，指示您是否订阅了[!DNL Marketo Sales Insight]。 | `false` |
 
@@ -303,7 +299,7 @@ Experience Platform支持从第三方CRM系统中摄取数据。 CRM提供商的
 openssl req -newkey rsa:4096 -new -nodes -x509 -days 3650 -keyout key.pem -out cert.pem  
 ```
 
-1. 在[!DNL Salesforce]仪表板中，选择设置(![设置图标。](/help/images/icons/settings.png))，然后选择&#x200B;**[!DNL Setup]**。
+1. 在[!DNL Salesforce]仪表板中，选择设置（![设置图标。](/help/images/icons/settings.png)） 然后选择&#x200B;**[!DNL Setup]**。
 2. 导航到[!DNL App Manager]，然后选择&#x200B;**[!DNL New Connection App]**。
 3. 为应用程序提供一个名称，并允许自动填写其余字段。
 4. 为[!DNL Enable OAuth Settings]启用该框。
@@ -438,8 +434,8 @@ public class Main {
 | 属性 | 配置 |
 | --- | --- |
 | `claimArray[0]` | 使用您的客户端ID更新`claimArray[0]`。 |
-| `claimArray[1]` | 使用针对应用程序授权的`claimArray[1]`用户名更新[!DNL Salesforce]。 |
-| `claimArray[2]` | 使用您的`claimArray[2]`登录URL更新[!DNL Salesforce]。 |
+| `claimArray[1]` | 使用针对应用程序授权的[!DNL Salesforce]用户名更新`claimArray[1]`。 |
+| `claimArray[2]` | 使用您的[!DNL Salesforce]登录URL更新`claimArray[2]`。 |
 | `claimArray[3]` | 用自纪元以来毫秒的格式设置过期日期更新`claimArray[3]`。 例如，`3660624000000`为12-31-2085。 |
 | `/path/to/keystore` | 将`/path/to/keystore`替换为您的keystore.jks的正确路径 |
 | `keystorepassword` | 将`keystorepassword`替换为您的目标密钥库密码。 |

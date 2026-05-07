@@ -4,9 +4,9 @@ type: Tutorial
 description: 了解如何使用Snowflake UI创建Adobe Experience Platform源连接。
 badgeUltimate: label="Ultimate" type="Positive"
 exl-id: fb2038b9-7f27-4818-b5de-cc8072122127
-source-git-commit: 80ea8b5aa46e7aa4fdecfee3c962a77989a9b191
+source-git-commit: ea8100cf8e032371b6c5187ba142bc12047b35d1
 workflow-type: tm+mt
-source-wordcount: '1250'
+source-wordcount: '1079'
 ht-degree: 2%
 
 ---
@@ -36,13 +36,13 @@ ht-degree: 2%
 
 ## 导航源目录 {#navigate}
 
-在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL 源]**&#x200B;以访问[!UICONTROL 源]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
+在Experience Platform UI中，从左侧导航中选择&#x200B;**[!UICONTROL Sources]**&#x200B;以访问[!UICONTROL Sources]工作区。 您可以从屏幕左侧的目录中选择相应的类别。 或者，您可以使用搜索选项查找您要使用的特定源。
 
-在&#x200B;**[!DNL Snowflake]**&#x200B;数据库&#x200B;*[!UICONTROL 类别下选择]*，然后选择&#x200B;**[!UICONTROL 设置]**。
+在&#x200B;*[!UICONTROL Databases]*&#x200B;类别下选择&#x200B;**[!DNL Snowflake]**，然后选择&#x200B;**[!UICONTROL Set up]**。
 
 >[!TIP]
 >
->当给定的源尚未具有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL 设置]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL 添加数据]**。
+>当给定的源尚未拥有经过身份验证的帐户时，源目录中的源会显示&#x200B;**[!UICONTROL Set up]**&#x200B;选项。 一旦存在经过身份验证的帐户，此选项将更改为&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择Snowflake卡的源目录……](../../../../images/tutorials/create/snowflake/catalog.png)
 
@@ -50,7 +50,7 @@ ht-degree: 2%
 
 接下来，您将进入源工作流的身份验证步骤。 在此，您可以使用现有帐户或创建新帐户。
 
-若要使用现有帐户，请选择要连接的[!DNL Snowflake]帐户，然后选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要使用现有帐户，请选择要连接的[!DNL Snowflake]帐户，然后选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![源工作流中的现有帐户接口。](../../../../images/tutorials/create/snowflake/existing.png)
 
@@ -58,50 +58,28 @@ ht-degree: 2%
 
 如果您没有现有帐户，则必须通过提供与您的源对应的必需身份验证凭据来创建新帐户。
 
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，然后提供名称并选择性地为您的帐户添加描述。
+要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**，然后提供名称并选择性地为您的帐户添加描述。
 
 ### 连接到Azure上的Experience Platform {#azure}
 
-您可以使用帐户密钥身份验证或密钥对身份验证将您的[!DNL Snowflake]帐户连接到Azure上的Experience Platform。
+您可以使用密钥对身份验证将您的[!DNL Snowflake]帐户连接到Azure上的Experience Platform。
 
->[!BEGINTABS]
+要使用密钥对身份验证，请选择&#x200B;**[!UICONTROL KeyPair authentication]**，提供帐户、用户名、私钥、私钥密码、数据库和仓库的值，然后选择&#x200B;**[!UICONTROL Connect to source]**。
 
->[!TAB 帐户密钥身份验证]
-
-若要使用帐户密钥身份验证，请选择&#x200B;**[!UICONTROL 帐户密钥身份验证]**，在输入表单中提供您的连接字符串，然后选择&#x200B;**[!UICONTROL 连接到源]**。
-
-![帐户密钥身份验证接口。](../../../../images/tutorials/create/snowflake/account-key-auth.png)
-
-| 凭据 | 描述 |
-| --- | --- |
-| 帐户 | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `orgname-account_name`。 请阅读有关[检索 [!DNL Snowflake] 帐户标识符](../../../../connectors/databases/snowflake.md#retrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
-| 仓库 | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
-| 数据库 | [!DNL Snowflake]数据库包含要带Experience Platform的数据。 |
-| 用户名 | [!DNL Snowflake]帐户的用户名。 |
-| 密码 | [!DNL Snowflake]用户帐户的密码。 |
-| 角色 | 在[!DNL Snowflake]会话中使用的默认访问控制角色。 该角色应为已分配给指定用户的现有角色。 默认角色为`PUBLIC`。 |
-| 连接字符串 | 用于连接到[!DNL Snowflake]实例的连接字符串。 [!DNL Snowflake]的连接字符串模式为`jdbc:snowflake://{ACCOUNT_NAME}.snowflakecomputing.com/?user={USERNAME}&password={PASSWORD}&db={DATABASE}&warehouse={WAREHOUSE}` |
-
->[!TAB 密钥对身份验证]
-
-要使用密钥对身份验证，请选择&#x200B;**[!UICONTROL 密钥对身份验证]**，提供帐户、用户名、私钥、私钥密码、数据库和仓库的值，然后选择&#x200B;**[!UICONTROL 连接到源]**。
-
-![帐户密钥对身份验证接口。](../../../../images/tutorials/create/snowflake/key-pair-auth.png)
+![帐户密钥对身份验证接口。](../../../../images/tutorials/create/snowflake/new.png)
 
 使用密钥对身份验证，您必须生成2048位RSA密钥对，然后在为[!DNL Snowflake]源创建帐户时提供以下值。
 
 | 凭据 | 描述 |
 | --- | --- |
-| 帐户 | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如： `orgname-account_name`。 请阅读有关[检索 [!DNL Snowflake] 帐户标识符](../../../../connectors/databases/snowflake.md#retrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
+| 帐户 | 帐户名称可唯一标识组织内的帐户。 在这种情况下，您必须跨不同的[!DNL Snowflake]组织唯一标识帐户。 要实现此目的，您必须在帐户名称前添加组织名称。 例如：`orgname-account_name`。 请阅读有关[检索 [!DNL Snowflake] 帐户标识符](../../../../connectors/databases/snowflake.md#retrieve-your-account-identifier)的指南，以获取其他指导。 有关更多信息，请参阅[[!DNL Snowflake] 文档](https://docs.snowflake.com/en/user-guide/admin-account-identifier#format-1-preferred-account-name-in-your-organization)。 |
 | 用户名 | [!DNL Snowflake]帐户的用户名。 |
-| 私钥 | [!DNL Base64-]帐户的[!DNL Snowflake]编码私钥。 您可以生成加密或未加密的私钥。 如果您使用的是加密的私钥，那么在针对Experience Platform进行身份验证时，还必须提供私钥密码。 有关详细信息，请阅读[检索 [!DNL Snowflake] 私钥](../../../../connectors/databases/snowflake.md)的指南。 |
-| 私钥密码 | 私钥密码是附加的安全层，在使用加密的私钥进行身份验证时必须使用该安全层。 如果您使用未加密的私钥，则无需提供密码。 |
+| 私钥 | [!DNL Snowflake]帐户的[!DNL Base64-]编码私钥。 您可以生成加密或未加密的私钥。 如果您使用的是加密的私钥，那么在针对Experience Platform进行身份验证时，还必须提供私钥密码。 有关详细信息，请阅读[检索 [!DNL Snowflake] 私钥](../../../../connectors/databases/snowflake.md)的指南。 |
+| 私钥的密码短语 | 私钥密码是附加的安全层，在使用加密的私钥进行身份验证时必须使用该安全层。 如果您使用未加密的私钥，则无需提供密码。 |
 | 数据库 | 包含要摄取到Experience Platform的数据的[!DNL Snowflake]数据库。 |
 | 仓库 | [!DNL Snowflake]仓库管理应用程序的查询执行过程。 每个[!DNL Snowflake]仓库彼此独立，在将数据传送到Experience Platform时必须单独访问。 |
 
 有关这些值的详细信息，请参阅[此Snowflake文档](https://docs.snowflake.com/en/user-guide/key-pair-auth.html)。
-
->[!ENDTABS]
 
 ### 连接到AWS上的Experience Platform {#aws}
 
@@ -115,7 +93,7 @@ ht-degree: 2%
 
 >[!TAB 密钥对身份验证]
 
-若要使用密钥对进行连接，请选择&#x200B;**[!UICONTROL 密钥对身份验证]**，提供您的身份验证凭据，然后选择&#x200B;**[!UICONTROL 连接到源]**。 有关这些凭据的详细信息，请阅读[[!DNL Snowflake] 批次概述](../../../../connectors/databases/snowflake.md#gather-required-credentials)。
+要使用密钥对连接，请选择&#x200B;**[!UICONTROL KeyPair Authentication]**，提供您的身份验证凭据，然后选择&#x200B;**[!UICONTROL Connect to source]**。 有关这些凭据的详细信息，请阅读[[!DNL Snowflake] 批次概述](../../../../connectors/databases/snowflake.md#gather-required-credentials)。
 
 ![密钥对身份验证的新帐户创建步骤。](../../../../images/tutorials/create/snowflake/key-pair-aws.png)
 
@@ -125,7 +103,7 @@ ht-degree: 2%
 >
 >[!DNL Snowflake]源的基本身份验证（或帐户密钥身份验证）将于2025年11月被弃用。 您必须迁移到基于密钥对的身份验证，才能继续使用源并从数据库中摄取数据到Experience Platform。 有关弃用的详细信息，请阅读关于降低凭据泄露风险的[[!DNL Snowflake] 最佳实践指南](https://www.snowflake.com/en/resources/white-paper/best-practices-to-mitigate-the-risk-of-credential-compromise/)。
 
-若要使用用户名和密码组合进行连接，请选择&#x200B;**[!UICONTROL 基本身份验证]**，提供您的身份验证凭据，然后选择&#x200B;**[!UICONTROL 连接到源]**。 有关这些凭据的详细信息，请阅读[[!DNL Snowflake] 批次概述](../../../../connectors/databases/snowflake.md#gather-required-credentials)。
+要使用用户名和密码组合进行连接，请选择&#x200B;**[!UICONTROL Basic authentication]**，提供您的身份验证凭据，然后选择&#x200B;**[!UICONTROL Connect to source]**。 有关这些凭据的详细信息，请阅读[[!DNL Snowflake] 批次概述](../../../../connectors/databases/snowflake.md#gather-required-credentials)。
 
 ![源工作流程中的新帐户步骤，可将Snowflake连接到AWS上的Experience Platform。](../../../../images/tutorials/create/snowflake/aws-auth.png)
 
@@ -133,7 +111,7 @@ ht-degree: 2%
 
 ### 跳过样本数据预览 {#skip-preview-of-sample-data}
 
-在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL 跳过预览样本数据]**&#x200B;切换开关。
+在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL Skip previewing sample data]**&#x200B;切换开关。
 
 工作流的其余部分将保持不变。 唯一需要注意的是，跳过数据预览可能会阻止在映射步骤中自动验证已计算和必填字段，您随后必须在映射期间手动验证这些字段。
 

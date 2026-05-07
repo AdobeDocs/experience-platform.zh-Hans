@@ -2,10 +2,10 @@
 title: 使用Salesforce用户界面连接您的Experience Platform帐户
 description: 了解如何使用用户界面连接您的Salesforce帐户并将CRM数据引入Experience Platform。
 exl-id: b67fa4c4-d8ff-4d2d-aa76-5d9d32aa22d6
-source-git-commit: 56307d8457ba6d0046ad80a7c97405220aa6161c
+source-git-commit: 11e9e1a25a45f4011f15b1e28753a98d4158012c
 workflow-type: tm+mt
-source-wordcount: '1003'
-ht-degree: 2%
+source-wordcount: '724'
+ht-degree: 3%
 
 ---
 
@@ -26,108 +26,58 @@ ht-degree: 2%
 
 ### 收集所需的凭据 {#gather-required-credentials}
 
->[!WARNING]
->
->[!DNL Salesforce]源的基本身份验证将于2026年1月被弃用。 您必须移至OAuth 2客户端凭据身份验证，才能继续使用该源并将数据从[!DNL Salesforce]帐户摄取到Experience Platform。
-
-[!DNL Salesforce]源支持基本身份验证和OAuth2客户端凭据。
-
->[!BEGINTABS]
-
->[!TAB 基本身份验证]
-
-你必须为以下凭据提供值，才能使用基本身份验证连接[!DNL Salesforce]帐户。
-
-| 凭据 | 描述 |
-| --- | --- |
-| 环境 URL | [!DNL Salesforce]源实例的URL。 环境URL的格式为`https://[domain].my.salesforce.com`。 |
-| 用户名 | [!DNL Salesforce]用户帐户的用户名。 |
-| 密码 | [!DNL Salesforce]用户帐户的密码。 |
-| 安全令牌 | [!DNL Salesforce]用户帐户的安全令牌。 |
-| API版本 | （可选）您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
-
-有关身份验证的详细信息，请参阅[此 [!DNL Salesforce] 身份验证指南](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/quickstart_oauth.htm)。
-
->[!TAB OAuth2客户端凭据]
-
-您必须为以下凭据提供值，才能使用OAuth2客户端凭据连接您的[!DNL Salesforce]帐户。
+[!DNL Salesforce]源支持通过OAuth2客户端凭据进行身份验证。
 
 | 凭据 | 描述 |
 | --- | --- |
 | 环境 URL | [!DNL Salesforce]源实例的URL。 环境URL的格式为`https://[domain].my.salesforce.com`。 |
 | 客户端 ID | 在OAuth2身份验证中，客户端ID与客户端密钥结合使用。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
 | 客户端密码 | 客户端密钥与客户端ID结合使用，作为OAuth2身份验证的一部分。 客户端ID和客户端密钥共同使您的应用程序能够代表您的帐户运行，方法是向[!DNL Salesforce]标识您的应用程序。 |
-| API版本 | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
-| 包括已删除的对象 | 一个布尔值，用于确定是否包括软删除的记录。 如果设置为true，软删除的记录可以包含在您的[!DNL Salesforce]查询中，并从您的帐户摄取到Experience Platform中。如果未指定配置，此值默认为`false`。 |
+| API 版本 | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
+| 包含已删除的对象 | 一个布尔值，用于确定是否包括软删除的记录。 如果设置为true，软删除的记录可以包含在您的[!DNL Salesforce]查询中，并从您的帐户摄取到Experience Platform中。如果未指定配置，此值默认为`false`。 |
 
-有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[[!DNL Salesforce] 的](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)指南。
-
->[!ENDTABS]
-
-收集所需的凭据后，您可以按照以下步骤将您的[!DNL Salesforce]帐户连接到Experience Platform。
+有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce] 指南。
 
 ## 连接您的[!DNL Salesforce]帐户
 
-在Experience Platform UI中，从左侧菜单导航到&#x200B;**[!UICONTROL 源]**&#x200B;以打开[!UICONTROL 源]工作区。 使用左侧的目录浏览类别，或使用搜索栏快速查找要连接的源。
+在Experience Platform UI中，从左侧菜单导航到&#x200B;**[!UICONTROL Sources]**&#x200B;以打开[!UICONTROL Sources]工作区。 使用左侧的目录浏览类别，或使用搜索栏快速查找要连接的源。
 
-在&#x200B;**[!DNL Salesforce]** CRM *[!UICONTROL 类别下选择]*，然后选择&#x200B;**[!UICONTROL 添加数据]**。
+在&#x200B;*[!UICONTROL CRM]*&#x200B;类别下选择&#x200B;**[!DNL Salesforce]**，然后选择&#x200B;**[!UICONTROL Add data]**。
 
 >[!TIP]
 >
->在源目录中，如果未连接任何帐户，您将看到&#x200B;**[!UICONTROL 设置]**；如果帐户已经过身份验证，您将看到&#x200B;**[!UICONTROL 添加数据]**。
+>在源目录中，如果未连接任何帐户，您将看到&#x200B;**[!UICONTROL Set up]**；如果帐户已经过身份验证，您将看到&#x200B;**[!UICONTROL Add data]**。
 
 ![已选择Salesforce源卡的Experience Platform UI上的源目录。](../../../../images/tutorials/create/salesforce/catalog.png)
 
-此时会显示&#x200B;**[!UICONTROL 连接到Salesforce]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
+此时会显示&#x200B;**[!UICONTROL Connect to Salesforce]**&#x200B;页面。 在此页上，您可以使用新凭据或现有凭据。
 
 ### 使用现有帐户
 
-要使用现有帐户，请选择&#x200B;**[!UICONTROL 现有帐户]**，然后从显示的列表中选择要使用的帐户。 完成后，选择&#x200B;**[!UICONTROL 下一步]**&#x200B;以继续。
+要使用现有帐户，请选择&#x200B;**[!UICONTROL Existing account]**，然后从显示的列表中选择要使用的帐户。 完成后，选择&#x200B;**[!UICONTROL Next]**&#x200B;以继续。
 
 ![您的组织中已存在的经过身份验证的Salesforce帐户的列表。](../../../../images/tutorials/create/salesforce/existing.png)
 
 ### 创建新帐户
 
-要创建新帐户，请选择&#x200B;**[!UICONTROL 新帐户]**，并为您的新[!DNL Salesforce]帐户提供名称和描述。
+要创建新帐户，请选择&#x200B;**[!UICONTROL New account]**&#x200B;并为您的新[!DNL Salesforce]帐户提供名称和描述。
 
-![通过提供适当的身份验证凭据来创建新的Salesforce帐户的界面。](../../../../images/tutorials/create/salesforce/new.png)
-
-接下来，选择要用于新帐户的身份验证类型。
-
->[!BEGINTABS]
-
->[!TAB 基本身份验证]
-
-对于基本身份验证，请选择&#x200B;**[!UICONTROL 基本身份验证]**，然后提供以下凭据的值：
-
-* 环境 URL
-* 用户名
-* 密码
-* API版本（可选）
-
-完成后，选择&#x200B;**[!UICONTROL 连接到源]**。
-
-![用于创建Salesforce帐户的基本身份验证界面。](../../../../images/tutorials/create/salesforce/basic.png)
-
->[!TAB OAuth2客户端凭据]
-
-对于OAuth 2客户端凭据，选择&#x200B;**[!UICONTROL OAuth2客户端凭据]**，然后提供以下凭据的值：
+对于OAuth 2客户端凭据，选择&#x200B;**[!UICONTROL OAuth2 Client Credential]**，然后提供以下凭据的值：
 
 * 环境 URL
 * 客户端 ID
 * 客户端密码
-* API版本
+* API 版本
 * 包括删除对象
 
-完成后，选择&#x200B;**[!UICONTROL 连接到源]**。
+完成后，选择&#x200B;**[!UICONTROL Connect to source]**。
 
-![用于创建Salesforce帐户的OAuth接口。](../../../../images/tutorials/create/salesforce/oauth.png)
 
->[!ENDTABS]
+![通过提供适当的身份验证凭据来创建新的Salesforce帐户的界面。](../../../../images/tutorials/create/salesforce/new.png)
 
 ### 跳过样本数据预览 {#skip-preview-of-sample-data}
 
-在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL 跳过预览样本数据]**&#x200B;切换开关。
+在数据选择步骤中，摄取大型表或数据文件时可能会遇到超时。 您可以跳过数据预览以规避超时，并且仍可以查看架构，尽管没有示例数据。 要跳过数据预览，请启用&#x200B;**[!UICONTROL Skip previewing sample data]**&#x200B;切换开关。
 
 工作流的其余部分将保持不变。 唯一需要注意的是，跳过数据预览可能会阻止在映射步骤中自动验证已计算和必填字段，您随后必须在映射期间手动验证这些字段。
 
