@@ -2,10 +2,10 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 9f7464b78da9615bf6966e34eb129150a481fb5f
+source-git-commit: 93229faebaf7c381fc348d67d877d7d3e3a05ae6
 workflow-type: tm+mt
-source-wordcount: '3230'
-ht-degree: 20%
+source-wordcount: '3320'
+ht-degree: 19%
 
 ---
 
@@ -13,6 +13,13 @@ ht-degree: 20%
 # Web SDK标记扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Adobe Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
+
+## 2.35.0版 — 2026年5月7日
+
+- 包含Adobe Experience Platform Web SDK的[版本2.33.0](/help/collection/js/release-notes.md)。
+- 从扩展配置页面的Advertising和推送通知部分删除了测试版标记。
+- 修复了推送通知配置在编辑之前显示错误的问题。
+- 修复了在连续更新变量操作中覆盖Analytics事件的问题。
 
 ## 版本2.34.2 - 2026年3月23日
 
@@ -22,8 +29,8 @@ ht-degree: 20%
 ## 2.34.1版 — 2026年2月11日
 
 - 包含[版本2.31.1](/help/collection/js/release-notes.md)的Adobe Experience Platform Web SDK。
-- 修复了在[发送事件](configure/advertising.md)操作中无法编辑[Adobe Advertising配置设置](actions/send-event.md)的问题。
-- 添加了`edge.adobedc.net`不可用时[Edge域](configure/general.md)配置设置的回退到`tenant-id`。
+- 修复了在[发送事件](actions/send-event.md)操作中无法编辑[Adobe Advertising配置设置](configure/advertising.md)的问题。
+- 添加了`tenant-id`不可用时[Edge域](configure/general.md)配置设置的回退到`edge.adobedc.net`。
 
 ## 2.34.0版 — 2026年2月9日
 
@@ -38,10 +45,10 @@ ht-degree: 20%
 **修复和改进**
 
 - 更新了[默认边缘域](configure/general.md#edge-domain)以包含公司ID作为子域。
-- 向&#x200B;**[!UICONTROL No overrides]**&#x200B;数据流配置覆盖[添加了](configure/configuration-overrides.md)选项。
+- 向[数据流配置覆盖](configure/configuration-overrides.md)添加了&#x200B;**[!UICONTROL No overrides]**&#x200B;选项。
 - 添加了刷新按钮以重新填充某些输入字段上的项目。
 - 现在，每次创建实例时，都会自动生成唯一的实例名称。
-- 修复了值是`combinedValidator`或`undefined`时`null`引发错误的错误。
+- 修复了值是`undefined`或`null`时`combinedValidator`引发错误的错误。
 - 修复了删除实例时显示的错误。
 - 修复了获取架构时出错，导致XDM对象数据元素不可用的问题。
 - 修复了[发送媒体事件](actions/send-media-event.md)操作中的保存设置。
@@ -194,15 +201,15 @@ ht-degree: 20%
 **新增功能**
 
 - 在扩展配置中添加了对[`Streaming Media Collection`](configure/streaming-media.md)组件的支持。
-- 为[`Send Media Event`](actions/send-media-event.md)功能添加了[!DNL Streaming Media Collection]操作。
-- 为[`Media: Quality of Experience`](data-element-types.md#quality-experience)功能添加了[!DNL Streaming Media Collection]数据元素。
+- 为[!DNL Streaming Media Collection]功能添加了[`Send Media Event`](actions/send-media-event.md)操作。
+- 为[!DNL Streaming Media Collection]功能添加了[`Media: Quality of Experience`](data-element-types.md#quality-experience)数据元素。
 
 包含2.20.0版本的Adobe Experience Platform Web SDK。
 
 **修复和改进**
 
 - 修复了在[更新变量](actions/update-variable.md)操作中搜索数据元素时发生的错误。
-- 已从建议在[!UICONTROL Media]操作中使用的事件类型中删除`sendEvent`事件类型。
+- 已从建议在`sendEvent`操作中使用的事件类型中删除[!UICONTROL Media]事件类型。
 
 ## 版本2.22.0 - 2024年5月3日
 
@@ -260,7 +267,7 @@ ht-degree: 20%
 
 **新增功能**
 
-- 添加了对数据流ID[的每命令](../../../../datastreams/overrides.md)覆盖的支持。
+- 添加了对数据流ID](../../../../datastreams/overrides.md)的每命令[覆盖的支持。
 
 **修复和改进**
 
@@ -281,7 +288,7 @@ ht-degree: 20%
 
 - 包含2.16.0版本的Adobe Experience Platform Web SDK。
 - 添加了对[数据流配置覆盖](/help/datastreams/overrides.md)的支持。
-- 向`datasetId`命令上的`sendEvent`选项添加弃用通知。
+- 向`sendEvent`命令上的`datasetId`选项添加弃用通知。
 
 **修复和改进**
 
@@ -420,7 +427,7 @@ ht-degree: 20%
 包含 Adobe Experience Platform Web SDK 库的版本 2.4.0。
 
 - 向[发送事件](actions/send-event.md)操作添加了“文档卸载”复选框。
-- 在`out`配置默认同意[时添加了对](configure/consent.md)选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
+- 在[配置默认同意](configure/consent.md)时添加了对`out`选项的支持，该默认同意会丢弃所有事件直到收到同意为止（现有`pending`选项将事件排入队列，并在收到同意后发送这些事件）。
 - 向默认同意字段添加了工具提示。
 - 添加了在使用[`Set consent`](actions/set-consent.md)操作时对Adobe Consent 2.0标准的支持。
 - 如果用户的访问令牌无效或配置不正确，则XDM对象数据元素UI中现在会显示更好的错误。
@@ -436,17 +443,17 @@ ht-degree: 20%
 
 ## 版本2.2.0 - 2020年10月1日
 
-- 当客户尝试按照沙盒架构创建 XDM 对象时，他们将会遇到身份验证问题。由于调用Experience Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
+- 当客户尝试按照沙盒架构创建 XDM 对象时，他们将会遇到身份验证问题。 由于调用Experience Platform的API现在能够识别环境，因此用户只会看到他们有权编辑的架构。
 - 使用`identityMap`数据元素时，命名空间现在会预填充到下拉列表中，因此您不必手动进行填充。
-- 翻新了 `xdmObject` 数据元素的 UI。在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
+- 翻新了 `xdmObject` 数据元素的 UI。 在新的 UI 中，您无需输入对象中的每个项目，即可查看已填充字段。
 
 ## 版本2.1.1 - 2020年8月26日
 
-- 修复了 XDM 对象视图上的 Adobe Experience Platform 沙盒显示不正确的问题。在使用该扩展版本时，如果列表中未显示预期的沙盒，则用户应与其 Adobe Experience Platform 管理员确认，以确保设置正确的访问权限。
+- 修复了 XDM 对象视图上的 Adobe Experience Platform 沙盒显示不正确的问题。 在使用该扩展版本时，如果列表中未显示预期的沙盒，则用户应与其 Adobe Experience Platform 管理员确认，以确保设置正确的访问权限。
 
 ## 版本2.1.0 - 2020年8月5日
 
-- 重大变更：移除了 `syncIdentity` 操作，取而代之，在 `sendEvent` 操作中支持传递这些 ID。请在升级扩展之前，通过这项操作来禁用任何现有规则。
+- 重大变更：移除了 `syncIdentity` 操作，取而代之，在 `sendEvent` 操作中支持传递这些 ID。 请在升级扩展之前，通过这项操作来禁用任何现有规则。
 - 已更新至Alloy版本2.1.0。
 - 在 `setConsent` 操作中支持 IAB 2.0 Consent Standard。
 - 在 `sendEvent` 操作中支持覆盖数据集 ID。
@@ -461,17 +468,17 @@ ht-degree: 20%
 ## 0.1.2版 — 2020年5月4日
 
 - 将 `configId` 重命名为 `edgeConfigId`。
-- 将 `viewStart` 重命名为 `renderDecisions`，默认情况下设置为 false。如果设置为 true，则会获取并自动渲染个性化内容。
+- 将 `viewStart` 重命名为 `renderDecisions`，默认情况下设置为 false。 如果设置为 true，则会获取并自动渲染个性化内容。
 - 与 `Get Decisions` 相关的更改：
    - 删除了 `getDecisions` 命令。
-   - 为 `sendEvent` 命令添加了一个 `scopes` 选项。将在 `sendEvent` 已解决的承诺中返回决策。
-   - 添加了内置 `__view__` 范围，该范围将导致返回页面/视图范围的内容。（例如，Target中的VEC选件。）
-仅当`sendEvent`设置为false时，才会从`renderDecisions`命令返回这些决策。
+   - 为 `sendEvent` 命令添加了一个 `scopes` 选项。 将在 `sendEvent` 已解决的承诺中返回决策。
+   - 添加了内置 `__view__` 范围，该范围将导致返回页面/视图范围的内容。 （例如，Target中的VEC选件。）
+仅当`renderDecisions`设置为false时，才会从`sendEvent`命令返回这些决策。
    - 添加了一个 `Decisions Received` 事件，当决策可用时会触发此事件。
 - 在单个服务器调用下合并多个个性化通知。
 - 修复了每次引用数据元素时都会重置事件合并 ID 的问题。
 - 将 `setCustomerIds` 操作重命名为 `syncIdentity`。
-- 添加了一个 `getIdentity` 命令。现在只能通过自定义代码使用此命令。
+- 添加了一个 `getIdentity` 命令。 现在只能通过自定义代码使用此命令。
 - 现在，允许使用`_satellite`进行调试可在Adobe Experience Platform Web SDK中进行调试。
 - 添加了对 XDM 对象中键入值的支持：布尔值、数字和小数。
 
@@ -498,7 +505,7 @@ ht-degree: 20%
 
 ## 0.0.3版 — 2019年11月25日
 
-- 在“Send Event”（发送事件）操作中，新增了“Merge ID”（合并 ID）和“Type”（类型）字段。“Merge ID”（合并 ID）映射到 XDM 架构中的 `xdm.eventMergeID`；“Type”（类型）则映射到 XDM 架构中的 `xdm.eventType`。
+- 在“Send Event”（发送事件）操作中，新增了“Merge ID”（合并 ID）和“Type”（类型）字段。 “Merge ID”（合并 ID）映射到 XDM 架构中的 `xdm.eventMergeID`；“Type”（类型）则映射到 XDM 架构中的 `xdm.eventType`。
 
 ## 0.0.2版 — 2019年11月18日
 
