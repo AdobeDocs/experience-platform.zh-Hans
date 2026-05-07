@@ -2,9 +2,9 @@
 title: Adobe Experience Platform Web SDK扩展发行说明
 description: Adobe Experience Platform Web SDK标记扩展
 exl-id: 91de8c91-023a-45b6-9f67-ac75ee471e50
-source-git-commit: 93229faebaf7c381fc348d67d877d7d3e3a05ae6
+source-git-commit: a8a466778b74e6f64d258f759a36e1a4361f0a6b
 workflow-type: tm+mt
-source-wordcount: '3320'
+source-wordcount: '3355'
 ht-degree: 19%
 
 ---
@@ -13,6 +13,11 @@ ht-degree: 19%
 # Web SDK标记扩展发行说明
 
 本文档介绍Adobe Experience Platform Web SDK标记扩展的发行说明。 有关SDK本身的最新发行说明，请参阅[Adobe Experience Platform Web SDK发行说明](/help/collection/js/release-notes.md)。
+
+## 2.35.1版 — 2026年5月7日
+
+- 包含[版本2.35.1](/help/collection/js/release-notes.md)的Adobe Experience Platform Web SDK。
+- 修复了从SDK捆绑包中排除上下文等必需组件并阻止发送事件的问题。
 
 ## 2.35.0版 — 2026年5月7日
 
@@ -267,7 +272,7 @@ ht-degree: 19%
 
 **新增功能**
 
-- 添加了对数据流ID[&#128279;](../../../../datastreams/overrides.md)的每命令覆盖的支持。
+- 添加了对数据流ID](../../../../datastreams/overrides.md)的每命令[覆盖的支持。
 
 **修复和改进**
 
