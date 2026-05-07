@@ -267,7 +267,7 @@ ht-degree: 19%
 
 **新增功能**
 
-- 添加了对数据流ID](../../../../datastreams/overrides.md)的每命令[覆盖的支持。
+- 添加了对数据流ID[&#128279;](../../../../datastreams/overrides.md)的每命令覆盖的支持。
 
 **修复和改进**
 
