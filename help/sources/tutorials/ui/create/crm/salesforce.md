@@ -36,7 +36,7 @@ ht-degree: 3%
 | API 版本 | 您正在使用的[!DNL Salesforce]实例的REST API版本。 API版本的值必须使用小数格式设置。 例如，如果您使用的是API版本`52`，则必须以`52.0`的形式输入值。 如果此字段留空，则Experience Platform将自动使用最新可用版本。 |
 | 包含已删除的对象 | 一个布尔值，用于确定是否包括软删除的记录。 如果设置为true，软删除的记录可以包含在您的[!DNL Salesforce]查询中，并从您的帐户摄取到Experience Platform中。如果未指定配置，此值默认为`false`。 |
 
-有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce] 指南。
+有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[!DNL Salesforce] 指南。
 
 ## 连接您的[!DNL Salesforce]帐户
 

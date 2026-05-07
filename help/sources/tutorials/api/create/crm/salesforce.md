@@ -43,7 +43,7 @@ ht-degree: 2%
 | `includeDeletedObjects` | 一个布尔值，用于确定是否包括软删除的记录。 如果设置为true，软删除的记录可以包含在您的[!DNL Salesforce]查询中，并从您的帐户引入Experience Platform。 如果未指定配置，此值默认为`false`。 |
 | `connectionSpec.id` | 连接规范返回源的连接器属性，包括与创建基础连接和源连接相关的验证规范。 [!DNL Salesforce]的连接规范ID为： `cfc0fee1-7dc0-40ef-b73e-d8b134c436f5`。 |
 
-有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[[!DNL Salesforce] 指南。
+有关为[!DNL Salesforce]使用OAuth的更多信息，请阅读有关OAuth授权流程[&#128279;](https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm&type=5)的[!DNL Salesforce] 指南。
 
 ### 在[!DNL Azure]的Experience Platform中为[!DNL Salesforce]创建基本连接
 
